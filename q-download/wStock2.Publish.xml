@@ -1,0 +1,120 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\NGUYENTUAN\Desktop\webst\">
+    <file relUrl="Service References/UserService/DataLibs61.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs62.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="bin/wStock2.dll" publishTime="02/15/2012 23:09:43" />
+    <file relUrl="Default.aspx.designer.cs" publishTime="02/07/2012 23:42:08" />
+    <file relUrl="images/16s.png" publishTime="02/05/2012 17:16:08" />
+    <file relUrl="DownloadSite.Master" publishTime="02/12/2012 00:23:08" />
+    <file relUrl="Service References/UserService/wStock2.UserService.TradePointInfo.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="App_Data/ASPNETDB.MDF" publishTime="02/05/2012 21:32:48" />
+    <file relUrl="Service References/UserService/baseDS1.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Download.aspx.cs" publishTime="02/15/2012 22:57:57" />
+    <file relUrl="Properties/AssemblyInfo.cs" publishTime="02/05/2012 16:08:59" />
+    <file relUrl="App_Data/Quantum_0202beta.zip" publishTime="02/05/2012 20:51:47" />
+    <file relUrl="css/style.css" publishTime="02/12/2012 00:13:37" />
+    <file relUrl="Service References/UserService/DataLibs64.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="bin/wStock2.pdb" publishTime="02/15/2012 23:09:43" />
+    <file relUrl="Service References/UserService/Reference.cs" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="wStock2.csproj" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="Service References/UserService/configuration.svcinfo" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/tmpDS1.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="images/16m.png" publishTime="02/05/2012 17:15:19" />
+    <file relUrl="Login.aspx.designer.cs" publishTime="02/05/2012 20:42:32" />
+    <file relUrl="Service References/UserService/configuration91.svcinfo" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs65.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="DownloadSite.Master.designer.cs" publishTime="02/12/2012 00:17:02" />
+    <file relUrl="Service References/UserService/wStock2.UserService.baseDS.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Login.aspx.cs" publishTime="02/12/2012 00:28:03" />
+    <file relUrl="DownloadSite.Master.cs" publishTime="02/12/2012 00:15:11" />
+    <file relUrl="DownloadSuccess.aspx" publishTime="02/15/2012 23:14:19" />
+    <file relUrl="App_Data/aspnetdb_log.ldf" publishTime="02/05/2012 21:32:48" />
+    <file relUrl="wUser.cs" publishTime="02/15/2012 22:56:06" />
+    <file relUrl="Service References/UserService/DataLibs6.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Login.aspx" publishTime="02/12/2012 00:20:14" />
+    <file relUrl="images/16t.png" publishTime="02/05/2012 17:16:29" />
+    <file relUrl="Globals.cs" publishTime="02/12/2012 00:36:30" />
+    <file relUrl="Service References/UserService/wStock2.UserService.GlobalSettings.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Service References/UserService/wStock2.UserService.tmpDS.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Service References/UserService/wStock2.UserService.TransactionInfo.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Index.aspx.designer.cs" publishTime="02/05/2012 21:15:16" />
+    <file relUrl="DownloadSuccess.aspx.cs" publishTime="02/15/2012 23:08:45" />
+    <file relUrl="Service References/UserService/DataLibs1.wsdl" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs66.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Properties/DataSources/System.Data.DataTable.datasource" publishTime="02/07/2012 23:41:26" />
+    <file relUrl="wStock2.csproj.user" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="Index.aspx" publishTime="02/05/2012 21:15:20" />
+    <file relUrl="Download.aspx.designer.cs" publishTime="02/05/2012 20:57:23" />
+    <file relUrl="wStock2.Publish.xml" publishTime="02/15/2012 23:18:24" />
+    <file relUrl="Service References/UserService/DataLibs1.disco" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs63.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Index.aspx.cs" publishTime="02/05/2012 21:19:08" />
+    <file relUrl="Web.config" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="Default.aspx.cs" publishTime="02/07/2012 23:42:40" />
+    <file relUrl="Service References/UserService/Reference.svcmap" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="DownloadHandler.ashx" publishTime="02/05/2012 20:49:40" />
+    <file relUrl="DownloadHandler.ashx.cs" publishTime="02/15/2012 22:59:21" />
+    <file relUrl="DownloadSuccess.aspx.designer.cs" publishTime="02/15/2012 23:04:02" />
+    <file relUrl="Download.aspx" publishTime="02/12/2012 00:22:00" />
+    <file relUrl="Default.aspx" publishTime="02/07/2012 23:42:12" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://test01.cesti.gov.vn/tuan/">
+    <file relUrl="Service References/UserService/DataLibs61.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs62.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="bin/wStock2.pdb" publishTime="02/15/2012 23:09:43" />
+    <file relUrl="Default.aspx.designer.cs" publishTime="02/07/2012 23:42:08" />
+    <file relUrl="bin/wStock2.dll" publishTime="02/15/2012 23:09:43" />
+    <file relUrl="images/16s.png" publishTime="02/05/2012 17:16:08" />
+    <file relUrl="DownloadSite.Master" publishTime="02/12/2012 00:23:08" />
+    <file relUrl="Service References/UserService/wStock2.UserService.tmpDS.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Service References/UserService/DataLibs6.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="App_Data/ASPNETDB.MDF" publishTime="02/05/2012 21:32:48" />
+    <file relUrl="Download.aspx.cs" publishTime="02/15/2012 22:57:57" />
+    <file relUrl="Service References/UserService/tmpDS1.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="App_Data/Quantum_0202beta.zip" publishTime="02/05/2012 20:51:47" />
+    <file relUrl="wStock2.Publish.xml" publishTime="02/12/2012 01:11:48" />
+    <file relUrl="css/style.css" publishTime="02/12/2012 00:13:37" />
+    <file relUrl="Default.aspx.cs" publishTime="02/07/2012 23:42:40" />
+    <file relUrl="Service References/UserService/wStock2.UserService.baseDS.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Download.aspx.designer.cs" publishTime="02/05/2012 20:57:23" />
+    <file relUrl="wStock2.csproj" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="Service References/UserService/configuration.svcinfo" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Login.aspx.designer.cs" publishTime="02/05/2012 20:42:32" />
+    <file relUrl="Service References/UserService/configuration91.svcinfo" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs65.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="DownloadSite.Master.designer.cs" publishTime="02/12/2012 00:17:02" />
+    <file relUrl="Service References/UserService/wStock2.UserService.TransactionInfo.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="DownloadSuccess.aspx" publishTime="02/15/2012 23:08:47" />
+    <file relUrl="Web.config" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="Login.aspx.cs" publishTime="02/12/2012 00:28:03" />
+    <file relUrl="DownloadSite.Master.cs" publishTime="02/12/2012 00:15:11" />
+    <file relUrl="images/16t.png" publishTime="02/05/2012 17:16:29" />
+    <file relUrl="Service References/UserService/DataLibs1.disco" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="App_Data/aspnetdb_log.ldf" publishTime="02/05/2012 21:32:48" />
+    <file relUrl="Download.aspx" publishTime="02/12/2012 00:22:00" />
+    <file relUrl="Login.aspx" publishTime="02/12/2012 00:20:14" />
+    <file relUrl="Globals.cs" publishTime="02/12/2012 00:36:30" />
+    <file relUrl="Service References/UserService/wStock2.UserService.GlobalSettings.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="DownloadHandler.ashx" publishTime="02/05/2012 20:49:40" />
+    <file relUrl="wStock2.csproj.user" publishTime="02/15/2012 22:53:24" />
+    <file relUrl="DownloadHandler.ashx.cs" publishTime="02/15/2012 22:59:21" />
+    <file relUrl="Service References/UserService/baseDS1.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="DownloadSuccess.aspx.cs" publishTime="02/15/2012 23:08:45" />
+    <file relUrl="Service References/UserService/DataLibs1.wsdl" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs64.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Service References/UserService/DataLibs66.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Properties/DataSources/System.Data.DataTable.datasource" publishTime="02/07/2012 23:41:26" />
+    <file relUrl="Index.aspx" publishTime="02/05/2012 21:15:20" />
+    <file relUrl="Service References/UserService/Reference.cs" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Index.aspx.cs" publishTime="02/05/2012 21:19:08" />
+    <file relUrl="Service References/UserService/DataLibs63.xsd" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="Properties/AssemblyInfo.cs" publishTime="02/05/2012 16:08:59" />
+    <file relUrl="Index.aspx.designer.cs" publishTime="02/05/2012 21:15:16" />
+    <file relUrl="Service References/UserService/Reference.svcmap" publishTime="02/15/2012 22:53:16" />
+    <file relUrl="wUser.cs" publishTime="02/15/2012 22:56:06" />
+    <file relUrl="DownloadSuccess.aspx.designer.cs" publishTime="02/15/2012 23:04:02" />
+    <file relUrl="images/16m.png" publishTime="02/05/2012 17:15:19" />
+    <file relUrl="Service References/UserService/wStock2.UserService.TradePointInfo.datasource" publishTime="02/15/2012 22:53:17" />
+    <file relUrl="Default.aspx" publishTime="02/07/2012 23:42:12" />
+  </publishTarget>
+</publishData>

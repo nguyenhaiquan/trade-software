@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3a63e1d8-69c5-4bc9-835f-de21431aca16" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://test01.cesti.gov.vn/DataLibs.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataLibs1.xsd" MetadataType="Schema" ID="888a47ca-9655-4cb3-8833-10af7587ab4e" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd3" />
+    <MetadataFile FileName="DataLibs11.xsd" MetadataType="Schema" ID="e700517b-2f9c-4065-97b7-fd266ded0562" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd1" />
+    <MetadataFile FileName="tmpDS.xsd" MetadataType="Schema" ID="277ddc95-b687-4e2b-86c7-fa482b448fa2" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd6" />
+    <MetadataFile FileName="baseDS.xsd" MetadataType="Schema" ID="a02a003f-f51d-446c-a4cb-3bbf1876e03d" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataLibs12.xsd" MetadataType="Schema" ID="dea981c0-5523-4a62-8f47-8ff427f370c8" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd8" />
+    <MetadataFile FileName="DataLibs.wsdl" MetadataType="Wsdl" ID="cdd10f0f-73c2-45bb-a038-061e04ed5fd0" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?wsdl" />
+    <MetadataFile FileName="DataLibs13.xsd" MetadataType="Schema" ID="31fba1ff-863f-4225-be4c-606613fb1431" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataLibs14.xsd" MetadataType="Schema" ID="b60932a3-3a7e-4134-ab18-2815ccc98d6f" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLibs15.xsd" MetadataType="Schema" ID="6593a182-343f-4ce3-aa8d-bf5b6404f024" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd7" />
+    <MetadataFile FileName="DataLibs.disco" MetadataType="Disco" ID="2f36619b-340f-4019-befe-29353cc8fc37" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?disco" />
+    <MetadataFile FileName="DataLibs16.xsd" MetadataType="Schema" ID="e428b3e8-cce8-49d3-b758-f270b0caee63" SourceId="1" SourceUrl="http://test01.cesti.gov.vn/DataLibs.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

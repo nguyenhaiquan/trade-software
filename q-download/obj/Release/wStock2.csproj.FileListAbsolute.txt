@@ -1,0 +1,7 @@
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\wStock2.dll
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\wStock2.pdb
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Release\ResolveAssemblyReference.cache
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Release\wStock2.dll
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Release\wStock2.pdb
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\commonClass.dll
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\commonTypes.dll

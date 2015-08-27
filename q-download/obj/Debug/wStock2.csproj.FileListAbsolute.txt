@@ -1,0 +1,14 @@
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\wStock2.dll
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\wStock2.pdb
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Debug\wStock2.dll
+C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Debug\wStock2.pdb
+C:\QuantumDownload\q-download\bin\wStock2.dll
+C:\QuantumDownload\q-download\bin\wStock2.pdb
+C:\QuantumDownload\q-download\bin\commonClass.dll
+C:\QuantumDownload\q-download\bin\commonTypes.dll
+C:\QuantumDownload\q-download\obj\Debug\wStock2.csprojResolveAssemblyReference.cache
+C:\QuantumDownload\q-download\obj\Debug\wStock2.dll
+C:\QuantumDownload\q-download\obj\Debug\wStock2.pdb
+C:\QuantumDownload\q-download\bin\wStock2.dll.CodeAnalysisLog.xml
+C:\QuantumDownload\q-download\bin\wStock2.dll.lastcodeanalysissucceeded
