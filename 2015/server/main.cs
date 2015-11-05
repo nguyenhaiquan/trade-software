@@ -9,10 +9,10 @@ using commonTypes;
 
 namespace server
 {
-    public partial class main : common.forms.baseApplication
-    //public partial class main : baseClass.forms.baseApplication
+    public partial class frmServer : common.forms.baseApplication
+    //public partial class frmServer : baseClass.forms.baseApplication
     {
-        public main()
+        public frmServer()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace server
             Form myForm = this.FindForm("importPriceData");
             if (myForm == null || myForm.IsDisposed)
             {
-                myForm = new Imports.Forms.importPriceData();
+                myForm = new Imports.Forms.frmImportPriceData();
                 myForm.Name = "importPriceData";
             }
             this.ShowForm(myForm, false);
@@ -91,7 +91,7 @@ namespace server
             Form myForm = this.FindForm("importCompany");
             if (myForm == null || myForm.IsDisposed)
             {
-                myForm = new Imports.Forms.importCompany();
+                myForm = new Imports.Forms.frmImportCompany();
                 myForm.Name = "importCompany";
             }
             this.ShowForm(myForm, false);
@@ -102,7 +102,7 @@ namespace server
             Form myForm = this.FindForm("importComSector");
             if (myForm == null || myForm.IsDisposed)
             {
-                myForm = new Imports.Forms.importComSector();
+                myForm = new Imports.Forms.frmImportComSector();
                 myForm.Name = "importComSector";
             }
             this.ShowForm(myForm, false);
@@ -112,7 +112,7 @@ namespace server
         {
             try
             {
-                Imports.Forms.reUpdatePrice form = new Imports.Forms.reUpdatePrice();
+                Imports.Forms.frmReUpdatePrice form = new Imports.Forms.frmReUpdatePrice();
                 form.ShowDialog();
             }
             catch (Exception er)
@@ -121,12 +121,12 @@ namespace server
             }
         }
 
-        static scheduleForm scheduleForm = null;
+        static frmSchedule scheduleForm = null;
         private void updateDataMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (scheduleForm == null || scheduleForm.IsDisposed) scheduleForm = new scheduleForm();
+                if (scheduleForm == null || scheduleForm.IsDisposed) scheduleForm = new frmSchedule();
                 scheduleForm.Show();
                 scheduleForm.Activate();
             }
@@ -140,7 +140,7 @@ namespace server
         {
             try
             {
-                Imports.Forms.reAggregatePrice form = new Imports.Forms.reAggregatePrice();
+                Imports.Forms.frmReAggregatePrice form = new Imports.Forms.frmReAggregatePrice();
                 form.ShowDialog();
             }
             catch (Exception er)
@@ -149,7 +149,7 @@ namespace server
             }
         }
 
-        public scheduleForm scheduleForm1
+        public frmSchedule scheduleForm1
         {
             get
             {
@@ -160,16 +160,16 @@ namespace server
             }
         }
 
-        public libs libs
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        //public libs libs
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
+        //    set
+        //    {
+        //    }
+        //}
 
         /// <summary>
         /// Menu Tạo chiến lược tốt nhất cho từng loại cổ phiếu

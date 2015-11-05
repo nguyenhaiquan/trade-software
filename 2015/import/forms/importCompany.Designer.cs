@@ -1,6 +1,6 @@
 ﻿namespace Imports.Forms
 {
-    partial class importCompany
+    partial class frmImportCompany
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(importCompany));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportCompany));
             this.dataFileLbl = new common.controls.baseLabel();
             this.dataFileNameEd = new common.controls.baseTextBox();
             this.myDataSet = new databases.baseDS();
@@ -207,7 +207,7 @@
             this.importDirbtn.UseVisualStyleBackColor = true;
             this.importDirbtn.Click += new System.EventHandler(this.importDirbtn_Click);
             // 
-            // importCompany
+            // frmImportCompany
             // 
             this.ClientSize = new System.Drawing.Size(573, 311);
             this.Controls.Add(this.noteGb);

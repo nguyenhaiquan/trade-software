@@ -1,6 +1,6 @@
 ﻿namespace Imports.Forms
 {
-    partial class importPriceData
+    partial class frmImportPriceData
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(importPriceData));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportPriceData));
             this.dataFileLbl = new common.controls.baseLabel();
             this.dataFileNameEd = new common.controls.baseTextBox();
             this.stockExchangeLbl = new common.controls.baseLabel();
@@ -281,7 +281,7 @@
             this.dataSourceLbl.TabIndex = 155;
             this.dataSourceLbl.Text = "Nguồn dữ liệu";
             // 
-            // importPriceData
+            // frmImportPriceData
             // 
             this.ClientSize = new System.Drawing.Size(410, 294);
             this.Controls.Add(this.dataSourceLbl);

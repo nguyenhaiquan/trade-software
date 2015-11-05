@@ -1,6 +1,6 @@
 ﻿namespace Imports.Forms
 {
-    partial class importComSector
+    partial class frmImportComSector
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(importComSector));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportComSector));
             this.dataFileLbl = new common.controls.baseLabel();
             this.dataFileNameEd = new common.controls.baseTextBox();
             this.myDataSet = new databases.baseDS();
@@ -183,7 +183,7 @@
             this.noteLbl.Text = "Cập nhật mã ngành của các công ty niêm yết từ tệp Excel";
             this.noteLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // importComSector
+            // frmImportComSector
             // 
             this.ClientSize = new System.Drawing.Size(409, 381);
             this.Controls.Add(this.noteGb);

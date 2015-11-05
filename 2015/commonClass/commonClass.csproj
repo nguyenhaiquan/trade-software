@@ -59,6 +59,10 @@
       <HintPath>..\dlls\common.dll</HintPath>
     </Reference>
     <Reference Include="commonTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="databases, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dlls\databases.dll</HintPath>
+    </Reference>
     <Reference Include="Languages, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -98,12 +102,6 @@
     </Compile>
     <Compile Include="dataClass.cs" />
     <Compile Include="Libs.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\databases\databases.csproj">
-      <Project>{B698A85B-1837-49DF-B2E5-221DFB0D02CA}</Project>
-      <Name>databases</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

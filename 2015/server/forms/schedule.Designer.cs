@@ -1,6 +1,6 @@
 ﻿namespace server
 {
-    partial class scheduleForm
+    partial class frmSchedule
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scheduleForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSchedule));
             this.fetchStockLbl = new common.controls.baseLabel();
             this.tradeAlertLbl = new common.controls.baseLabel();
             this.scheduleGb = new System.Windows.Forms.GroupBox();
@@ -205,7 +205,7 @@
             this.toolStrip1.TabIndex = 146;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // scheduleForm
+            // frmSchedule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(321, 148);

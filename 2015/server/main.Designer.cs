@@ -1,6 +1,6 @@
 ﻿namespace server
 {
-    partial class main
+    partial class frmServer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServer));
             this.myMainMenu = new System.Windows.Forms.MenuStrip();
             this.systemMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.loginMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -240,7 +240,7 @@
             this.progressBar1.Size = new System.Drawing.Size(720, 23);
             this.progressBar1.TabIndex = 233;
             // 
-            // main
+            // frmServer
             // 
             this.ClientSize = new System.Drawing.Size(720, 406);
             this.Controls.Add(this.progressBar1);

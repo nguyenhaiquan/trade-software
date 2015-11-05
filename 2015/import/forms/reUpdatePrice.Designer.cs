@@ -1,6 +1,6 @@
 ﻿namespace Imports.Forms
 {
-    partial class reUpdatePrice
+    partial class frmReUpdatePrice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reUpdatePrice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReUpdatePrice));
             this.closeBtn = new common.controls.baseButton();
             this.importBtn = new common.controls.baseButton();
             this.myBaseDS = new databases.baseDS();
@@ -141,7 +141,7 @@
             this.codeLbl.TabIndex = 153;
             this.codeLbl.Text = "Mã hiệu";
             // 
-            // reUpdatePrice
+            // frmReUpdatePrice
             // 
             this.ClientSize = new System.Drawing.Size(358, 206);
             this.Controls.Add(this.codeEd);

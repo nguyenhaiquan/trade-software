@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app_bak.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\application.StrategyStatistics.datasource" />
     <None Include="Properties\DataSources\commonClass.DataValues1.datasource" />
     <None Include="Properties\DataSources\commonClass.TradePointInfo1.datasource" />

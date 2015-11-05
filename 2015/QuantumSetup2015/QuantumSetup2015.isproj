@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\indicators\Indicators.csproj">
+			<Name>Indicators</Name>
+			<Project>{001346B6-40DD-4D1B-BFE6-7C760850C3EB}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\Languages\Languages.csproj">
+			<Name>Languages</Name>
+			<Project>{0C77EE2C-AD41-4BB5-8E58-2CB334D75878}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\strategy\Strategy.csproj">
+			<Name>Strategy</Name>
+			<Project>{1463FC47-2B74-4E63-9710-2C3B8ED3DE8A}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\Tools\Tools.csproj">
+			<Name>Tools</Name>
+			<Project>{CD659AAB-1D6C-499C-8292-E63A9B43A281}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\Trade\Trade.csproj">
+			<Name>Trade</Name>
+			<Project>{A9381839-C418-4E7D-8297-A61A72DD01A4}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\admin\admin.cs.csproj">
+			<Name>admin.cs</Name>
+			<Project>{10F39549-D83D-4E47-8CB5-36E88CE2501B}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\application\application.csproj">
+			<Name>application</Name>
+			<Project>{19674D3E-1CE6-4C34-9E3B-CB9D9E86F868}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\baseClass\baseClass.csproj">
+			<Name>baseClass</Name>
+			<Project>{D14859F5-0C41-4D7E-91AD-ED1C9195234D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\charts\charts.csproj">
+			<Name>charts</Name>
+			<Project>{B4BB5B7E-B7E1-4F82-9C4B-B373A46B08F8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\client\client.csproj">
+			<Name>client</Name>
+			<Project>{54D43B08-45E4-4BE4-92C0-A080C7DD16BE}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\commonClass\commonClass.csproj">
+			<Name>commonClass</Name>
+			<Project>{38C531D1-0881-4DC3-B616-34810EF077E7}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\commonTypes\commonTypes.csproj">
+			<Name>commonTypes</Name>
+			<Project>{AE392C66-BEBF-4507-ADD9-F17D9E51FC42}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\dataAccess\dataAccess.csproj">
+			<Name>dataAccess</Name>
+			<Project>{826C6D25-5C31-4CEA-B9A3-01578ECDB148}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\databases\databases.csproj">
+			<Name>databases</Name>
+			<Project>{B698A85B-1837-49DF-B2E5-221DFB0D02CA}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\import\imports.csproj">
+			<Name>imports</Name>
+			<Project>{350FB15F-1944-47A5-9B00-4E5F05438050}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\wsServices\wsServices.csproj">
+			<Name>wsServices</Name>
+			<Project>{6B0CCF86-3F30-4295-A42A-604FD6AC83A3}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

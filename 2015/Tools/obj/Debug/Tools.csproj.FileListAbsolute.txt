@@ -1,0 +1,14 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Tools.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Tools.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.backTesting.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.baseTesting.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.profitEstimate.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.strategyRanking.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.screening.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.tradeAnalysis.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Forms.TradeStatistics.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\Debug\Tools.pdb

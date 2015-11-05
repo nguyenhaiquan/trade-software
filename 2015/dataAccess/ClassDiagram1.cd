@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataAccess.AppLibs">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAQAAAAAABAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>appLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.AnalysisData">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.PleaseWait" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>dataLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Libs">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="DataAccess.Libs.LastPriceCache" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>dataLibs.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="DataAccess.Libs.AnalysisDataCache" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>dataLibs.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ARKMEERI0sC35REIAMSgKBgMUSwXDHDRwDkwX8gIkkQ=</HashCode>
+      <FileName>dataLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.forms.splashForm" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>forms\splashForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Properties.Resources" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Properties.Settings" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.ServiceReference1.StockServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABGvEFQ73sAvJABABMPiCAAMkAyLDSTAQCIQXMgo0XY=</HashCode>
+      <FileName>Service References\ServiceReference1\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DataAccess.ServiceReference1.IStockService" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABGvEFQ73sAvJABABMPiCAAMkAyLDSTAQCIQXMgo0XY=</HashCode>
+      <FileName>Service References\ServiceReference1\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataAccess.ServiceReference1.IStockServiceChannel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\ServiceReference1\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DataAccess.ConnState" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAgEAAAA=</HashCode>
+      <FileName>dataLibs.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="DataAccess.OnErrorEvent" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dataLibs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="DataAccess.OnConnStateChangedEvent" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dataLibs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

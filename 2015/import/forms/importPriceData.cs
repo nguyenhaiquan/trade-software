@@ -15,13 +15,13 @@ using commonClass;
 
 namespace Imports.Forms
 {
-    public partial class importPriceData : common.forms.baseForm
+    public partial class frmImportPriceData : common.forms.baseForm
     {
         private static CultureInfo dataCultureInfo = null;
         private static CultureInfo marketCultureInfo = null;
         const int constNumberOfImportInBatch = 10000;
         private bool fCanceled = false;
-        public importPriceData()
+        public frmImportPriceData()
         {
             try
             {
@@ -68,17 +68,17 @@ namespace Imports.Forms
             switch (dataSourceCb.SelectedIndex)
             {
                 case 0: //Data from copheu 68
-                    Imports.Stock.Libs.ImportFromCVS(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
+                    Imports.CVSLibs.ImportFromCVS(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
                     databases.DbAccess.UpdateData(myDataSet.priceData);
                     DoAggregate(myDataSet.priceData,marketCultureInfo);
                     break;
                 case 1: // Data from BVSC MMDDYYYY - Neu xu ly tay thi ko can
-                    Imports.Stock.Libs.ImportFromCVS_BVSC(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
+                    Imports.CVSLibs.ImportFromCVS_BVSC(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
                     databases.DbAccess.UpdateData(myDataSet.priceData);
                     DoAggregate(myDataSet.priceData, marketCultureInfo);
                     break;
                 case 2:// Gold
-                    Imports.Gold.Libs.ImportFromCVS(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
+                    Imports.Gold.GoldLibs.ImportFromCVS(dataFileNameEd.Text, marketCb.myValue, dataCultureInfo, myDataSet.priceData, OnUpdateData);
                     databases.DbAccess.UpdateData(myDataSet.priceData);
                     DoAggregate(myDataSet.priceData, marketCultureInfo);
                     break;

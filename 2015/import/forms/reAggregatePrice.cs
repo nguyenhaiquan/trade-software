@@ -14,9 +14,9 @@ using application;
 
 namespace Imports.Forms
 {
-    public partial class reAggregatePrice : common.forms.baseForm
+    public partial class frmReAggregatePrice : common.forms.baseForm
     {
-        public reAggregatePrice()
+        public frmReAggregatePrice()
         {
             InitializeComponent();
         }

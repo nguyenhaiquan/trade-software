@@ -12,3 +12,10 @@ C:\QuantumDownload\q-download\obj\Debug\wStock2.dll
 C:\QuantumDownload\q-download\obj\Debug\wStock2.pdb
 C:\QuantumDownload\q-download\bin\wStock2.dll.CodeAnalysisLog.xml
 C:\QuantumDownload\q-download\bin\wStock2.dll.lastcodeanalysissucceeded
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\wStock2.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\wStock2.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonClass.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonTypes.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Debug\wStock2.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Debug\wStock2.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Debug\wStock2.pdb

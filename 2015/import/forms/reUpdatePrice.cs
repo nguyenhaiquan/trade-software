@@ -14,9 +14,9 @@ using application;
 
 namespace Imports.Forms
 {
-    public partial class reUpdatePrice : common.forms.baseForm
+    public partial class frmReUpdatePrice : common.forms.baseForm
     {
-        public reUpdatePrice()
+        public frmReUpdatePrice()
         {
             InitializeComponent();
             dateRangeEd.frDate = common.dateTimeLibs.MakeDate(1, 10, 2011);

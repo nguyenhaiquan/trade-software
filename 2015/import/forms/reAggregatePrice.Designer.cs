@@ -1,6 +1,6 @@
 ﻿namespace Imports.Forms
 {
-    partial class reAggregatePrice
+    partial class frmReAggregatePrice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reAggregatePrice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReAggregatePrice));
             this.closeBtn = new common.controls.baseButton();
             this.okBtn = new common.controls.baseButton();
             this.myBaseDS = new databases.baseDS();
@@ -133,7 +133,7 @@
             this.codeChk.UseVisualStyleBackColor = true;
             this.codeChk.CheckedChanged += new System.EventHandler(this.codeChk_CheckedChanged);
             // 
-            // reAggregatePrice
+            // frmReAggregatePrice
             // 
             this.ClientSize = new System.Drawing.Size(358, 173);
             this.Controls.Add(this.codeChk);

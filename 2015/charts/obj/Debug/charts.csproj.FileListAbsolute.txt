@@ -1,0 +1,7 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Charts.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Charts.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.Controls.myGraphControl.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.Controls.baseGraphPanel.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\charts.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.pdb

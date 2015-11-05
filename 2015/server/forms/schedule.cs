@@ -12,19 +12,19 @@ using System.Diagnostics;
 
 namespace server
 {
-    public partial class scheduleForm : baseClass.forms.baseForm   
+    public partial class frmSchedule : baseClass.forms.baseForm   
     {
         private bool fRunning = false;
         common.TimerProcess fetchDataTimer = new common.TimerProcess();
-        common.TimerProcess fetchDataTimerHOSE = new common.TimerProcess();
-        common.TimerProcess fetchDataTimerHASTC = new common.TimerProcess();
-        common.TimerProcess fetchDataTimerGOLD = new common.TimerProcess();
+        //common.TimerProcess fetchDataTimerHOSE = new common.TimerProcess();
+        //common.TimerProcess fetchDataTimerHASTC = new common.TimerProcess();
+        //common.TimerProcess fetchDataTimerGOLD = new common.TimerProcess();
 
         common.TimerProcess createTradeAlertTimer = new common.TimerProcess();
 
         BackgroundWorker bWorker;
 
-        public scheduleForm()
+        public frmSchedule()
         {
             try
             {
@@ -40,10 +40,10 @@ namespace server
         {
             tradeAlertLbl.Text = Settings.sysGlobal.CheckAlertInSeconds.ToString() + " " + Languages.Libs.GetString("seconds");
             fetchStockLbl.Text = Settings.sysGlobal.RefreshDataInSecs.ToString() + " " + Languages.Libs.GetString("seconds");
-            //fetchDataTimer.OnProcess += new common.TimerProcess.OnProcessEvent(FetchData);
-            fetchDataTimerHOSE.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHOSE);
-            fetchDataTimerHASTC.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHASTC);
-            fetchDataTimerGOLD.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataGOLD);
+            fetchDataTimer.OnProcess += new common.TimerProcess.OnProcessEvent(FetchData);
+            //fetchDataTimerHOSE.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHOSE);
+            //fetchDataTimerHASTC.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHASTC);
+            //fetchDataTimerGOLD.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataGOLD);
 
             createTradeAlertTimer.OnProcess += new common.TimerProcess.OnProcessEvent(CreateTradeAlert);
 
@@ -168,7 +168,6 @@ namespace server
                 string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                     ts.Hours, ts.Minutes, ts.Seconds,
                     ts.Milliseconds / 10);
-                //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "Time01",elapsedTime);
             }
             catch (Exception er)
             {
@@ -178,95 +177,95 @@ namespace server
             
         }
 
-        private void FetchDataHOSE()
-        {
-            try
-            {
-                if (fFetchDataHOSERunning) return;
+        //private void FetchDataHOSE()
+        //{
+        //    try
+        //    {
+        //        if (fFetchDataHOSERunning) return;
 
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
+        //        Stopwatch stopWatch = new Stopwatch();
+        //        stopWatch.Start();
 
-                fFetchDataHOSERunning = true;
-                libs.FetchRealTimeData(DateTime.Now, "HOSE");
-                fFetchDataHOSERunning = false;
+        //        fFetchDataHOSERunning = true;
+        //        libs.FetchRealTimeData(DateTime.Now, "HOSE");
+        //        fFetchDataHOSERunning = false;
 
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
+        //        stopWatch.Stop();
+        //        TimeSpan ts = stopWatch.Elapsed;
 
-                // Format and display the TimeSpan value.
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                    ts.Hours, ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHOSE", elapsedTime);
-            }
-            catch (Exception er)
-            {
-                fFetchDataHOSERunning = false;
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-            }
+        //        // Format and display the TimeSpan value.
+        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+        //            ts.Hours, ts.Minutes, ts.Seconds,
+        //            ts.Milliseconds / 10);
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHOSE", elapsedTime);
+        //    }
+        //    catch (Exception er)
+        //    {
+        //        fFetchDataHOSERunning = false;
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
+        //    }
 
-        }
+        //}
 
-        private void FetchDataHASTC()
-        {
-            try
-            {
-                if (fFetchDataHASTCRunning) return;
+        //private void FetchDataHASTC()
+        //{
+        //    try
+        //    {
+        //        if (fFetchDataHASTCRunning) return;
 
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
+        //        Stopwatch stopWatch = new Stopwatch();
+        //        stopWatch.Start();
 
-                fFetchDataHASTCRunning = true;
-                libs.FetchRealTimeData(DateTime.Now, "HASTC");
-                fFetchDataHASTCRunning = false;
+        //        fFetchDataHASTCRunning = true;
+        //        libs.FetchRealTimeData(DateTime.Now, "HASTC");
+        //        fFetchDataHASTCRunning = false;
 
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
+        //        stopWatch.Stop();
+        //        TimeSpan ts = stopWatch.Elapsed;
 
-                // Format and display the TimeSpan value.
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                    ts.Hours, ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHASTC", elapsedTime);
-            }
-            catch (Exception er)
-            {
-                fFetchDataHASTCRunning = false;
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-            }
+        //        // Format and display the TimeSpan value.
+        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+        //            ts.Hours, ts.Minutes, ts.Seconds,
+        //            ts.Milliseconds / 10);
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHASTC", elapsedTime);
+        //    }
+        //    catch (Exception er)
+        //    {
+        //        fFetchDataHASTCRunning = false;
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
+        //    }
 
-        }
+        //}
 
-        private void FetchDataGOLD()
-        {
-            try
-            {
-                if (fFetchDataGOLDRunning) return;
+        //private void FetchDataGOLD()
+        //{
+        //    try
+        //    {
+        //        if (fFetchDataGOLDRunning) return;
 
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
+        //        Stopwatch stopWatch = new Stopwatch();
+        //        stopWatch.Start();
 
-                fFetchDataGOLDRunning = true;
-                libs.FetchRealTimeData(DateTime.Now, "GOLD");
-                fFetchDataGOLDRunning = false;
+        //        fFetchDataGOLDRunning = true;
+        //        libs.FetchRealTimeData(DateTime.Now, "GOLD");
+        //        fFetchDataGOLDRunning = false;
 
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
+        //        stopWatch.Stop();
+        //        TimeSpan ts = stopWatch.Elapsed;
 
-                // Format and display the TimeSpan value.
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                    ts.Hours, ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeGOLD", elapsedTime);
-            }
-            catch (Exception er)
-            {
-                fFetchDataGOLDRunning = false;
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-            }
+        //        // Format and display the TimeSpan value.
+        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+        //            ts.Hours, ts.Minutes, ts.Seconds,
+        //            ts.Milliseconds / 10);
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeGOLD", elapsedTime);
+        //    }
+        //    catch (Exception er)
+        //    {
+        //        fFetchDataGOLDRunning = false;
+        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
+        //    }
 
-        }
+        //}
 
         private void CreateTradeAlert()
         {
@@ -309,10 +308,10 @@ namespace server
                 runBtn.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
                 scheduleGb.Enabled = !fRunning;
 
-                //fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked?Settings.sysGlobal.RefreshDataInSecs:0);
-                fetchDataTimerHOSE.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-                fetchDataTimerHASTC.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-                fetchDataTimerGOLD.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
+                fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked?Settings.sysGlobal.RefreshDataInSecs:0);
+                //fetchDataTimerHOSE.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
+                //fetchDataTimerHASTC.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
+                //fetchDataTimerGOLD.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
 
                 createTradeAlertTimer.WaitInSeconds = (short)(tradeAlertChk.Checked ? Settings.sysGlobal.CheckAlertInSeconds : 0);
                 //createTradeAlertTimer.WaitInSeconds = 10;

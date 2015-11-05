@@ -15,10 +15,10 @@ using commonClass;
 
 namespace Imports.Forms
 {
-    public partial class importComSector : common.forms.baseForm
+    public partial class frmImportComSector : common.forms.baseForm
     {
         DataView mySubSectorView = null;
-        public importComSector()
+        public frmImportComSector()
         {
             try
             {

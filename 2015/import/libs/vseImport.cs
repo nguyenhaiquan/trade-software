@@ -38,43 +38,44 @@ namespace Imports.Stock
 
         protected virtual bool GetData(databases.baseDS.exchangeDetailRow exchangeDetailRow, ref MarketData vnIdx, ref MarketData vn30Idx)
         {
-            CultureInfo dataCulture = common.language.GetCulture("en-US");
-            //Hose
-            clientHOSE.HoSTC_ServiceSoapClient client = new Imports.clientHOSE.HoSTC_ServiceSoapClient();
-            client.Endpoint.Address = new System.ServiceModel.EndpointAddress(exchangeDetailRow.address);
+            //CultureInfo dataCulture = common.language.GetCulture("en-US");
+            ////Hose
+            //clientHOSE.HoSTC_ServiceSoapClient client = new Imports.clientHOSE.HoSTC_ServiceSoapClient();
+            //client.Endpoint.Address = new System.ServiceModel.EndpointAddress(exchangeDetailRow.address);
 
-            System.ServiceModel.BasicHttpBinding binding = (client.Endpoint.Binding as System.ServiceModel.BasicHttpBinding);
+            //System.ServiceModel.BasicHttpBinding binding = (client.Endpoint.Binding as System.ServiceModel.BasicHttpBinding);
 
-            binding.OpenTimeout = TimeSpan.FromSeconds(Consts.constWebServiceTimeOutInSecs);
-            binding.CloseTimeout = binding.OpenTimeout;
-            binding.SendTimeout = binding.OpenTimeout;
+            //binding.OpenTimeout = TimeSpan.FromSeconds(Consts.constWebServiceTimeOutInSecs);
+            //binding.CloseTimeout = binding.OpenTimeout;
+            //binding.SendTimeout = binding.OpenTimeout;
 
-            binding.MaxReceivedMessageSize = Consts.constWebServiceMaxReceivedMessageSize;
-            binding.MaxBufferSize = Consts.constWebServiceMaxReceivedMessageSize;
+            //binding.MaxReceivedMessageSize = Consts.constWebServiceMaxReceivedMessageSize;
+            //binding.MaxBufferSize = Consts.constWebServiceMaxReceivedMessageSize;
 
-            binding.ReaderQuotas.MaxStringContentLength = Consts.constWebServiceMaxStringContentLength;
-            binding.ReaderQuotas.MaxBytesPerRead = Consts.constWebServiceMaxBytesPerRead;
+            //binding.ReaderQuotas.MaxStringContentLength = Consts.constWebServiceMaxStringContentLength;
+            //binding.ReaderQuotas.MaxBytesPerRead = Consts.constWebServiceMaxBytesPerRead;
 
-            string[] arr = client.GetLiveTotalMKT().Split('*');
-            string content = string.Empty;
-            List<string> rows = new List<string>();
-            foreach (var item in arr)
-            {
-                if (item.Trim() == "") continue;
-                rows.Add(item);
-                content += item + Environment.NewLine;
-            }
-            string[] dRow = rows[8].Split('|');
+            //string[] arr = client.GetLiveTotalMKT().Split('*');
+            //string content = string.Empty;
+            //List<string> rows = new List<string>();
+            //foreach (var item in arr)
+            //{
+            //    if (item.Trim() == "") continue;
+            //    rows.Add(item);
+            //    content += item + Environment.NewLine;
+            //}
+            //string[] dRow = rows[8].Split('|');
 
-            vnIdx.Value = decimal.Parse(dRow[0], dataCulture);
-            vnIdx.TotalQty = decimal.Parse(dRow[4], dataCulture);
-            vnIdx.TotalAmt = decimal.Parse(dRow[5], dataCulture);
+            //vnIdx.Value = decimal.Parse(dRow[0], dataCulture);
+            //vnIdx.TotalQty = decimal.Parse(dRow[4], dataCulture);
+            //vnIdx.TotalAmt = decimal.Parse(dRow[5], dataCulture);
 
-            vn30Idx.Value = decimal.Parse(dRow[10], dataCulture);
-            vn30Idx.TotalQty = 0;
-            vn30Idx.TotalAmt = 0;
+            //vn30Idx.Value = decimal.Parse(dRow[10], dataCulture);
+            //vn30Idx.TotalQty = 0;
+            //vn30Idx.TotalAmt = 0;
 
-            return true;
+            //return true;
+            return false;
         }
     }
 

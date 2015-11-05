@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="Imports.Forms.frmImportCompany" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oQAAAABAACJgCIYAMICgRCgCQAAIAAAAQEAgAAAEABE=</HashCode>
+      <FileName>forms\importCompany.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Forms.frmImportComSector" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAAABAACJgAEYAMICgQAgCgQAIAAAAQEAAAAAEAAA=</HashCode>
+      <FileName>forms\importComSector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Forms.importIcbCode" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRAQEIBgACJgAAIAAICgQAACAACIAAAIQEAAAAAEAAA=</HashCode>
+      <FileName>forms\importIcbCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Forms.frmImportPriceData" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQKAFABAACJgABcARICgwEICAAAJAAABYEAAAAAUAgA=</HashCode>
+      <FileName>forms\importPriceData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Forms.frmReAggregatePrice" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAIQAACAAAAKAAACgABICAIAAAAAAQAAAgAAABAA=</HashCode>
+      <FileName>forms\reAggregatePrice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Forms.frmReUpdatePrice" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAACIAAAIAAACgABACAAAIAQAAQCAAAAAABAA=</HashCode>
+      <FileName>forms\reUpdatePrice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.importOHLCV" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.importStat" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAEAQAgAAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAMA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.ImportData">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAABAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.generalImport">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgCAAAAAAABAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\generalImport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Libs" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Imports.Libs.DailyData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>libs\ImportLibs.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAkgEBAAAAAAAAAAACCAAAABAgAAQAAAEAAA=</HashCode>
+      <FileName>libs\ImportLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Gold.kitcoImport" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>libs\gold.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Gold.forexImport" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAACIAAAAAAAAAAAAAAgAAMAgAAAAAAAAIA=</HashCode>
+      <FileName>libs\gold.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Gold.GoldLibs" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAIABAAAA=</HashCode>
+      <FileName>libs\gold.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Stock.ssi_StockImport">
+    <Position X="1" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAEAAAAAAAAAAAAAAAAIAAAAAAAAAAAg=</HashCode>
+      <FileName>libs\ssiImport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ssiPage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Imports.Stock.PageStockRow" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAABAAAAABA4gAAQAAAISAIQAAAAACAAAAAACAAkAQc=</HashCode>
+      <FileName>libs\SSIPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Stock.SSIPage" Collapsed="true">
+    <Position X="0.75" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQBAAgGKhCAAAQAAJgBAAMAABABBAAAEAEAAAAggA=</HashCode>
+      <FileName>libs\SSIPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.Properties.Resources" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEACABEAAAAQAAAABAAIAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imports.CVSLibs" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAIABAAQA=</HashCode>
+      <FileName>libs\CVSLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="common.forms.baseForm" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Delegate Name="Imports.ImportRowHandler" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Imports.OnUpdatePriceData" Collapsed="true">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Imports.OnCodeAdded" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Imports.OnEndImportPriceData" Collapsed="true">
+    <Position X="15.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>libs\dataClass.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

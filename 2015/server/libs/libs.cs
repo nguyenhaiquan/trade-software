@@ -117,12 +117,16 @@ namespace server
             for (int idx1 = 0; idx1 < application.SysLibs.myStockExchangeTbl.Count; idx1++)
             {
                 marketRow = application.SysLibs.myStockExchangeTbl[idx1];
+                
+                //verify holidays ?
                 if (IsHolidays(updateTime, marketRow.holidays)) continue;
 
                 // WorkTimes can have multipe parts separated by charater |
                 parts = marketRow.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 StringCollection confWorkTimes = new StringCollection();
                 for(int idx2=0;idx2<parts.Length;idx2++) confWorkTimes.Add(parts[idx2]);
+                
+                //Verify if it's working time ?
                 if (!IsWorktime(updateTime, confWorkTimes)) continue;
 
                 myDataView.RowFilter = application.SysLibs.myExchangeDetailTbl.marketCodeColumn.ColumnName + "='" + marketRow.code + "' AND "+
@@ -136,13 +140,12 @@ namespace server
                 {
                     try
                     {
-                        //if (exchangeDetailRow.marketCode==marketRow.code) 
-                            retVal = Imports.Libs.ImportFromWeb(updateTime, exchangeDetailRow);
+                        //Main function for importing
+                        retVal = Imports.Libs.ImportFromWeb(updateTime, exchangeDetailRow);
                     }
-                    catch (Exception er)
+                    catch (Exception)
                     {
                         retVal = false;
-                        //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV004", er);
                     }
 
                     string nextRunCode = null;
@@ -157,7 +160,6 @@ namespace server
                     if (exchangeDetailRow == null) break;
                 }
             }
-            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", "End");
             return;
         }
 
@@ -193,6 +195,7 @@ namespace server
                 {
                     try
                     {
+                        //Main call to update price
                         retVal = Imports.Libs.ImportFromWeb(updateTime, exchangeDetailRow);
                     }
                     catch (Exception er)

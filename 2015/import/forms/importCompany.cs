@@ -17,9 +17,9 @@ using commonClass;
 
 namespace Imports.Forms
 {
-    public partial class importCompany : common.forms.baseForm
+    public partial class frmImportCompany : common.forms.baseForm
     {
-        public importCompany()
+        public frmImportCompany()
         {
             try
             {
