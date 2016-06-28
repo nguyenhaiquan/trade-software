@@ -1,0 +1,3 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\x86\Release\DataAccess.forms.splashForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\x86\Release\DataAccess.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\x86\Release\dataAccess.csproj.GenerateResource.Cache

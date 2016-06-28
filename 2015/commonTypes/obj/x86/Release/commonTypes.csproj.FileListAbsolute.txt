@@ -1,0 +1,15 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\commonTypes.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\commonTypes.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\common.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\Languages.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\WeifenLuo.WinFormsUI.Docking.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\LaMarvin.Windows.Forms.ColorPicker.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\NTP.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\Languages.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\vi-VN\common.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\bin\x86\Release\vi-VN\Languages.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\obj\x86\Release\commonTypes.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\obj\x86\Release\commonTypes.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\obj\x86\Release\commonTypes.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\obj\x86\Release\commonTypes.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonTypes\obj\x86\Release\commonTypes.pdb

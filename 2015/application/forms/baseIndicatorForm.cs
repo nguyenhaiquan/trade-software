@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using ZedGraph;
+//using Indicators;
 
 namespace application.forms
 {

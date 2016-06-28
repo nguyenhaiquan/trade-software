@@ -60,7 +60,7 @@ namespace DataAccess
             if (common.Settings.myWsConInfos.Length <= 0) return false;
             return OpenConnection(common.Settings.myWsConInfos[0]);
         }
-        private static bool OpenConnection(common.wsConnectionInfo wsInfo)
+        public static bool OpenConnection(common.wsConnectionInfo wsInfo)
         {
             if (_myClient != null) _myClient.Abort();
             //Basic binding

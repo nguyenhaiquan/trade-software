@@ -1,0 +1,7 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Release\Indicators.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Release\Indicators.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Release\Indicators.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Indicators.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Indicators.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Release\Indicators.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Release\Indicators.pdb

@@ -1,0 +1,8 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.frmReAggregatePrice.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.frmImportCompany.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.frmImportComSector.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.importIcbCode.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.frmImportPriceData.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Forms.frmReUpdatePrice.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\Imports.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\x86\Release\imports.csproj.GenerateResource.Cache

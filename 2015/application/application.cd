@@ -63,67 +63,11 @@
       <FileName>TradeAlertLibs.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="application.forms.baseIndicatorForm" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAQCACAABgIACCAEACAAAAAAAAAAEAAAAAAAA=</HashCode>
-      <FileName>forms\baseIndicatorForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="application.forms.baseStrategyForm" Collapsed="true">
     <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAACAASCAAAAAgYACiAEECAAMCABQAAIAAAAAAAAA=</HashCode>
       <FileName>forms\baseStrategyForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.forms.commonIndicatorForm" Collapsed="true">
-    <Position X="2.75" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAACMACCAAABBAQYCCAOECQALCABQAACAIAAAAAAA=</HashCode>
-      <FileName>forms\commonIndicatorForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.forms.sampleMACD" Collapsed="true">
-    <Position X="0.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QAAAAAcEQKACgABAAQCAAAACABAACAAAAAAIAAAAAAA=</HashCode>
-      <FileName>forms\sampleMACD.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.Indicators.CatList" Collapsed="true">
-    <Position X="6.5" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IndicatorLibs.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.Indicators.Data" Collapsed="true">
-    <Position X="12.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAEAYBAAAAAAAAAAAUAAAAAAAiAAAAAAEAAABAAAA=</HashCode>
-      <FileName>IndicatorLibs.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.Indicators.Helpers" Collapsed="true">
-    <Position X="8.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAACAAAAAAA=</HashCode>
-      <FileName>IndicatorLibs.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.Indicators.Meta" Collapsed="true">
-    <Position X="8.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAAEQCAAAAigAAABAAIIAgSABCBAAEkAGIAAAAgACAA=</HashCode>
-      <FileName>IndicatorLibs.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="application.Indicators.Libs" Collapsed="true">
-    <Position X="12.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACAiEAAAAAAAAAAYAAAAAAAQAAQAACAAAAEA=</HashCode>
-      <FileName>IndicatorLibs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="application.Properties.Resources" Collapsed="true">
@@ -149,7 +93,7 @@
     <Position X="7" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAQCAAAAigAAAAAAAgABSABCBAAAAAAYAAAAgACAA=</HashCode>
-      <FileName>StrategyLibs.cs</FileName>
+      <FileName>StrategyMeta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="application.Strategy.StrategyLibs" Collapsed="true">
@@ -178,6 +122,27 @@
     <TypeIdentifier>
       <HashCode>AAgAAAAAhAAAgAAAAAAQAgAAAAAAAAQAAAEgiABAAAA=</HashCode>
       <FileName>StrategyData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="application.Indicators.CatList" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IndicatorLibs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="application.forms.commonIndicatorForm" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACMACCAAABBAQYCCAOECQALCABQAACAIAAAAAAA=</HashCode>
+      <FileName>forms\commonIndicatorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="application.forms.baseIndicatorForm" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQCACAABgIACCAEACAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>forms\baseIndicatorForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />

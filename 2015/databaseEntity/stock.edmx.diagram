@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ca3d170d1654b2e97fc1800f69fdebb" Name="Diagram1">
+        <EntityTypeShape EntityType="stockModel.bestStrategy" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.dtproperty" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.exchangeDetail" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.financialModel" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.investor" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.investorStock" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.message" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.portfolio" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.portfolioDetail" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.priceData" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.priceDataSum" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.stockCode" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.stockExchange" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.stockReport" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysAutoKey" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysAutoKeyPending" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysCode" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysCodeCat" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysConfig" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysdiagram" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.sysLog" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.tradeAlert" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.transaction" Width="1.5" PointX="8.25" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="stockModel.FK_bestStrategy_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_portpolio_investor" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_investorStock_portpolio" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_investorStock_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_investorTransHistory_portpolio" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_portfolioDetail_portfolio" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_tradeAlert_portpolio" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_priceData_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_priceDataSum_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_investorTransHistory_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_stockCode_stockExchange" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_stockReport_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_tradeAlert_stockCode" ManuallyRouted="false" />
+        <AssociationConnector Association="stockModel.FK_sysCode_sysCodeCat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

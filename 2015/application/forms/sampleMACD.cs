@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ZedGraph;
 using commonTypes;
 using commonClass;
+using Indicators;
 
 namespace application.forms
 {

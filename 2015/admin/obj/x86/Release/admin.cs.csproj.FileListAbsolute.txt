@@ -1,0 +1,5 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\x86\Release\admin.forms.editTools.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\x86\Release\admin.forms.dataTools.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\x86\Release\admin.main.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\x86\Release\admin.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\x86\Release\admin.cs.csproj.GenerateResource.Cache

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="15d16255-d817-4e50-93a2-2259d6368447" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/DataLibs.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataLibs.xsd" MetadataType="Schema" ID="d75b861c-f5e2-4073-a9d8-3be792971bbf" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataLibs1.xsd" MetadataType="Schema" ID="79e1d3d1-e36c-4233-8884-f2cbf47723b2" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd9" />
+    <MetadataFile FileName="baseDS1.xsd" MetadataType="Schema" ID="a0f87d11-4d17-40dc-80b7-be5298512ace" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataLibs2.xsd" MetadataType="Schema" ID="54a4b473-b20d-416a-b5c3-20403496b83f" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd8" />
+    <MetadataFile FileName="DataLibs3.xsd" MetadataType="Schema" ID="57afef04-9ec1-4304-895c-d68fb0fcbf28" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLibs4.xsd" MetadataType="Schema" ID="8b92a1b3-2f39-4bfb-849b-0f41e49c4e9d" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd6" />
+    <MetadataFile FileName="DataLibs5.xsd" MetadataType="Schema" ID="6816c127-4fec-4588-90c6-7f71826d8446" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd7" />
+    <MetadataFile FileName="tmpDS1.xsd" MetadataType="Schema" ID="58824ccc-8686-45ac-bb5a-a9ab388dd395" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd5" />
+    <MetadataFile FileName="DataLibs.disco" MetadataType="Disco" ID="57847943-bfbd-44ef-93fc-1c077d7f07ff" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?disco" />
+    <MetadataFile FileName="DataLibs6.xsd" MetadataType="Schema" ID="abedee8e-4d41-44de-af92-6daba15efc06" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataLibs1.wsdl" MetadataType="Wsdl" ID="750d7f0e-390c-461b-a972-f165c23cb3ed" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?wsdl" />
+    <MetadataFile FileName="DataLibs7.xsd" MetadataType="Schema" ID="8bacbf13-55d2-4625-a0bd-f3a17e841eca" SourceId="1" SourceUrl="http://cscvieah751922.vdc.csc.com/DataLibs.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

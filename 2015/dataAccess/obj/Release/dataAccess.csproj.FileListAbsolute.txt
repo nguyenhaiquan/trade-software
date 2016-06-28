@@ -1,0 +1,9 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\dataAccess.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\DataAccess.forms.splashForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\DataAccess.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\dataAccess.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\DataAccess.dll.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\DataAccess.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\DataAccess.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\DataAccess.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Release\DataAccess.pdb

@@ -1,0 +1,11 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\bin\Release\databaseEntity.dll.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\bin\Release\databaseEntity.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\bin\Release\databaseEntity.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\bin\Release\EntityFramework.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\bin\Release\EntityFramework.xml
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\obj\Release\databaseEntity.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\obj\Release\databaseEntity.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databaseEntity.dll.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databaseEntity.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databaseEntity.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databaseEntity\obj\Release\databaseEntity.csprojResolveAssemblyReference.cache

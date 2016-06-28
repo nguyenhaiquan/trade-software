@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>c:\temp\quantumdownload2016</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/application.dll">
+      <publishTime>06/13/2016 20:57:05</publishTime>
+    </File>
+    <File Include="bin/Charts.dll">
+      <publishTime>05/12/2016 16:09:45</publishTime>
+    </File>
+    <File Include="bin/common.dll">
+      <publishTime>08/23/2015 07:56:27</publishTime>
+    </File>
+    <File Include="bin/commonClass.dll">
+      <publishTime>05/12/2016 16:12:56</publishTime>
+    </File>
+    <File Include="bin/commonTypes.dll">
+      <publishTime>06/10/2016 09:47:53</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>06/10/2016 10:49:03</publishTime>
+    </File>
+    <File Include="bin/databases.dll">
+      <publishTime>06/10/2016 10:14:26</publishTime>
+    </File>
+    <File Include="bin/LaMarvin.Windows.Forms.ColorPicker.dll">
+      <publishTime>08/23/2015 07:56:25</publishTime>
+    </File>
+    <File Include="bin/Languages.dll">
+      <publishTime>05/12/2016 16:09:45</publishTime>
+    </File>
+    <File Include="bin/NTP.dll">
+      <publishTime>08/23/2015 07:56:25</publishTime>
+    </File>
+    <File Include="bin/vi-VN/common.resources.dll">
+      <publishTime>08/23/2015 07:56:29</publishTime>
+    </File>
+    <File Include="bin/vi-VN/Languages.resources.dll">
+      <publishTime>05/12/2016 16:09:46</publishTime>
+    </File>
+    <File Include="bin/WeifenLuo.WinFormsUI.Docking.dll">
+      <publishTime>08/23/2015 07:56:26</publishTime>
+    </File>
+    <File Include="bin/wStock2.dll">
+      <publishTime>06/13/2016 21:54:20</publishTime>
+    </File>
+    <File Include="bin/ZedGraph.dll">
+      <publishTime>08/23/2015 07:56:26</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>02/12/2012 00:13:37</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>07/26/2012 22:57:08</publishTime>
+    </File>
+    <File Include="Download.aspx">
+      <publishTime>05/24/2016 04:52:13</publishTime>
+    </File>
+    <File Include="download2.html">
+      <publishTime>06/07/2016 11:18:56</publishTime>
+    </File>
+    <File Include="DownloadHandler.ashx">
+      <publishTime>07/26/2012 22:58:25</publishTime>
+    </File>
+    <File Include="DownloadSite.Master">
+      <publishTime>05/06/2015 16:01:58</publishTime>
+    </File>
+    <File Include="DownloadSuccess.aspx">
+      <publishTime>01/12/2016 16:39:39</publishTime>
+    </File>
+    <File Include="images/16m.png">
+      <publishTime>07/26/2012 23:00:05</publishTime>
+    </File>
+    <File Include="images/16s.png">
+      <publishTime>07/26/2012 23:00:09</publishTime>
+    </File>
+    <File Include="images/16t.png">
+      <publishTime>07/26/2012 23:00:12</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>07/26/2012 22:59:05</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>05/11/2015 10:18:46</publishTime>
+    </File>
+    <File Include="misc/draggable.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/drupalcc97.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/grippie.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/help.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/jquery.cookiec619.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/jquery.once7839.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/jquery1cc4.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/menu-collapsed.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/menu-expanded.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/menu-leaf.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/message-24-error.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/message-24-ok.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/message-24-warning.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/progress.gif">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/textareafe81.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/throbber.gif">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/tree-bottom.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="misc/tree.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/comment/commentcc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/field/theme/fieldcc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/node/nodecc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/search/searchcc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/system/system.basecc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/system/system.menuscc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/system/system.messagescc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/system/system.themecc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="modules/user/usercc97.css">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="node/4.html">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="node/5.html">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="Properties/DataSources/commonClass.DataValues.datasource">
+      <publishTime>01/12/2016 14:50:25</publishTime>
+    </File>
+    <File Include="Properties/DataSources/commonClass.TradePointInfo.datasource">
+      <publishTime>01/12/2016 14:50:26</publishTime>
+    </File>
+    <File Include="Properties/DataSources/commonClass.TransactionInfo.datasource">
+      <publishTime>01/12/2016 14:50:25</publishTime>
+    </File>
+    <File Include="Properties/DataSources/commonTypes.GlobalSettings.datasource">
+      <publishTime>01/12/2016 14:50:26</publishTime>
+    </File>
+    <File Include="Properties/DataSources/databases.baseDS.datasource">
+      <publishTime>01/12/2016 14:50:24</publishTime>
+    </File>
+    <File Include="Properties/DataSources/databases.tmpDS.datasource">
+      <publishTime>01/12/2016 14:50:25</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/configuration.svcinfo">
+      <publishTime>01/12/2016 16:25:14</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/configuration91.svcinfo">
+      <publishTime>01/12/2016 16:25:14</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/DataLibs.disco">
+      <publishTime>01/12/2016 23:54:31</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/DataLibs.wsdl">
+      <publishTime>01/12/2016 16:25:14</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/DataLibs1.wsdl">
+      <publishTime>01/12/2016 23:54:31</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/item.disco">
+      <publishTime>01/12/2016 16:25:14</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Reference.svcmap">
+      <publishTime>01/12/2016 16:25:14</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/wStock2.ServiceReference1.StrategyStatistics.datasource">
+      <publishTime>05/12/2016 15:29:12</publishTime>
+    </File>
+    <File Include="sites/default/files/logo_0.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/css/stylecc97.css">
+      <publishTime>06/19/2013 13:17:20</publishTime>
+    </File>
+    <File Include="themes/business_theme/favicon.ico">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/blockquote-bg.jpg">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/comment-arrow.gif">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/facebook.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/featured-img-effect.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/googleplus.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/header-top-footer-bg.jpg">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/header_bg.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/header_top_bg.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/no-new-posts.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/pinterest.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/rss.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/search-button.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/slide-image-1.jpg">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/slide-image-2.jpg">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/slide-image-3.jpg">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/textile-square.gif">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/images/twitter.png">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/js/jquery.cycle.all.mincc97.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/js/pngfix.mincc97.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="themes/business_theme/js/slidecc97.js">
+      <publishTime>06/07/2013 23:24:33</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>06/13/2016 21:54:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\x86\Debug\Indicators.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\x86\Debug\Indicators.csproj.GenerateResource.Cache

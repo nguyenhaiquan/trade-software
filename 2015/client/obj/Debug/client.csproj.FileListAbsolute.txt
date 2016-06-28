@@ -1,8 +1,3 @@
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe.config
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe.manifest
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.application
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.csprojResolveAssemblyReference.cache
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.forms.AboutBox.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.forms.companyList.resources
@@ -12,6 +7,11 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.main.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.Properties.Resources.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe.manifest
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.application
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\client.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.exe.manifest
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.application
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\Debug\client.exe

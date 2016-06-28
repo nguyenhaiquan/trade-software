@@ -60,25 +60,8 @@ namespace wStock2
                     Globals.vContent += "<li>Tên tài khoản ít nhất phải 1 ký tự</li>";
                     isDownload = false;
                 }
-                string phone = Request.Form["phone"];
-                //if (phone.Length < 10)
-                //{
-                //    Globals.vContent += "<li>Số điện thoại không hợp lệ</li>";
-                //    isDownload = false;
-                //}
-                string company = Request.Form["company"];
-                //if (company.Length==0)
-                //{
-                //    Globals.vContent += "<li>Xin vui lòng nhập tên công ty</li>";
-                //    isDownload = false;
-                //}
-                string stockcompany = Request.Form["stockcompany"];
-                if (stockcompany.Length == 0)
-                {
-                    Globals.vContent += "<li>Xin vui lòng nhập tên công ty chứng khoán nơi bạn mở tài khoản.</li>";
-                    isDownload = false;
-                }
-                else if (!wUser.isValidUserName(username))
+                else
+                if (!wUser.isValidUserName(username))
                 {
                     Globals.vContent += "<li>Tên người dùng đã tồn tại</li>";
                     isDownload = false;
@@ -92,8 +75,6 @@ namespace wStock2
                     user.Lastname = lastname;
                     user.Password = password;
                     user.Username = username;
-                    user.StockCompany = stockcompany;
-                    user.Company = company;
                     try
                     {
                         user.InsertNew();
@@ -106,10 +87,6 @@ namespace wStock2
                     wUser.currentUser = user;
                     Response.Redirect("DownloadSuccess.aspx");                 
                 }
-                //if (firstname!=null)
-                //{
-                //    Response.Redirect("DownloadHandler.ashx?File=Quantum_0202beta.zip");
-                //}                 
             }
         }
     }

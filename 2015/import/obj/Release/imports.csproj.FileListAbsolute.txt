@@ -1,0 +1,14 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\imports.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.frmReAggregatePrice.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.frmImportCompany.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.frmImportComSector.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.importIcbCode.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.frmImportPriceData.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Forms.frmReUpdatePrice.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\Imports.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\imports.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\chromedriver.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\imports.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\imports.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\imports.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Release\imports.pdb

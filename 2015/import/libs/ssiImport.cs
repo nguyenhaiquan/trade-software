@@ -43,7 +43,7 @@ namespace Imports.Stock
             Imports.Libs.AddNewCode(exchangeDetailRow.marketCode, importPriceTbl, null);
             databases.DbAccess.UpdateData(importPriceTbl);
             databases.baseDS.priceDataDataTable priceTbl = new databases.baseDS.priceDataDataTable();
-            Imports.Libs.AddImportPrice(importPriceTbl, priceTbl);
+            Imports.Libs.AddIdmportPrice(importPriceTbl, priceTbl);
             databases.DbAccess.UpdateData(priceTbl);
             return priceTbl;
         }

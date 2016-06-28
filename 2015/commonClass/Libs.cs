@@ -178,7 +178,13 @@ namespace commonClass
         /// <returns></returns>
         public static XmlDocument GetLocalXmlDocSTRATEGY()
         {
+            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Notice, "xml strategy", Settings.sysExecuteDirectory);
             string tmp = common.fileFuncs.ConcatFileName(new string[] { Settings.sysExecuteDirectory, common.language.myCulture.Name, Consts.constConfFile_Meta_Strategy });
+            //Get XML file from installed application folder
+            //string tmp = common.fileFuncs.ConcatFileName(new string[] { Settings.sysCurrentDirectory, common.language.myCulture.Name, Consts.constConfFile_Meta_Strategy });
+            //string tmp = common.fileFuncs.ConcatFileName(new string[] { System.IO.Directory.GetCurrentDirectory(), common.language.myCulture.Name, Consts.constConfFile_Meta_Strategy });
+            
+
             return common.xmlLibs.GetXmlDocument(tmp);
         }
 
@@ -188,7 +194,12 @@ namespace commonClass
         /// <returns></returns>
         public static XmlDocument GetLocalXmlDocINDICATOR()
         {
+            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Notice, "xml indicator", Settings.sysExecuteDirectory);
             string tmp = common.fileFuncs.ConcatFileName(new string[] { Settings.sysExecuteDirectory, common.language.myCulture.Name, Consts.constConfFile_Meta_Indicator });
+           
+            //Get XML file from installed application folder
+            //string tmp = common.fileFuncs.ConcatFileName(new string[] { Settings.sysCurrentDirectory, common.language.myCulture.Name, Consts.constConfFile_Meta_Indicator });
+            //string tmp = common.fileFuncs.ConcatFileName(new string[] { System.IO.Directory.GetCurrentDirectory(), common.language.myCulture.Name, Consts.constConfFile_Meta_Indicator });
             return common.xmlLibs.GetXmlDocument(tmp);
         }
 

@@ -17,7 +17,7 @@ namespace wStock2
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class DownloadHandler : IHttpHandler
     {
-        const string sDownloadFile = "https://q-invest.googlecode.com/files/QuantumPro.zip";
+        const string sDownloadFile = "http://210.211.116.4/quantuminstall/setup.exe";
 
         public void ProcessRequest(HttpContext context)
         {
@@ -25,16 +25,8 @@ namespace wStock2
             {
                 context.Response.Redirect("Login.aspx");
             }            
-            //string filename = context.Request.QueryString["File"];
-            ////Validate the file name and make sure it is one that the user may access
-            //context.Response.Buffer = true;
-            //context.Response.Clear();
-            //context.Response.AddHeader("content-disposition", "attachment; filename=" + filename);
-            //context.Response.ContentType = "octet/stream";
-
-            //context.Response.WriteFile("~/App_Data/" + filename);
+            
             context.Response.Redirect(sDownloadFile);
-            //context.Response.RedirectLocation = "DownloadSuccess.aspx";            
         }
 
         public bool IsReusable

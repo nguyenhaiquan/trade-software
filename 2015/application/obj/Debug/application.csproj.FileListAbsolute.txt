@@ -1,11 +1,10 @@
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\application.dll
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\application.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.csprojResolveAssemblyReference.cache
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseIndicatorForm.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseStrategyForm.resources
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.commonIndicatorForm.resources
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.sampleMACD.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.Properties.Resources.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\application.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\application.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseIndicatorForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.commonIndicatorForm.resources

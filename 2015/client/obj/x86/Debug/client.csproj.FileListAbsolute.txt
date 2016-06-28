@@ -1,0 +1,9 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.forms.AboutBox.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.forms.companyList.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.forms.fundamentalWebBrowserForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.forms.investorEdit.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.forms.startSplash.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.main.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\client\obj\x86\Debug\client.csproj.GenerateResource.Cache

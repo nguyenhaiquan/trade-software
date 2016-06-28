@@ -120,9 +120,11 @@ namespace commonTypes
     /// </summary>
     public static class Settings
     {
-        public const bool sysDebugMode = false;//Dung de debug WCF
+        //public const bool sysDebugMode = false;//Dung de debug WCF
+        public const bool sysDebugMode = true;//Dung de debug WCF
         public enum environmentDebugMode{localT440,localHP,SIT440,UAT,Prod};
-        public static environmentDebugMode environmentMode = environmentDebugMode.Prod;
+        public static environmentDebugMode environmentMode = environmentDebugMode.localT440;
+        //public static environmentDebugMode environmentMode = environmentDebugMode.Prod;
         //public const string sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\Quantum201428\wsServices\obj\Debug";
         public static string sysDebugMode_execDirectory = "";
         //public const string sysDebugMode_execDirectory = "D:\\work\\stockProdsject\\code\\wsServices\\obj\\Debug";        
@@ -247,10 +249,10 @@ namespace commonTypes
                             sysDebugMode_execDirectory = @"C:\Users\quan_nh\Documents\Visual Studio 2008\Projects\Quantum20140726\wsServices\obj\Debug";
                         else
                             if (environmentMode == environmentDebugMode.localT440)
-                                sysDebugMode_execDirectory = @"C:\Quantum2012_20150128\wsServices\obj\Debug";
+                                sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\wsServices\obj\Debug";
                             else
                                 if (environmentMode == environmentDebugMode.SIT440)
-                                    sysDebugMode_execDirectory = @"C:\Quantum2012_20150128\wsServices\obj\Debug";
+                                    sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\wsServices\obj\Debug";
                                 else
                                 //for Production and UAT
                                 {
@@ -276,6 +278,14 @@ namespace commonTypes
             }
         }
 
+        private static string _sysCurrentDirectory=null;
+        public static string sysCurrentDirectory{
+            get{
+                if (_sysCurrentDirectory == null)
+                    _sysCurrentDirectory = System.Environment.CurrentDirectory;
+                return _sysCurrentDirectory;
+            }
+        }
         ///Images and logo
         public static string sysImgFilePathIcon = "";
         public static string sysImgFilePathBackGround = "";

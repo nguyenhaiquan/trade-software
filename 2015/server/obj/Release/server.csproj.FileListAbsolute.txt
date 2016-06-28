@@ -1,0 +1,10 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.frmSchedule.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.frmServer.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\server.exe.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\server.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\server.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Release\server.pdb

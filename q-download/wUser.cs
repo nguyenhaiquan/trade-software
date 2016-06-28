@@ -9,13 +9,14 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using wStock2.UserService1;
+//using wStock2.UserService1;
+//using DataAccess;
 
 namespace wStock2
 {
     public class wUser
     {
-        static UserService1.StockServiceClient client = null;
+        static ServiceReference1.StockServiceClient client = null;
         string username;
         public static wUser currentUser = null;
         public string Username
@@ -78,20 +79,22 @@ namespace wStock2
         }
         private void OpenConn()
         {
+            //DataAccess.Libs.G();
+
             if (client == null || client.State != System.ServiceModel.CommunicationState.Opened)
             {
-                client = new UserService1.StockServiceClient("basicEndpoint1");
-                //client.ClientCredentials.Windows.ClientCredential.UserName = "test";
-                //client.ClientCredentials.Windows.ClientCredential.Password = "123";
-                client.ClientCredentials.Windows.ClientCredential.UserName = "";
-                client.ClientCredentials.Windows.ClientCredential.Password = "";
+                client = new ServiceReference1.StockServiceClient("basicEndpoint");
+                client.ClientCredentials.Windows.ClientCredential.UserName = "test";
+                client.ClientCredentials.Windows.ClientCredential.Password = "123";
+               // client.ClientCredentials.Windows.ClientCredential.UserName = "";
+                //client.ClientCredentials.Windows.ClientCredential.Password = "";
             }
         }
         public static void tryOpenConnect()
         {
             if (client == null || client.State != System.ServiceModel.CommunicationState.Opened)
             {
-                client = new UserService1.StockServiceClient("basicEndpoint1");
+                client = new ServiceReference1.StockServiceClient("basicEndpoint");
                 client.ClientCredentials.Windows.ClientCredential.UserName = "test";
                 client.ClientCredentials.Windows.ClientCredential.Password = "123";
             }
@@ -100,8 +103,8 @@ namespace wStock2
         public static Boolean isValidUserName(string username)
         {
             tryOpenConnect();
-            baseDS.investorDataTable table = client.GetInvestor_ByAccount(username);
-            if ((table==null)||(table.Rows.Count==0))
+            databases.baseDS.investorDataTable table = client.GetInvestor_ByAccount(username);
+            if ((table == null) || (table.Rows.Count == 0))
             {
                 return true;
             }
@@ -111,46 +114,55 @@ namespace wStock2
         public bool Login()
         {
             OpenConn();
-            baseDS.investorDataTable table = client.GetInvestor_ByAccount(this.Username);
+            
+            //common.Settings.myWsConInfos = new common.wsConnectionInfo[2];
+            //common.Settings.myWsConInfos[0] =new common.wsConnectionInfo();
+            //common.Settings.myWsConInfos[0].URI = "http://210.211.116.4:8080/datalibs.svc";
+            //common.Settings.myWsConInfos[0]. = "";
+
+            //DataAccess.Libs.OpenConnection();
+            databases.baseDS.investorDataTable table = client.GetInvestor_ByAccount(this.Username);
+            //databases.baseDS.investorDataTable table = DataAccess.Libs.GetInvestor_ByAccount(this.Username);
             if (table!=null&&table.Count==1&&table[0].password.Trim()==this.Password.Trim())
             {
                 return true;
             }
+            
             return false;
         }
         //Tuan - Insert new user to database, no parametter
         public void InsertNew()
         {
-            OpenConn();
+            //OpenConn();
 
-            DateTime time = DateTime.Now;
-            //baseDS.investorDataTable dt=client.GetInvestor_ByCode("A00000004");
-            baseDS.investorDataTable dt = new baseDS.investorDataTable();
-            baseDS.investorRow row = dt.NewinvestorRow();
-            row.code = commonTypes.Consts.constNotMarkerNEW;            
-            row.catCode = string.Empty;
-            row.account = Username;
-            row.firstName = Firstname;
-            row.email = Email;
-            row.password = Password;
-            row.lastName = Lastname;
-            row.address1 = Company;
-            row.address2 = StockCompany;
-            row.city = string.Empty;
-            row.country = string.Empty;
-            row.displayName = row.firstName;
-            row.phone = Phone;
-            row.sex = 0;
-            row.status = 0;
-            row.type = 0;
-            row.expireDate = DateTime.Now.AddMonths(3);
-            dt.AddinvestorRow(row);
-            client.UpdateInvestor(ref dt);
+            //DateTime time = DateTime.Now;
+            ////baseDS.investorDataTable dt=client.GetInvestor_ByCode("A00000004");
+            //baseDS.investorDataTable dt = new baseDS.investorDataTable();
+            //baseDS.investorRow row = dt.NewinvestorRow();
+            //row.code = commonTypes.Consts.constNotMarkerNEW;            
+            //row.catCode = string.Empty;
+            //row.account = Username;
+            //row.firstName = Firstname;
+            //row.email = Email;
+            //row.password = Password;
+            //row.lastName = Lastname;
+            //row.address1 = Company;
+            //row.address2 = StockCompany;
+            //row.city = string.Empty;
+            //row.country = string.Empty;
+            //row.displayName = row.firstName;
+            //row.phone = Phone;
+            //row.sex = 0;
+            //row.status = 0;
+            //row.type = 0;
+            //row.expireDate = DateTime.Now.AddMonths(3);
+            //dt.AddinvestorRow(row);
+            //client.UpdateInvestor(ref dt);
 
-            // Use the 'client' variable to call operations on the service.
+            //// Use the 'client' variable to call operations on the service.
 
-            // Always close the client.
-            client.Close();
+            //// Always close the client.
+            //client.Close();
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.cs.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.forms.editTools.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.forms.dataTools.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.main.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.cs.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\admin.exe.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\admin.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\admin.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\admin\obj\Release\admin.pdb

@@ -6,13 +6,13 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Quantum 2013")]
+[assembly: AssemblyTitle("Quantum 2016")]
 [assembly: AssemblyDescription("Quantum system is the pioneer software in automatic trading")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HQ Corporation")]
-[assembly: AssemblyProduct("Quantum 2013")]
+[assembly: AssemblyProduct("Quantum 2016")]
 [assembly: AssemblyCopyright("Copyright © by HQ Corporation")]
-[assembly: AssemblyTrademark("Quantum 2013")]
+[assembly: AssemblyTrademark("Quantum 2016")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -34,6 +34,6 @@ using System.Resources;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.13.06.12")]
-[assembly: AssemblyFileVersion("1.13.06.12")]
+[assembly: AssemblyVersion("1.16.06.21")]
+[assembly: AssemblyFileVersion("1.16.06.21")]
 [assembly: NeutralResourcesLanguageAttribute("en-GB")]

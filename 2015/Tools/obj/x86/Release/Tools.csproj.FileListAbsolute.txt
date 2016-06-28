@@ -1,0 +1,9 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.backTesting.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.baseTesting.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.profitEstimate.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.strategyRanking.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.screening.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.tradeAnalysis.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Forms.TradeStatistics.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Tools\obj\x86\Release\Tools.csproj.GenerateResource.Cache

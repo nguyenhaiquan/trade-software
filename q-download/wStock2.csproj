@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>wStock2</RootNamespace>
     <AssemblyName>wStock2</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -23,6 +23,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,30 +42,40 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="commonClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="commonTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="common, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\2015\dlls\common.dll</HintPath>
+    </Reference>
+    <Reference Include="commonClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\2015\dlls\commonClass.dll</HintPath>
+    </Reference>
+    <Reference Include="commonTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\2015\dlls\commonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess">
+      <HintPath>..\2015\dlls\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="databases">
+      <HintPath>..\2015\dlls\databases.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -71,6 +83,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
@@ -123,11 +136,10 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\UserService1\Reference.cs">
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="wUser.cs" />
   </ItemGroup>
@@ -142,8 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
-    <Content Include="dlls\commonClass.dll" />
-    <Content Include="dlls\commonTypes.dll" />
     <Content Include="download2.html" />
     <Content Include="DownloadHandler.ashx" />
     <Content Include="Index.aspx" />
@@ -176,61 +186,46 @@
     <Content Include="modules\user\usercc97.css" />
     <Content Include="node\4.html" />
     <Content Include="node\5.html" />
-    <None Include="Service References\UserService1\baseDS.xsd" />
-    <Content Include="Service References\UserService1\DataLibs.wsdl" />
-    <None Include="Service References\UserService1\item.xsd">
+    <Content Include="Properties\DataSources\commonClass.DataValues.datasource" />
+    <Content Include="Properties\DataSources\commonClass.TradePointInfo.datasource" />
+    <Content Include="Properties\DataSources\commonClass.TransactionInfo.datasource" />
+    <Content Include="Properties\DataSources\commonTypes.GlobalSettings.datasource" />
+    <Content Include="Properties\DataSources\databases.baseDS.datasource" />
+    <Content Include="Properties\DataSources\databases.tmpDS.datasource" />
+    <None Include="Properties\PublishProfiles\Download Quantum.pubxml" />
+    <None Include="Service References\ServiceReference1\baseDS1.xsd" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\DataLibs.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item1.xsd">
+    <Content Include="Service References\ServiceReference1\DataLibs1.wsdl" />
+    <None Include="Service References\ServiceReference1\DataLibs1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item2.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item3.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item4.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item5.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item6.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\item7.xsd">
+    <None Include="Service References\ServiceReference1\DataLibs7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService1\tmpDS.xsd" />
-    <Content Include="Service References\UserService1\wStock2.UserService1.baseDS.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.DataValues.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.GlobalSettings.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.StrategyStatistics.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.tmpDS.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.TradePointInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\wStock2.UserService1.TransactionInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UserService1\item.disco" />
-    <Content Include="Service References\UserService1\configuration91.svcinfo" />
-    <Content Include="Service References\UserService1\configuration.svcinfo" />
-    <Content Include="Service References\UserService1\Reference.svcmap">
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
+    <Content Include="Service References\ServiceReference1\DataLibs.disco" />
     <Content Include="sites\default\files\logo_0.png" />
     <Content Include="themes\business_theme\css\stylecc97.css" />
     <Content Include="themes\business_theme\favicon.ico" />
@@ -254,6 +249,7 @@
     <Content Include="themes\business_theme\js\jquery.cycle.all.mincc97.js" />
     <Content Include="themes\business_theme\js\pngfix.mincc97.js" />
     <Content Include="themes\business_theme\js\slidecc97.js" />
+    <None Include="Service References\ServiceReference1\tmpDS1.xsd" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -263,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Service References\ServiceReference1\wStock2.ServiceReference1.StrategyStatistics.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -272,7 +271,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\UserService1\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -294,7 +293,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>17408</DevelopmentServerPort>
+          <DevelopmentServerPort>60177</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/wStock2</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -5,3 +5,29 @@ C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Re
 C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\obj\Release\wStock2.pdb
 C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\commonClass.dll
 C:\Users\NGUYENTUAN\Documents\Visual Studio 2008\Projects\wStock2\wStock2\bin\commonTypes.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\wStock2.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\wStock2.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\common.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonClass.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonTypes.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\databases.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\WeifenLuo.WinFormsUI.Docking.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\LaMarvin.Windows.Forms.ColorPicker.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\NTP.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Languages.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonClass.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonTypes.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Languages.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\vi-VN\common.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\vi-VN\Languages.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Release\wStock2.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Release\wStock2.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\obj\Release\wStock2.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\DataAccess.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\application.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Charts.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\ZedGraph.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\DataAccess.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\databases.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\application.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Charts.pdb

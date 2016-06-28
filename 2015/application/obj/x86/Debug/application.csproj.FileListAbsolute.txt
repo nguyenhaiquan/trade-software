@@ -1,0 +1,7 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.forms.baseIndicatorForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.forms.baseStrategyForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.forms.commonIndicatorForm.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.forms.sampleMACD.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\x86\Debug\application.csproj.GenerateResource.Cache

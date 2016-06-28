@@ -1,0 +1,10 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Languages.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Languages.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\vi-VN\Languages.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.langs.myResources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.langs.myResources.vi-VN.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\vi-VN\Languages.resources.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Release\Languages.pdb

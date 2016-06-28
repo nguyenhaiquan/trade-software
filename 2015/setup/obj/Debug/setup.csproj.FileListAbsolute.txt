@@ -1,0 +1,12 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\setup.exe.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\setup.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\setup.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.AboutBox.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.forms.configure.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.forms.selectConfigFile.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.main.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.exe
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\setup\obj\Debug\setup.pdb

@@ -1,0 +1,7 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Release\Strategy.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Release\strategy.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Release\Strategy.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\strategy.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\strategy.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Release\strategy.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Release\strategy.pdb

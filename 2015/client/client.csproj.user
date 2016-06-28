@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>http://localhost/|http://localhost/client/</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>C:\Temp\clickonce_quantum20160621\|C:\Temp\clickonce_quantum20160503\|ftp://210.211.116.4/|http://localhost/|http://localhost/client/</PublishUrlHistory>
+    <InstallUrlHistory>http://www.quantumvn.com/quantuminstall/|http://210.211.116.4/quantuminstall/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>http://210.211.116.4/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
