@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Gioithieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <!-- Top content -->
+    <div class="top-content">
+        @Html.ValidationSummary(true)
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 text">
+                        <h1>Đăng ký người dùng Quantum</h1>
+                        <div class="description">
+                            <p>
+                                Nếu không thể đăng ký được vui lòng liên hệ tại phần 
+                            </p>
+                        </div>
+                        <div class="top-big-link">
+                            <a class="btn btn-link-1" @Html.ActionLink("Trợ giúp", "Trogiup", "Home")></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Đăng ký ngay </h3>
+                                <p>Vui lòng điền đầy đủ thông tin ở form bên dưới :</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form  role="form" action="/Home/CreateNewUser" method="post" class="registration-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-account">Tài khoản</label>
+                                    <input type="text" name="accountname" placeholder="Tài khoản..." class="form-account form-control" id="form-account">
+                                    @Html.ValidationMessage("accountname")
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">Mật khẩu</label>
+                                    <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password">
+                                    @Html.ValidationMessage("password")
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-email">Email</label>
+                                    <input type="email" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                    @Html.ValidationMessage("email")
+                                </div>
+                                
+                                <button type="submit" class="btn" name="btnSubmit">Đăng ký!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

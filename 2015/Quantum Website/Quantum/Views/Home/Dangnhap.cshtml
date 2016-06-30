@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Quantum.Models.LoginModel
+
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+<h2>Use a local account to log in.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.accountname)
+                @Html.TextBoxFor(m => m.accountname)
+                @Html.ValidationMessageFor(m => m.accountname)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.password)
+                @Html.PasswordFor(m => m.password)
+                @Html.ValidationMessageFor(m => m.password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.rememberMe)
+                @Html.LabelFor(m => m.rememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Log in" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Đăng ký", "Dangky") if you don't have an account.
+    </p>
+    
+    
+}
+</section>
+

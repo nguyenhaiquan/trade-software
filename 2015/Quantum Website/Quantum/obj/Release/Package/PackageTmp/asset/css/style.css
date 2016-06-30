@@ -1,0 +1,83 @@
+
+/* CSS - BASIC*/
+
+body{	
+	background-color: #1DB2E0;
+}
+#header{
+	margin: 91px;
+}
+.emerald{
+	background-color: rgb(29, 178, 224);
+	padding: 33px;
+	color: #fff;
+	font-family: cursive;
+	text-align: justify;
+}
+.breadcrumb {
+	margin-top: -34px;
+}
+
+
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	margin : 15px;
+}
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+	margin-bottom: 20px;
+	font-family: cursive;
+}
+.format-footer {
+    color: #1DB2E0;
+    padding: 30px;
+    background-color: #F8F8F8;
+}
+.format-footer h3{
+    font-family: cursive;    
+}
+.format-footer ul li{
+	line-height: 2.5;
+    font-family: cursive;
+    color: #777777;
+}
+.copyright{
+	background-color: #1DB2E0;
+    padding: 20px;
+    font-family: cursive;
+    color: #fff;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    font-family: cursive;
+}
+.h4, h4 {
+    font-size: 28px;
+    color: #F8F8F8;
+}
+
+/* MEDIA - RESPONSIVE DESIGN*/
+
+@media screen and(min-width: 1200px){
+	section .container{
+		width: 1170px;
+	}
+}
+@media screen and(min-width: 800px){
+	section .container{
+		width: 770px;
+	}	
+	
+}
+@media screen and(min-width: 400px){
+	section .container{
+		width: 370px;
+	}
+}
+
+#SignIn{
+	display: block;
+}
+#Successful{
+	display: none;
+}
