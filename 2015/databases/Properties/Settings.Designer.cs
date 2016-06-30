@@ -66,27 +66,5 @@ namespace databases.Properties {
                 return ((string)(this["stockConnectionString2"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=stock;Persist Security Info=True;User ID=sa;P" +
-            "assword=P@ssword123")]
-        public string stockConnectionString {
-            get {
-                return ((string)(this["stockConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=stock;Persist Security Info=True;User ID=sa;P" +
-            "assword=P@ssword123")]
-        public string stockConnectionString1 {
-            get {
-                return ((string)(this["stockConnectionString1"]));
-            }
-        }
     }
 }

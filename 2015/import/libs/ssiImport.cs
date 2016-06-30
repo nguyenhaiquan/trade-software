@@ -76,10 +76,17 @@ namespace Imports.Stock
                     databases.AppLibs.InitData(importRow);
                     importRow.onDate = updateTime;
                     importRow.stockCode = stock.Key;
-                    importRow.isTotalVolume = true;
+                    //Doi de fix error #136 - Lỗi cập nhật HNX
+                    //importRow.isTotalVolume = true;
+                    importRow.isTotalVolume = false;
+
                     importRow.closePrice=(decimal)stock.Value.price;
-                    importRow.volume = (decimal)stock.Value.totalVolume;
-                
+
+                    //Doi de fix error #136 - Lỗi cập nhật HNX
+                    //importRow.volume = (decimal)stock.Value.totalVolume;
+                    importRow.volume = (decimal)stock.Value.actualVolume;
+                    
+                    //Doi de fix error #136 - Lỗi cập nhật HNX
                     if (importRow.closePrice > 0)
                     {
                         //Only add new when there are some changes 
