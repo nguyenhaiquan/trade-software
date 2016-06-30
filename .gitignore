@@ -6,3 +6,8 @@
 2015/admin/obj/Debug/admin.exe
 *.dll
 *.dll
+2015/dlls/server.vshost.exe.config
+*.dll
+*.dll
+2015/dlls/databases.dll
+*.dll
