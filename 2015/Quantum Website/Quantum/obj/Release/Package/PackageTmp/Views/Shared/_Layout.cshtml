@@ -1,0 +1,142 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research Tecnical Bootstrap 3.0">
+    <meta name="author" content="Nguyen Nho Dung">
+    <title>Quantum Investor | Home </title>
+    <link rel="shortcut icon" href="~/asset/images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/asset/css/style.css">    
+    
+
+</head>
+<body>
+    <!-- Form Login -->
+    <section>
+        <div id="login-box" class="login">
+            <p class="login_title"> Đăng nhập</p>
+            <a href="#" class="close"><img src="~/asset/images/close.png" id="CloseSignIn" class="img-close" title="Close Window" alt="Close" /></a>
+            <form method="post" class="login-content" action="#">
+                <label class="username">
+                    <span>Tên hoặc email</span>
+                    <input id="name" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="password">
+                    <span>Mật khẩu</span>
+                    <input id="password" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="button submit-button" id="submit" type="button">Đăng nhập</button>
+                <p>
+                    <a class="forgot" href="#">Quên mật khẩu?</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    <!-- Header NAVBAR -->
+    <header id="header">
+        <!--
+            Navigation với class navbar là mặc định , class navbar-default là sử dụng giao diện .
+            CHúng ta có vài class sau "navbar-default" , "navbar-inverse"
+        -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!--
+                Class "nav navbar-header" sử dụng mặc định
+                Responsive Design : class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+                -->
+                <div class="nav navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                    
+                    <a class="navbar-brand" href="~/Views/Home/Index.cshtml"><img src="~/asset/images/logo_0.png" alt="logo"></a>
+                </div>
+                <!--
+                Class : "collapse navbar-collapse" id="myNavbar" hiển thị thông tin khi thu nhỏ giao diện
+                -->
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>                        
+                        <li>@Html.ActionLink("Giới thiệu Quantum", "Gioithieu", "Home")</li>
+                        <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Sanpham", "Home")</li>
+                        <li>@Html.ActionLink("Tải phần mềm", "Download", "Home")</li>
+                        <li>@Html.ActionLink("Trợ giúp", "Trogiup", "Home")</li>
+                        <li>@Html.ActionLink("Liên hệ", "Lienhe", "Home")</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="SignIn">
+                        <li>@Html.ActionLink("Đăng ký thành viên", "Dangky", "Home")</li>
+                        <li><a href="#login-box" class="login-window button"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="Successful">                           
+                        <li><a href="form-register.html">Chào bạn đã đến với website của chúng tôi !<span class="glyphicon glyphicon-user"></span> Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Add Render Body Here-->
+    @RenderBody();
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="format-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li>Các mô hình đầu tư được xây dựng sẵn bởi các chuyên gia cao cấp (PhD, CFA, CMT)</li>
+                        <li>Linh hoạt với các thay đổi mới của thị trường</li>
+                        <li>Giảm thiểu rủi ro do các quyết định tâm lý</li>
+                        <li>Mang lại lợi nhuận cao trong ngắn hạn, trung hạn và dài hạn</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Tính năng nổi bật</h3>
+                    <ul>
+                        <li>Các mô hình đầu tư được xây dựng sẵn bởi các chuyên gia cao cấp (PhD, CFA, CMT)</li>
+                        <li>Linh hoạt với các thay đổi mới của thị trường</li>
+                        <li>Giảm thiểu rủi ro do các quyết định tâm lý</li>
+                        <li>Mang lại lợi nhuận cao trong ngắn hạn, trung hạn và dài hạn</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Đối tác</h3>
+                    <ul>
+                        <li>Các mô hình đầu tư được xây dựng sẵn bởi các chuyên gia cao cấp (PhD, CFA, CMT)</li>
+                        <li>Linh hoạt với các thay đổi mới của thị trường</li>
+                        <li>Giảm thiểu rủi ro do các quyết định tâm lý</li>
+                        <li>Mang lại lợi nhuận cao trong ngắn hạn, trung hạn và dài hạn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section id="footer-end" class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>Copyright © 2015 - 2016 by HQ Investment &amp; Consulting Corporation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+    <script src="~/asset/js/jquery.js"></script>
+    <script src="~/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/asset/js/dialog.js"></script>
+    <script type="text/javascript" src="~/asset/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/asset/css/dialog.css">
+</html>
+
+

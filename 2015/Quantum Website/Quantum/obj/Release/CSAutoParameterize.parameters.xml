@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Database-Web.config Connection String" description="Database Connection String used in web.config by the application to access the database." defaultValue="data source=SCD071410;initial catalog=QUANTUM;user id=sa;password=123;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\qnguyen37\\Dropbox\\QuantumDoc\\Reports\\Dung_PUF\ 07_2015\\Quantum\\Quantum\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Database']/@connectionString" />
+  </parameter>
+  <parameter name="Quantum-Web.config Connection String" description="Quantum Connection String used in web.config by the application to access the database." defaultValue="data source=SCD071410;initial catalog=QUANTUM;user id=sa;password=123;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\qnguyen37\\Dropbox\\QuantumDoc\\Reports\\Dung_PUF\ 07_2015\\Quantum\\Quantum\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Quantum']/@connectionString" />
+  </parameter>
+  <parameter name="Quantum1-Web.config Connection String" description="Quantum1 Connection String used in web.config by the application to access the database." defaultValue="data source=SCD071410;initial catalog=QUANTUM;user id=sa;password=123;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\qnguyen37\\Dropbox\\QuantumDoc\\Reports\\Dung_PUF\ 07_2015\\Quantum\\Quantum\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Quantum1']/@connectionString" />
+  </parameter>
+  <parameter name="QuantumDb-Web.config Connection String" description="QuantumDb Connection String used in web.config by the application to access the database." defaultValue="data source=SCD071410;initial catalog=QUANTUM;user id=sa;password=123;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\qnguyen37\\Dropbox\\QuantumDoc\\Reports\\Dung_PUF\ 07_2015\\Quantum\\Quantum\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QuantumDb']/@connectionString" />
+  </parameter>
+</parameters>
