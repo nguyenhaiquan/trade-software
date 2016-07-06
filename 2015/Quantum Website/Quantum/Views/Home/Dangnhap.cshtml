@@ -9,41 +9,50 @@
     ViewBag.Title = "Đăng nhập";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-
-<section id="loginForm">
-<h2>Use a local account to log in.</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+<div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 text">
+                        <h1>Đăng nhập người dùng Quantum</h1>
+                        <div class="description">
+                            <p>
+                                Nếu bạn chưa có tài khoản, xin vui lòng đăng ký
+                            </p>
+                        </div>
+                        <div class="top-big-link">
+                            <a class="btn btn-link-1" @Html.ActionLink("Đăng ký tài khoản mới", "Dangky", "Home")></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 form-box">
+                        <div class="form-top">                            
+                        </div>
+                        <div class="form-bottom">
+                            <form  role="form" action="/Home/Dangnhap" method="post">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-account">Tài khoản</label>
+                                    <input type="text" name="accountname" placeholder="Nhập Tài khoản..." class="form-account form-control" id="form-account">
+                                    @Html.ValidationMessage("accountname")
+                                </div>
 
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.accountname)
-                @Html.TextBoxFor(m => m.accountname)
-                @Html.ValidationMessageFor(m => m.accountname)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.password)
-                @Html.PasswordFor(m => m.password)
-                @Html.ValidationMessageFor(m => m.password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.rememberMe)
-                @Html.LabelFor(m => m.rememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Đăng ký", "Dangky") if you don't have an account.
-    </p>
-    
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">Mật khẩu</label>
+                                    <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password">
+                                    @Html.ValidationMessage("password")
+                                </div>                                
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="" value="">Lưu mật khẩu</label>
+                                </div>
+
+                                <button type="submit" class="btn" name="btnSubmit">Đăng nhập!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
 }
-</section>
-

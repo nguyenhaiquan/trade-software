@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Quantum.Models;
-
+using WebMatrix.WebData;
+using System.Web.Security;
+ 
 namespace Quantum.Controllers
 {
     public class HomeController : Controller
@@ -26,10 +28,12 @@ namespace Quantum.Controllers
         }
 
         // GET: Taiphanmem
-        [Authorize]
+        //[Authorize]
         public ActionResult download()
         {
-            return View();
+            if (Session["AccountName"]!=null)
+                return View("Download");
+            return RedirectToAction("Dangnhap", "Home", new { returnUrl="DownLoad" });
         }
         // GET: Trogiup
         public ActionResult Trogiup()
@@ -41,11 +45,7 @@ namespace Quantum.Controllers
         {
             return View();
         }
-        public ActionResult Dangky()
-        {
-            return View();
-        }
-
+        
         //
         // GET: /Home/Dangnhap
 
@@ -56,17 +56,37 @@ namespace Quantum.Controllers
             return View();
         }
 
+        //
+        // GET: /Home/Dangnhap
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Dangxuat()
+        {
+            Session["AccountName"] = null;
+            return View("Index");
+        }
+
         // POST: /Home/Dangnhap
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Dangnhap(LoginModel model,string returnUrl)
         {
-           
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             if (ModelState.IsValid && model.IsUserExisteWithPassword(model.accountname, model.password))
             {
-                return RedirectToAction(returnUrl);
+                Session["AccountName"] = model.accountname;
+                //AuthorizeAttribute = true;
+                //WebSecurity.Login(model.accountname, model.password, persistCookie: model.rememberMe);
+                //WebSecurity.a
+
+                //FormsAuthentication.RedirectToLoginPage(returnUrl);
+
+                //return RedirectToLocal(returnUrl);
+                if (returnUrl!=null)
+                    return RedirectToAction(returnUrl);
+                return RedirectToAction("Index");
             }
 
             // If we got this far, something failed, redisplay form
@@ -74,8 +94,14 @@ namespace Quantum.Controllers
             return View(model);
         }
 
+        //[AllowAnonymous]
+        //public ActionResult Dangky()
+        //{
+        //    return View();
+        //}
+
         [AllowAnonymous]
-        public ActionResult CreateNewUser(UserViewModel model)
+        public ActionResult Dangky(UserViewModel model)
         {
             //Connect to Database
             //databaseEn db = new StockDb();
@@ -96,6 +122,8 @@ namespace Quantum.Controllers
                         return View("Dangky");
                     }
                     model.addUser(model.accountname, model.password, model.email);
+                    ModelState.Clear();
+                    ViewBag.Message = "Đăng ký thành công tài khoản " +model.accountname;
                     return RedirectToAction("Index");
                 }
             }
@@ -122,5 +150,18 @@ namespace Quantum.Controllers
             return Json(output);
         }
 
+        #region Helpers
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        #endregion 
     }
 }

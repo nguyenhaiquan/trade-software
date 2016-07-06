@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.AntiForgeryToken()
 <section id="title" class="emerald">
     <div class="container">
         <div class="row">
@@ -13,7 +14,7 @@
             </div>
             <div class="col-sm-6">
                 <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a></li>
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
                     <li class="active">Tải phần mềm</li>
                 </ul>
             </div>
