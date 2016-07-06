@@ -1,0 +1,18 @@
+﻿@if (Session["AccountName"]!=null) {
+    <ul class="nav navbar-nav navbar-right"> 
+        <li>
+        <text>Xin chào, @Session["AccountName"]
+        @using (Html.BeginForm("Dangxuat", "Home", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Đăng xuất</a>
+        }
+            </text>
+        </li>
+    </ul>
+} else {
+   <ul class="nav navbar-nav navbar-right" id="SignIn">
+        <li>@Html.ActionLink("Đăng ký", "Dangky", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Đăng nhập", "Dangnhap", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+
