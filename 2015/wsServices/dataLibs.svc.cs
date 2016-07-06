@@ -1038,7 +1038,8 @@ namespace wsServices
                 //d//atabases.baseDS.messagesDataTable tbl = new databases.baseDS.messagesDataTable();
                 databases.baseDS.bestStrategyDataTable tbl=new databases.baseDS.bestStrategyDataTable();
                 databases.DbAccess.LoadData(tbl);
-                databases.baseDS.bestStrategyRow bestStrategyRow=tbl.FindBystockCodetimeFrame(stockCode, timeFrame);
+                //databases.baseDS.bestStrategyRow bestStrategyRow=tbl.FindBystockCodetimeFrame(stockCode, timeFrame);
+                databases.baseDS.bestStrategyRow bestStrategyRow = databases.DbAccess.GetBestStrategy(stockCode, timeFrame);
                 if (order==1)
                     bestStrategy = bestStrategyRow.strategyCode1;
                 else
