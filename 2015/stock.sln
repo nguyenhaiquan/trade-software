@@ -167,13 +167,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wStock2", "..\q-download\wS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECCF887D-46E8-470D-BBA7-70A17A2CF6EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum", "..\..\..\..\Dropbox\QuantumDoc\Reports\Dung_PUF 07_2015\Quantum\Quantum\Quantum.csproj", "{3DCADE75-0A2E-4C45-89C3-A136C718AA22}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "databaseEntity", "databaseEntity\databaseEntity.csproj", "{6BE7DADB-B275-465F-B396-9866CE2E254A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "common\common.csproj", "{B7600D70-3D5D-4F1D-836D-F867120E3FC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc7days", "..\..\..\Visual Studio 2012\Projects\Mvc7days\Mvc7days\Mvc7days.csproj", "{DD922389-DDFA-46A4-BAD6-5AA86AFDF2C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum", "Quantum Website\Quantum\Quantum.csproj", "{3DCADE75-0A2E-4C45-89C3-A136C718AA22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -537,21 +537,6 @@ Global
 		{682A163E-35E6-408E-A942-0799C7D6349A}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{682A163E-35E6-408E-A942-0799C7D6349A}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{682A163E-35E6-408E-A942-0799C7D6349A}.SingleImage|x86.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|x86.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|x86.ActiveCfg = Debug|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|x86.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|x86.ActiveCfg = Release|Any CPU
 		{6BE7DADB-B275-465F-B396-9866CE2E254A}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
 		{6BE7DADB-B275-465F-B396-9866CE2E254A}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{6BE7DADB-B275-465F-B396-9866CE2E254A}.CD_ROM|x86.ActiveCfg = Release|Any CPU
@@ -597,6 +582,21 @@ Global
 		{DD922389-DDFA-46A4-BAD6-5AA86AFDF2C4}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{DD922389-DDFA-46A4-BAD6-5AA86AFDF2C4}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{DD922389-DDFA-46A4-BAD6-5AA86AFDF2C4}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.Release|x86.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

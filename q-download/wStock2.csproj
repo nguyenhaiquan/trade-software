@@ -293,7 +293,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60177</DevelopmentServerPort>
+          <DevelopmentServerPort>4945</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/wStock2</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
