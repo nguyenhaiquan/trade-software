@@ -26,8 +26,8 @@ namespace databases.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=stock_import;Persist Security Info=True;User " +
-            "ID=sa;Password=P@ssword123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=import;Persist Security Info=True;User ID=sa;" +
+            "Password=P@ssword123")]
         public string importConnectionString {
             get {
                 return ((string)(this["importConnectionString"]));
@@ -54,16 +54,6 @@ namespace databases.Properties {
             }
             set {
                 this["Setting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=stock;User ID=sa")]
-        public string stockConnectionString2 {
-            get {
-                return ((string)(this["stockConnectionString2"]));
             }
         }
     }

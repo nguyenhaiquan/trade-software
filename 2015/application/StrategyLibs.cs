@@ -1035,7 +1035,8 @@ namespace application.Strategy
                     //Console.WriteLine(stockCodeList[rowId] + " s1 name=" + bestStrategy[strategyList.Count - 1].strategyName + "profit=" + bestStrategy[strategyList.Count - 1].profit.ToString());
 
                     //Write to database the result    
-                    databases.baseDS.bestStrategyRow existingRow = bestStrategyDataTable.FindBystockCodetimeFrame(bestStrategyRow.stockCode, bestStrategyRow.timeFrame);
+                    //databases.baseDS.bestStrategyRow existingRow = databases.DbAccess.databases.baseDS.bestStrategyDataTable.FindBystockCodetimeFrame(bestStrategyRow.stockCode, bestStrategyRow.timeFrame);
+                    databases.baseDS.bestStrategyRow existingRow = databases.DbAccess.GetBestStrategy(bestStrategyRow.stockCode, bestStrategyRow.timeFrame);
                     if (existingRow == null)
                     {                        
                         bestStrategyDataTable.Rows.Add(bestStrategyRow);
