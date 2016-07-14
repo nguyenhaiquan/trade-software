@@ -31,10 +31,25 @@ namespace Quantum.Controllers
         //[Authorize]
         public ActionResult download()
         {
-            if (Session["AccountName"]!=null)
+            if ((Session!=null)&&(Session["AccountName"]!=null))
                 return View("Download");
             return RedirectToAction("Dangnhap", "Home", new { returnUrl="DownLoad" });
         }
+
+        // GET: Taiphanmem
+        //[Authorize]
+        public ActionResult clickoncedownload()
+        {
+            if ((Session!=null)&&(Session["AccountName"] != null))
+            {
+                //string path = @"~/Downloads/MyApplication.exe.manifest";
+                string path = @"C:\Temp\clickonce_quantum20160701\setup.exe";
+                string content = "application/x-ms-application";
+                return new FilePathResult(path, content); 
+            }
+            return RedirectToAction("Dangnhap", "Home", new { returnUrl = "DownLoad" });
+        }
+
         // GET: Trogiup
         public ActionResult Trogiup()
         {
@@ -56,14 +71,23 @@ namespace Quantum.Controllers
             return View();
         }
 
+        // GET: /Home/Recommendation?stockcode='SSI'
+        public ActionResult Recommendation(string stockcode)
+        {
+            return View();
+        }
+
         //
-        // GET: /Home/Dangnhap
+        // POST: /Home/DangXuat
 
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Dangxuat()
         {
-            Session["AccountName"] = null;
+            if (Session != null)
+            {
+                Session["AccountName"] = null;
+            }
             return View("Index");
         }
 
@@ -77,13 +101,6 @@ namespace Quantum.Controllers
             if (ModelState.IsValid && model.IsUserExisteWithPassword(model.accountname, model.password))
             {
                 Session["AccountName"] = model.accountname;
-                //AuthorizeAttribute = true;
-                //WebSecurity.Login(model.accountname, model.password, persistCookie: model.rememberMe);
-                //WebSecurity.a
-
-                //FormsAuthentication.RedirectToLoginPage(returnUrl);
-
-                //return RedirectToLocal(returnUrl);
                 if (returnUrl!=null)
                     return RedirectToAction(returnUrl);
                 return RedirectToAction("Index");
@@ -94,23 +111,13 @@ namespace Quantum.Controllers
             return View(model);
         }
 
-        //[AllowAnonymous]
-        //public ActionResult Dangky()
-        //{
-        //    return View();
-        //}
-
         [AllowAnonymous]
         public ActionResult Dangky(UserViewModel model)
         {
-            //Connect to Database
-            //databaseEn db = new StockDb();
             if (ModelState.IsValid)
             {
-                //UserViewModel uvm = new UserViewModel();
                 if (model.IsUserExiste(model.accountname))
                 {
-                    //ModelState.IsValid = false;
                     ModelState.AddModelError("accountname", "Tài khoản đã tồn tại");
                     return View("Dangky");
                 }
@@ -124,6 +131,7 @@ namespace Quantum.Controllers
                     model.addUser(model.accountname, model.password, model.email);
                     ModelState.Clear();
                     ViewBag.Message = "Đăng ký thành công tài khoản " +model.accountname;
+                    Session["AccountName"] = model.accountname;
                     return RedirectToAction("Index");
                 }
             }
@@ -131,24 +139,24 @@ namespace Quantum.Controllers
                 return View("Dangky");
         }
 
-        [HttpPost]
-        public JsonResult CheckLogin(string data){
-            string name = Request.Form["name"];
-            string password = Request.Form["password"];
-            string email = Request.Form["email"];
-            UserViewModel user = new UserViewModel();
-            //bool authorize = user.checkLogin(username, password,email);
-            bool authorize = true;
-            var status = false;
-            string message = "Dang nhap ko thanh cong";
-            if (authorize)
-            {
-                message = "Đăng nhập thành công";
-                status = true;
-            }
-            var output = new { status = status, message = message };
-            return Json(output);
-        }
+        //[HttpPost]
+        //public JsonResult CheckLogin(string data){
+        //    string name = Request.Form["name"];
+        //    string password = Request.Form["password"];
+        //    string email = Request.Form["email"];
+        //    UserViewModel user = new UserViewModel();
+        //    //bool authorize = user.checkLogin(username, password,email);
+        //    bool authorize = true;
+        //    var status = false;
+        //    string message = "Dang nhap ko thanh cong";
+        //    if (authorize)
+        //    {
+        //        message = "Đăng nhập thành công";
+        //        status = true;
+        //    }
+        //    var output = new { status = status, message = message };
+        //    return Json(output);
+        //}
 
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)

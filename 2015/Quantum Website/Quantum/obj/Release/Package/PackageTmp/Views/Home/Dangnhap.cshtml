@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Quantum.Models.LoginModel
+
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+<div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 text">
+                        <h1>Đăng nhập người dùng Quantum</h1>
+                        <div class="description">
+                            <p>
+                                Nếu bạn chưa có tài khoản, xin vui lòng đăng ký
+                            </p>
+                        </div>
+                        <div class="top-big-link">
+                            <a class="btn btn-link-1" @Html.ActionLink("Đăng ký tài khoản mới", "Dangky", "Home")></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 form-box">
+                        <div class="form-top">                            
+                        </div>
+                        <div class="form-bottom">
+                            <form  role="form" action="/Home/Dangnhap" method="post">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-account">Tài khoản</label>
+                                    <input type="text" name="accountname" placeholder="Nhập Tài khoản..." class="form-account form-control" id="form-account">
+                                    @Html.ValidationMessage("accountname")
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">Mật khẩu</label>
+                                    <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password">
+                                    @Html.ValidationMessage("password")
+                                </div>                                
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="" value="">Lưu mật khẩu</label>
+                                </div>
+
+                                <button type="submit" class="btn" name="btnSubmit">Đăng nhập!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+}

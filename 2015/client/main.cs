@@ -759,6 +759,14 @@ namespace client
             }
         }
 
+
+        #region GetMarketWatchForm
+
+        /// <summary>
+        /// Return Market Watch Form
+        /// </summary>
+        /// <param name="createIfNotFound"></param>
+        /// <returns></returns>
         private Trade.Forms.marketWatch GetMarketWatchForm(bool createIfNotFound)
         {
             string formName = constFormNameWatchList + "Market";
@@ -788,6 +796,43 @@ namespace client
             Trade.Forms.marketWatch form = GetMarketWatchForm(false);
             if (form!=null) form.Hide();
         }
+        #endregion
+
+        #region GetStatistics Form
+
+        /// <summary>
+        /// Return Statistics Form
+        /// </summary>
+        /// <param name="createIfNotFound"></param>
+        /// <returns></returns>
+        private Tools.Forms.TradeStatistics GetStatisticForm(bool createIfNotFound)
+        {
+            string formName = constFormNameWatchList + "Statistic";
+
+            Tools.Forms.TradeStatistics myForm = (Tools.Forms.TradeStatistics)cachedForms.Find(formName);
+            if (myForm == null || myForm.IsDisposed)
+            {
+                if (!createIfNotFound) return null;
+                myForm = new Tools.Forms.TradeStatistics();
+                myForm.Name = formName;
+                cachedForms.Add(formName, myForm);
+
+                MapForm(myForm, marketWatchMenuItem);
+            }
+            return myForm;
+        }
+
+        private void ShowStatisticForm()
+        {
+            Tools.Forms.TradeStatistics form = GetStatisticForm(true);
+            form.Show(dockPanel, DockState.DockLeft);
+        }
+        private void HideStatisticForm()
+        {
+            Tools.Forms.TradeStatistics form = GetStatisticForm(false);
+            if (form != null) form.Hide();
+        }
+        #endregion
 
         private Trade.Forms.MarketSummary GetMarketSummaryForm(bool createIfNotFound)
         {

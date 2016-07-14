@@ -11,3 +11,9 @@
 *.dll
 2015/dlls/databases.dll
 *.dll
+*.nupkg
+*.nupkg
+2015/packages/Microsoft.AspNet.WebApi.5.0.0/Microsoft.AspNet.WebApi.5.0.0.nuspec
+*.exe
+*.dll
+*.exe

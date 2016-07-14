@@ -149,16 +149,16 @@ namespace server
             }
         }
 
-        public frmSchedule scheduleForm1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        //public frmSchedule scheduleForm1
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
+        //    set
+        //    {
+        //    }
+        //}
 
         //public libs libs
         //{
