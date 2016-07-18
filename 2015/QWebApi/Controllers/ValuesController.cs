@@ -35,5 +35,12 @@ namespace QWebApi.Controllers
         public void Delete(int id)
         {
         }
+
+        // GET api/<controller>
+        public IEnumerable<string>  Get(string stockcode)
+        {
+            stockcode = "SSI";
+            return new string[] { "value1", "value2" };
+        }
     }
 }

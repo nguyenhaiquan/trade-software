@@ -18,6 +18,11 @@ namespace QWebApi.Models
         {
         }
 
+        public bool Recommendation()
+        {
+            return true;
+        }
+
         //public TradePointInfo[] GetTradePointWithEstimationDetail(DataParams dataParam, string stockCode, string strategyCode, EstimateOptions options,
         //                                                          out databases.tmpDS.tradeEstimateDataTable toTbl, out application.StrategyStatistics statistics)
         //{
