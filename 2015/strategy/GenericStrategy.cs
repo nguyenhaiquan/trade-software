@@ -100,7 +100,10 @@ namespace Strategy
         /// <param name="info"></param>
         public void SelectStock(int index, BusinessInfo info)
         {
-            adviceInfo.Add(AppTypes.TradeActions.Select, index, info);
+            //adviceInfo.Add(AppTypes.TradeActions.Select, index, info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Select, index, dt,info);
             is_bought = true;
             last_position = index;
             buy_price = data.Close[index];
@@ -112,7 +115,11 @@ namespace Strategy
         /// <param name="index"></param>
         public void BuyAtClose(int index)
         {
-            adviceInfo.Add(AppTypes.TradeActions.Buy, index);
+            //adviceInfo.Add(AppTypes.TradeActions.Buy, index);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Buy, index,dt);
+           
             is_bought = true;
             last_position = index;
             buy_price=data.Close[index];
@@ -125,7 +132,11 @@ namespace Strategy
         /// <param name="info"></param>
         public void BuyAtClose(int index, BusinessInfo info)
         {
-            adviceInfo.Add(AppTypes.TradeActions.Buy, index,info);
+            //adviceInfo.Add(AppTypes.TradeActions.Buy, index,info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Buy, index, dt,info);
+
             is_bought = true;
             last_position = index;
             buy_price = data.Close[index];
@@ -138,7 +149,10 @@ namespace Strategy
         public void SellAtClose(int index)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt);
             last_position = index;
         }
 
@@ -150,7 +164,10 @@ namespace Strategy
         public void SellAtClose(int index, BusinessInfo info)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt, info);
             last_position = index;
         }
 
@@ -161,7 +178,10 @@ namespace Strategy
         public void SellCutLoss(int index)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt);
             last_position = index;
         }
 
@@ -172,7 +192,10 @@ namespace Strategy
         public void SellCutLoss(int index, BusinessInfo info)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt, info);
             last_position = index;
         }
 
@@ -183,7 +206,10 @@ namespace Strategy
         public void SellTakeProfit(int index)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt);
             last_position = index;
         }
 
@@ -194,7 +220,10 @@ namespace Strategy
         public void SellTakeProfit(int index, BusinessInfo info)
         {
             is_bought = false;
-            adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            //adviceInfo.Add(AppTypes.TradeActions.Sell, index,info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Sell, index, dt,info);
             last_position = index;
         }
         /// <summary>
@@ -204,7 +233,10 @@ namespace Strategy
         public void AccumulateAtClose(int index)
         {
             is_bought = true;
-            adviceInfo.Add(AppTypes.TradeActions.Accumulate, index);
+            //adviceInfo.Add(AppTypes.TradeActions.Accumulate, index);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Accumulate, index, dt);
             last_position = index;
         }
 
@@ -216,7 +248,10 @@ namespace Strategy
         public void AccumulateAtClose(int index, BusinessInfo info)
         {
             is_bought = true;
-            adviceInfo.Add(AppTypes.TradeActions.Accumulate, index, info);
+            //adviceInfo.Add(AppTypes.TradeActions.Accumulate, index, info);
+            DateTime dt;
+            dt = DateTime.FromOADate(data.DateTime[index]);
+            adviceInfo.Add(AppTypes.TradeActions.Accumulate, index, dt);
             last_position = index;
         }
 
