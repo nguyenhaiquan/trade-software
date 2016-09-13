@@ -148,6 +148,7 @@
     <Compile Include="Basic Strategy\StochasticSlow.cs" />
     <Compile Include="Hybrid\SMA_Stochastic.cs" />
     <Compile Include="Rule.cs" />
+    <Compile Include="Screening\VolumeSCR.cs" />
     <Compile Include="strategyLib.cs" />
     <Compile Include="Basic Strategy\TwoMA.cs" />
     <Compile Include="Basic Strategy\TwoMA_Filters.cs" />
