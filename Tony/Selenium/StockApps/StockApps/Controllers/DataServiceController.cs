@@ -50,7 +50,7 @@ namespace StockApps.Controllers
 
         // Call API
         // http://localhost:63471/api/DataService/LogIn?account=test&password=1234
-        [HttpGet]
+        [HttpPost]
         public string LogIn(string account, string password)
         {
             return new Investor().LogIn(account, password);

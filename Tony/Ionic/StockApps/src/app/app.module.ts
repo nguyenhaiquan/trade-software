@@ -11,6 +11,7 @@ import { AlarmPage } from '../pages/alarm/alarm';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { OrderPage } from '../pages/order/order';
+import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WatchlistPage } from '../pages/watchlist/watchlist';
 
@@ -24,6 +25,7 @@ import { AuthService } from '../providers/auth-service';
     HomePage,
     LoginPage,
     OrderPage,
+    RegisterPage,
     TabsPage,
     WatchlistPage
   ],
@@ -39,6 +41,7 @@ import { AuthService } from '../providers/auth-service';
     HomePage,
     LoginPage,
     OrderPage,
+    RegisterPage,
     TabsPage,
     WatchlistPage
   ],
