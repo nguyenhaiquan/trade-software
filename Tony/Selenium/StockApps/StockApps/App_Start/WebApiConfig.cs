@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace StockApps
@@ -26,15 +27,16 @@ namespace StockApps
                 routeTemplate: "api/{controller}/{id}/{action}",
                 defaults: new { id = RouteParameter.Optional }
                 );
-            
+
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             /*
             config.Routes.MapHttpRoute(
                 name: "DefaultApiWithExtensions",
-                routeTemplate: "{controller}.{ext}/{action}",
+                routeTemplate: "api/{controller}.{ext}/{id}/{action}",
                 defaults: new { ext = "json", action = "Get", showHelp = true }
             );
             config.Formatters.JsonFormatter.MediaTypeMappings.Add(new UriPathExtensionMapping("json", "application/json"));
-
+            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{controller}/{action}",

@@ -8,31 +8,31 @@ namespace StockApps.Models
 {
     public class FinancialData
     {
-        public string[,] Get(int id)
+        public string[,] Get(string code)
         {
             SqlConnection myConnection = new SqlConnection("user id=Testing;" +
                                        "password=123456;" +
                                        "server=TONY;" +
                                        "Trusted_Connection=yes;" +
-                                       "database=QStockDB; " +
+                                       "database=Stock; " +
                                        "connection timeout=10");
 
             try
             {
                 myConnection.Open();
 
-                int rows = 40, columns = 5;
+                int rows = 40, columns = 5; // Init defautl columns and rows
 
                 string[,] data = new string[rows, columns];
 
-                // Get Stock's Code
-                data[0, 0] = new Stock().GetStock(id).code;
+                // Show stock's code
+                data[0, 0] = code;
 
                 SqlCommand myCommand =
                     new SqlCommand("select * " +
-                    "from dbo.FinancialData d, dbo.FinancialRubric r " +
-                    "where d.ID_Stock = " + id +
-                    " and d.ID_Rubric = r.ID", myConnection);
+                    "from dbo.financialData d, dbo.financialRubric r " +
+                    "where d.stock = '" + code + "'" +
+                    " and d.rubric = r.id", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
@@ -40,12 +40,12 @@ namespace StockApps.Models
 
                 while (myReader.Read())
                 {
-                    data[r, c] = myReader["Value"].ToString();
+                    data[r, c] = myReader["value"].ToString();
                     c++;
 
                     if (c > 4)
                     {
-                        data[r, 0] = myReader["Description"].ToString();
+                        data[r, 0] = myReader["description"].ToString();
                         r++;
 
                         c = 1;
@@ -64,20 +64,19 @@ namespace StockApps.Models
             }
         }
 
-        public void SaveDB(int id)
+        public void SaveDB(string code)
         {
             SqlConnection myConnection = new SqlConnection("user id=Testing;" +
                                        "password=123456;" +
                                        "server=TONY;" +
                                        "Trusted_Connection=yes;" +
-                                       "database=QStockDB; " +
+                                       "database=Stock; " +
                                        "connection timeout=10");
 
             try
             {
                 myConnection.Open();
 
-                string code = new Stock().GetStock(id).code;
                 string url = "http://ivt.ssi.com.vn/CorporateFundBalanceSheet.aspx?Ticket=" + code;
 
                 IWebDriver driver = new InternetExplorerDriver();
@@ -133,19 +132,18 @@ namespace StockApps.Models
                         }
                         else if (j == 1)
                         {
-                            /* First column => Financial Rubric
+                            // First column => Financial Rubric
                             SqlCommand myCommand =
-                                new SqlCommand("INSERT INTO dbo.FinancialRubric (ID, ID_Parent, ID_Category, Description) " +
+                                new SqlCommand("INSERT INTO dbo.financialRubric (id, id_parent, category, description) " +
                                          "Values (" + i + ", NULL, 1, N'" + Table_data + "')", myConnection);
                             myCommand.ExecuteNonQuery();
-                            */
                         }
                         else
                         {
                             // Next columns => Financial Data
                             SqlCommand myCommand =
-                                new SqlCommand("INSERT INTO dbo.FinancialData (ID_Stock, ID_Rubric, Time, Value) " +
-                                         "Values (" + id + ", " + i + ", '" + time[j - 1] + "', '" + Table_data + "')", myConnection);
+                                new SqlCommand("INSERT INTO dbo.financialData (stock, rubric, time, value) " +
+                                         "Values (" + code + ", " + i + ", '" + time[j - 1] + "', '" + Table_data + "')", myConnection);
                             myCommand.ExecuteNonQuery();
                         }
                     }

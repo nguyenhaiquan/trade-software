@@ -7,9 +7,8 @@ namespace StockApps.Models
 {
     public class Stock
     {
-        public int id { get; set; }
         public string code { get; set; }
-        public string description { get; set; }
+        public string name { get; set; }
 
         public List<Stock> GetAll()
         {
@@ -17,7 +16,7 @@ namespace StockApps.Models
                               "password=123456;" +
                               "server=TONY;" +
                               "Trusted_Connection=yes;" +
-                              "database=QStockDB; " +
+                              "database=Stock; " +
                               "connection timeout=10");
 
             try
@@ -26,7 +25,7 @@ namespace StockApps.Models
 
                 List<Stock> listStock = new List<Stock>();
 
-                SqlCommand myCommand = new SqlCommand("select * from dbo.Stock", myConnection);
+                SqlCommand myCommand = new SqlCommand("select * from dbo.stockCode", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
@@ -35,9 +34,8 @@ namespace StockApps.Models
                     listStock.Add(
                         new Stock
                         {
-                            id = Int32.Parse(myReader["ID"].ToString()),
-                            code = myReader["StockCode"].ToString(),
-                            description = myReader["Description"].ToString()
+                            code = myReader["code"].ToString(),
+                            name = myReader["name"].ToString()
                         }
                     );
                 }
@@ -54,9 +52,9 @@ namespace StockApps.Models
             }            
         }
 
-        public Stock GetStock(int id)
+        public Stock GetStock(string code)
         {
-            return GetAll().Where(x => x.id == id).FirstOrDefault();
+            return GetAll().Where(x => x.code == code).FirstOrDefault();
         }
 
         public List<Stock> Create(Stock s)
@@ -68,16 +66,16 @@ namespace StockApps.Models
 
         public List<Stock> Update(Stock s)
         {
-            List<Stock> listStock = GetAll().Where(x => x.id != s.id).ToList();
-            Stock t = GetStock(s.id);
+            List<Stock> listStock = GetAll().Where(x => x.code != s.code).ToList();
+            Stock t = GetStock(s.code);
             listStock.Remove(t);
             listStock.Add(s);
             return listStock;
         }
 
-        public List<Stock> Delete(int id)
+        public List<Stock> Delete(string code)
         {
-            List<Stock> listStock = GetAll().Where(x => x.id != id).ToList();
+            List<Stock> listStock = GetAll().Where(x => x.code != code).ToList();
             return listStock;
         }
     }

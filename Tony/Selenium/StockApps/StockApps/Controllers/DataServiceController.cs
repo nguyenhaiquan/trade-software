@@ -11,15 +11,18 @@ namespace StockApps.Controllers
 {
     public class DataServiceController : ApiController
     {
+        // Defautl get function
+        // Call API
+        // http://localhost:63471/api/DataService
         public IEnumerable<Stock> Get()
         {
             return new Stock().GetAll();
         }
 
-        public Stock Get(int id)
-        {
-            return new Stock().GetStock(id);
-        }
+        //public Stock Get(string code)
+        //{
+            //return new Stock().GetStock(code);
+        //}
 
         public IEnumerable<Stock> Post(Stock s)
         {
@@ -31,21 +34,25 @@ namespace StockApps.Controllers
             return new Stock().Update(s);
         }
 
-        public IEnumerable<Stock> Delete(int id)
+        public IEnumerable<Stock> Delete(string code)
         {
-            return new Stock().Delete(id);
+            return new Stock().Delete(code);
         }
 
+        // Call API
+        // http://localhost:63471/api/DataService/details?code=HPG
         [HttpGet]
-        public string[,] Details(int id)
+        public string[,] Details(string code)
         {
-            return new FinancialData().Get(id);
+            return new FinancialData().Get(code);
         }
 
+        // Call API
+        // http://localhost:63471/api/DataService/savedb?code=HPG
         [HttpPost]
-        public void SaveDB(int id)
+        public void SaveDB(string code)
         {
-            new FinancialData().SaveDB(id);
+            new FinancialData().SaveDB(code);
         }
 
         // Call API
