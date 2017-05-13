@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading;
 using OpenQA.Selenium;
@@ -8,7 +9,7 @@ namespace StockApps.Models
 {
     public class Investor
     {
-        public string LogIn(string account, string password)
+        public List<Stock> LogIn(string account, string password)
         {
             string name = null;
 
@@ -23,23 +24,34 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
+                // get list of stock in investor's portfolio
+                List<Stock> listStock = new List<Stock>();
+
                 SqlCommand myCommand =
-                    new SqlCommand("select * " +
-                    "from dbo.investor i " +
-                    "where i.account = '" + account +
+                    new SqlCommand("select s.code, s.name " +
+                    "from dbo.investor i, dbo.portfolio p, dbo.investorStock x, dbo.stockCode s " +
+                    "where i.code = p.investorCode and p.code = x.portfolio and x.stockCode = s.code " +
+                    "and p.type = '1' " +
+                    "and i.account = '" + account +
                     "' and i.password = '" + password +
                     "'", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
-                if (myReader.Read())
+                while (myReader.Read())
                 {
-                    name = myReader["displayName"].ToString();
+                    listStock.Add(
+                        new Stock
+                        {
+                            code = myReader["code"].ToString(),
+                            name = myReader["name"].ToString()
+                        }
+                    );
                 }
 
                 myConnection.Close();
 
-                return name;
+                return listStock;
             }
             catch
             {

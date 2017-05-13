@@ -14,7 +14,7 @@ namespace StockApps.Controllers
         // Defautl get function
         // Call API
         // http://localhost:63471/api/DataService
-        public IEnumerable<Stock> Get()
+        public List<Stock> Get()
         {
             return new Stock().GetAll();
         }
@@ -58,7 +58,7 @@ namespace StockApps.Controllers
         // Call API
         // http://localhost:63471/api/DataService/LogIn?account=test&password=1234
         [HttpPost]
-        public string LogIn(string account, string password)
+        public List<Stock> LogIn(string account, string password)
         {
             return new Investor().LogIn(account, password);
         }

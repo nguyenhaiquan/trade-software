@@ -25,7 +25,7 @@ namespace StockApps.Models
 
                 List<Stock> listStock = new List<Stock>();
 
-                SqlCommand myCommand = new SqlCommand("select * from dbo.stockCode", myConnection);
+                SqlCommand myCommand = new SqlCommand("select s.code, s.name from dbo.stockCode s", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
