@@ -1,14 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Support.UI;
 
 namespace StockApps.Models
 {
     public class FinancialData
     {
-        public string[,] Get(string code)
+        public string name { get; set; }
+        public string value1 { get; set; }
+        public string value2 { get; set; }
+        public string value3 { get; set; }
+        public string value4 { get; set; }
+        public List<FinancialData> GetAll(string code)
         {
             SqlConnection myConnection = new SqlConnection("user id=Testing;" +
                                        "password=123456;" +
@@ -21,35 +28,55 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
-                int rows = 40, columns = 5; // Init defautl columns and rows
+                List<FinancialData> data = new List<FinancialData>();
 
-                string[,] data = new string[rows, columns];
+                data.Add(
+                    new FinancialData
+                    {
+                        name = code
+                    });
 
-                // Show stock's code
-                data[0, 0] = code;
-
-                SqlCommand myCommand =
-                    new SqlCommand("select * " +
+                SqlCommand myCommand = new SqlCommand("select d.time, d.value, r.description " +
                     "from dbo.financialData d, dbo.financialRubric r " +
-                    "where d.stock = '" + code + "'" +
-                    " and d.rubric = r.id", myConnection);
+                    "where d.stock = '" + code + "' " +
+                    "and d.rubric = r.id and r.id_parent is null", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
-                int r = 1, c = 1;
+                int i = 0; // column's index
+                string[] row = new string[5];
 
                 while (myReader.Read())
                 {
-                    data[r, c] = myReader["value"].ToString();
-                    c++;
-
-                    if (c > 4)
+                    if (i == 0)
                     {
-                        data[r, 0] = myReader["description"].ToString();
-                        r++;
-
-                        c = 1;
+                        // get rubric and data if i = 0
+                        row[i] = myReader["description"].ToString();
+                        row[i+1] = myReader["value"].ToString();
                     }
+                    else
+                    {
+                        // get data if i = 1, 2, 3
+                        row[i+1] = myReader["value"].ToString();
+
+                        if (i == 3)
+                        {
+                            // add new financial data
+                            data.Add(
+                                new FinancialData
+                                {
+                                    name = row[0],
+                                    value1 = row[1],
+                                    value2 = row[2],
+                                    value3 = row[3],
+                                    value4 = row[4]
+                                });
+
+                            // reset i
+                            i = -1;
+                        }
+                    }
+                    i++;
                 }
 
                 myConnection.Close();
@@ -82,12 +109,8 @@ namespace StockApps.Models
                 IWebDriver driver = new InternetExplorerDriver();
                 driver.Url = url;
 
-                Thread.Sleep(1000);
-
                 // Change table data (by Quarter => by Year)
                 driver.FindElement(By.Id("ctl00_mainContent_CorporateFundBalanceSheet1_LinkButton2")).Click();
-
-                Thread.Sleep(1000);
 
                 //Get number of rows In table.
                 int Row_count = driver.FindElements(By.XPath("//*[@class='content_chart_20']/table/tbody/tr")).Count;
@@ -134,7 +157,7 @@ namespace StockApps.Models
                         {
                             // First column => Financial Rubric
                             SqlCommand myCommand =
-                                new SqlCommand("INSERT INTO dbo.financialRubric (id, id_parent, category, description) " +
+                                new SqlCommand("insert into dbo.financialRubric (id, id_parent, category, description) " +
                                          "Values (" + i + ", NULL, 1, N'" + Table_data + "')", myConnection);
                             myCommand.ExecuteNonQuery();
                         }
@@ -142,7 +165,7 @@ namespace StockApps.Models
                         {
                             // Next columns => Financial Data
                             SqlCommand myCommand =
-                                new SqlCommand("INSERT INTO dbo.financialData (stock, rubric, time, value) " +
+                                new SqlCommand("insert into dbo.financialData (stock, rubric, time, value) " +
                                          "Values (" + code + ", " + i + ", '" + time[j - 1] + "', '" + Table_data + "')", myConnection);
                             myCommand.ExecuteNonQuery();
                         }

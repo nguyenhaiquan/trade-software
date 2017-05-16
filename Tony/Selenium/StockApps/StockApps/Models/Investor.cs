@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Threading;
-using OpenQA.Selenium;
-using OpenQA.Selenium.IE;
+﻿using System.Data.SqlClient;
 
 namespace StockApps.Models
 {
     public class Investor
     {
-        public List<Stock> LogIn(string account, string password)
+        public bool LogIn(string account, string password)
         {
-            string name = null;
+            bool result = false;
 
             SqlConnection myConnection = new SqlConnection("user id=Testing;" +
                                        "password=123456;" +
@@ -24,38 +19,27 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
-                // get list of stock in investor's portfolio
-                List<Stock> listStock = new List<Stock>();
-
                 SqlCommand myCommand =
-                    new SqlCommand("select s.code, s.name " +
-                    "from dbo.investor i, dbo.portfolio p, dbo.investorStock x, dbo.stockCode s " +
-                    "where i.code = p.investorCode and p.code = x.portfolio and x.stockCode = s.code " +
-                    "and p.type = '1' " +
-                    "and i.account = '" + account +
+                    new SqlCommand("select * " +
+                    "from dbo.investor i " +
+                    "where i.account = '" + account +
                     "' and i.password = '" + password +
                     "'", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
-                while (myReader.Read())
+                if (myReader.Read())
                 {
-                    listStock.Add(
-                        new Stock
-                        {
-                            code = myReader["code"].ToString(),
-                            name = myReader["name"].ToString()
-                        }
-                    );
+                    result = true;
                 }
 
                 myConnection.Close();
 
-                return listStock;
+                return result;
             }
             catch
             {
-                return null;
+                return false;
             }
                 
         }

@@ -29,21 +29,6 @@ namespace StockApps
                 );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-            /*
-            config.Routes.MapHttpRoute(
-                name: "DefaultApiWithExtensions",
-                routeTemplate: "api/{controller}.{ext}/{id}/{action}",
-                defaults: new { ext = "json", action = "Get", showHelp = true }
-            );
-            config.Formatters.JsonFormatter.MediaTypeMappings.Add(new UriPathExtensionMapping("json", "application/json"));
-            
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "{controller}/{action}",
-                defaults: new { ext = "json", action = "Get", showHelp = true }
-            );
-            config.Formatters.JsonFormatter.AddQueryStringMapping("responseContentType", "json", "application/json");
-            */
         }
     }
 }

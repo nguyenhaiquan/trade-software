@@ -8,9 +8,40 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-row>
+    <ion-col>
+      <p>Symbol</p>
+    </ion-col>
+    <ion-col>
+      <p>Quantity</p>
+    </ion-col>
+    <ion-col>
+      <p>Cost</p>
+    </ion-col>
+    <ion-col>
+      <p>Matched</p>
+    </ion-col>
+    <ion-col>
+      <p>+ / -</p>
+    </ion-col>
+  </ion-row>
   <ion-list>
-    <ion-item *ngFor="let stock of stocks">
-      <p>{{ stock.code }} : {{ stock.name }}</p>
-    </ion-item>
+    <ion-row *ngFor="let p of portfolios">
+      <ion-col>
+        <p>{{p.code}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{p.quantity}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{p.cost}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{p.matched}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{p.PL}}</p>
+      </ion-col>
+    </ion-row>
   </ion-list>
 </ion-content>

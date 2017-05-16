@@ -22,18 +22,20 @@
       <p>Volume</p>
     </ion-col>
   </ion-row>
-  <ion-row>
+  <ion-list>
+    <ion-row *ngFor="let w of watchlists">
     <ion-col>
-      <p>FLC</p>
+      <p>{{w.code}}</p>
     </ion-col>
     <ion-col>
-      <p>11.000</p>
+      <p>{{w.matched}}</p>
     </ion-col>
     <ion-col>
-      <p>+1.000</p>
+      <p>{{w.PL}}</p>
     </ion-col>
     <ion-col>
-      <p>1.000.000</p>
+      <p>{{w.volume}}</p>
     </ion-col>
   </ion-row>
+  </ion-list>
 </ion-content>

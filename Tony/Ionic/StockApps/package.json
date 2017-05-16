@@ -41,6 +41,9 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
+  "config": {
+    "ionic_source_map" : "source-map"
+  },
   "cordovaPlatforms": [],
   "description": "myBlank: An Ionic project"
 }

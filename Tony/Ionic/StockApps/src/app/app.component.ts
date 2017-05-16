@@ -15,8 +15,10 @@ import { WatchlistPage } from '../pages/watchlist/watchlist';
   templateUrl: 'app.html',
 })
 export class MyApp {
+
   @ViewChild(Nav) nav: Nav;
 
+  // change the default home page
   rootPage: any = TabsPage;
 
   pages: Array<{ title: string, component: any }>;
@@ -50,5 +52,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+  
 }
 

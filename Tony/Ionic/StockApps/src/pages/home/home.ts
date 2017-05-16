@@ -9,11 +9,12 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
 
-  stocks: any;
+  portfolios: any;
 
   constructor(public navCtrl: NavController, public http: Http) {
-    this.http.get('http://localhost:63471/api/DataService').map(res => res.json()).subscribe(data => {
-      this.stocks = data;
+
+    this.http.get('http://localhost:63471/api/Portfolio?investor=test').map(res => res.json()).subscribe(data => {
+      this.portfolios = data;
     });
   }
 
