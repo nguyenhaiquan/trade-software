@@ -10,7 +10,7 @@ namespace StockApps.Models
 {
     public class FinancialData
     {
-        public string name { get; set; }
+        public string rubric { get; set; }
         public string value1 { get; set; }
         public string value2 { get; set; }
         public string value3 { get; set; }
@@ -29,12 +29,6 @@ namespace StockApps.Models
                 myConnection.Open();
 
                 List<FinancialData> data = new List<FinancialData>();
-
-                data.Add(
-                    new FinancialData
-                    {
-                        name = code
-                    });
 
                 SqlCommand myCommand = new SqlCommand("select d.time, d.value, r.description " +
                     "from dbo.financialData d, dbo.financialRubric r " +
@@ -65,7 +59,7 @@ namespace StockApps.Models
                             data.Add(
                                 new FinancialData
                                 {
-                                    name = row[0],
+                                    rubric = row[0],
                                     value1 = row[1],
                                     value2 = row[2],
                                     value3 = row[3],

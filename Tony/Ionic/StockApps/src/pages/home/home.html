@@ -28,7 +28,7 @@
   <ion-list>
     <ion-row *ngFor="let p of portfolios">
       <ion-col>
-        <p>{{p.code}}</p>
+        <button ion-button small outline color="dark" (click)="navigate(p.code)">{{p.code}}</button>
       </ion-col>
       <ion-col>
         <p>{{p.quantity}}</p>

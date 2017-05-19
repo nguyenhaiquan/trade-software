@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{stockCode}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-scroll scrollX="true" style="width:450px;height:750px">
+    <ion-row>
+      <ion-col>
+        <p> </p>
+      </ion-col>
+      <ion-col>
+        <p>2013</p>
+      </ion-col>
+      <ion-col>
+        <p>2014</p>
+      </ion-col>
+      <ion-col>
+        <p>2015</p>
+      </ion-col>
+      <ion-col>
+        <p>2016</p>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-row *ngFor="let d of financialData">
+        <ion-col>
+          <p>{{d.rubric}}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{d.value1}}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{d.value2}}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{d.value3}}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{d.value4}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-scroll>
+</ion-content>
