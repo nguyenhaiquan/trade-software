@@ -4,14 +4,14 @@ using System.Data.SqlClient;
 
 namespace StockApps.Models
 {
-    public class Portfolio
+    public class Alarm
     {
         public string code { get; set; }
-        public string quantity { get; set; }
-        public decimal cost { get; set; }
-        public decimal matched { get; set; }
-        public decimal PL { get; set; }
-        public List<Portfolio> GetAll(string investor)
+        public int type { get; set; }
+        public int condition { get; set; }
+        public int value { get; set; }
+        public int status { get; set; }
+        public List<Alarm> GetAll(string investor)
         {
             SqlConnection myConnection = new SqlConnection(
                 "user id=Testing;" +
@@ -24,36 +24,33 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
-                List<Portfolio> portfolios = new List<Portfolio>();
+                List<Alarm> alarms = new List<Alarm>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select s.stockCode, s.qty, s.buyAmt, d.closePrice " +
-                    "from dbo.investor i, dbo.portfolio p, dbo.investorStock s, dbo.priceData d " +
+                    "select a.stockCode, a.type, a.condition, a.value, a.status " +
+                    "from dbo.investor i, dbo.alarm a " +
                     "where i.account = '" + investor + "' " +
-                    "and p.type = '1' " +
-                    "and i.code = p.investorCode " +
-                    "and p.code = s.portfolio " +
-                    "and s.stockCode = d.stockCode", myConnection);
+                    "and i.code = a.investor", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    portfolios.Add(
-                        new Portfolio
+                    alarms.Add(
+                        new Alarm
                         {
                             code = myReader["stockCode"].ToString(),
-                            quantity = myReader["qty"].ToString(),
-                            cost = myReader.GetDecimal(myReader.GetOrdinal("buyAmt")),
-                            matched = myReader.GetDecimal(myReader.GetOrdinal("closePrice")),
-                            PL = matched - cost
+                            type = myReader.GetInt32(myReader.GetOrdinal("type")),
+                            condition = myReader.GetInt32(myReader.GetOrdinal("condition")),
+                            value = myReader.GetInt32(myReader.GetOrdinal("value")),
+                            status = myReader.GetInt32(myReader.GetOrdinal("status"))
                         }
                     );
                 }
 
                 myConnection.Close();
 
-                return portfolios;
+                return alarms;
             }
             catch (Exception e)
             {

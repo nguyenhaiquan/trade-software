@@ -17,12 +17,13 @@ namespace StockApps.Models
         public string value4 { get; set; }
         public List<FinancialData> GetAll(string code)
         {
-            SqlConnection myConnection = new SqlConnection("user id=Testing;" +
-                                       "password=123456;" +
-                                       "server=TONY;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=Stock; " +
-                                       "connection timeout=10");
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
 
             try
             {
@@ -30,10 +31,12 @@ namespace StockApps.Models
 
                 List<FinancialData> data = new List<FinancialData>();
 
-                SqlCommand myCommand = new SqlCommand("select d.time, d.value, r.description " +
+                SqlCommand myCommand = new SqlCommand(
+                    "select d.time, d.value, r.description " +
                     "from dbo.financialData d, dbo.financialRubric r " +
                     "where d.stock = '" + code + "' " +
-                    "and d.rubric = r.id and r.id_parent is null", myConnection);
+                    "and d.rubric = r.id " +
+                    "and r.id_parent is null", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
@@ -87,12 +90,13 @@ namespace StockApps.Models
 
         public void SaveDB(string code)
         {
-            SqlConnection myConnection = new SqlConnection("user id=Testing;" +
-                                       "password=123456;" +
-                                       "server=TONY;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=Stock; " +
-                                       "connection timeout=10");
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
 
             try
             {

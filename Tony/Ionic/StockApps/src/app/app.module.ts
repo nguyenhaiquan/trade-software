@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 
 import { AdvicePage } from '../pages/advice/advice';
 import { AlarmPage } from '../pages/alarm/alarm';
+import { AlarmlistPage } from '../pages/alarmlist/alarmlist';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { OrderPage } from '../pages/order/order';
@@ -25,6 +26,7 @@ import { AuthService } from '../providers/auth-service';
     MyApp,
     AdvicePage,
     AlarmPage,
+    AlarmlistPage,
     HomePage,
     LoginPage,
     OrderPage,
@@ -43,6 +45,7 @@ import { AuthService } from '../providers/auth-service';
     MyApp,
     AdvicePage,
     AlarmPage,
+    AlarmlistPage,
     HomePage,
     LoginPage,
     OrderPage,

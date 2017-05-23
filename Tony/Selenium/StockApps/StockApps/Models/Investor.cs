@@ -8,12 +8,13 @@ namespace StockApps.Models
         {
             bool result = false;
 
-            SqlConnection myConnection = new SqlConnection("user id=Testing;" +
-                                       "password=123456;" +
-                                       "server=TONY;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=Stock; " +
-                                       "connection timeout=10");
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
 
             try
             {
@@ -22,9 +23,8 @@ namespace StockApps.Models
                 SqlCommand myCommand =
                     new SqlCommand("select * " +
                     "from dbo.investor i " +
-                    "where i.account = '" + account +
-                    "' and i.password = '" + password +
-                    "'", myConnection);
+                    "where i.account = '" + account + "' " +
+                    "and i.password = '" + password + "'", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 

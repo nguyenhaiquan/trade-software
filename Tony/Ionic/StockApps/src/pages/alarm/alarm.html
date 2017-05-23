@@ -13,23 +13,18 @@
     <ion-input type="text"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label fixed>Stock's name</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
     <ion-label>Type</ion-label>
     <ion-select [(ngModel)]="type">
-      <ion-option value="volume">Volume</ion-option>
       <ion-option value="price">Price</ion-option>
+      <ion-option value="volume">Volume</ion-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Condition</ion-label>
     <ion-select [(ngModel)]="condition">
-      <ion-option value="greater">></ion-option>
-      <ion-option value="equal">=</ion-option>
-      <ion-option value="less">
-        <</ion-option>
+      <ion-option value="greater">>=</ion-option>
+      <ion-option value="lower">
+        <=</ion-option>
     </ion-select>
   </ion-item>
   <ion-item>
@@ -37,16 +32,20 @@
     <ion-input type="number"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label fixed>Note</ion-label>
+    <ion-label fixed>Comment</ion-label>
     <ion-input type="text"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Expiry Date</ion-label>
+    <ion-label>Active</ion-label>
+    <ion-checkbox color="dark" checked="false"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Expiry</ion-label>
     <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="myDate"></ion-datetime>
   </ion-item>
   <ion-item>
-    <ion-label>Alarm</ion-label>
-    <ion-select [(ngModel)]="alarm">
+    <ion-label>Notification</ion-label>
+    <ion-select [(ngModel)]="notification">
       <ion-option value="email">Email</ion-option>
       <ion-option value="sms">SMS</ion-option>
     </ion-select>

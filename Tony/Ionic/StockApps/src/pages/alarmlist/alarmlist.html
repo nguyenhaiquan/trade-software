@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Alarm</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <p>Symbol</p>
+    </ion-col>
+    <ion-col>
+      <p>Type</p>
+    </ion-col>
+    <ion-col>
+      <p>Condition</p>
+    </ion-col>
+    <ion-col>
+      <p>Value</p>
+    </ion-col>
+    <ion-col>
+      <p>Status</p>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-row *ngFor="let a of alarms">
+      <ion-col>
+        <p>{{a.stockCode}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{a.type}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{a.condition}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{a.value}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{a.status}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
