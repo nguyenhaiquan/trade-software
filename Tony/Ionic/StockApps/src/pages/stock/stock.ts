@@ -14,7 +14,7 @@ export class StockPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.stockCode = navParams.get("stockCode");
-    this.http.get('http://localhost:63471/api/FinancialData?code=' + this.stockCode).map(res => res.json()).subscribe(data => {
+    this.http.get('http://localhost:63471/api/FinancialData?code=' + this.stockCode + '&time1=2015&time2=2016').map(res => res.json()).subscribe(data => {
       this.financialData = data;
     });
   }

@@ -28,7 +28,7 @@
   <ion-list>
     <ion-row *ngFor="let a of alarms">
       <ion-col>
-        <p>{{a.stockCode}}</p>
+        <button ion-button small outline color="dark" (click)="navigate(a.code)">{{a.code}}</button>
       </ion-col>
       <ion-col>
         <p>{{a.type}}</p>

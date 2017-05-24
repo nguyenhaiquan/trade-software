@@ -7,8 +7,8 @@ namespace StockApps.Models
     public class Alarm
     {
         public string code { get; set; }
-        public int type { get; set; }
-        public int condition { get; set; }
+        public string type { get; set; }
+        public string condition { get; set; }
         public int value { get; set; }
         public int status { get; set; }
         public List<Alarm> GetAll(string investor)
@@ -40,8 +40,8 @@ namespace StockApps.Models
                         new Alarm
                         {
                             code = myReader["stockCode"].ToString(),
-                            type = myReader.GetInt32(myReader.GetOrdinal("type")),
-                            condition = myReader.GetInt32(myReader.GetOrdinal("condition")),
+                            type = myReader["type"].ToString(),
+                            condition = myReader["condition"].ToString(),
                             value = myReader.GetInt32(myReader.GetOrdinal("value")),
                             status = myReader.GetInt32(myReader.GetOrdinal("status"))
                         }

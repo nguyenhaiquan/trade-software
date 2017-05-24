@@ -13,9 +13,7 @@ namespace StockApps.Models
         public string rubric { get; set; }
         public string value1 { get; set; }
         public string value2 { get; set; }
-        public string value3 { get; set; }
-        public string value4 { get; set; }
-        public List<FinancialData> GetAll(string code)
+        public List<FinancialData> GetAll(string code, int time1, int time2)
         {
             SqlConnection myConnection = new SqlConnection(
                 "user id=Testing;" +
@@ -35,6 +33,8 @@ namespace StockApps.Models
                     "select d.time, d.value, r.description " +
                     "from dbo.financialData d, dbo.financialRubric r " +
                     "where d.stock = '" + code + "' " +
+                    "and (d.time = '" + time1 + "' " +
+                    "or d.time = '" + time2 + "') " +
                     "and d.rubric = r.id " +
                     "and r.id_parent is null", myConnection);
 
@@ -53,25 +53,20 @@ namespace StockApps.Models
                     }
                     else
                     {
-                        // get data if i = 1, 2, 3
+                        // get data if i = 1
                         row[i+1] = myReader["value"].ToString();
 
-                        if (i == 3)
-                        {
-                            // add new financial data
-                            data.Add(
-                                new FinancialData
-                                {
-                                    rubric = row[0],
-                                    value1 = row[1],
-                                    value2 = row[2],
-                                    value3 = row[3],
-                                    value4 = row[4]
-                                });
+                        // add new financial data
+                        data.Add(
+                            new FinancialData
+                            {
+                                rubric = row[0],
+                                value1 = row[1],
+                                value2 = row[2]
+                            });
 
-                            // reset i
-                            i = -1;
-                        }
+                        // reset i
+                        i = -1;
                     }
                     i++;
                 }
