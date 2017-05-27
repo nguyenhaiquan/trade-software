@@ -13,9 +13,9 @@ namespace StockApps.Controllers
         }
 
         // http://localhost:63471/api/Portfolio?stock=HSG&investor=test&quantity=1&price=1
-        public void Post(string stock, string investor, int quantity, int price)
+        public bool Post(string stock, string investor, int quantity, int price)
         {
-            new Portfolio().InsertStock(stock, investor, quantity, price);
+            return new Portfolio().InsertStock(stock, investor, quantity, price);
         }
     }
 }

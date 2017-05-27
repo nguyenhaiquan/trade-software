@@ -33,7 +33,7 @@ export class LoginPage {
       if (allowed) {
         this.navCtrl.setRoot(TabsPage);
       } else {
-        this.showError("Access Denied");
+        this.showError("Access denied");
       }
     },
       error => {

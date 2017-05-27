@@ -77,8 +77,6 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
-                List<Portfolio> portfolios = new List<Portfolio>();
-
                 SqlCommand myCommand = new SqlCommand(
                     "execute dbo.addStockToPortfolio '" 
                     + stock + "', '"

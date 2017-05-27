@@ -33,10 +33,14 @@ export class OrderPage {
       '&investor=test' +
       '&quantity=' + this.volume +
       '&price=' + this.price, null).subscribe(result => {
-        this.navCtrl.setRoot(TabsPage);
+        if (result) {
+          this.showMessage("Information", "Order saved");
+        } else {
+          this.showMessage("Error", "Database connection fail");
+        }
       },
       error => {
-        this.showError(error);
+        this.showMessage("Error", error);
       });
   }
 
@@ -48,12 +52,12 @@ export class OrderPage {
     this.loading.present();
   }
 
-  showError(text) {
+  showMessage(title, content) {
     this.loading.dismiss();
 
     let alert = this.alertCtrl.create({
-      title: 'Fail',
-      subTitle: text,
+      title: title,
+      subTitle: content,
       buttons: ['OK']
     });
     alert.present(prompt);
