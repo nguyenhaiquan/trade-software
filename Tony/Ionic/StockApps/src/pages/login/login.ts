@@ -12,8 +12,8 @@ export class LoginPage {
 
   loading: Loading;
 
-  account: '';
-  password: '';
+  account: any;
+  password: any;
 
   constructor(
     public navCtrl: NavController,

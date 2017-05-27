@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+import { OrderPage } from '../order/order';
 import { StockPage } from '../stock/stock';
 
 @Component({
@@ -24,6 +25,10 @@ export class HomePage {
     this.navCtrl.push(StockPage, {
       stockCode: code
     });
+  }
+
+  public order() {
+    this.navCtrl.setRoot(OrderPage);
   }
 
 }

@@ -8,48 +8,53 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label fixed>Stock's code</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Type</ion-label>
-    <ion-select [(ngModel)]="type">
-      <ion-option value="price">Price</ion-option>
-      <ion-option value="volume">Volume</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label>Condition</ion-label>
-    <ion-select [(ngModel)]="condition">
-      <ion-option value="greater">>=</ion-option>
-      <ion-option value="lower">
-        <=</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Value</ion-label>
-    <ion-input type="number"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Comment</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Active</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
-  <ion-item>
-    <ion-label>Expiry</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-  <ion-item>
-    <ion-label>Notification</ion-label>
-    <ion-select [(ngModel)]="notification">
-      <ion-option value="email">Email</ion-option>
-      <ion-option value="sms">SMS</ion-option>
-    </ion-select>
-  </ion-item>
-  <button ion-button color="secondary" round>Submit</button>
-  <button ion-button color="danger" round>Cancel</button>
+  <form (ngSubmit)="create()">
+    <ion-item>
+      <ion-label fixed>Stock's code</ion-label>
+      <ion-input name="code" type="text" [(ngModel)]="code" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select name="type" [(ngModel)]="type">
+        <ion-option value="price" selected="true">Price</ion-option>
+        <ion-option value="volume">Volume</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Condition</ion-label>
+      <ion-select name="condition" [(ngModel)]="condition">
+        <ion-option value="greater">
+          >=
+        </ion-option>
+        <ion-option value="lower">
+          <=
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Value</ion-label>
+      <ion-input name="value" type="number" [(ngModel)]="value"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Comment</ion-label>
+      <ion-input name="comment" type="text" [(ngModel)]="comment"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Active</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expiry</ion-label>
+      <ion-datetime name="expiry" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="expiry"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notification</ion-label>
+      <ion-select name="notification" [(ngModel)]="notification">
+        <ion-option value="email">Email</ion-option>
+        <ion-option value="sms" selected="true">SMS</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button color="secondary" full>Create</button>
+  </form>
+  <button ion-button color="danger" full (click)="cancel()">Cancel</button>
 </ion-content>

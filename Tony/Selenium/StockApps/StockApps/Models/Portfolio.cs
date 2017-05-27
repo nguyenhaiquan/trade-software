@@ -11,6 +11,7 @@ namespace StockApps.Models
         public decimal cost { get; set; }
         public decimal matched { get; set; }
         public decimal PL { get; set; }
+
         public List<Portfolio> GetAll(string investor)
         {
             SqlConnection myConnection = new SqlConnection(
@@ -60,6 +61,44 @@ namespace StockApps.Models
                 Console.WriteLine(e.ToString());
 
                 return null;
+            }
+        }
+
+        public bool InsertStock (string stock, string investor, int quantity, int price)
+        {
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
+            try
+            {
+                myConnection.Open();
+
+                List<Portfolio> portfolios = new List<Portfolio>();
+
+                SqlCommand myCommand = new SqlCommand(
+                    "execute dbo.addStockToPortfolio '" 
+                    + stock + "', '"
+                    + investor + "', '"
+                    + DateTime.Now.ToString("yyyy-MM-dd hh:HH:ss") + "', " 
+                    + quantity + ", " 
+                    + price, 
+                    myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return false;
             }
         }
     }

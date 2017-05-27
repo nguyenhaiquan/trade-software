@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 import { StockPage } from '../stock/stock';
+import { AlarmPage } from '../alarm/alarm';
 
 @Component({
   selector: 'page-alarmlist',
@@ -23,6 +24,10 @@ export class AlarmlistPage {
     this.navCtrl.push(StockPage, {
       stockCode: code
     });
+  }
+
+  public create() {
+    this.navCtrl.push(AlarmPage);
   }
 
 }

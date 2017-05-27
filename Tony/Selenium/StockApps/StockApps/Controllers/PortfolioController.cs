@@ -6,11 +6,16 @@ namespace StockApps.Controllers
 {
     public class PortfolioController : ApiController
     {
-        // Call API
         // http://localhost:63471/api/Portfolio?investor=test
         public List<Portfolio> Get(string investor)
         {
             return new Portfolio().GetAll(investor);
+        }
+
+        // http://localhost:63471/api/Portfolio?stock=HSG&investor=test&quantity=1&price=1
+        public void Post(string stock, string investor, int quantity, int price)
+        {
+            new Portfolio().InsertStock(stock, investor, quantity, price);
         }
     }
 }

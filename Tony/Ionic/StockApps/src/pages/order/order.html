@@ -8,38 +8,44 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Order</ion-label>
-    <ion-select [(ngModel)]="order">
-      <ion-option value="buy">Buy</ion-option>
-      <ion-option value="sell">Sell</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Stock's code</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Volume</ion-label>
-    <ion-input type="number"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Type</ion-label>
-    <ion-select [(ngModel)]="type">
-      <ion-option value="limit">Limit</ion-option>
-      <ion-option value="ato">ATO</ion-option>
-      <ion-option value="atc">ATC</ion-option>
-      <ion-option value="mp">MP</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Limit Price</ion-label>
-    <ion-input type="number"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Expiry Date</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-  <button ion-button color="secondary" round>Submit</button>
-  <button ion-button color="danger" round>Cancel</button>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Order</ion-label>
+      <ion-select name="order" [(ngModel)]="order">
+        <ion-option value="buy">Buy</ion-option>
+        <ion-option value="sell">Sell</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Stock's code</ion-label>
+      <ion-input name="stock" type="text" [(ngModel)]="stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Volume</ion-label>
+      <ion-input name="volume" type="number" [(ngModel)]="volume" min="1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select name="type" [(ngModel)]="type">
+        <ion-option value="limit">Limit</ion-option>
+        <ion-option value="ato">ATO</ion-option>
+        <ion-option value="atc">ATC</ion-option>
+        <ion-option value="mp">MP</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Price</ion-label>
+      <ion-input name="price" type="number" [(ngModel)]="price" min="1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expiry</ion-label>
+      <ion-datetime name="expiry" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="expiry"></ion-datetime>
+    </ion-item>
+    <button ion-button color="primary" full>
+      Submit
+    </button>
+  </form>
+  <button ion-button color="danger" full (click)="cancel()">
+      Cancel
+  </button>
 </ion-content>
