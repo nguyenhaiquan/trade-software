@@ -34,8 +34,8 @@ export class AlarmPage {
   }
 
   public create() {
-    this.showLoading()
-    this.http.post('http://localhost:63471/api/Alarm?stock=' + this.stock +
+    this.showLoading();
+    this.http.post('http://localhost:63471/api/Alarm/Insert?stock=' + this.stock +
       '&investor=' + this.account +
       '&type=' + this.type +
       '&condition=' + this.condition +

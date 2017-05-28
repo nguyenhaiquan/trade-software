@@ -99,5 +99,41 @@ namespace StockApps.Models
                 return false;
             }
         }
+
+        public bool DeleteAlarm(string stock, string investor)
+        {
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand(
+                    "delete from dbo.alarm " +
+                    "where investor=" +
+                    "(select i.code " +
+                    "from investor i " +
+                    "where i.account = '" + investor + "')" +
+                    "and stockCode = '" + stock + "'",
+                    myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return false;
+            }
+        }
     }
 }

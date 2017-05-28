@@ -25,7 +25,7 @@
       <p>Value</p>
     </ion-col>
     <ion-col>
-      <p>Status</p>
+      <p> </p>
     </ion-col>
   </ion-row>
   <ion-list>
@@ -43,7 +43,9 @@
         <p>{{a.value}}</p>
       </ion-col>
       <ion-col>
-        <p>{{a.status}}</p>
+        <button ion-button small outline color="dark" (click)="delete(a.code)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-list>

@@ -6,14 +6,14 @@ namespace StockApps.Controllers
 {
     public class StockController : ApiController
     {
-        // Call API
+        // Call
         // http://localhost:63471/api/Stock
         public List<Stock> Get()
         {
             return new Stock().GetAll();
         }
 
-        // Call API
+        // Call
         // http://localhost:63471/api/Stock?code=HPG
         public Stock Get(string code)
         {

@@ -28,7 +28,7 @@ export class LoginPage {
   }
 
   public login() {
-    this.showLoading()
+    this.showLoading();
     this.auth.login(this.account, this.password).subscribe(allowed => {
       if (allowed) {
         this.navCtrl.setRoot(TabsPage);

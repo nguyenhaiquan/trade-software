@@ -33,8 +33,8 @@ export class WatchlistPage {
   }
 
   public add() {
-    this.showLoading()
-    this.http.post('http://localhost:63471/api/Watchlist?stock=' + this.stock +
+    this.showLoading();
+    this.http.post('http://localhost:63471/api/Watchlist/Insert?stockI=' + this.stock +
       '&investor=' + this.account, null).subscribe(result => {
         if (result) {
           this.navCtrl.setRoot(this.navCtrl.getActive().component);
@@ -72,8 +72,19 @@ export class WatchlistPage {
     });
   }
 
-  public delete(code) {
-    
+  public delete(stockCode) {
+    this.showLoading();
+    this.http.post('http://localhost:63471/api/Watchlist/Delete?stockD=' + stockCode +
+      '&investor=' + this.account, null).subscribe(result => {
+        if (result) {
+          this.navCtrl.setRoot(this.navCtrl.getActive().component);
+        } else {
+          this.showMessage("Error", "Database connection fail");
+        }
+      },
+      error => {
+        this.showMessage("Error", error);
+      });    
   }
 
 }

@@ -33,7 +33,7 @@ export class OrderPage {
   }
 
   public submit() {
-    this.showLoading()
+    this.showLoading();
     this.http.post('http://localhost:63471/api/Portfolio?stock=' + this.stock +
       '&investor=' + this.account +
       '&quantity=' + this.volume +

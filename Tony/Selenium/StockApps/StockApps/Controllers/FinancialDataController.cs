@@ -6,7 +6,7 @@ namespace StockApps.Controllers
 {
     public class FinancialDataController : ApiController
     {
-        // Call API
+        // Call
         // http://localhost:63471/api/FinancialData?code=VNM&time1=2015&time2=2016
         // or SAB
         public List<FinancialData> Get(string code, int time1, int time2)
@@ -14,7 +14,7 @@ namespace StockApps.Controllers
             return new FinancialData().GetAll(code, time1, time2);
         }
 
-        // Call API
+        // Call
         // http://localhost:63471/api/FinancialData?code=HPG
         // or HSG
         public void Post(string code)

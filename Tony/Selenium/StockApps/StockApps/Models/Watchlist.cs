@@ -97,5 +97,43 @@ namespace StockApps.Models
                 return false;
             }
         }
+
+        public bool DeleteStock(string stock, string investor)
+        {
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand(
+                    "delete from dbo.investorStock " +
+                    "where portfolio=" +
+                    "(select p.code " +
+                    "from investor i, portfolio p " +
+                    "where i.account = '" + investor + "' " +
+                    "and p.type = 2 " +
+                    "and p.investorCode = i.code)" +
+                    "and stockCode = '" + stock + "'", 
+                    myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return false;
+            }
+        }
     }
 }
