@@ -59,5 +59,45 @@ namespace StockApps.Models
                 return null;
             }
         }
+
+        public bool InsertAlarm(string stock, string investor, string type, string condition, int value, string comment, int status, string expiry, int notification)
+        {
+            SqlConnection myConnection = new SqlConnection(
+                "user id=Testing;" +
+                "password=123456;" +
+                "server=TONY;" +
+                "Trusted_Connection=yes;" +
+                "database=Stock;" +
+                "connection timeout=10");
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand(
+                    "execute dbo.addStockToAlarm '"
+                    + stock + "', '"
+                    + investor + "', '"
+                    + type + "', '"
+                    + condition + "', "
+                    + value + ", '"
+                    + comment + "', "
+                    + status + ", '"
+                    + expiry + "', "
+                    + notification,
+                    myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return false;
+            }
+        }
     }
 }

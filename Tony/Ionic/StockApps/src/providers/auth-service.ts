@@ -3,11 +3,23 @@ import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+export class User {
+    account: string;
+    constructor(account: string) {
+        this.account = account;
+    }
+}
+
 @Injectable()
 export class AuthService {
+    currentUser: User;
 
     constructor(public http: Http) {
 
+    }
+
+    public getAccount(): string {
+        return this.currentUser.account;
     }
 
     public login(account, password) {
@@ -21,6 +33,7 @@ export class AuthService {
                     + password).map(res => res.json()).subscribe(result => {
                         console.log(result);
                         if (result === true) {
+                            this.currentUser = new User(account);
                             observer.next(true);
                             observer.complete();
                         }
@@ -34,5 +47,13 @@ export class AuthService {
                     });
             });
         }
+    }
+
+    public logout() {
+        return Observable.create(observer => {
+            this.currentUser = null;
+            observer.next(true);
+            observer.complete();
+        });
     }
 }

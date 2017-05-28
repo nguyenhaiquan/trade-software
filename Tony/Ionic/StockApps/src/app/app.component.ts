@@ -4,8 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
-import { OrderPage } from '../pages/order/order';
-import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html',
@@ -15,7 +13,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // change the default home page
-  rootPage: any = TabsPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -24,8 +22,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'LogIn', component: LoginPage},
-      { title: 'Order', component: OrderPage }
+      { title: 'LogIn', component: LoginPage }
     ];
 
   }

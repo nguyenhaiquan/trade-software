@@ -11,47 +11,65 @@
   <form (ngSubmit)="create()">
     <ion-item>
       <ion-label fixed>Stock's code</ion-label>
-      <ion-input name="code" type="text" [(ngModel)]="code" required></ion-input>
+      <ion-input name="stock" type="text" [(ngModel)]="stock" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Type</ion-label>
+      <ion-label fixed>Type</ion-label>
       <ion-select name="type" [(ngModel)]="type">
-        <ion-option value="price" selected="true">Price</ion-option>
-        <ion-option value="volume">Volume</ion-option>
+        <ion-option value="Price" selected="true">
+          Price
+        </ion-option>
+        <ion-option value="Volume">
+          Volume
+        </ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Condition</ion-label>
+      <ion-label fixed>Condition</ion-label>
       <ion-select name="condition" [(ngModel)]="condition">
-        <ion-option value="greater">
-          >=
+        <ion-option value="Higher" selected="true">
+          Higher
         </ion-option>
-        <ion-option value="lower">
-          <=
+        <ion-option value="Lower">
+          Lower
         </ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label fixed>Value</ion-label>
-      <ion-input name="value" type="number" [(ngModel)]="value"></ion-input>
+      <ion-input name="value" type="number" [(ngModel)]="value" min="1"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Comment</ion-label>
       <ion-input name="comment" type="text" [(ngModel)]="comment"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Active</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      <ion-label>Status</ion-label>
+      <ion-select name="status" [(ngModel)]="status">
+        <ion-option value="1" selected="true">
+          Active
+        </ion-option>
+        <ion-option value="0">
+          Desactive
+        </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Expiry</ion-label>
-      <ion-datetime name="expiry" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017" max="2020" [(ngModel)]="expiry"></ion-datetime>
+      <ion-datetime name="expiry" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" min="2017-06-01" max="2020" [(ngModel)]="expiry"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Notification</ion-label>
       <ion-select name="notification" [(ngModel)]="notification">
-        <ion-option value="email">Email</ion-option>
-        <ion-option value="sms" selected="true">SMS</ion-option>
+        <ion-option value="1">
+          Email
+        </ion-option>
+        <ion-option value="2">
+          SMS
+        </ion-option>
+        <ion-option value="3" selected="true">
+          Both
+        </ion-option>
       </ion-select>
     </ion-item>
     <button ion-button color="secondary" full>Create</button>

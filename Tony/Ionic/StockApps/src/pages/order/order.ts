@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { Http } from '@angular/http';
 
-import { TabsPage } from '../tabs/tabs';
+import { AuthService } from '../../providers/auth-service';
+
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-order',
@@ -12,6 +14,7 @@ export class OrderPage {
 
   loading: Loading;
 
+  account: any;
   order: any;
   stock: any;
   volume: any;
@@ -23,14 +26,16 @@ export class OrderPage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    public http: Http) {
+    public http: Http, 
+    public auth: AuthService) {
+    this.account = this.auth.getAccount();
 
   }
 
   public submit() {
     this.showLoading()
     this.http.post('http://localhost:63471/api/Portfolio?stock=' + this.stock +
-      '&investor=test' +
+      '&investor=' + this.account +
       '&quantity=' + this.volume +
       '&price=' + this.price, null).subscribe(result => {
         if (result) {
@@ -64,7 +69,7 @@ export class OrderPage {
   }
 
   cancel() {
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

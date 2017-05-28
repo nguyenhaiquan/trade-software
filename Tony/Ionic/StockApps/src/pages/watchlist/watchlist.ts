@@ -3,6 +3,8 @@ import { NavController, AlertController, LoadingController, Loading } from 'ioni
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+import { AuthService } from '../../providers/auth-service';
+
 import { StockPage } from '../stock/stock';
 
 @Component({
@@ -14,6 +16,7 @@ export class WatchlistPage {
 
   loading: Loading;
 
+  account: any;
   stock: any;
   watchlists: any;
 
@@ -21,8 +24,10 @@ export class WatchlistPage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    public http: Http) {
-    this.http.get('http://localhost:63471/api/Watchlist?investor=test').map(res => res.json()).subscribe(data => {
+    public http: Http, 
+    public auth: AuthService) {
+    this.account = this.auth.getAccount();
+    this.http.get('http://localhost:63471/api/Watchlist?investor=' + this.account).map(res => res.json()).subscribe(data => {
       this.watchlists = data;
     });
   }
@@ -30,7 +35,7 @@ export class WatchlistPage {
   public add() {
     this.showLoading()
     this.http.post('http://localhost:63471/api/Watchlist?stock=' + this.stock +
-      '&investor=test', null).subscribe(result => {
+      '&investor=' + this.account, null).subscribe(result => {
         if (result) {
           this.navCtrl.setRoot(this.navCtrl.getActive().component);
         } else {
