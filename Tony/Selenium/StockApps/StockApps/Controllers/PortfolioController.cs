@@ -14,10 +14,19 @@ namespace StockApps.Controllers
         }
 
         // Call
-        // http://localhost:63471/api/Portfolio?stock=HSG&investor=test&quantity=1&price=1
-        public bool Post(string stock, string investor, int quantity, int price)
+        // http://localhost:63471/api/Portfolio/Buy?buyStock=HSG&investor=test&quantity=1&price=1
+        [HttpPost]
+        public bool Buy(string buyStock, string investor, int quantity, int price)
         {
-            return new Portfolio().InsertStock(stock, investor, quantity, price);
+            return new Portfolio().InsertStock(buyStock, investor, quantity, price);
+        }
+
+        // Call
+        // http://localhost:63471/api/Portfolio/Sell?sellStock=HSG&investor=test&quantity=1&price=1
+        [HttpPost]
+        public bool Sell(string sellStock, string investor, int quantity, int price)
+        {
+            return new Portfolio().DeleteStock(sellStock, investor, quantity, price);
         }
     }
 }

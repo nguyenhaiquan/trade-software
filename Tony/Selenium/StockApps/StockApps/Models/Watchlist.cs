@@ -9,7 +9,6 @@ namespace StockApps.Models
         public string code { get; set; }
         public decimal open { get; set; }
         public decimal matched { get; set; }
-        public decimal PL { get; set; }
         public decimal volume { get; set; }
 
         public List<Watchlist> GetAll(string investor)
@@ -28,13 +27,14 @@ namespace StockApps.Models
                 List<Watchlist> watchlists = new List<Watchlist>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select d.stockCode, d.closePrice, d.openPrice, d.volume " +
+                    "select d.stockCode, d.openPrice, d.closePrice, d.volume " +
                     "from dbo.investor i, dbo.portfolio p, dbo.investorStock s, dbo.priceData d " +
                     "where i.account = '" + investor + "' " +
                     "and p.type = '2' " +
                     "and i.code = p.investorCode " +
                     "and p.code = s.portfolio " +
-                    "and s.stockCode = d.stockCode", myConnection);
+                    "and s.stockCode = d.stockCode " +
+                    "and d.onDate = (select MAX(onDate) from dbo.priceData)", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
@@ -46,7 +46,6 @@ namespace StockApps.Models
                             code = myReader["stockCode"].ToString(),
                             open = myReader.GetDecimal(myReader.GetOrdinal("openPrice")),
                             matched = myReader.GetDecimal(myReader.GetOrdinal("closePrice")),
-                            PL = matched - open,
                             volume = myReader.GetDecimal(myReader.GetOrdinal("volume"))
                         }
                     );
@@ -81,7 +80,7 @@ namespace StockApps.Models
                     "execute dbo.addStockToWatchlist '"
                     + stock + "', '"
                     + investor + "', '"
-                    + DateTime.Now.ToString("yyyy-MM-dd hh:HH:ss") + "'",
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'",
                     myConnection);
 
                 myCommand.ExecuteNonQuery();

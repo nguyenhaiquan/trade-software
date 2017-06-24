@@ -8,22 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button color="primary" full (click)="order()">New order</button>
   <ion-row>
     <ion-col>
       <p>Symbol</p>
     </ion-col>
     <ion-col>
+      <p>Time</p>
+    </ion-col>
+    <ion-col>
       <p>Quantity</p>
     </ion-col>
     <ion-col>
-      <p>Avg. Cost</p>
-    </ion-col>
-    <ion-col>
-      <p>Matched</p>
-    </ion-col>
-    <ion-col>
-      <p>+ / -</p>
+      <p>Cost</p>
     </ion-col>
   </ion-row>
   <ion-list>
@@ -32,18 +28,14 @@
         <button ion-button small outline color="dark" (click)="navigate(p.code)">{{p.code}}</button>
       </ion-col>
       <ion-col>
+        <p>{{p.time}}</p>
+      </ion-col>
+      <ion-col>
         <p>{{p.quantity}}</p>
       </ion-col>
       <ion-col>
-        <p>{{(p.cost).toFixed(0)}}</p>
-      </ion-col>
-      <ion-col>
-        <p>{{p.matched}}</p>
-      </ion-col>
-      <ion-col>
-        <p>{{((p.matched - p.cost) * p.quantity).toFixed(0)}}</p>
+        <p>{{p.cost}}</p>
       </ion-col>
     </ion-row>
   </ion-list>
-  <button ion-button color="secondary" full (click)="detail()">See details</button>
 </ion-content>

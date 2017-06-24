@@ -5,16 +5,14 @@ import 'rxjs/add/operator/map';
 
 import { AuthService } from '../../providers/auth-service';
 
-import { OrderPage } from '../order/order';
-import { PortfolioPage } from '../portfolio/portfolio';
 import { StockPage } from '../stock/stock';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-portfolio',
+  templateUrl: 'portfolio.html'
 })
 
-export class HomePage {
+export class PortfolioPage {
 
   account: any;
   portfolios: any;
@@ -24,7 +22,7 @@ export class HomePage {
     public http: Http, 
     public auth: AuthService) {
     this.account = this.auth.getAccount();
-    this.http.get('http://localhost:63471/api/Investment?investor=' + this.account).map(res => res.json()).subscribe(data => {
+    this.http.get('http://localhost:63471/api/Portfolio?investor=' + this.account).map(res => res.json()).subscribe(data => {
       this.portfolios = data;
     });
   }
@@ -33,14 +31,6 @@ export class HomePage {
     this.navCtrl.push(StockPage, {
       stockCode: code
     });
-  }
-
-  public order() {
-    this.navCtrl.setRoot(OrderPage);
-  }
-
-  public detail() {
-    this.navCtrl.push(PortfolioPage);
   }
 
 }

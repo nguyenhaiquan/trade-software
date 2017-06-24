@@ -26,27 +26,45 @@ export class OrderPage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    public http: Http, 
+    public http: Http,
     public auth: AuthService) {
     this.account = this.auth.getAccount();
 
   }
 
   public submit() {
-    this.showLoading();
-    this.http.post('http://localhost:63471/api/Portfolio?stock=' + this.stock +
-      '&investor=' + this.account +
-      '&quantity=' + this.volume +
-      '&price=' + this.price, null).subscribe(result => {
-        if (result) {
-          this.showMessage("Information", "Order saved");
-        } else {
-          this.showMessage("Error", "Database connection fail");
-        }
-      },
-      error => {
-        this.showMessage("Error", error);
-      });
+    if (this.order == 'buy') {
+      this.showLoading();
+      this.http.post('http://localhost:63471/api/Portfolio/Buy?buyStock=' + this.stock +
+        '&investor=' + this.account +
+        '&quantity=' + this.volume +
+        '&price=' + this.price, null).subscribe(result => {
+          if (result) {
+            this.showMessage("Information", "Order saved");
+          } else {
+            this.showMessage("Error", "Database connection fail");
+          }
+        },
+        error => {
+          this.showMessage("Error", error);
+        });
+    } else { // sell
+      this.showLoading();
+      this.http.post('http://localhost:63471/api/Portfolio/Sell?sellStock=' + this.stock +
+        '&investor=' + this.account +
+        '&quantity=' + this.volume +
+        '&price=' + this.price, null).subscribe(result => {
+          if (result) {
+            this.showMessage("Information", "Order saved");
+          } else {
+            this.showMessage("Error", "Database connection fail");
+          }
+        },
+        error => {
+          this.showMessage("Error", error);
+        });
+    }
+
   }
 
   showLoading() {
@@ -57,11 +75,11 @@ export class OrderPage {
     this.loading.present();
   }
 
-  showMessage(title, content) {
+  showMessage(header, content) {
     this.loading.dismiss();
 
     let alert = this.alertCtrl.create({
-      title: title,
+      title: header,
       subTitle: content,
       buttons: ['OK']
     });

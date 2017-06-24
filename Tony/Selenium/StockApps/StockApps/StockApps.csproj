@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AlarmController.cs" />
     <Compile Include="Controllers\FinancialDataController.cs" />
+    <Compile Include="Controllers\InvestmentController.cs" />
     <Compile Include="Controllers\InvestorController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\StockController.cs" />
@@ -195,6 +196,7 @@
     </Compile>
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\FinancialData.cs" />
+    <Compile Include="Models\Investment.cs" />
     <Compile Include="Models\Investor.cs" />
     <Compile Include="Models\Portfolio.cs" />
     <Compile Include="Models\Stock.cs" />
