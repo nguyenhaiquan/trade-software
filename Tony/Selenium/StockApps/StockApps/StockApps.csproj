@@ -189,6 +189,7 @@
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TradeHistoryController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WatchlistController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,7 @@
     <Compile Include="Models\Investor.cs" />
     <Compile Include="Models\Portfolio.cs" />
     <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\TradeHistory.cs" />
     <Compile Include="Models\Watchlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

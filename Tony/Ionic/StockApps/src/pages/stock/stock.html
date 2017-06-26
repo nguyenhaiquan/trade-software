@@ -8,30 +8,30 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-scroll scrollX="true" style="height:770px;">
-    <ion-row>
+  <h1>Bảng cân đối kế toán</h1>
+  <ion-row>
+    <ion-col>
+      <p>Danh mục</p>
+    </ion-col>
+    <ion-col>
+      <p>2015</p>
+    </ion-col>
+    <ion-col>
+      <p>2016</p>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-row *ngFor="let d of financialData">
       <ion-col>
-        <p>Danh mục</p>
+        <p>{{d.rubric}}</p>
       </ion-col>
       <ion-col>
-        <p>2015</p>
+        <p>{{d.value1}}</p>
       </ion-col>
       <ion-col>
-        <p>2016</p>
+        <p>{{d.value2}}</p>
       </ion-col>
     </ion-row>
-    <ion-list>
-      <ion-row *ngFor="let d of financialData">
-        <ion-col>
-          <p>{{d.rubric}}</p>
-        </ion-col>
-        <ion-col>
-          <p>{{d.value1}}</p>
-        </ion-col>
-        <ion-col>
-          <p>{{d.value2}}</p>
-        </ion-col>
-      </ion-row>
-    </ion-list>
-  </ion-scroll>
+  </ion-list>
+  <button ion-button color="primary" full (click)="chart()">See chart</button>
 </ion-content>

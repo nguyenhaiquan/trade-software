@@ -43,7 +43,7 @@ namespace StockApps.Models
                         new Portfolio
                         {
                             code = myReader["stockCode"].ToString(),
-                            time = myReader["buyDate"].ToString(),
+                            time = myReader["buyDate"].ToString().Substring(0, 9),
                             quantity = myReader["qty"].ToString(),
                             cost = myReader.GetDecimal(myReader.GetOrdinal("buyAmt"))
                         }
