@@ -34,3 +34,4 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\To
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Trade.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\vi-VN\Languages.resources.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\QuantumTest.dll.config
+C:\Users\Ang Tony Vincent\Documents\trade-software\2015\QuantumTest\obj\Debug\QuantumTest.csprojResolveAssemblyReference.cache

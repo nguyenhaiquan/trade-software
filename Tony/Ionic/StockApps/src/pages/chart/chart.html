@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar>
     <ion-title>
       {{stockCode}}
     </ion-title>
@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-item>
+    <ion-label>Last {{days}} transactions</ion-label>
+    <ion-range min={{range.min}} max={{range.max}} step={{range.step}} snaps="true" color="dark" [(ngModel)]="days" (ionChange)="drawChart()"></ion-range>
+  </ion-item>
 
   <ion-card>
     <ion-card-header>

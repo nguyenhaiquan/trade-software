@@ -10,7 +10,7 @@ namespace StockApps.Models
         public decimal price { get; set; }
         public decimal volume { get; set; }
 
-        public List<TradeHistory> GetAll(string stock)
+        public List<TradeHistory> GetAll(string stock, int days)
         {
             SqlConnection myConnection = new SqlConnection(
                 "user id=Testing;" +
@@ -26,7 +26,7 @@ namespace StockApps.Models
                 List<TradeHistory> data = new List<TradeHistory>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select d.onDate, d.closePrice, d.volume " +
+                    "select top(" + days + ") d.onDate, d.closePrice, d.volume " +
                     "from dbo.priceData d " +
                     "where d.stockCode = '" + stock + "' " +
                     "order by d.onDate ASC", myConnection);

@@ -14,19 +14,23 @@ export class ChartPage {
     @ViewChild('lineCanvas') lineCanvas;
 
     stockCode: any;
+    days: any;
+
     dates: any;
     prices: any;
     volumes: any;
 
     barChart: any;
     lineChart: any;
+    range = {'max': 100, 'min': 10, 'step': 10}
 
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
         public http: Http) {
         this.stockCode = navParams.get("stockCode");
-        this.http.get('http://localhost:63471/api/TradeHistory?stock=' + this.stockCode).map(res => res.json()).subscribe(data => {
+        this.days = this.range.min;
+        this.http.get('http://localhost:63471/api/TradeHistory?stock=' + this.stockCode + '&days=' + this.range.max).map(res => res.json()).subscribe(data => {
             this.dates = data.map(x => x.date);
             this.prices = data.map(x => x.price);
             this.volumes = data.map(x => x.volume);
@@ -34,13 +38,17 @@ export class ChartPage {
     }
 
     ionViewDidEnter() {
+        this.drawChart();
+    }
+
+    drawChart() {
         this.barChart = new Chart(this.barCanvas.nativeElement, {
             type: 'bar',
             data: {
-                labels: this.dates,
+                labels: this.dates.slice(0, this.days),
                 datasets: [{
                     label: 'Volume',
-                    data: this.volumes,
+                    data: this.volumes.slice(0, this.days),
                     backgroundColor: "rgba(0, 0, 0, 1)",
                     borderColor: "rgba(0, 0, 0, 1)",
                     borderWidth: 1
@@ -60,7 +68,7 @@ export class ChartPage {
         this.lineChart = new Chart(this.lineCanvas.nativeElement, {
             type: 'line',
             data: {
-                labels: this.dates,
+                labels: this.dates.slice(0, this.days),
                 datasets: [
                     {
                         label: "Price",
@@ -81,7 +89,7 @@ export class ChartPage {
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
                         pointHitRadius: 10,
-                        data: this.prices,
+                        data: this.prices.slice(0, this.days),
                         spanGaps: false,
                     }
                 ]
