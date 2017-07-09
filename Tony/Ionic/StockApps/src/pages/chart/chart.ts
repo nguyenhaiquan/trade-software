@@ -4,6 +4,8 @@ import { Chart } from 'chart.js';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+import { Api } from '../../providers/auth-service';
+
 @Component({
     selector: 'page-chart',
     templateUrl: 'chart.html'
@@ -30,7 +32,7 @@ export class ChartPage {
         public http: Http) {
         this.stockCode = navParams.get("stockCode");
         this.days = this.range.min;
-        this.http.get('http://localhost:63471/api/TradeHistory?stock=' + this.stockCode + '&days=' + this.range.max).map(res => res.json()).subscribe(data => {
+        this.http.get(new Api().api + 'TradeHistory?stock=' + this.stockCode + '&days=' + this.range.max).map(res => res.json()).subscribe(data => {
             this.dates = data.map(x => x.date);
             this.prices = data.map(x => x.price);
             this.volumes = data.map(x => x.volume);

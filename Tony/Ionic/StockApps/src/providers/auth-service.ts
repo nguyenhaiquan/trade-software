@@ -11,10 +11,19 @@ export class User {
 }
 
 @Injectable()
+export class Api {
+    api = "http://localhost:63471/api/";
+    constructor() {
+
+    }
+}
+
+@Injectable()
 export class AuthService {
     currentUser: User;
 
-    constructor(public http: Http) {
+    constructor(
+        public http: Http) {    
 
     }
 
@@ -28,7 +37,7 @@ export class AuthService {
         } else {
             return Observable.create(observer => {
                 this.http.get(
-                    'http://localhost:63471/api/Investor/LogIn?account='
+                    new Api().api + 'Investor/LogIn?account='
                     + account + '&password='
                     + password).map(res => res.json()).subscribe(result => {
                         console.log(result);

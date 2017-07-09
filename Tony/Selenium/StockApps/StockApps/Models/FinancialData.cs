@@ -5,6 +5,7 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
+using System.Web.Configuration;
 
 namespace StockApps.Models
 {
@@ -16,12 +17,7 @@ namespace StockApps.Models
         public List<FinancialData> GetAll(string code, int time1, int time2)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                            WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
             try
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Web.Configuration;
 
 namespace StockApps.Models
 {
@@ -13,12 +14,7 @@ namespace StockApps.Models
         public List<Stock> GetAll()
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
             try
             {

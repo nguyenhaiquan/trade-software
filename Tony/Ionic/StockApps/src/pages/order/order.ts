@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { Http } from '@angular/http';
 
-import { AuthService } from '../../providers/auth-service';
+import { Api, AuthService } from '../../providers/auth-service';
 
 import { HomePage } from '../home/home';
 
@@ -35,7 +35,7 @@ export class OrderPage {
   public submit() {
     if (this.order == 'buy') {
       this.showLoading();
-      this.http.post('http://localhost:63471/api/Portfolio/Buy?buyStock=' + this.stock +
+      this.http.post(new Api().api + 'Portfolio/Buy?buyStock=' + this.stock +
         '&investor=' + this.account +
         '&quantity=' + this.volume +
         '&price=' + this.price, null).subscribe(result => {
@@ -50,7 +50,7 @@ export class OrderPage {
         });
     } else { // sell
       this.showLoading();
-      this.http.post('http://localhost:63471/api/Portfolio/Sell?sellStock=' + this.stock +
+      this.http.post(new Api().api + 'Portfolio/Sell?sellStock=' + this.stock +
         '&investor=' + this.account +
         '&quantity=' + this.volume +
         '&price=' + this.price, null).subscribe(result => {

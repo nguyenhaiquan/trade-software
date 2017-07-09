@@ -3,7 +3,7 @@ import { NavController, AlertController, LoadingController, Loading } from 'ioni
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { AuthService } from '../../providers/auth-service';
+import { Api, AuthService } from '../../providers/auth-service';
 
 import { StockPage } from '../stock/stock';
 import { AlarmPage } from '../alarm/alarm';
@@ -26,7 +26,7 @@ export class AlarmlistPage {
     public http: Http, 
     public auth: AuthService) {
     this.account = this.auth.getAccount();
-    this.http.get('http://localhost:63471/api/Alarm?investor=' + this.account).map(res => res.json()).subscribe(data => {
+    this.http.get(new Api().api + 'Alarm?investor=' + this.account).map(res => res.json()).subscribe(data => {
       this.alarms = data;
     });
   }
@@ -43,7 +43,7 @@ export class AlarmlistPage {
 
   public delete(stockCode) {
     this.showLoading();
-    this.http.post('http://localhost:63471/api/Alarm/Delete?stock=' + stockCode +
+    this.http.post(new Api().api + 'Alarm/Delete?stock=' + stockCode +
       '&investor=' + this.account, null).subscribe(result => {
         if (result) {
           this.navCtrl.setRoot(this.navCtrl.getActive().component);

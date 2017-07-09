@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { Http } from '@angular/http';
 
-import { AuthService } from '../../providers/auth-service';
+import { Api, AuthService } from '../../providers/auth-service';
 
 import { AlarmlistPage } from '../alarmlist/alarmlist'
 
@@ -35,7 +35,7 @@ export class AlarmPage {
 
   public create() {
     this.showLoading();
-    this.http.post('http://localhost:63471/api/Alarm/Insert?stock=' + this.stock +
+    this.http.post(new Api().api + 'Alarm/Insert?stock=' + this.stock +
       '&investor=' + this.account +
       '&type=' + this.type +
       '&condition=' + this.condition +
