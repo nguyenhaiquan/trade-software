@@ -59,12 +59,7 @@ namespace StockApps.Models
         public bool InsertAlarm(string stock, string investor, string type, string condition, int value, string comment, int status, string expiry, int notification)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();
@@ -99,12 +94,7 @@ namespace StockApps.Models
         public bool DeleteAlarm(string stock, string investor)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();

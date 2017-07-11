@@ -62,12 +62,7 @@ namespace StockApps.Models
         public bool InsertStock(string stock, string investor)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();
@@ -96,12 +91,7 @@ namespace StockApps.Models
         public bool DeleteStock(string stock, string investor)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();

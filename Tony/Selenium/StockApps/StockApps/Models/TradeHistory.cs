@@ -22,7 +22,7 @@ namespace StockApps.Models
                 List<TradeHistory> data = new List<TradeHistory>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select top(" + days + ") d.onDate, d.closePrice, d.volume " +
+                    "select top(" + days + ") convert(varchar(10), d.onDate, 103) as onDate, d.closePrice, d.volume " +
                     "from dbo.priceData d " +
                     "where d.stockCode = '" + stock + "' " +
                     "order by d.onDate ASC", myConnection);
@@ -34,7 +34,7 @@ namespace StockApps.Models
                     data.Add(
                         new TradeHistory
                         {
-                            date = myReader["onDate"].ToString().Substring(0, 9),
+                            date = myReader["onDate"].ToString(),
                             price = myReader.GetDecimal(myReader.GetOrdinal("closePrice")),
                             volume = myReader.GetDecimal(myReader.GetOrdinal("volume"))
                         }

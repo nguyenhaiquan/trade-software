@@ -12,7 +12,8 @@ export class User {
 
 @Injectable()
 export class Api {
-    api = "http://localhost:63471/api/";
+    //api = "http://localhost:63471/api/";
+    api = "http://qstockmobile.azurewebsites.net/api/";
     constructor() {
 
     }

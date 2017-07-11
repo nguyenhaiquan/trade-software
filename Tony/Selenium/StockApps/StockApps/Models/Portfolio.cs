@@ -23,7 +23,7 @@ namespace StockApps.Models
                 List<Portfolio> portfolios = new List<Portfolio>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select s.stockCode, s.buyDate, s.qty, s.buyAmt " +
+                    "select s.stockCode, convert(varchar(10), s.buyDate, 103) as buyDate, s.qty, s.buyAmt " +
                     "from dbo.investor i, dbo.portfolio p, dbo.investorStock s " +
                     "where i.account = '" + investor + "' " +
                     "and p.type = '1' " +
@@ -39,7 +39,7 @@ namespace StockApps.Models
                         new Portfolio
                         {
                             code = myReader["stockCode"].ToString(),
-                            time = myReader["buyDate"].ToString().Substring(0, 9),
+                            time = myReader["buyDate"].ToString(),
                             quantity = myReader["qty"].ToString(),
                             cost = myReader.GetDecimal(myReader.GetOrdinal("buyAmt"))
                         }
@@ -61,12 +61,7 @@ namespace StockApps.Models
         public bool InsertStock (string stock, string investor, int quantity, int price)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();
@@ -97,12 +92,7 @@ namespace StockApps.Models
         public bool DeleteStock(string stock, string investor, int quantity, int price)
         {
             SqlConnection myConnection = new SqlConnection(
-                "user id=Testing;" +
-                "password=123456;" +
-                "server=TONY;" +
-                "Trusted_Connection=yes;" +
-                "database=Stock;" +
-                "connection timeout=10");
+                                        WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             try
             {
                 myConnection.Open();
