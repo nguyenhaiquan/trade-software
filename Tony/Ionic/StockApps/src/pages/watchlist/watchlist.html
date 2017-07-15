@@ -37,13 +37,13 @@
   <ion-list>
     <ion-row *ngFor="let w of watchlists">
       <ion-col>
-        <button ion-button small outline color="dark" (click)="navigate(w.code)">{{w.code}}</button>
+        <button [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}" ion-button small outline color="dark" (click)="navigate(w.code)">{{w.code}}</button>
       </ion-col>
       <ion-col>
-        <p>{{w.matched}}</p>
+        <p [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}">{{w.matched}}</p>
       </ion-col>
       <ion-col>
-        <p>{{w.matched - w.open}}</p>
+        <p [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}">{{w.matched - w.open}}</p>
       </ion-col>
       <ion-col>
         <p>{{w.volume}}</p>

@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { Api, AuthService } from '../../providers/auth-service';
 
-import { AlarmlistPage } from '../alarmlist/alarmlist'
+import { AlarmlistPage } from '../alarmlist/alarmlist';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'page-alarm',
-  templateUrl: 'alarm.html'
+  templateUrl: 'alarm.html',
+  providers: [DatePipe]
 })
-export class AlarmPage {
+export class AlarmPage implements OnInit {
 
   loading: Loading;
 
@@ -23,14 +25,26 @@ export class AlarmPage {
   status: any;
   expiry: any;
   notification: any;
+  date: any;
+  minDate: any;
 
   constructor(public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
     public http: Http, 
-    public auth: AuthService) {
+    public auth: AuthService,
+    public datepipe: DatePipe) {
     this.account = this.auth.getAccount();
+  }
 
+  ngOnInit() {
+    this.date = new Date();
+    this.minDate = this.datepipe.transform(this.date, 'yyyy-MM-dd');
+    this.expiry = this.minDate;
+  }
+
+  public today() {
+    return new Date().toISOString().substring(0,10);
   }
 
   public create() {

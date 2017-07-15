@@ -56,7 +56,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Expiry</ion-label>
-      <ion-datetime name="expiry" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2017-07-07" max="2020" [(ngModel)]="expiry"></ion-datetime>
+      <ion-datetime name="expiry" displayFormat="DD/MM/YYYY" [min]="today()" pickerFormat="DD/MM/YYYY" max="2020-12-31" [(ngModel)]="minDate"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Notification</ion-label>

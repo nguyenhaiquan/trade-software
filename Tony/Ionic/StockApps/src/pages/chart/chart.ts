@@ -24,7 +24,7 @@ export class ChartPage {
 
     barChart: any;
     lineChart: any;
-    range = {'max': 100, 'min': 10, 'step': 10}
+    range = {'max': 100, 'min': 10, 'step': 10};
 
     constructor(
         public navCtrl: NavController,
@@ -47,10 +47,10 @@ export class ChartPage {
         this.barChart = new Chart(this.barCanvas.nativeElement, {
             type: 'bar',
             data: {
-                labels: this.dates.slice(0, this.days),
+                labels: this.dates.slice(-this.days),
                 datasets: [{
                     label: 'Volume',
-                    data: this.volumes.slice(0, this.days),
+                    data: this.volumes.slice(-this.days),
                     backgroundColor: "rgba(0, 0, 0, 1)",
                     borderColor: "rgba(0, 0, 0, 1)",
                     borderWidth: 1
@@ -70,7 +70,7 @@ export class ChartPage {
         this.lineChart = new Chart(this.lineCanvas.nativeElement, {
             type: 'line',
             data: {
-                labels: this.dates.slice(0, this.days),
+                labels: this.dates.slice(-this.days),
                 datasets: [
                     {
                         label: "Price",
@@ -91,7 +91,7 @@ export class ChartPage {
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
                         pointHitRadius: 10,
-                        data: this.prices.slice(0, this.days),
+                        data: this.prices.slice(-this.days),
                         spanGaps: false,
                     }
                 ]

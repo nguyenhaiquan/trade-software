@@ -41,7 +41,7 @@
         <p>{{p.matched}}</p>
       </ion-col>
       <ion-col>
-        <p>{{((p.matched - p.cost) * p.quantity).toFixed(0)}}</p>
+        <p [ngClass]="{'green' : (p.matched - p.cost > 0), 'red' : (p.matched - p.cost < 0),'orange' : (p.matched - p.cost == 0)}">{{((p.matched - p.cost) * p.quantity).toFixed(0)}}</p>
       </ion-col>
     </ion-row>
   </ion-list>

@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { Api, AuthService } from '../../providers/auth-service';
 
 import { HomePage } from '../home/home';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'page-order',
-  templateUrl: 'order.html'
+  templateUrl: 'order.html',
+  providers: [DatePipe]
 })
-export class OrderPage {
+export class OrderPage implements OnInit {
 
   loading: Loading;
 
@@ -21,15 +23,27 @@ export class OrderPage {
   type: any;
   price: any;
   expiry: any;
-
+  date: any;
+  minDate: any;
+    
   constructor(
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
     public http: Http,
-    public auth: AuthService) {
+    public auth: AuthService,
+    public datepipe: DatePipe) {
     this.account = this.auth.getAccount();
+  }
 
+  ngOnInit() {
+    this.date = new Date();
+    this.minDate = this.datepipe.transform(this.date, 'yyyy-MM-dd');
+    this.expiry = this.minDate;
+  }
+
+  public today() {
+    return new Date().toISOString().substring(0,10);
   }
 
   public submit() {

@@ -20,6 +20,8 @@ import { RegisterPage } from '../pages/register/register';
 import { StockPage } from '../pages/stock/stock'
 import { TabsPage } from '../pages/tabs/tabs';
 import { WatchlistPage } from '../pages/watchlist/watchlist';
+import { DatePickerModule } from 'datepicker-ionic2';
+import { DatePipe } from '@angular/common';
 
 import { AuthService } from '../providers/auth-service';
 
@@ -42,6 +44,7 @@ import { AuthService } from '../providers/auth-service';
   imports: [
     BrowserModule,
     HttpModule,
+    DatePickerModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -64,7 +67,8 @@ import { AuthService } from '../providers/auth-service';
     StatusBar,
     SplashScreen,
     AuthService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatePipe
   ]
 })
 export class AppModule {}

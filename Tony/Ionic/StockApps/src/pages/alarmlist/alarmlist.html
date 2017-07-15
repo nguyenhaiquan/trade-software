@@ -37,7 +37,7 @@
         <p>{{a.type}}</p>
       </ion-col>
       <ion-col>
-        <p>{{a.condition}}</p>
+        <p [ngClass]="(a.condition == 'Higher') ? 'green' : 'red'">{{a.condition}}</p>
       </ion-col>
       <ion-col>
         <p>{{a.value}}</p>

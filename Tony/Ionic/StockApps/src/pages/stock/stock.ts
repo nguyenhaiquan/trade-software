@@ -13,8 +13,6 @@ import { ChartPage } from '../chart/chart';
 })
 export class StockPage {
 
-  beginTime: any;
-  endTime: any;
   stockCode: any;
   financialData: any;
 
@@ -23,11 +21,8 @@ export class StockPage {
     public navParams: NavParams, 
     public http: Http,
     public auth: AuthService) {
-    this.beginTime = 2015;
-    this.endTime = 2016;
     this.stockCode = navParams.get("stockCode");
-    this.http.get(new Api().api + 'FinancialData?code=' + this.stockCode 
-    + '&time1=' + this.beginTime + '&time2=' + this.endTime).map(res => res.json()).subscribe(data => {
+    this.http.get(new Api().api + 'FinancialData?code=' + this.stockCode + '&time1=2015&time2=2016').map(res => res.json()).subscribe(data => {
       this.financialData = data;
     });
   }

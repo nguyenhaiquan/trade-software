@@ -31,7 +31,7 @@
         <p>{{p.time}}</p>
       </ion-col>
       <ion-col>
-        <p>{{p.quantity}}</p>
+        <p [ngClass]="(p.quantity >= 0) ? 'green' : 'red'">{{p.quantity}}</p>
       </ion-col>
       <ion-col>
         <p>{{p.cost}}</p>
