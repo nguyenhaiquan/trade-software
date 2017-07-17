@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Welcome, {{username}}</h1>
+  <p>{{information}}</p>
+  <button ion-button color="danger" full (click)="logout()">
+    Logout
+  </button>
+</ion-content>

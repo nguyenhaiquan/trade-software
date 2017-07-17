@@ -17,12 +17,12 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Stock's code</ion-label>
-      <ion-input name="stock" type="text" [(ngModel)]="stock"></ion-input>
+      <ion-label fixed>Symbol</ion-label>
+      <ion-input text-right name="stock" type="text" [(ngModel)]="stock"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Volume</ion-label>
-      <ion-input name="volume" type="number" [(ngModel)]="volume" min="1"></ion-input>
+      <ion-input text-right name="volume" type="number" [(ngModel)]="volume" min="1"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Type</ion-label>
@@ -35,7 +35,7 @@
     </ion-item>
     <ion-item>
       <ion-label fixed>Price</ion-label>
-      <ion-input name="price" type="number" [(ngModel)]="price" min="1"></ion-input>
+      <ion-input text-right name="price" type="number" [(ngModel)]="price" min="1"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Expiry</ion-label>

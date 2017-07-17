@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Log In</ion-title>
+    <ion-title>Welcome</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,8 +18,8 @@
       <ion-input name="password" type="password" [(ngModel)]="password" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Active Simulator Mode</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      <ion-label>Simulation mode</ion-label>
+      <ion-checkbox color="dark" checked="true" required></ion-checkbox>
     </ion-item>
     <button ion-button color="primary" full>
       Login

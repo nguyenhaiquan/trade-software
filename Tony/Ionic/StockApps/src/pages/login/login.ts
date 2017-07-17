@@ -35,7 +35,7 @@ export class LoginPage {
       if (allowed) {
         this.navCtrl.setRoot(TabsPage);
       } else {
-        this.showError("Access denied");
+        this.showError("Your username or password is incorrect");
       }
     },
       error => {
@@ -55,7 +55,7 @@ export class LoginPage {
     this.loading.dismiss();
 
     let alert = this.alertCtrl.create({
-      title: 'Fail',
+      title: 'Login fail',
       subTitle: text,
       buttons: ['OK']
     });

@@ -10,11 +10,11 @@
 <ion-content padding>
   <form (ngSubmit)="create()">
     <ion-item>
-      <ion-label fixed>Stock's code</ion-label>
-      <ion-input name="stock" type="text" [(ngModel)]="stock" required></ion-input>
+      <ion-label fixed>Symbol</ion-label>
+      <ion-input text-right name="stock" type="text" [(ngModel)]="stock" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Type</ion-label>
+      <ion-label>Type</ion-label>
       <ion-select name="type" [(ngModel)]="type">
         <ion-option value="Price" selected="true">
           Price
@@ -25,7 +25,7 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Condition</ion-label>
+      <ion-label>Condition</ion-label>
       <ion-select name="condition" [(ngModel)]="condition">
         <ion-option value="Higher" selected="true">
           Higher
@@ -37,11 +37,11 @@
     </ion-item>
     <ion-item>
       <ion-label fixed>Value</ion-label>
-      <ion-input name="value" type="number" [(ngModel)]="value" min="1"></ion-input>
+      <ion-input text-right name="value" type="number" [(ngModel)]="value" min="1"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Comment</ion-label>
-      <ion-input name="comment" type="text" [(ngModel)]="comment"></ion-input>
+      <ion-input text-right name="comment" type="text" [(ngModel)]="comment"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Status</ion-label>

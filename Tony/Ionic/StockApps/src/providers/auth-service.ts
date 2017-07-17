@@ -5,8 +5,15 @@ import 'rxjs/add/operator/map';
 
 export class User {
     account: string;
-    constructor(account: string) {
+    password: string;
+    name: string;
+    code: string;
+
+    constructor(account: string, password: string, name: string, code: string) {
         this.account = account;
+        this.password = password;
+        this.name = name;
+        this.code = code;
     }
 }
 
@@ -32,6 +39,14 @@ export class AuthService {
         return this.currentUser.account;
     }
 
+    public getName(): string {
+        return this.currentUser.name;
+    }
+
+    public getCode(): string {
+        return this.currentUser.code;
+    }
+
     public login(account, password) {
         if (account === null || password === null) {
             return Observable.throw("Please insert credentials");
@@ -41,14 +56,13 @@ export class AuthService {
                     new Api().api + 'Investor/LogIn?account='
                     + account + '&password='
                     + password).map(res => res.json()).subscribe(result => {
-                        console.log(result);
-                        if (result === true) {
-                            this.currentUser = new User(account);
-                            observer.next(true);
+                        if (result === null) {
+                            observer.next(false);
                             observer.complete();
                         }
                         else {
-                            observer.next(false);
+                            this.currentUser = new User(account, password, result.name, result.code);
+                            observer.next(true);
                             observer.complete();
                         }
                     },
