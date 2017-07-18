@@ -17,12 +17,14 @@ export class OrderPage implements OnInit {
   loading: Loading;
 
   account: any;
+
   order: any;
   stock: any;
   volume: any;
   type: any;
   price: any;
   expiry: any;
+  stocklist: any;
   date: any;
   minDate: any;
     
@@ -34,6 +36,7 @@ export class OrderPage implements OnInit {
     public auth: AuthService,
     public datepipe: DatePipe) {
     this.account = this.auth.getAccount();
+    this.stocklist = this.auth.getStocklList();
   }
 
   ngOnInit() {
@@ -54,7 +57,7 @@ export class OrderPage implements OnInit {
         '&quantity=' + this.volume +
         '&price=' + this.price, null).subscribe(result => {
           if (result) {
-            this.showMessage("Information", "Order saved");
+            this.showMessage("Information", "Order matched");
           } else {
             this.showMessage("Error", "Database connection fail");
           }
@@ -69,7 +72,7 @@ export class OrderPage implements OnInit {
         '&quantity=' + this.volume +
         '&price=' + this.price, null).subscribe(result => {
           if (result) {
-            this.showMessage("Information", "Order saved");
+            this.showMessage("Information", "Order matched");
           } else {
             this.showMessage("Error", "Database connection fail");
           }

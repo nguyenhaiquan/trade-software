@@ -1,15 +1,3 @@
-.ios, .md {
- 
-    page-chart {
- 
-        .scroll-content {
-            background-color: map-get($colors, light);
-        }
- 
-        ion-card-header {
-            font-weight: bold;
-        }
- 
-    }
- 
+page-chart {
+    font-size:12px !important;
 }

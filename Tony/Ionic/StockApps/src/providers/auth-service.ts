@@ -17,6 +17,14 @@ export class User {
     }
 }
 
+export class List {
+    list: string[];
+
+    constructor(list: string[]) {
+        this.list = list;
+    }
+}
+
 @Injectable()
 export class Api {
     //api = "http://localhost:63471/api/";
@@ -29,9 +37,10 @@ export class Api {
 @Injectable()
 export class AuthService {
     currentUser: User;
+    stockList: List;
 
     constructor(
-        public http: Http) {    
+        public http: Http) {
 
     }
 
@@ -45,6 +54,10 @@ export class AuthService {
 
     public getCode(): string {
         return this.currentUser.code;
+    }
+
+    public getStocklList(): string[] {
+        return this.stockList.list;
     }
 
     public login(account, password) {
@@ -62,6 +75,8 @@ export class AuthService {
                         }
                         else {
                             this.currentUser = new User(account, password, result.name, result.code);
+                            this.getData();
+                            
                             observer.next(true);
                             observer.complete();
                         }
@@ -79,5 +94,12 @@ export class AuthService {
             observer.next(true);
             observer.complete();
         });
+    }
+
+    public getData() {
+        this.http.get(
+            new Api().api + 'Stock').map(res => res.json()).subscribe(data => {
+                this.stockList = new List(data);
+            });
     }
 }

@@ -25,6 +25,7 @@ export class AlarmPage implements OnInit {
   status: any;
   expiry: any;
   notification: any;
+  stocklist: any;
   date: any;
   minDate: any;
 
@@ -35,6 +36,7 @@ export class AlarmPage implements OnInit {
     public auth: AuthService,
     public datepipe: DatePipe) {
     this.account = this.auth.getAccount();
+    this.stocklist = this.auth.getStocklList();
   }
 
   ngOnInit() {

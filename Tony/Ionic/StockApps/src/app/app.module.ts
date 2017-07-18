@@ -12,7 +12,8 @@ import { AccountPage } from '../pages/account/account';
 import { AdvicePage } from '../pages/advice/advice';
 import { AlarmPage } from '../pages/alarm/alarm';
 import { AlarmlistPage } from '../pages/alarmlist/alarmlist';
-import { ChartPage } from '../pages/chart/chart'
+import { ChartPage } from '../pages/chart/chart';
+import { FinancePage } from '../pages/finance/finance';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { OrderPage } from '../pages/order/order';
@@ -36,6 +37,7 @@ import { AuthService } from '../providers/auth-service';
     AlarmPage,
     AlarmlistPage,
     ChartPage,
+    FinancePage,
     HomePage,
     LoginPage,
     OrderPage,
@@ -60,6 +62,7 @@ import { AuthService } from '../providers/auth-service';
     AlarmPage,
     AlarmlistPage,
     ChartPage,
+    FinancePage,
     HomePage,
     LoginPage,
     OrderPage,

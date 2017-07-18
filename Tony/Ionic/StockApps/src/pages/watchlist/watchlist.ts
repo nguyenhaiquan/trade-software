@@ -18,7 +18,8 @@ export class WatchlistPage {
 
   account: any;
   stock: any;
-  watchlists: any;
+  stocklist: any;
+  watchlist: any;
 
   constructor(
     public navCtrl: NavController,
@@ -27,8 +28,9 @@ export class WatchlistPage {
     public http: Http, 
     public auth: AuthService) {
     this.account = this.auth.getAccount();
+    this.stocklist = this.auth.getStocklList();
     this.http.get(new Api().api + 'Watchlist?investor=' + this.account).map(res => res.json()).subscribe(data => {
-      this.watchlists = data;
+      this.watchlist = data;
     });
   }
 

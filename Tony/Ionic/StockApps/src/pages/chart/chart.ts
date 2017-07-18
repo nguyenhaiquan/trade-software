@@ -24,7 +24,8 @@ export class ChartPage {
 
     barChart: any;
     lineChart: any;
-    range = {'max': 100, 'min': 10, 'step': 10};
+
+    range = { 'max': 50, 'min': 10, 'step': 10 };
 
     constructor(
         public navCtrl: NavController,
@@ -33,17 +34,23 @@ export class ChartPage {
         this.stockCode = navParams.get("stockCode");
         this.days = this.range.min;
         this.http.get(new Api().api + 'TradeHistory?stock=' + this.stockCode + '&days=' + this.range.max).map(res => res.json()).subscribe(data => {
+            // get data
             this.dates = data.map(x => x.date);
             this.prices = data.map(x => x.price);
             this.volumes = data.map(x => x.volume);
+
+            // reverse array
+            this.dates.reverse();
+            this.prices.reverse();
+            this.volumes.reverse();
+
+            // draw chart
+            this.drawChart();
         });
     }
 
-    ionViewDidEnter() {
-        this.drawChart();
-    }
-
     drawChart() {
+        this.barChart =null; // reset
         this.barChart = new Chart(this.barCanvas.nativeElement, {
             type: 'bar',
             data: {
@@ -67,6 +74,7 @@ export class ChartPage {
             }
         });
 
+        this.lineChart = null; // reset
         this.lineChart = new Chart(this.lineCanvas.nativeElement, {
             type: 'line',
             data: {

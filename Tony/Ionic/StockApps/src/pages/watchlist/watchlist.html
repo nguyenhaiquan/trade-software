@@ -9,13 +9,23 @@
 
 <ion-content padding>
   <form (ngSubmit)="add()">
-    <ion-item>
-      <ion-label fixed>Symbol</ion-label> 
-      <ion-input name="stock" type="text" [(ngModel)]="stock"></ion-input>
-    </ion-item>
-    <button ion-button color="primary" full>
-      Add stock
-    </button>
+    <ion-row>
+      <ion-col col-8>
+        <ion-item>
+          <ion-label>
+            Symbol
+          </ion-label>
+          <ion-select name="stock" [(ngModel)]="stock">
+            <ion-option *ngFor="let s of stocklist">{{s}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col col-auto>
+        <button ion-button icon-only>
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
   </form>
   <ion-row>
     <ion-col>
@@ -35,9 +45,10 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <ion-row *ngFor="let w of watchlists">
+    <ion-row *ngFor="let w of watchlist">
       <ion-col>
-        <button [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}" ion-button small outline color="dark" (click)="navigate(w.code)">{{w.code}}</button>
+        <button [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}"
+          ion-button small outline color="dark" (click)="navigate(w.code)">{{w.code}}</button>
       </ion-col>
       <ion-col>
         <p [ngClass]="{'green' : (w.matched - w.open > 0), 'red' : (w.matched - w.open < 0), 'orange' : (w.matched - w.open == 0)}">{{w.matched}}</p>
@@ -50,7 +61,8 @@
       </ion-col>
       <ion-col>
         <button ion-button small outline color="dark" (click)="delete(w.code)">
-          <ion-icon name="trash"></ion-icon>
+          <ion-icon name="trash">
+          </ion-icon>
         </button>
       </ion-col>
     </ion-row>

@@ -10,8 +10,19 @@ namespace StockApps.Models
     {
         public string code { get; set; }
         public string name { get; set; }
+        public decimal openPrice { get; set; }
+        public decimal closePrice { get; set; }
+        public decimal lowPrice { get; set; }
+        public decimal highPrice { get; set; }
+        public decimal volume { get; set; }
+        public decimal PB { get; set; }
+        public decimal EPS { get; set; }
+        public decimal PE { get; set; }
+        public decimal ROA { get; set; }
+        public decimal ROE { get; set; }
+        public decimal BETA { get; set; }
 
-        public List<Stock> GetAll()
+        public List<string> GetAll()
         {
             SqlConnection myConnection = new SqlConnection(
                 WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
@@ -20,23 +31,17 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
-                List<Stock> listStock = new List<Stock>();
+                List<string> listStock = new List<string>();
 
                 SqlCommand myCommand = new SqlCommand(
-                    "select s.code, s.name " +
-                    "from dbo.stockCode s", myConnection);
+                    "select code " +
+                    "from dbo.stockCode", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    listStock.Add(
-                        new Stock
-                        {
-                            code = myReader["code"].ToString(),
-                            name = myReader["name"].ToString()
-                        }
-                    );
+                    listStock.Add(myReader["code"].ToString());
                 }
 
                 myConnection.Close();
@@ -53,29 +58,54 @@ namespace StockApps.Models
 
         public Stock GetStock(string code)
         {
-            return GetAll().Where(x => x.code == code).FirstOrDefault();
-        }
+            SqlConnection myConnection = new SqlConnection(
+                WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        public List<Stock> Create(Stock s)
-        {
-            List<Stock> listStock = GetAll();
-            listStock.Add(s);
-            return listStock;
-        }
+            try
+            {
+                myConnection.Open();
 
-        public List<Stock> Update(Stock s)
-        {
-            List<Stock> listStock = GetAll().Where(x => x.code != s.code).ToList();
-            Stock t = GetStock(s.code);
-            listStock.Remove(t);
-            listStock.Add(s);
-            return listStock;
-        }
+                Stock stock = null;
 
-        public List<Stock> Delete(string code)
-        {
-            List<Stock> listStock = GetAll().Where(x => x.code != code).ToList();
-            return listStock;
+                SqlCommand myCommand = new SqlCommand(
+                    "select s.code, s.nameEn, p.openPrice, p.closePrice, p.lowPrice, p.highPrice, p.volume, s.PB, s.EPS, s.PE, s.ROA,s.ROE, s.BETA " +
+                    "from dbo.stockCode s, dbo.priceData p " +
+                    "where p.onDate = (select max(onDate) from dbo.priceData) " +
+                    "and s.code = '" + code + "'" +
+                    "and s.code = p.stockCode", myConnection);
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+
+                if (myReader.Read())
+                {
+                    stock = new Stock
+                    {
+                        code = myReader["code"].ToString(),
+                        name = myReader["nameEn"].ToString(),
+                        openPrice = myReader.GetDecimal(myReader.GetOrdinal("openPrice")),
+                        closePrice = myReader.GetDecimal(myReader.GetOrdinal("closePrice")),
+                        lowPrice = myReader.GetDecimal(myReader.GetOrdinal("lowPrice")),
+                        highPrice = myReader.GetDecimal(myReader.GetOrdinal("highPrice")),
+                        volume = myReader.GetDecimal(myReader.GetOrdinal("volume")),
+                        PB = myReader.GetDecimal(myReader.GetOrdinal("PB")),
+                        EPS = myReader.GetDecimal(myReader.GetOrdinal("EPS")),
+                        PE = myReader.GetDecimal(myReader.GetOrdinal("PE")),
+                        ROA = myReader.GetDecimal(myReader.GetOrdinal("ROA")),
+                        ROE = myReader.GetDecimal(myReader.GetOrdinal("ROE")),
+                        BETA = myReader.GetDecimal(myReader.GetOrdinal("BETA")),
+                    };
+                }
+
+                myConnection.Close();
+
+                return stock;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return null;
+            }
         }
     }
 }

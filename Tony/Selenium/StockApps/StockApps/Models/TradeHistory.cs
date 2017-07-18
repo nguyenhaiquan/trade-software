@@ -25,7 +25,7 @@ namespace StockApps.Models
                     "select top(" + days + ") convert(varchar(10), d.onDate, 103) as onDate, d.closePrice, d.volume " +
                     "from dbo.priceData d " +
                     "where d.stockCode = '" + stock + "' " +
-                    "order by d.onDate ASC", myConnection);
+                    "order by d.onDate DESC", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 

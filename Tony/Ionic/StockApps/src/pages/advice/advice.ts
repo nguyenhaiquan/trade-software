@@ -11,14 +11,23 @@ import { Api } from '../../providers/auth-service';
 })
 export class AdvicePage {
 
-  advide = {'code' : '', 'current' : 0, 'target' : 0, 'cutloss' : 0, 'explication' : '', 'source' : ''};
+  stockCode: any;
+  currentPrice: any;
+  targetPrice: any;
+  cutlossPrice: any;
+  explication: any;
+  source: any;
 
   constructor(
     public navCtrl: NavController,
     public http: Http) {
-    this.http.get(new Api().api + 'Advide').map(res => res.json()).subscribe(data => {
-      this.advide = data;
-      console.log(this.advide);
+    this.http.get(new Api().api + 'Advice').map(res => res.json()).subscribe(result => {
+      this.stockCode = result.code;
+      this.currentPrice = result.currentPrice;
+      this.targetPrice = result.targetPrice;
+      this.cutlossPrice = result.cutlossPrice;
+      this.explication = result.explication;
+      this.source = result.source;
     });
   }
 

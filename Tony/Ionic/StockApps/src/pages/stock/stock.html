@@ -8,30 +8,103 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Balance sheet</h1>
-  <ion-row>
-    <ion-col>
-      <p>Rubric</p>
-    </ion-col>
-    <ion-col>
-      <p>2015</p>
-    </ion-col>
-    <ion-col>
-      <p>2016</p>
-    </ion-col>
-  </ion-row>
-  <ion-list>
-    <ion-row *ngFor="let d of financialData">
+  <h1>{{stockName}}</h1>
+  <ion-item>
+    <ion-row>
       <ion-col>
-        <p>{{d.rubric}}</p>
+        <p>Open</p>
       </ion-col>
       <ion-col>
-        <p>{{d.value1}}</p>
+        <p>{{openPrice}}</p>
       </ion-col>
       <ion-col>
-        <p>{{d.value2}}</p>
+        <p>Change</p>
+      </ion-col>
+      <ion-col>
+        <p [ngClass]="{'green' : (closePrice > openPrice), 'red' : (closePrice < openPrice),'orange' : (closePrice == openPrice)}">{{closePrice - openPrice}}</p>
       </ion-col>
     </ion-row>
-  </ion-list>
+    <ion-row>
+      <ion-col>
+        <p>Close</p>
+      </ion-col>
+      <ion-col>
+        <p [ngClass]="{'green' : (closePrice > openPrice), 'red' : (closePrice < openPrice),'orange' : (closePrice == openPrice)}">{{closePrice}}</p>
+      </ion-col>
+      <ion-col>
+        <p>Volume</p>
+      </ion-col>
+      <ion-col>
+        <p>{{volume}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>Low</p>
+      </ion-col>
+      <ion-col>
+        <p>Average</p>
+      </ion-col>
+      <ion-col>
+        <p>High</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p [ngClass]="{'red' : (lowPrice < openPrice),'orange' : (lowPrice == openPrice)}">{{lowPrice}}</p>
+      </ion-col>
+      <ion-col>
+        <p>________</p>
+      </ion-col>
+      <ion-col>
+        <p [ngClass]="{'green' : (highPrice > openPrice), 'orange' : (highPrice == openPrice)}">{{highPrice}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
   <button ion-button color="primary" full (click)="chart()">See chart</button>
+  <ion-item>
+    <ion-row>
+      <ion-col>
+        <p>PB</p>
+      </ion-col>
+      <ion-col>
+        <p>{{PB}}</p>
+      </ion-col>
+      <ion-col>
+        <p>ROA</p>
+      </ion-col>
+      <ion-col>
+        <p>{{ROA}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>PE</p>
+      </ion-col>
+      <ion-col>
+        <p>{{PE}}</p>
+      </ion-col>
+      <ion-col>
+        <p>ROE</p>
+      </ion-col>
+      <ion-col>
+        <p>{{ROE}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>EPS</p>
+      </ion-col>
+      <ion-col>
+        <p>{{EPS}}</p>
+      </ion-col>
+      <ion-col>
+        <p>BETA</p>
+      </ion-col>
+      <ion-col>
+        <p>{{BETA}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <button ion-button color="secondary" full (click)="finance()">See balance sheet</button>
 </ion-content>

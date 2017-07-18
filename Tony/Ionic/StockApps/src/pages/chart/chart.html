@@ -7,28 +7,19 @@
 </ion-header>
 
 <ion-content>
-
   <ion-item>
     <ion-label>Last {{days}} transactions</ion-label>
-    <ion-range min={{range.min}} max={{range.max}} step={{range.step}} snaps="true" color="dark" [(ngModel)]="days" (ionChange)="drawChart()"></ion-range>
+    <ion-range min={{range.min}} max={{range.max}} step={{range.step}} snaps="true" color="dark" [(ngModel)]="days" (ionChange)="drawChart()">
+      <p range-left>{{range.min}}</p>
+      <p range-right>{{range.max}}</p>
+    </ion-range>
   </ion-item>
-
-  <ion-card>
-    <ion-card-header>
-      Price
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Volume
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #barCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
-
+  <ion-item>
+    <h1>Price</h1>
+    <canvas #lineCanvas></canvas>
+  </ion-item>
+  <ion-item>
+    <h1>Volume</h1>
+    <canvas #barCanvas></canvas>
+  </ion-item>
 </ion-content>

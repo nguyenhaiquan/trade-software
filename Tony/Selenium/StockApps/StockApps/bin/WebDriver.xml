@@ -3157,7 +3157,7 @@
             Interface allowing execution of W3C Specification-compliant actions.
             </summary>
     </member>
-    <member name="M:OpenQA.Selenium.Internal.IActionExecutor.PerformActions(System.Collections.Generic.List{OpenQA.Selenium.Interactions.ActionSequence})">
+    <member name="M:OpenQA.Selenium.Internal.IActionExecutor.PerformActions(System.Collections.Generic.IList{OpenQA.Selenium.Interactions.ActionSequence})">
       <summary>
             Performs the specified list of actions with this action executor.
             </summary>
@@ -3210,11 +3210,24 @@
             The default command timeout for HTTP requests in a RemoteWebDriver instance.
             </summary>
     </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.#ctor(OpenQA.Selenium.DriverOptions)">
+      <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" /> class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+            </summary>
+      <param name="options">An <see cref="T:OpenQA.Selenium.DriverOptions" /> object containing the desired capabilities of the browser.</param>
+    </member>
     <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.#ctor(OpenQA.Selenium.ICapabilities)">
       <summary>
             Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" /> class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
             </summary>
       <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" /> object containing the desired capabilities of the browser.</param>
+    </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.#ctor(System.Uri,OpenQA.Selenium.DriverOptions)">
+      <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" /> class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+            </summary>
+      <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+      <param name="options">An <see cref="T:OpenQA.Selenium.DriverOptions" /> object containing the desired capabilities of the browser.</param>
     </member>
     <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.#ctor(System.Uri,OpenQA.Selenium.ICapabilities)">
       <summary>
@@ -3535,6 +3548,17 @@
             Dispose the RemoteWebDriver Instance
             </summary>
     </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.PerformActions(System.Collections.Generic.IList{OpenQA.Selenium.Interactions.ActionSequence})">
+      <summary>
+            Performs the specified list of actions with this action executor.
+            </summary>
+      <param name="actionSequenceList">The list of action sequences to perform.</param>
+    </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.ResetInputState">
+      <summary>
+            Resets the input state of the action executor.
+            </summary>
+    </member>
     <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.EscapeCssSelector(System.String)">
       <summary>
             Escapes invalid characters in a CSS selector.
@@ -3575,6 +3599,24 @@
             Starts a session with the driver
             </summary>
       <param name="desiredCapabilities">Capabilities of the browser</param>
+    </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.GetLegacyCapabilitiesDictionary(OpenQA.Selenium.ICapabilities)">
+      <summary>
+            Gets the capabilities as a dictionary supporting legacy drivers.
+            </summary>
+      <param name="legacyCapabilities">The dictionary to return.</param>
+      <returns>A Dictionary consisting of the capabilities requested.</returns>
+      <remarks>This method is only transitional. Do not rely on it. It will be removed
+            once browser driver capability formats stabilize.</remarks>
+    </member>
+    <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.GetCapabilitiesDictionary(OpenQA.Selenium.ICapabilities)">
+      <summary>
+            Gets the capabilities as a dictionary.
+            </summary>
+      <param name="capabilitiesToConvert">The dictionary to return.</param>
+      <returns>A Dictionary consisting of the capabilities requested.</returns>
+      <remarks>This method is only transitional. Do not rely on it. It will be removed
+            once browser driver capability formats stabilize.</remarks>
     </member>
     <member name="M:OpenQA.Selenium.Remote.RemoteWebDriver.Execute(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
       <summary>
@@ -3716,6 +3758,11 @@
     <member name="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId">
       <summary>
             Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" /> for the current session of this driver.
+            </summary>
+    </member>
+    <member name="P:OpenQA.Selenium.Remote.RemoteWebDriver.IsActionExecutor">
+      <summary>
+            Gets a value indicating whether this object is a valid action executor.
             </summary>
     </member>
     <member name="P:OpenQA.Selenium.Remote.RemoteWebDriver.IsSpecificationCompliant">
@@ -6351,6 +6398,15 @@
       <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" /> used to initialize the driver.</param>
       <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     </member>
+    <member name="M:OpenQA.Selenium.IE.InternetExplorerDriver.GetLegacyCapabilitiesDictionary(OpenQA.Selenium.ICapabilities)">
+      <summary>
+            Gets the capabilities as a dictionary supporting legacy drivers.
+            </summary>
+      <param name="legacyCapabilities">The dictionary to return.</param>
+      <returns>A Dictionary consisting of the capabilities requested.</returns>
+      <remarks>This method is only transitional. Do not rely on it. It will be removed
+            once browser driver capability formats stabilize.</remarks>
+    </member>
     <member name="P:OpenQA.Selenium.IE.InternetExplorerDriver.FileDetector">
       <summary>
             Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" /> responsible for detecting
@@ -6561,6 +6617,12 @@
             </code>
       </example>
     </member>
+    <member name="F:OpenQA.Selenium.IE.InternetExplorerOptions.Capability">
+      <summary>
+            Gets the name of the capability used to store IE options in
+            a <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" /> object.
+            </summary>
+    </member>
     <member name="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object)">
       <summary>
             Provides a means to add additional capabilities not yet added as type safe options
@@ -6572,7 +6634,26 @@
             thrown when attempting to add a capability for which there is already a type safe option, or
             when <paramref name="capabilityName" /> is <see langword="null" /> or the empty string.
             </exception>
-      <remarks>Calling <see cref="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object)" /> where <paramref name="capabilityName" />
+      <remarks>Calling <see cref="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object)" />
+            where <paramref name="capabilityName" /> has already been added will overwrite the
+            existing value with the new value in <paramref name="capabilityValue" />.
+            Also, by default, calling this method adds capabilities to the options object passed to
+            IEDriverServer.exe.</remarks>
+    </member>
+    <member name="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)">
+      <summary>
+            Provides a means to add additional capabilities not yet added as type safe options
+            for the Internet Explorer driver.
+            </summary>
+      <param name="capabilityName">The name of the capability to add.</param>
+      <param name="capabilityValue">The value of the capability to add.</param>
+      <param name="isGlobalCapability">Indicates whether the capability is to be set as a global
+            capability for the driver instead of a IE-specific option.</param>
+      <exception cref="T:System.ArgumentException">
+            thrown when attempting to add a capability for which there is already a type safe option, or
+            when <paramref name="capabilityName" /> is <see langword="null" /> or the empty string.
+            </exception>
+      <remarks>Calling <see cref="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)" /> where <paramref name="capabilityName" />
             has already been added will overwrite the existing value with the new value in <paramref name="capabilityValue" /></remarks>
     </member>
     <member name="M:OpenQA.Selenium.IE.InternetExplorerOptions.ToCapabilities">
@@ -9086,6 +9167,11 @@
             Capability name used to indicate whether the browser accepts SSL certificates.
             </summary>
     </member>
+    <member name="F:OpenQA.Selenium.Remote.CapabilityType.AcceptInsecureCertificates">
+      <summary>
+            Capability name used to indicate whether the browser accepts SSL certificates on W3C Endpoints
+            </summary>
+    </member>
     <member name="F:OpenQA.Selenium.Remote.CapabilityType.HasNativeEvents">
       <summary>
             Capability name used to indicate whether the browser uses native events.
@@ -9440,6 +9526,11 @@
     <member name="P:OpenQA.Selenium.Remote.DesiredCapabilities.IsJavaScriptEnabled">
       <summary>
             Gets or sets a value indicating whether the browser is JavaScript enabled
+            </summary>
+    </member>
+    <member name="P:OpenQA.Selenium.Remote.DesiredCapabilities.AcceptInsecureCerts">
+      <summary>
+            Gets or sets a value indicating whether the browser accepts SSL certificates.
             </summary>
     </member>
     <member name="P:OpenQA.Selenium.Remote.DesiredCapabilities.CapabilitiesDictionary">

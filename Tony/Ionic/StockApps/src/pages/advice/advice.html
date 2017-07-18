@@ -3,26 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Advide</ion-title>
+    <ion-title>Advice</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-slides pager>
     <ion-slide>
-      <h1>{{advide.code}}</h1>
+      <h1>{{stockCode}}</h1>
       <ion-icon name="trending-up"></ion-icon>
-      <p>Current price : {{advide.current}}</p>
-      <p>Target price : {{advide.target}}</p>
-      <p>Cutloss price : {{advide.cutloss}}</p>
+      <p>Current price : {{currentPrice}}</p>
+      <p>Target price : {{targetPrice}}</p>
+      <p>Cutloss price : {{cutlossPrice}}</p>
       <p>Slide to read more</p>
     </ion-slide>
     <ion-slide>
       <h1>Explication</h1>
       <ion-icon name="stats"></ion-icon>
-      <p>{{advide.explication}}</p>
+      <p>{{explication}}</p>
       <p>Source</p>
-      <a>{{advide.source}}</a>
+      <a>{{source}}</a>
     </ion-slide>
   </ion-slides>
 </ion-content>

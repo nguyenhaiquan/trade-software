@@ -5,10 +5,11 @@ namespace StockApps.Models
 {
     public class Investor
     {
-        public bool LogIn(string account, string password)
-        {
-            bool result = false;
+        public string name { get; set; }
+        public string code { get; set; }
 
+        public Investor LogIn(string account, string password)
+        {
             SqlConnection myConnection = new SqlConnection(
                             WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
@@ -16,26 +17,32 @@ namespace StockApps.Models
             {
                 myConnection.Open();
 
+                Investor investor = null;
+
                 SqlCommand myCommand =
-                    new SqlCommand("select * " +
-                    "from dbo.investor i " +
-                    "where i.account = '" + account + "' " +
-                    "and i.password = '" + password + "'", myConnection);
+                    new SqlCommand("select displayName, code " +
+                    "from dbo.investor " +
+                    "where account = '" + account + "' " +
+                    "and password = '" + password + "'", myConnection);
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 if (myReader.Read())
                 {
-                    result = true;
+                    investor = new Investor
+                    {
+                        name = myReader["displayName"].ToString(),
+                        code = myReader["code"].ToString()
+                    };
                 }
 
                 myConnection.Close();
 
-                return result;
+                return investor;
             }
             catch
             {
-                return false;
+                return null;
             }
                 
         }

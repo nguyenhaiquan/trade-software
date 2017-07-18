@@ -10,8 +10,12 @@
 <ion-content padding>
   <form (ngSubmit)="create()">
     <ion-item>
-      <ion-label fixed>Symbol</ion-label>
-      <ion-input text-right name="stock" type="text" [(ngModel)]="stock" required></ion-input>
+      <ion-label>
+        Symbol
+      </ion-label>
+      <ion-select name="stock" [(ngModel)]="stock">
+        <ion-option *ngFor="let s of stocklist">{{s}}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Type</ion-label>
@@ -36,12 +40,12 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Value</ion-label>
+      <ion-label>Value</ion-label>
       <ion-input text-right name="value" type="number" [(ngModel)]="value" min="1"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Comment</ion-label>
-      <ion-input text-right name="comment" type="text" [(ngModel)]="comment"></ion-input>
+      <ion-label>Comment</ion-label>
+      <ion-input name="comment" type="text" [(ngModel)]="comment"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Status</ion-label>
