@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using StockApps.Models;
+using System.Collections.Generic;
 
 namespace StockApps.Controllers
 {
@@ -11,6 +12,12 @@ namespace StockApps.Controllers
         public Investor LogIn(string account, string password)
         {
             return new Investor().LogIn(account, password);
+        }
+
+        [HttpGet]
+        public List<string> GetAsset(string code)
+        {
+            return new Investor().GetAsset(code);
         }
     }
 }

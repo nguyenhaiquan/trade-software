@@ -8,8 +8,10 @@
 
 <ion-content padding>
   <h1>Welcome, {{username}}</h1>
-  <p>{{information}}</p>
+  <p>{{notification}}</p>
+  <p>{{startAmount}}</p>
+  <p>{{currentAmount}}</p>
   <button ion-button color="danger" full (click)="logout()">
-    Logout
+    {{buttonName}}
   </button>
 </ion-content>

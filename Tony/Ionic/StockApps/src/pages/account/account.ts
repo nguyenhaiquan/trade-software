@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
-import { AuthService } from '../../providers/auth-service';
+import { Api, AuthService } from '../../providers/auth-service';
 
 import { LoginPage } from '../login/login';
 
@@ -11,19 +13,32 @@ import { LoginPage } from '../login/login';
 })
 
 export class AccountPage {
-  username: string;
-  information: string;
+  username: any;
+  notification: any;
+  startAmount: any;
+  currentAmount: any;
+  buttonName: any;
 
   constructor(
     public navCtrl: NavController,
+    public http: Http,
     public auth: AuthService) {
       if (typeof this.auth.currentUser === 'undefined' || this.auth.currentUser === null) {
         this.username = ''; // show nothing
-        this.information = 'You need to login!';
+        this.notification = 'You need to login!';
+        this.startAmount = ''; // show nothing
+        this.currentAmount = ''; // show nothing
+        this.buttonName = 'Quit';
       }
       else {
+        this.http.get(new Api().api + 'Investor/GetAsset?code=' + this.auth.getCode()).map(res => res.json()).subscribe(data => {
+          this.startAmount = 'Starting capital : ' + data[0] + ' VND';
+          this.currentAmount = 'Withdrawable amount : ' + data[1] + ' VND';
+        });
+        
         this.username = this.auth.getName();
-        this.information = ''; // show nothing
+        this.notification = ''; // show nothing
+        this.buttonName = 'Logout';
       }
   }
 

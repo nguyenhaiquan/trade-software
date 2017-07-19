@@ -6,14 +6,14 @@ import 'rxjs/add/operator/map';
 export class User {
     account: string;
     password: string;
-    name: string;
     code: string;
+    name: string;
 
-    constructor(account: string, password: string, name: string, code: string) {
+    constructor(account: string, password: string, code: string, name: string) {
         this.account = account;
         this.password = password;
-        this.name = name;
         this.code = code;
+        this.name = name;
     }
 }
 
@@ -48,12 +48,12 @@ export class AuthService {
         return this.currentUser.account;
     }
 
-    public getName(): string {
-        return this.currentUser.name;
-    }
-
     public getCode(): string {
         return this.currentUser.code;
+    }
+
+    public getName(): string {
+        return this.currentUser.name;
     }
 
     public getStocklList(): string[] {
@@ -74,7 +74,7 @@ export class AuthService {
                             observer.complete();
                         }
                         else {
-                            this.currentUser = new User(account, password, result.name, result.code);
+                            this.currentUser = new User(account, password, result.code, result.name);
                             this.getData();
                             
                             observer.next(true);

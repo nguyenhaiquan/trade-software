@@ -1,12 +1,14 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Web.Configuration;
 
 namespace StockApps.Models
 {
     public class Investor
     {
-        public string name { get; set; }
         public string code { get; set; }
+        public string name { get; set; }
 
         public Investor LogIn(string account, string password)
         {
@@ -20,7 +22,7 @@ namespace StockApps.Models
                 Investor investor = null;
 
                 SqlCommand myCommand =
-                    new SqlCommand("select displayName, code " +
+                    new SqlCommand("select code, displayName " +
                     "from dbo.investor " +
                     "where account = '" + account + "' " +
                     "and password = '" + password + "'", myConnection);
@@ -31,8 +33,8 @@ namespace StockApps.Models
                 {
                     investor = new Investor
                     {
-                        name = myReader["displayName"].ToString(),
-                        code = myReader["code"].ToString()
+                        code = myReader["code"].ToString(),
+                        name = myReader["displayName"].ToString()
                     };
                 }
 
@@ -40,11 +42,51 @@ namespace StockApps.Models
 
                 return investor;
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
+
                 return null;
             }
                 
+        }
+
+        public List<string> GetAsset(string code)
+        {
+            SqlConnection myConnection = new SqlConnection(
+                WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+
+            try
+            {
+                myConnection.Open();
+
+                List<string> asset = new List<string>();
+
+                SqlCommand myCommand = new SqlCommand(
+                    "select p.startCapAmt, p.usedCapAmt " +
+                    "from dbo.investor i, dbo.portfolio p " +
+                    "where i.code = '" + code + "' " +
+                    "and i.code = p.investorCode " +
+                    "and p.type = 1", myConnection);
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+
+                if (myReader.Read())
+                {
+                    asset.Add(myReader["startCapAmt"].ToString());
+                    asset.Add(myReader["usedCapAmt"].ToString());
+                }
+
+                myConnection.Close();
+
+                return asset;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+
+                return null;
+            }
         }
     }
 }
