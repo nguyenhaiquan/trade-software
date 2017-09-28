@@ -30,7 +30,8 @@ namespace databases.Properties {
             "Password=P@ssword123")]
         public string importConnectionString {
             get {
-                return ((string)(this["importConnectionString"]));
+                return databases.SysLibs.importConnectionString;
+                //return ((string)(this["importConnectionString"]));
             }
         }
         
@@ -41,7 +42,8 @@ namespace databases.Properties {
             "assword=P@ssword123")]
         public string dbConnectionString {
             get {
-                return ((string)(this["dbConnectionString"]));
+                return databases.SysLibs.dbConnectionString;
+                //return ((string)(this["dbConnectionString"]));
             }
         }
         

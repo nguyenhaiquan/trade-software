@@ -22,16 +22,12 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\da
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Languages.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Tools.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Trade.dll
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\application.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\baseClass.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Charts.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\commonClass.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\commonTypes.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\dataAccess.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\databases.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Languages.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Tools.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Trade.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\vi-VN\Languages.resources.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\QuantumTest.dll.config
 C:\Users\Ang Tony Vincent\Documents\trade-software\2015\QuantumTest\obj\Debug\QuantumTest.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\QuantumTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

@@ -27,17 +27,12 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\LaMarvin.Windo
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\NTP.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonClass.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\commonTypes.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Languages.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\vi-VN\common.resources.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\vi-VN\Languages.resources.dll
-C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\databases.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\DataAccess.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\application.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Charts.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\ZedGraph.dll
-C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\DataAccess.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\application.pdb
-C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Charts.pdb
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\bin\wStock2.dll.config
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\bin\wStock2.dll
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\bin\wStock2.pdb
@@ -61,3 +56,6 @@ C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\bin\vi-VN\Language
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\obj\Debug\wStock2.csprojResolveAssemblyReference.cache
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\obj\Debug\wStock2.dll
 C:\Users\Ang Tony Vincent\Documents\trade-software\q-download\obj\Debug\wStock2.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\wStock2.dll.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\databases.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\q-download\bin\Languages.pdb
