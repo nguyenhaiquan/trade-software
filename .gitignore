@@ -1,19 +1,12 @@
 *.dll
-2015/wsServices/obj/Debug/strategy.pdb
 *.pdb
-2015/databases/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
 *.txt
-2015/admin/obj/Debug/admin.exe
-*.dll
-*.dll
-2015/dlls/server.vshost.exe.config
-*.dll
-*.dll
-2015/dlls/databases.dll
-*.dll
+/2015/admin/obj/
+/2015/dlls/*
 *.nupkg
-*.nupkg
-2015/packages/Microsoft.AspNet.WebApi.5.0.0/Microsoft.AspNet.WebApi.5.0.0.nuspec
-*.exe
-*.dll
-*.exe
+*.config
+/2015/dataAccess/Service References/
+/2015/dataAccess/obj/
+/2015/dataAccess/obj/Debug/
+/2015/dlls/*.*
