@@ -5,3 +5,12 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\charts.csproj.GenerateResource.Cache
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\charts\obj\Debug\Charts.pdb
+C:\Github\trade-software\2015\dlls\Charts.dll
+C:\Github\trade-software\2015\dlls\Charts.pdb
+C:\Github\trade-software\2015\charts\obj\Debug\charts.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\charts\obj\Debug\Charts.Controls.myGraphControl.resources
+C:\Github\trade-software\2015\charts\obj\Debug\Charts.Controls.baseGraphPanel.resources
+C:\Github\trade-software\2015\charts\obj\Debug\charts.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\charts\obj\Debug\charts.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\charts\obj\Debug\Charts.dll
+C:\Github\trade-software\2015\charts\obj\Debug\Charts.pdb

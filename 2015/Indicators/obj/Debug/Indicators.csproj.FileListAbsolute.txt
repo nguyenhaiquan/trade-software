@@ -5,3 +5,11 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Indicators.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\Indicators.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Debug\Indicators.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\indicators\obj\Debug\Indicators.pdb
+C:\Github\trade-software\2015\dlls\Indicators.dll
+C:\Github\trade-software\2015\dlls\Indicators.pdb
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.Properties.Resources.resources
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.dll
+C:\Github\trade-software\2015\indicators\obj\Debug\Indicators.pdb

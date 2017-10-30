@@ -267,23 +267,30 @@ namespace Imports.Stock
             //VNIndex & Volume
             //dVNIndex = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHoseVnIndex']").InnerText);
             bool result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHoseVnIndex']").InnerText, out dVNIndex);
+            if (!result) dVNIndex = 0;
 
-            dVNIndexVolume = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHoseTotalQtty']").InnerText);
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHoseTotalQtty']").InnerText, out dVNIndexVolume);
+            if (!result) dVNIndexVolume = 0;
             AddStock("VN-IDX", new PageStockRow("HOSE", "VN-IDX", dVNIndex, 0,dVNIndexVolume));
 
             //VNIndex 30 & Volume
-            dVNIndex30 = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHose30VnIndex']").InnerText);
-            dVNIndex30Volume = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHose30TotalQtty']").InnerText);
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHose30VnIndex']").InnerText, out dVNIndex30);
+            if (!result) dVNIndex30 = 0;
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHose30TotalQtty']").InnerText,out dVNIndex30Volume);
+            if (!result) dVNIndex30Volume = 0;
+
             AddStock("VN30-IDX", new PageStockRow("HOSE", "VN30-IDX", dVNIndex30,0, dVNIndex30Volume));
 
             //HNIndex, HNIndex Volume
-            dHNIndex = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxIndex']").InnerText);
-            dHNIndexVolume = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxTotalQtty']").InnerText);
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxIndex']").InnerText,out dHNIndex);
+            if (!result) dHNIndex = 0;
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxTotalQtty']").InnerText, out dHNIndexVolume);
+            if (!result) dHNIndexVolume = 0;
             AddStock("HNX-IDX", new PageStockRow("HASTC", "HNX-IDX", dHNIndex, 0,dHNIndexVolume));
 
             //HNX30
-            dHNIndex30 = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxIndex']").InnerText);
-            dHNIndex30Volume = Double.Parse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxTotalQtty']").InnerText);
+            result= Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxIndex']").InnerText, out dHNIndex30);
+            result = Double.TryParse(html.DocumentNode.SelectSingleNode("//*[@id='tdHnxTotalQtty']").InnerText, out dHNIndex30Volume);
             AddStock("HNX30-IDX", new PageStockRow("HASTC", "HNX30-IDX", dHNIndex, 0,dHNIndexVolume));
 
             //Console.WriteLine("VNIndex=" + dictStocks["VN-IDX"].price);

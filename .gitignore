@@ -12,3 +12,11 @@
 *.cache
 *.resources
 /2015/baseClass/obj/Debug/*
+*.dll
+*.ps1
+*.ps1
+*.transform
+*.exe
+*.xml
+*.config
+*.exe

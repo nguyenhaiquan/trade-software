@@ -8,3 +8,14 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\ap
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseIndicatorForm.resources
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\application\obj\Debug\application.forms.commonIndicatorForm.resources
+C:\Github\trade-software\2015\dlls\application.dll
+C:\Github\trade-software\2015\dlls\application.pdb
+C:\Github\trade-software\2015\application\obj\Debug\application.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\application\obj\Debug\application.forms.baseIndicatorForm.resources
+C:\Github\trade-software\2015\application\obj\Debug\application.forms.baseStrategyForm.resources
+C:\Github\trade-software\2015\application\obj\Debug\application.forms.commonIndicatorForm.resources
+C:\Github\trade-software\2015\application\obj\Debug\application.Properties.Resources.resources
+C:\Github\trade-software\2015\application\obj\Debug\application.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\application\obj\Debug\application.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\application\obj\Debug\application.dll
+C:\Github\trade-software\2015\application\obj\Debug\application.pdb
