@@ -42,7 +42,7 @@ namespace databaseEntity
                 user.status = 0;
                 user.type = 0;
                 user.expireDate = DateTime.Now.AddMonths(6);
-                Entry(user).State = (EntityState)System.Data.EntityState.Added;
+                Entry(user).State = (EntityState)System.Data.Entity.EntityState.Added;                
                 //Investors.Add(user);
                 this.SaveChanges();
                 return user;
