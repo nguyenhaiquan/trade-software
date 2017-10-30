@@ -52,6 +52,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dataProcessMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             this.myMainMenu.Location = new System.Drawing.Point(0, 0);
             this.myMainMenu.Name = "myMainMenu";
             this.myMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.myMainMenu.Size = new System.Drawing.Size(720, 27);
+            this.myMainMenu.Size = new System.Drawing.Size(720, 24);
             this.myMainMenu.TabIndex = 231;
             // 
             // systemMenuStrip
@@ -81,7 +82,7 @@
             this.exitMenuItem});
             this.systemMenuStrip.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.systemMenuStrip.Name = "systemMenuStrip";
-            this.systemMenuStrip.Size = new System.Drawing.Size(101, 25);
+            this.systemMenuStrip.Size = new System.Drawing.Size(79, 22);
             this.systemMenuStrip.Text = "Hệ thống";
             // 
             // loginMenu
@@ -90,20 +91,20 @@
             this.loginMenu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginMenu.Image = ((System.Drawing.Image)(resources.GetObject("loginMenu.Image")));
             this.loginMenu.Name = "loginMenu";
-            this.loginMenu.Size = new System.Drawing.Size(173, 26);
+            this.loginMenu.Size = new System.Drawing.Size(146, 22);
             this.loginMenu.Text = "Đăng nhập";
             this.loginMenu.Click += new System.EventHandler(this.loginMenu_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Image = global::server.Properties.Resources.close;
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.exitMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitMenuItem.Text = "Kết thúc";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
@@ -121,16 +122,17 @@
             this.toolStripSeparator6,
             this.reAggregateMenuItem,
             this.toolStripSeparator7,
-            this.bestStrategyToolStripMenuItem});
+            this.bestStrategyToolStripMenuItem,
+            this.xToolStripMenuItem});
             this.toolMenuItem.Name = "toolMenuItem";
-            this.toolMenuItem.Size = new System.Drawing.Size(91, 25);
+            this.toolMenuItem.Size = new System.Drawing.Size(71, 22);
             this.toolMenuItem.Text = "Công cụ";
             // 
             // importPriceDataMenu
             // 
             this.importPriceDataMenu.Image = global::server.Properties.Resources.import;
             this.importPriceDataMenu.Name = "importPriceDataMenu";
-            this.importPriceDataMenu.Size = new System.Drawing.Size(306, 26);
+            this.importPriceDataMenu.Size = new System.Drawing.Size(249, 22);
             this.importPriceDataMenu.Text = "Nhập dữ liệu giá";
             this.importPriceDataMenu.Click += new System.EventHandler(this.importPriceDataMenu_Click);
             // 
@@ -138,7 +140,7 @@
             // 
             this.importIcbMenu.Image = global::server.Properties.Resources.data;
             this.importIcbMenu.Name = "importIcbMenu";
-            this.importIcbMenu.Size = new System.Drawing.Size(306, 26);
+            this.importIcbMenu.Size = new System.Drawing.Size(249, 22);
             this.importIcbMenu.Text = "Nhập bộ mã ICB ";
             this.importIcbMenu.Click += new System.EventHandler(this.importIcbMenu_Click);
             // 
@@ -146,7 +148,7 @@
             // 
             this.importCompanyMenu.Image = global::server.Properties.Resources.home1;
             this.importCompanyMenu.Name = "importCompanyMenu";
-            this.importCompanyMenu.Size = new System.Drawing.Size(306, 26);
+            this.importCompanyMenu.Size = new System.Drawing.Size(249, 22);
             this.importCompanyMenu.Text = "Nhập công ty";
             this.importCompanyMenu.Click += new System.EventHandler(this.importCompanyMenu_Click);
             // 
@@ -154,65 +156,65 @@
             // 
             this.importComSectorMenu.Image = global::server.Properties.Resources.product;
             this.importComSectorMenu.Name = "importComSectorMenu";
-            this.importComSectorMenu.Size = new System.Drawing.Size(306, 26);
+            this.importComSectorMenu.Size = new System.Drawing.Size(249, 22);
             this.importComSectorMenu.Text = "Nhập mã ngành";
             this.importComSectorMenu.Click += new System.EventHandler(this.importComSectorMenu_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(303, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(246, 6);
             // 
             // updateDataMenuItem
             // 
             this.updateDataMenuItem.Image = global::server.Properties.Resources.schedule;
             this.updateDataMenuItem.Name = "updateDataMenuItem";
-            this.updateDataMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.updateDataMenuItem.Size = new System.Drawing.Size(249, 22);
             this.updateDataMenuItem.Text = "Lấy giá trực tuyến";
             this.updateDataMenuItem.Click += new System.EventHandler(this.updateDataMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(303, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(246, 6);
             // 
             // reUpdatePriceMenuItem
             // 
             this.reUpdatePriceMenuItem.Image = global::server.Properties.Resources.exrate;
             this.reUpdatePriceMenuItem.Name = "reUpdatePriceMenuItem";
-            this.reUpdatePriceMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.reUpdatePriceMenuItem.Size = new System.Drawing.Size(249, 22);
             this.reUpdatePriceMenuItem.Text = "Cập nhật lại giá trực tuyến";
             this.reUpdatePriceMenuItem.Click += new System.EventHandler(this.reUpdatePriceMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(303, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(246, 6);
             // 
             // reAggregateMenuItem
             // 
             this.reAggregateMenuItem.Image = global::server.Properties.Resources.exrate;
             this.reAggregateMenuItem.Name = "reAggregateMenuItem";
-            this.reAggregateMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.reAggregateMenuItem.Size = new System.Drawing.Size(249, 22);
             this.reAggregateMenuItem.Text = "Tổ hợp lại giá";
             this.reAggregateMenuItem.Click += new System.EventHandler(this.reAggregateMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(303, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(246, 6);
             // 
             // bestStrategyToolStripMenuItem
             // 
             this.bestStrategyToolStripMenuItem.Name = "bestStrategyToolStripMenuItem";
-            this.bestStrategyToolStripMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.bestStrategyToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.bestStrategyToolStripMenuItem.Text = "Tạo chiến lược tốt nhất";
             this.bestStrategyToolStripMenuItem.Click += new System.EventHandler(this.bestStrategyToolStripMenuItem_Click);
             // 
             // exitMenuStrip
             // 
             this.exitMenuStrip.Name = "exitMenuStrip";
-            this.exitMenuStrip.Size = new System.Drawing.Size(71, 25);
+            this.exitMenuStrip.Size = new System.Drawing.Size(57, 22);
             this.exitMenuStrip.Text = "Thóat";
             this.exitMenuStrip.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -235,10 +237,17 @@
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 360);
+            this.progressBar1.Location = new System.Drawing.Point(0, 361);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(720, 23);
             this.progressBar1.TabIndex = 233;
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.xToolStripMenuItem.Text = "Xóa Cổ Phiếu Không Tồn Tại";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.DeleteStocksMenuItem_Click);
             // 
             // frmServer
             // 
@@ -251,7 +260,7 @@
             this.MainMenuStrip = this.myMainMenu;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = true;
-            this.Name = "main";
+            this.Name = "frmServer";
             this.Text = "Stock Trading";
             this.Controls.SetChildIndex(this.myMainMenu, 0);
             this.Controls.SetChildIndex(this.TitleLbl, 0);
@@ -288,5 +297,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem bestStrategyToolStripMenuItem;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }
