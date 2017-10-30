@@ -1771,7 +1771,7 @@ namespace DataAccess
                 lock (myClient)
                 {
                     string errorText = "";
-                    databases.baseDS.transactionsDataTable retVal = myClient.MakeTransaction(out errorText, type, stockCode, portfolioCode, qty, feePerc);
+                    databases.baseDS.transactionsDataTable retVal = myClient.MakeTransaction(type, stockCode, portfolioCode, qty, feePerc, out errorText);
                     if (retVal == null) common.system.ShowErrorMessage(errorText);
                     return retVal;
                 }
@@ -1833,7 +1833,7 @@ namespace DataAccess
                         data = new AnalysisDataCache();
                         int firstData = 0;
                         DataParams dataParam = new DataParams(dataObj.DataTimeScale.Code, dataObj.DataTimeRange, dataObj.DataMaxCount);
-                        data.dataTbl = myClient.GetAnalysis_Data(out firstData, dataObj.DataStockCode, dataParam);
+                        data.dataTbl = myClient.GetAnalysis_Data(dataObj.DataStockCode, dataParam, out firstData);
                         data.firstData = firstData;
                         AddCache(cacheKey, data);
                         dataObj.priceDataTbl = (databases.baseDS.priceDataDataTable)data.dataTbl.Copy();
@@ -1857,7 +1857,7 @@ namespace DataAccess
             {
                 lock (myClient)
                 {
-                    return myClient.GetTradePointWithEstimationDetail(out toTbl,out statistics, dataParam, stockCode, strategyCode, options);
+                    return myClient.GetTradePointWithEstimationDetail(dataParam, stockCode, strategyCode, options, out toTbl, out statistics);
                 }
             }
             catch (Exception er)
