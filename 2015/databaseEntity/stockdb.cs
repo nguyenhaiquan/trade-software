@@ -14,12 +14,21 @@ namespace databaseEntity
     {
         public virtual DbSet<investor> Investors { get; set; }
 
+        public virtual DbSet<investorStock> InvestorStocks { get; set; }
+
+        public virtual DbSet<stockCode> StockCodes { get; set; }
+        public virtual DbSet<tradeAlert> TradeAlerts { get; set; }
+        public virtual DbSet<priceDataSum> PriceDataSums { get; set; }
+        public virtual DbSet<priceData> PriceData { get; set; }
+        public virtual DbSet<transaction> Transactions { get; set; }
+
         public StockDb()
             : base("name=stockEntities")
         {
         }
 
-        public investor AddInvestor(string username,string password,string email){
+        public investor AddInvestor(string username, string password, string email)
+        {
             try
             {
                 var user = new investor();
@@ -42,7 +51,7 @@ namespace databaseEntity
                 user.status = 0;
                 user.type = 0;
                 user.expireDate = DateTime.Now.AddMonths(6);
-                Entry(user).State = (EntityState)System.Data.Entity.EntityState.Added;                
+                Entry(user).State = (EntityState)System.Data.Entity.EntityState.Added;
                 //Investors.Add(user);
                 this.SaveChanges();
                 return user;
@@ -81,11 +90,11 @@ namespace databaseEntity
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        public bool IsUserExisteWithPassword(string username,string password)
+        public bool IsUserExisteWithPassword(string username, string password)
         {
             //return db.IsExisteInvestor(username);
             var investor = from i in Investors
-                           where ((i.account == username)&&(i.password==password))
+                           where ((i.account == username) && (i.password == password))
                            select i;
             if (investor.Count() > 0) return true;
             return false;
@@ -99,6 +108,87 @@ namespace databaseEntity
                            select i;
             if (investor.Count() > 0) return true;
             return false;
+        }
+
+        /// <summary>
+        /// Delete Alerts having condition =stock code
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public bool DeleteTradeAlerts(string code)
+        {
+            TradeAlerts.RemoveRange(TradeAlerts.Where(x => x.stockCode == code));
+            this.SaveChanges();
+            return true;
+        }
+
+        public bool DeletePriceDataSum(string code)
+        {
+            PriceDataSums.RemoveRange(PriceDataSums.Where(x => x.stockCode == code));
+            this.SaveChanges();
+            return true;
+        }
+
+        public bool DeletePriceData(string code)
+        {
+            PriceData.RemoveRange(PriceData.Where(x => x.stockCode == code));
+            this.SaveChanges();
+            return true;
+        }
+
+        public bool DeleteTransactions(string code)
+        {
+            Transactions.RemoveRange(Transactions.Where(x => x.stockCode == code));
+            this.SaveChanges();
+            return true;
+        }
+
+        public bool DeleteInvestorStocks(string code)
+        {
+            InvestorStocks.RemoveRange(InvestorStocks.Where(x => x.stockCode == code));
+            this.SaveChanges();
+            return true;
+        }
+
+        public bool DeleteStockCode(string stockcode)
+        {
+            try
+            {
+                //1. Delete TradeAlert
+                DeleteTradeAlerts(stockcode);
+
+                //2. Delete priceDataSum
+                DeletePriceDataSum(stockcode);
+                //3. delete priceData
+                DeletePriceData(stockcode);
+
+                //4.Delete Transations
+
+                DeleteTransactions(stockcode);
+                //5. Delete InvestorStock
+                DeleteInvestorStocks(stockcode);
+
+                //6. Delete Stock Code
+                var stock = (from s in StockCodes
+                            where (s.code == stockcode)
+                            select s).FirstOrDefault();
+                StockCodes.Remove(stock);
+                this.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}",
+                                                validationError.PropertyName,
+                                                validationError.ErrorMessage);
+                    }
+                }
+                return false;
+            }
         }
     }
 }

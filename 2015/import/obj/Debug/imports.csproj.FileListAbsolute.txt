@@ -11,6 +11,9 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Debug\Imports
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Debug\imports.csproj.GenerateResource.Cache
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Debug\imports.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\import\obj\Debug\imports.pdb
+C:\Github\trade-software\2015\dlls\imports.dll.config
+C:\Github\trade-software\2015\dlls\imports.dll
+C:\Github\trade-software\2015\dlls\imports.pdb
 C:\Github\trade-software\2015\import\obj\Debug\imports.csprojResolveAssemblyReference.cache
 C:\Github\trade-software\2015\import\obj\Debug\Imports.Forms.frmReAggregatePrice.resources
 C:\Github\trade-software\2015\import\obj\Debug\Imports.Forms.frmImportCompany.resources
@@ -21,7 +24,5 @@ C:\Github\trade-software\2015\import\obj\Debug\Imports.Forms.frmReUpdatePrice.re
 C:\Github\trade-software\2015\import\obj\Debug\Imports.Properties.Resources.resources
 C:\Github\trade-software\2015\import\obj\Debug\imports.csproj.GenerateResource.Cache
 C:\Github\trade-software\2015\import\obj\Debug\imports.csproj.CoreCompileInputs.cache
-C:\Github\trade-software\2015\dlls\imports.dll
-C:\Github\trade-software\2015\dlls\imports.pdb
 C:\Github\trade-software\2015\import\obj\Debug\imports.dll
 C:\Github\trade-software\2015\import\obj\Debug\imports.pdb

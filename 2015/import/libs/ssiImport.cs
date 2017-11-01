@@ -14,6 +14,7 @@ using commonTypes;
 using System.Threading;
 using System.Net;
 using Imports.Stock;
+using databaseEntity;
 
 namespace Imports.Stock
 {
@@ -130,14 +131,15 @@ namespace Imports.Stock
             ssiPage.getHOSEData();
             ssiPage.getHNXData();
             //SaveDatatoImportPriceDataTable(updateTime,importPriceTbl);
-           
+
+            StockDb stockdb = new StockDb();
             for (int i = 0; i < stockCodeList.Count; i++)
             {
                 if (!ssiPage.dictStocks.ContainsKey(stockCodeList[i]))   //Step 3: neu ko ton tai
                 {
                     System.Console.WriteLine(stockCodeList[i]);
-                    //databases.DbAccess.DeleteStockSQL(stockCodeList[i]);Chua chay
-
+                    //Dung Entity Framework de xoa toan bo du lieu
+                    stockdb.DeleteStockCode(stockCodeList[i]);
                 }
             }
             

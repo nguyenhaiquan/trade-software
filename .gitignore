@@ -20,3 +20,6 @@
 *.xml
 *.config
 *.exe
+*.config
+*.config
+*.Cache
