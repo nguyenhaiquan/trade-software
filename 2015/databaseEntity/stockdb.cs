@@ -190,5 +190,10 @@ namespace databaseEntity
                 return false;
             }
         }
+
+        public StockCodes GetHOSEStockCodes()
+        {
+            return StockCodes.Where(x=>x.stockExchange=="HOSE")
+        }
     }
 }

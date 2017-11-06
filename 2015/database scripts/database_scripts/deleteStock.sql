@@ -1,7 +1,7 @@
 USE [stock]
 GO
 DECLARE @code nvarchar(20);  
-SET @code='ALP';
+SET @code='XAUUSD';
 
 DELETE FROM [dbo].[tradeAlert]
       WHERE [dbo].[tradeAlert].stockCode=@code

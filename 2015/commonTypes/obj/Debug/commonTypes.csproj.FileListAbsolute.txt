@@ -12,3 +12,4 @@ C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.GenerateR
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.CoreCompileInputs.cache
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.dll
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.pdb
+C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.csprojResolveAssemblyReference.cache

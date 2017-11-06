@@ -120,16 +120,15 @@ namespace commonTypes
     /// </summary>
     public static class Settings
     {
-        public const bool sysDebugMode =false;//Dung de debug WCF
+        public const bool sysDebugMode =true;//Dung de debug WCF
         //public const bool sysDebugMode = true;//Dung de debug WCF
-        public enum environmentDebugMode{localT440,localHP,SIT440,UAT,Prod};
-        public static environmentDebugMode environmentMode = environmentDebugMode.localT440;
+        public enum environmentDebugMode{localT440,localHP,SITAzure,UAT,Prod};
+        public static environmentDebugMode environmentMode = environmentDebugMode.SITAzure;
         //public static environmentDebugMode environmentMode = environmentDebugMode.localHP;
         //public static environmentDebugMode environmentMode = environmentDebugMode.Prod;
         //public const string sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\Quantum201428\wsServices\obj\Debug";
         public static string sysDebugMode_execDirectory = "";
         //public const string sysDebugMode_execDirectory = "D:\\work\\stockProdsject\\code\\wsServices\\obj\\Debug";        
-        
 
         private static GlobalSettings _sysGlobal = null;
         public static GlobalSettings sysGlobal
@@ -252,8 +251,8 @@ namespace commonTypes
                             if (environmentMode == environmentDebugMode.localT440)
                                 sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\wsServices\obj\Debug";
                             else
-                                if (environmentMode == environmentDebugMode.SIT440)
-                                    sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\wsServices\obj\Debug";
+                                if (environmentMode == environmentDebugMode.SITAzure)
+                                    sysDebugMode_execDirectory = @"C:\Github\trade-software\2015\wsServices\obj\Debug";
                                 else
                                 //for Production and UAT
                                 {
