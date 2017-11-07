@@ -191,9 +191,13 @@ namespace databaseEntity
             }
         }
 
-        public StockCodes GetHOSEStockCodes()
+        //public StockCodes GetHOSEStockCodes()
+        //{
+        //    return StockCodes.Where(x => x.stockExchange == "HOSE");
+        //}
+        public DbSet<databaseEntity.stockCode> GetAllStockCodes()
         {
-            return StockCodes.Where(x=>x.stockExchange=="HOSE")
+            return StockCodes;
         }
     }
 }

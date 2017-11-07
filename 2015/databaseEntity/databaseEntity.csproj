@@ -90,6 +90,7 @@
     <Compile Include="priceDataSum.cs">
       <DependentUpon>stock.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="stock.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

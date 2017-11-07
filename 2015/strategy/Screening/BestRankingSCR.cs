@@ -32,15 +32,16 @@ namespace Strategy
             //    SelectStock(Bar, info);
             //}
 
-            //Tinh diem cong cho tung chien luoc
+            //1. Tinh diem cong cho tung chien luoc
             Indicators.SMA smaVolume = new Indicators.SMA(data.Volume, parameters[0], "sma");
             if (data.Volume[Bar] > 1.2 * smaVolume[Bar])
                 weight++;
 
             if (data.Volume[Bar] < 1.2 * smaVolume[Bar])
                 weight--;
-            
 
+            //2. 
+            BasicMACDRule rule = new BasicMACDRule(data.Close, 29, 9, 9);
 
             BusinessInfo info = new BusinessInfo();
             info.Weight = weight;
