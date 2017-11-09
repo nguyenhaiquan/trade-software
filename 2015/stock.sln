@@ -179,6 +179,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database_scripts", "databas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stocksRanking", "stocksRanking\stocksRanking.csproj", "{429D8842-7507-4569-BEA6-44D4DF921CAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indicators.Tests", "Indicators.Tests\Indicators.Tests.csproj", "{5EF99BAB-F36D-4113-91A9-77704492FA59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -641,6 +643,26 @@ Global
 		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|x86.ActiveCfg = Release|Any CPU
 		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|x86.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

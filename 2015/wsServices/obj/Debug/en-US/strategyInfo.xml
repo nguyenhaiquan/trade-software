@@ -382,7 +382,7 @@
     <BasicDMI_CutLoss Code="STR002"/>
     <BasicDMI_CutLoss Category="HFT" />
     <BasicDMI_CutLoss Parameters="Plus Period=14,Minus Period=14,Stop Loss Level (%)=5,Take Profit Level (%)=200" />
-    <BasicDMI_CutLoss ParameterDescriptions="Period defines the input data for the strategy. Stop Loss Level defines the target in % of price for selling the stock. &#xD;&#xA;                      Take Profit Level defines the target in % of price for taking profit" />
+    <BasicDMI_CutLoss ParameterDescriptions="Period defines the input data for the strategy. &#xD;&#xA;                      Stop Loss Level defines the target in % of price for selling the stock. &#xD;&#xA;                      Take Profit Level defines the target in % of price for taking profit" />
     <BasicDMI_CutLoss Name="Basic DMI with Risk Management" />
     <BasicDMI_CutLoss Description="Buy when there is cut between DI+ and DI-. Sell when DI- crosses DI+. Cut loss when the strategy bypass the Stop Loss Level" />
     <BasicDMI_CutLoss URL="http://www.quantumvn.com" />
