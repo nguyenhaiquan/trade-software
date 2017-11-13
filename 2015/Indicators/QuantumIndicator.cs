@@ -54,9 +54,12 @@ namespace Indicators
             DataSeries line2 = stoch.SlowDSeries;
 
             //Relative Strength vs VN-Index
-            //application.AnalysisData vnidxData = data.New("VN-IDX");
-            //Indicators.ROCR100 roc = Indicators.ROCR100.Series(data.Close, period, "");
-            //Indicators.ROCR100 roc_index = Indicators.ROCR100.Series(vnidxData.Close, period, "");
+            //application.AnalysisData vnidxData = new application.AnalysisData();
+            //vnidxData.New("VN-IDX");
+            //vnidxData.LoadData();
+
+            //Indicators.ROCR100 roc = Indicators.ROCR100.Series(db.Close, 25, "roc"+name);
+            //Indicators.ROCR100 roc_index = Indicators.ROCR100.Series(vnidxData.Close, 25, "roc_index"+name);
 
             length = ds.Count;
             for (int i = 0; i < length; i++)
@@ -110,7 +113,10 @@ namespace Indicators
                 if (line1[i] >= line2[i]) output[i]++;
                 else output[i]--;
 
-                //Rate of change
+                //Rate of change - Multiple if have lots of change compared to vnindex
+                //double rs=0;
+                //if (roc_index[i]!=0) rs=roc[i] / roc_index[i];
+                //output[i] = output[i] * (1 + rs);
             }
 
             //Assign first bar that contains indicator data

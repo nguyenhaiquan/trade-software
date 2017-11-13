@@ -362,6 +362,19 @@
     <ResistanceSCR Version="1.0" />
   </STRATEGY>
 
+<STRATEGY>
+    <BestRankingSCR Type="SCREENING" />
+    <BestRankingSCR Code="QI001" />
+    <BestRankingSCR Category="OTHER" />
+    <BestRankingSCR Parameters="" />
+    <BestRankingSCR ParameterDescriptions="Best Ranking Screening using Quantum Indicator" />
+    <BestRankingSCR Name="Best Ranking Screening using Quantum Indicator" />
+    <BestRankingSCR Description="Screen stock near resistance line" />
+    <BestRankingSCR URL="http://www.quantumvn.com" />
+    <BestRankingSCR Authors="Quan Nguyen" />
+    <BestRankingSCR Version="1.0" />
+  </STRATEGY>
+
   <!--*******************************Strategy Description*****************************************-->
 
                <!--*****************Trending Strategy Description***************-->  

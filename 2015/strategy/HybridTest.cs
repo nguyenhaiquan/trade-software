@@ -83,6 +83,66 @@ namespace Strategy
         }
     }
 
+    public class QuantumRules : CompositeRule
+    {
+        ADXMarketTrend adxTrend;
+        PriceTwoSMARule volumeRule;
+        DataBars data;
+        double Volume_Filter;
+
+        public QuantumRules(DataBars db, double atrperiod, double shortperiod, double longperiod)
+        {
+            rules = new Rule[3];
+            rules[0] = new QuantumIndicatorRule(db);
+            //rules[0] = new TwoSMARule(db.Close, shortperiod, longperiod);
+            //rules[1] = new BasicATRRule(db, atrperiod, "atr");
+            //rules[2] = new BasicMACDRule(db.Close, 12, 26, 9);
+
+            adxTrend = new ADXMarketTrend(db, 14);
+            //Kiem tra volume
+            volumeRule = new PriceTwoSMARule(db.Volume, 10, 30);
+            data = db;
+            Volume_Filter = 50000;
+        }
+
+        public override bool DownTrend(int index)
+        {
+            if (rules[0].DownTrend(index))
+                return true;
+            return false;
+        }
+
+        public override bool UpTrend(int index)
+        {
+            return (rules[0].UpTrend(index));
+        }
+
+        public override bool isValid_forBuy(int index)
+        {
+            //if not sideway, avoid pitfall false signal
+            //if (!adxTrend.SideWay(index))
+            //{
+            //    //if volume is ok then
+            //    //if (volumeRule.UpTrend(index) && volumeRule.price[index] > Volume_Filter)
+            //    //{
+
+            //    //    if ((rules[1].isValid_forBuy(index) && rules[0].UpTrend(index) && rules[2].UpTrend(index))
+            //    //        ||
+            //    //       ((rules[0].isValid_forBuy(index) && rules[1].UpTrend(index) && rules[2].UpTrend(index))))
+            //    //        return true;
+            //    //}
+            //}
+            return rules[0].isValid_forBuy(index);
+        }
+
+        public override bool isValid_forSell(int index)
+        {
+            // if (rules[0].isValid_forSell(index) || rules[1].isValid_forSell(index))
+            //    return true;
+            //return false;
+            return rules[0].isValid_forSell(index);
+        }
+    }
     /// <summary>
     /// Screening following HybridTest, Buy Signal
     /// </summary>
@@ -129,7 +189,9 @@ namespace Strategy
     {
         override protected void StrategyExecute()
         {
-            HybridTestRules rule = new HybridTestRules(data.Bars, parameters[0], parameters[1], parameters[2]);
+            //HybridTestRules rule = new HybridTestRules(data.Bars, parameters[0], parameters[1], parameters[2]);
+            QuantumRules rule = new QuantumRules(data.Bars, parameters[0], parameters[1], parameters[2]);
+
             int cutlosslevel = (int)parameters[3];
             int trailingstoplevel = (int)parameters[4];
             int takeprofitlevel = (int)parameters[5];
@@ -139,12 +201,7 @@ namespace Strategy
 
             Indicators.Fibonnanci fibo = Indicators.Fibonnanci.Series(data.Bars, parameters[1], "fibo");
 
-
-        //    public double Short_Resistance;
-        //public double Short_Support;
-        //public double Short_Target;
-        //public AppTypes.MarketTrend ShortTermTrend;
-        //public double Stop_Loss;
+       
             for (int idx = 1; idx < data.Close.Count; idx++)
             {
                 if (rule.isValid_forBuy(idx))
@@ -168,14 +225,14 @@ namespace Strategy
                         info.Stop_Loss = data.Close[idx] * (1 - cutlosslevel / 100);
                         SellAtClose(idx, info);
                     }
-                if (is_bought && CutLossCondition(data.Close[idx], buy_price, cutlosslevel))
-                    SellCutLoss(idx);
+                //if (is_bought && CutLossCondition(data.Close[idx], buy_price, cutlosslevel))
+                //    SellCutLoss(idx);
 
-                if (is_bought && TakeProfitCondition(data.Close[idx], buy_price, takeprofitlevel))
-                    SellTakeProfit(idx);
+                //if (is_bought && TakeProfitCondition(data.Close[idx], buy_price, takeprofitlevel))
+                //    SellTakeProfit(idx);
 
-                if (trailingstoplevel > 0)
-                    TrailingStopWithBuyBack(rule, data.Close[idx], trailingstoplevel, idx);
+                //if (trailingstoplevel > 0)
+                //    TrailingStopWithBuyBack(rule, data.Close[idx], trailingstoplevel, idx);
             }
         }
     }    
