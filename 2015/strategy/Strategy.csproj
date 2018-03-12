@@ -150,8 +150,12 @@
     <Compile Include="Basic Strategy\StochasticSlow.cs" />
     <Compile Include="Hybrid\SMA_Stochastic.cs" />
     <Compile Include="Rule.cs" />
+<<<<<<< HEAD
     <Compile Include="Screening\RSIScreening.cs" />
     <Compile Include="Screening\VolumeScreening.cs" />
+=======
+    <Compile Include="Screening\VolumeSCR.cs" />
+>>>>>>> origin/Change-download-page
     <Compile Include="strategyLib.cs" />
     <Compile Include="Basic Strategy\TwoMA.cs" />
     <Compile Include="Basic Strategy\TwoMA_Filters.cs" />

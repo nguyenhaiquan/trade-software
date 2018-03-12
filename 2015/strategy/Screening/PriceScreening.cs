@@ -21,9 +21,12 @@ namespace Strategy
         public BasicPriceSCR_Helper() : base(typeof(BasicPriceSCR)) { }
     }
 
+<<<<<<< HEAD
     
 
 
+=======
+>>>>>>> origin/Change-download-page
     public class BasicPriceSCR : GenericStrategy
     {
         override protected void StrategyExecute()

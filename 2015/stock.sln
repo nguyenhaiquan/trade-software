@@ -4,6 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F85B296-DAB5-42A3-8F98-F42588CBB2FB}"
+<<<<<<< HEAD
+=======
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		Performance1.psess = Performance1.psess
+		stock.vsmdi = stock.vsmdi
+	EndProjectSection
+>>>>>>> origin/Change-download-page
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "baseClass", "baseClass\baseClass.csproj", "{D14859F5-0C41-4D7E-91AD-ED1C9195234D}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -716,10 +724,15 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 	GlobalSection(NestedProjects) = preSolution
 		{DC573208-DED1-474D-871B-C6083538D9DD} = {01C5D87D-19A2-4FA9-91C1-6A7B1F32C451}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {227AAFC2-A818-4C26-BFC5-1348E513A2D0}
+=======
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+>>>>>>> origin/Change-download-page
 	EndGlobalSection
 EndGlobal
