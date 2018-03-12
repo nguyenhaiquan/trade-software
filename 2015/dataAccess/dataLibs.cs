@@ -117,7 +117,8 @@ namespace DataAccess
             //For testing
             if (Settings.sysDebugMode)
             {
-                if (Settings.environmentMode == Settings.environmentDebugMode.localHP || Settings.environmentMode == Settings.environmentDebugMode.localT440)
+                if (Settings.environmentMode == Settings.environmentDebugMode.localHP || Settings.environmentMode == Settings.environmentDebugMode.localT440
+                    || Settings.environmentMode == Settings.environmentDebugMode.SITAzure)
                 {
                     _myClient.Endpoint.Address = new System.ServiceModel.EndpointAddress("http://localhost:8733/wsServices/DataLibs");
                     _myClient.ClientCredentials.Windows.ClientCredential.UserName = "";

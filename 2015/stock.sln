@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F85B296-DAB5-42A3-8F98-F42588CBB2FB}"
-	ProjectSection(SolutionItems) = preProject
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		Performance1.psess = Performance1.psess
-		stock.vsmdi = stock.vsmdi
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "baseClass", "baseClass\baseClass.csproj", "{D14859F5-0C41-4D7E-91AD-ED1C9195234D}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -178,9 +173,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc7days", "..\..\..\Visual
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum", "Quantum Website\Quantum\Quantum.csproj", "{3DCADE75-0A2E-4C45-89C3-A136C718AA22}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWebApi", "QWebApi\QWebApi.csproj", "{BC81AACF-CAD9-4E1A-B439-4D01AFC85C90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumWebAPI", "QuantumWebAPI\QuantumWebAPI.csproj", "{FBDAD9E8-CEB7-49E4-80B6-ABE4823E1E68}"
+=======
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database scripts", "database scripts", "{01C5D87D-19A2-4FA9-91C1-6A7B1F32C451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database_scripts", "database scripts\database_scripts\database_scripts.csproj", "{DC573208-DED1-474D-871B-C6083538D9DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stocksRanking", "stocksRanking\stocksRanking.csproj", "{429D8842-7507-4569-BEA6-44D4DF921CAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indicators.Tests", "Indicators.Tests\Indicators.Tests.csproj", "{5EF99BAB-F36D-4113-91A9-77704492FA59}"
+>>>>>>> TrendScore
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -604,6 +609,7 @@ Global
 		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{3DCADE75-0A2E-4C45-89C3-A136C718AA22}.SingleImage|x86.ActiveCfg = Release|Any CPU
+<<<<<<< HEAD
 		{BC81AACF-CAD9-4E1A-B439-4D01AFC85C90}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
 		{BC81AACF-CAD9-4E1A-B439-4D01AFC85C90}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{BC81AACF-CAD9-4E1A-B439-4D01AFC85C90}.CD_ROM|x86.ActiveCfg = Release|Any CPU
@@ -644,8 +650,76 @@ Global
 		{FBDAD9E8-CEB7-49E4-80B6-ABE4823E1E68}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{FBDAD9E8-CEB7-49E4-80B6-ABE4823E1E68}.SingleImage|x86.ActiveCfg = Release|Any CPU
 		{FBDAD9E8-CEB7-49E4-80B6-ABE4823E1E68}.SingleImage|x86.Build.0 = Release|Any CPU
+=======
+		{DC573208-DED1-474D-871B-C6083538D9DD}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.Release|x86.Build.0 = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{DC573208-DED1-474D-871B-C6083538D9DD}.SingleImage|x86.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Debug|x86.Build.0 = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Release|x86.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.Release|x86.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{429D8842-7507-4569-BEA6-44D4DF921CAD}.SingleImage|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Debug|x86.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.Release|x86.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{5EF99BAB-F36D-4113-91A9-77704492FA59}.SingleImage|x86.Build.0 = Release|Any CPU
+>>>>>>> TrendScore
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC573208-DED1-474D-871B-C6083538D9DD} = {01C5D87D-19A2-4FA9-91C1-6A7B1F32C451}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {227AAFC2-A818-4C26-BFC5-1348E513A2D0}
 	EndGlobalSection
 EndGlobal

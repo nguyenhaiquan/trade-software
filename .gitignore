@@ -1,12 +1,2 @@
-*.dll
-*.pdb
-*.cache
-*.txt
-/2015/admin/obj/
-/2015/dlls/*
-*.nupkg
-*.config
-/2015/dataAccess/Service References/
-/2015/dataAccess/obj/
-/2015/dataAccess/obj/Debug/
-/2015/dlls/*.*
+
+2015/.vs/stock/v15/sqlite3/storage.ide
