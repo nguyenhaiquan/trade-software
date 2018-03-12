@@ -349,7 +349,8 @@ namespace commonTypes
         ///Customed format
 
         public static string sysMaskGeneralValue = "###,###,###,##0";
-        public static string sysMaskLocalAmt = "###,###,###,###,##0";
+        //public static string sysMaskLocalAmt = "###,###,###,###,##0";
+        public static string sysMaskLocalAmt = "###,###,###,###,##0.00";
         public static string sysMaskForeignAmt = "###,###,###,##0.00";
         public static string sysMaskPercent = "#0.0";
         public static string sysMaskQty = "###,###,###,##0";

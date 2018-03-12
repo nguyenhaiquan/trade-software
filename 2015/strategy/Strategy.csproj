@@ -134,6 +134,7 @@
     <Compile Include="Screening\BasicATRSCR.cs" />
     <Compile Include="Screening\BasicMACDSCR.cs" />
     <Compile Include="Screening\BestRankingSCR.cs" />
+    <Compile Include="Screening\EMASCR.cs" />
     <Compile Include="Screening\MACD_HistogramSCR.cs" />
     <Compile Include="Screening\RelativeStrength.cs" />
     <Compile Include="Screening\ResistanceScreening.cs" />
@@ -149,6 +150,8 @@
     <Compile Include="Basic Strategy\StochasticSlow.cs" />
     <Compile Include="Hybrid\SMA_Stochastic.cs" />
     <Compile Include="Rule.cs" />
+    <Compile Include="Screening\RSIScreening.cs" />
+    <Compile Include="Screening\VolumeScreening.cs" />
     <Compile Include="strategyLib.cs" />
     <Compile Include="Basic Strategy\TwoMA.cs" />
     <Compile Include="Basic Strategy\TwoMA_Filters.cs" />
