@@ -53,6 +53,8 @@ namespace Indicators
             DataSeries line1 = stoch.SlowKSeries;
             DataSeries line2 = stoch.SlowDSeries;
 
+            baseSMA rsi = Indicators.RSI.Series(ds, 14, "rsi" + name);
+
             //Relative Strength vs VN-Index
             //application.AnalysisData vnidxData = new application.AnalysisData();
             //vnidxData.New("VN-IDX");
@@ -112,6 +114,12 @@ namespace Indicators
                 //Stochastic
                 if (line1[i] >= line2[i]) output[i]++;
                 else output[i]--;
+
+                //RSI
+                if (rsi[i] >= 70)
+                    output[i] = output[i] -2;
+                else 
+                    if (rsi[i]<=30) output[i] = output[i] + 2;
 
                 //Rate of change - Multiple if have lots of change compared to vnindex
                 //double rs=0;

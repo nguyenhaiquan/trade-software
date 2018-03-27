@@ -389,8 +389,47 @@
   </STRATEGY>
 
 <STRATEGY>
+    <EMA5_SCR Type="SCREENING" />
+    <EMA5_SCR Code="QI003" />
+    <EMA5_SCR Category="OTHER" />
+    <EMA5_SCR Parameters="Period=5" />
+    <EMA5_SCR ParameterDescriptions="Screen EMA 5" />
+    <EMA5_SCR Name="Screen EMA 5" />
+    <EMA5_SCR Description="Screen EMA 5" />
+    <EMA5_SCR URL="http://www.quantumvn.com" />
+    <EMA5_SCR Authors="Quan Nguyen" />
+    <EMA5_SCR Version="1.0" />
+  </STRATEGY>
+
+<STRATEGY>
+    <EMA9_SCR Type="SCREENING" />
+    <EMA9_SCR Code="QI004" />
+    <EMA9_SCR Category="OTHER" />
+    <EMA9_SCR Parameters="Period=9" />
+    <EMA9_SCR ParameterDescriptions="Screen EMA 9" />
+    <EMA9_SCR Name="Screen EMA 9" />
+    <EMA9_SCR Description="Screen EMA 9" />
+    <EMA9_SCR URL="http://www.quantumvn.com" />
+    <EMA9_SCR Authors="Quan Nguyen" />
+    <EMA9_SCR Version="1.0" />
+  </STRATEGY>
+
+<STRATEGY>
+    <EMA15_SCR Type="SCREENING" />
+    <EMA15_SCR Code="QI005" />
+    <EMA15_SCR Category="OTHER" />
+    <EMA15_SCR Parameters="Period=15" />
+    <EMA15_SCR ParameterDescriptions="Screen EMA 15" />
+    <EMA15_SCR Name="Screen EMA 15" />
+    <EMA15_SCR Description="Screen EMA 15" />
+    <EMA15_SCR URL="http://www.quantumvn.com" />
+    <EMA15_SCR Authors="Quan Nguyen" />
+    <EMA15_SCR Version="1.0" />
+  </STRATEGY>
+
+<STRATEGY>
     <EMA65_SCR Type="SCREENING" />
-    <EMA65_SCR Code="QI003" />
+    <EMA65_SCR Code="QI006" />
     <EMA65_SCR Category="OTHER" />
     <EMA65_SCR Parameters="Period=65" />
     <EMA65_SCR ParameterDescriptions="Screen EMA 65" />
@@ -403,7 +442,7 @@
 
 <STRATEGY>
     <EMA200_SCR Type="SCREENING" />
-    <EMA200_SCR Code="QI004" />
+    <EMA200_SCR Code="QI007" />
     <EMA200_SCR Category="OTHER" />
     <EMA200_SCR Parameters="Period=200" />
     <EMA200_SCR ParameterDescriptions="Screen EMA 200" />

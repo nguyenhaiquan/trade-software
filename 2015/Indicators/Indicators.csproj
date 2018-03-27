@@ -157,6 +157,7 @@
     <Compile Include="class\TRIX.cs" />
     <Compile Include="class\TYPPRICE.cs" />
     <Compile Include="class\VAR.cs" />
+    <Compile Include="SharpeRatioIndicator.cs" />
     <Compile Include="QuantumIndicator.cs" />
     <Compile Include="RiskReward.cs" />
     <Compile Include="SRChannel.cs" />

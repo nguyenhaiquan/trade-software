@@ -5,7 +5,6 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\strategy.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\strategy.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Debug\strategy.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\strategy\obj\Debug\strategy.pdb
-C:\Github\trade-software\2015\strategy\obj\Debug\Strategy.csprojResolveAssemblyReference.cache
 C:\Github\trade-software\2015\strategy\obj\Debug\strategy.Properties.Resources.resources
 C:\Github\trade-software\2015\strategy\obj\Debug\Strategy.csproj.GenerateResource.Cache
 C:\Github\trade-software\2015\strategy\obj\Debug\Strategy.csproj.CoreCompileInputs.cache
@@ -13,3 +12,4 @@ C:\Github\trade-software\2015\dlls\strategy.dll
 C:\Github\trade-software\2015\dlls\strategy.pdb
 C:\Github\trade-software\2015\strategy\obj\Debug\strategy.dll
 C:\Github\trade-software\2015\strategy\obj\Debug\strategy.pdb
+C:\Github\trade-software\2015\strategy\obj\Debug\Strategy.csprojResolveAssemblyReference.cache
