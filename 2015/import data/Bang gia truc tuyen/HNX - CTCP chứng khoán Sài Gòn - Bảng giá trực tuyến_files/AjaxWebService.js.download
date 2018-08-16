@@ -1,0 +1,302 @@
+﻿var firstCallMarketIndex = true;
+/*
+var firstCallGetDataHose_Index = true;
+var firstCallGetDataHose30_Index = true;
+var firstCallGetDataHnx_Index = true;
+var firstCallGetDataHnx30_Index = true;
+var firstCallGetUpcomIndex = true;
+*/
+
+var firstCallGetDataHose = true;
+var firstCallGetDataHnx = true;
+var firstCallGetDataUpcom = true;
+var firstCallGetDataUpcomPre = true;
+var firstCallGetDataHose30 = true;
+var firstCallGetDataHnx30 = true;
+
+//Load Status Base Price
+function GetStatusBasePrice(floor) {
+    SSI.STC.AjaxWebService.GetStatusBasePrice(floor, StatusBasePriceCallback, FailedCallback);
+}
+function GetHoseStatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(1, HoseStatusBasePriceCallback, FailedCallback);
+    }
+}
+function GetHose30StatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(1, Hose30StatusBasePriceCallback, FailedCallback);
+    }
+}
+function GetHnxStatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(2, HnxStatusBasePriceCallback, FailedCallback);
+    }
+}
+function GetHnx30StatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(2, Hnx30StatusBasePriceCallback, FailedCallback);
+    }
+}
+function GetUpcomStatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(3, UpcomStatusBasePriceCallback, FailedCallback);
+    }
+}
+function GetFutureStatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(2, FutureStatusBasePriceCallback, FailedCallback);
+    }
+}
+
+//----------MARKET INDEX---------------//
+function GetMarketAllIndex(versionId) {
+    if (firstCallMarketIndex || CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetMarketAllIndex(versionId, MarketAllIndexCallback, FailedCallback);
+        firstCallMarketIndex = false;
+    }
+}
+
+//----------HOSE DATA STOCK QUOTE---------------//
+function GetDataHoseStockList() {
+    SSI.STC.AjaxWebService.GetDataHoseStockList(HoseStockList, FailedCallback);
+}
+function GetDataHoseQuoteInit(){
+    SSI.STC.AjaxWebService.GetHoseStockQuoteInit(HoseStockQuoteInit, FailedCallback);
+}
+function GetDataHoseQuoteReload() {
+    SSI.STC.AjaxWebService.GetHoseStockQuoteInit(HoseStockQuote, FailedCallback);
+}
+function GetHoseStockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHoseStockQuote(versionId, HoseStockQuote, FailedCallback);
+    }
+}
+function GetDataHoseChartInit() {    
+    SSI.STC.AjaxWebService.GetHoseIndexChart(HoseIndexChartInit, FailedCallback);
+}
+function GetHosePTInit() {
+    SSI.STC.AjaxWebService.GetHosePTInit(HosePutThroughInit, FailedCallback);
+}
+function GetHosePTBid(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHosePTBid(versionId, HosePutThroughBid, FailedCallback);
+    }
+}
+function GetHosePTMatch(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHosePTMatch(versionId, HosePutThroughMatch, FailedCallback);
+    }
+}
+function GetHosePTOffer(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHosePTOffer(versionId, HosePutThroughOffer, FailedCallback);
+    }
+}
+//----------HNX DATA STOCK QUOTE---------------//
+function GetDataHnxStockList() {
+    SSI.STC.AjaxWebService.GetDataHnxStockList(HnxStockList, FailedCallback);
+}
+function GetDataHnxQuoteInit() {
+    SSI.STC.AjaxWebService.GetHnxStockQuoteInit(HnxStockQuoteInit, FailedCallback);
+}
+function GetDataHnxQuoteReload() {
+    SSI.STC.AjaxWebService.GetHnxStockQuoteInit(HnxStockQuoteReload, FailedCallback);
+}
+
+function GetHnxStockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnxStockQuote(versionId, HnxStockQuote, FailedCallback);
+    }
+}
+function GetHnxTop3Price(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnxTop3Price(versionId, HnxTop3Price, FailedCallback);
+    }
+}
+function GetDataHnxChartInit() {    
+    SSI.STC.AjaxWebService.GetHnxIndexChart(HnxIndexChartInit, FailedCallback);
+}
+function GetHnxPTInit() {
+    SSI.STC.AjaxWebService.GetHnxPTInit(HnxPutThroughInit, FailedCallback);
+}
+function GetHnxPTBid(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnxPTBid(versionId, HnxPutThroughBid, FailedCallback);
+    }
+}
+function GetHnxPTMatch(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnxPTMatch(versionId, HnxPutThroughMatch, FailedCallback);
+    }
+}
+function GetHnxPTOffer(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnxPTOffer(versionId, HnxPutThroughOffer, FailedCallback);
+    }
+}
+
+//----------UPCOM DATA STOCK QUOTE---------------//
+function GetUpcomStockList() {
+    SSI.STC.AjaxWebService.GetUpcomStockList(UpcomStockList, FailedCallback);
+}
+function GetUpcomQuoteInit() {
+    SSI.STC.AjaxWebService.GetUpcomStockQuoteInit(UpcomStockQuoteInit, FailedCallback);
+}
+function GetUpcomQuoteReload() {
+    SSI.STC.AjaxWebService.GetUpcomStockQuoteInit(UpcomStockQuoteReload, FailedCallback);
+}
+function GetUpcomStockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomStockQuote(versionId, UpcomStockQuote, FailedCallback);
+    }
+}
+function GetUpcomTop3Price(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomTop3Price(versionId, UpcomTop3Price, FailedCallback);
+    }
+}
+function GetUpcomChartInit() {
+    SSI.STC.AjaxWebService.GetHnxIndexChart(UpcomIndexChartInit, FailedCallback);
+}
+
+function GetUpcomPTInit() {
+    SSI.STC.AjaxWebService.GetUpcomPTInit(UpcomPutThroughInit, FailedCallback);
+}
+function GetUpcomPTBid(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomPTBid(versionId, UpcomPutThroughBid, FailedCallback);
+    }
+}
+function GetUpcomPTMatch(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomPTMatch(versionId, UpcomPutThroughMatch, FailedCallback);
+    }
+}
+function GetUpcomPTOffer(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomPTOffer(versionId, UpcomPutThroughOffer, FailedCallback);
+    }
+}
+
+//----------HOSE30 DATA STOCK QUOTE---------------//
+function GetDataHose30StockList() {
+    SSI.STC.AjaxWebService.GetDataHose30StockList(Hose30StockList, FailedCallback);
+}
+function GetDataHose30QuoteInit() {
+    SSI.STC.AjaxWebService.GetHose30StockQuoteInit(Hose30StockQuoteInit, FailedCallback);
+}
+function GetDataHose30QuoteReload() {
+    SSI.STC.AjaxWebService.GetHose30StockQuoteInit(Hose30StockQuote, FailedCallback);
+}
+function GetHose30StockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHose30StockQuote(versionId, Hose30StockQuote, FailedCallback);
+    }
+}
+
+//----------HNX30 DATA STOCK QUOTE---------------//
+function GetHnx30StockList() {
+    SSI.STC.AjaxWebService.GetHnx30StockList(Hnx30StockList, FailedCallback);
+}
+function GetHnx30StockQuoteInit() {
+    SSI.STC.AjaxWebService.GetHnx30StockQuoteInit(Hnx30StockQuoteInit, FailedCallback);
+}
+function GetHnx30StockQuoteReload() {
+    SSI.STC.AjaxWebService.GetHnx30StockQuoteInit(Hnx30StockQuoteReload, FailedCallback);
+}
+function GetHnx30StockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnx30StockQuote(versionId, Hnx30StockQuote, FailedCallback);
+    }
+}
+function GetHnx30Top3Price(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetHnx30Top3Price(versionId, Hnx30Top3Price, FailedCallback);
+    }
+}
+
+//----------UPCOMPRE DATA STOCK QUOTE---------------//
+function GetUpcomPreStockList() {
+    SSI.STC.AjaxWebService.GetUpcomPreStockList(UpcomPreStockList, FailedCallback);
+}
+function GetUpcomPreStockQuoteInit() {
+    SSI.STC.AjaxWebService.GetUpcomPreStockQuoteInit(UpcomPreStockQuoteInit, FailedCallback);
+}
+function GetUpcomPreStockQuoteReload() {
+    SSI.STC.AjaxWebService.GetUpcomPreStockQuoteInit(UpcomPreStockQuoteReload, FailedCallback);
+}
+function GetUpcomPreStockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomPreStockQuote(versionId, UpcomPreStockQuote, FailedCallback);
+    }
+}
+function GetUpcomPreTop3Price(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetUpcomPreTop3Price(versionId, UpcomPreTop3Price, FailedCallback);
+    }
+}
+function GetUpcomPreStatusBasePrice() {
+    if (CheckTime(7, 00, 09, 05)) {
+        SSI.STC.AjaxWebService.GetStatusBasePrice(3, UpcomPreStatusBasePriceCallback, FailedCallback);
+    }
+}
+//----------FUTURE DATA STOCK QUOTE---------------//
+function GetDataFutureStockList() {
+    SSI.STC.AjaxWebService.GetDataFutureStockList(FutureStockList, FailedCallback);
+}
+function GetDataFutureQuoteInit() {
+    SSI.STC.AjaxWebService.GetFutureStockQuoteInit(FutureStockQuoteInit, FailedCallback);
+}
+function GetDataFutureQuoteReload() {
+    SSI.STC.AjaxWebService.GetFutureStockQuoteInit(FutureStockQuoteReload, FailedCallback);
+}
+
+function GetFutureStockQuote(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetFutureStockQuote(versionId, FutureStockQuote, FailedCallback);
+    }
+}
+function GetFutureTop3Price(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetFutureTop3Price(versionId, FutureTop3Price, FailedCallback);
+    }
+}
+function GetFuturePTInit() {
+    SSI.STC.AjaxWebService.GetFuturePTInit(FuturePutThroughInit, FailedCallback);
+}
+function GetFuturePTBid(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetFuturePTBid(versionId, FuturePutThroughBid, FailedCallback);
+    }
+}
+function GetFuturePTMatch(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetFuturePTMatch(versionId, FuturePutThroughMatch, FailedCallback);
+    }
+}
+function GetFuturePTOffer(versionId) {
+    if (CheckTime(7, 30, 15, 10)) {
+        SSI.STC.AjaxWebService.GetFuturePTOffer(versionId, FuturePutThroughOffer, FailedCallback);
+    }
+}
+
+function GetDataVn30ChartInit() {
+    SSI.STC.AjaxWebService.GetVn30IndexChart(Vn30IndexChartInit, FailedCallback);
+}
+
+function GetDataVnx50ChartInit() {
+    SSI.STC.AjaxWebService.GetVnx50IndexChart(Vnx50IndexChartInit, FailedCallback);
+}
+
+function GetDataFutureIntradayChartInit(symbol) {
+    SSI.STC.AjaxWebService.GetDataFutureIntradayChart(symbol, FutureIntradayChartInit, FailedCallback);
+}
+
+function GetDataFutureLifetimeChartInit(symbol) {
+    SSI.STC.AjaxWebService.GetDataFutureLifetimeChart(symbol, FutureLifetimeChartInit, FailedCallback);
+}
+
+function SucceededCallback(result, eventArgs){}
+function FailedCallback(error){}
+if (typeof(Sys) !== "undefined") Sys.Application.notifyScriptLoaded();

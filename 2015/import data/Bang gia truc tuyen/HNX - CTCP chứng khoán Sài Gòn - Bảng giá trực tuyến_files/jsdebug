@@ -1,0 +1,665 @@
+Type.registerNamespace('SSI.STC');
+SSI.STC.AjaxWebService=function() {
+SSI.STC.AjaxWebService.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+SSI.STC.AjaxWebService.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return SSI.STC.AjaxWebService._staticInstance.get_path();},
+GetStatusBasePrice:function(tradingFloor,succeededCallback, failedCallback, userContext) {
+/// <param name="tradingFloor" type="Number">System.Int32</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetStatusBasePrice',false,{tradingFloor:tradingFloor},succeededCallback,failedCallback,userContext); },
+GetHoseIndex:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHoseIndex',false,{},succeededCallback,failedCallback,userContext); },
+GetDataHoseStockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataHoseStockList',false,{},succeededCallback,failedCallback,userContext); },
+GetHoseStockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHoseStockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHoseStockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHoseStockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHoseIndexChart:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHoseIndexChart',false,{},succeededCallback,failedCallback,userContext); },
+GetHosePTInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHosePTInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHosePTMatch:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHosePTMatch',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHosePTBid:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHosePTBid',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHosePTOffer:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHosePTOffer',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHose30Index:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHose30Index',false,{},succeededCallback,failedCallback,userContext); },
+GetDataHose30StockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataHose30StockList',false,{},succeededCallback,failedCallback,userContext); },
+GetHose30StockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHose30StockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHose30StockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHose30StockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnxIndex:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxIndex',false,{},succeededCallback,failedCallback,userContext); },
+GetDataHnxStockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataHnxStockList',false,{},succeededCallback,failedCallback,userContext); },
+GetHnxStockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxStockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHnxStockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxStockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnxTop3Price:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxTop3Price',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnxIndexChart:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxIndexChart',false,{},succeededCallback,failedCallback,userContext); },
+GetHnxPTInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxPTInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHnxPTMatch:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxPTMatch',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnxPTBid:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxPTBid',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnxPTOffer:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnxPTOffer',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnx30Index:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnx30Index',false,{},succeededCallback,failedCallback,userContext); },
+GetHnx30StockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnx30StockList',false,{},succeededCallback,failedCallback,userContext); },
+GetHnx30StockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnx30StockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetHnx30StockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnx30StockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetHnx30Top3Price:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetHnx30Top3Price',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetMarketAllIndex:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetMarketAllIndex',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomIndex:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomIndex',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomStockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomStockList',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomStockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomStockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomStockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomStockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomTop3Price:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomTop3Price',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomIndexChart:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomIndexChart',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomPTInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPTInit',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomPTMatch:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPTMatch',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomPTBid:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPTBid',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomPTOffer:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPTOffer',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomPreStockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPreStockList',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomPreStockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPreStockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetUpcomPreStockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPreStockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetUpcomPreTop3Price:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetUpcomPreTop3Price',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetDataFutureStockList:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataFutureStockList',false,{},succeededCallback,failedCallback,userContext); },
+GetFutureStockQuoteInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFutureStockQuoteInit',false,{},succeededCallback,failedCallback,userContext); },
+GetFutureStockQuote:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFutureStockQuote',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetFutureTop3Price:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFutureTop3Price',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetFuturePTInit:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFuturePTInit',false,{},succeededCallback,failedCallback,userContext); },
+GetFuturePTMatch:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFuturePTMatch',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetFuturePTBid:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFuturePTBid',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetFuturePTOffer:function(VersionId,succeededCallback, failedCallback, userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetFuturePTOffer',false,{VersionId:VersionId},succeededCallback,failedCallback,userContext); },
+GetVn30IndexChart:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetVn30IndexChart',false,{},succeededCallback,failedCallback,userContext); },
+GetVnx50IndexChart:function(succeededCallback, failedCallback, userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetVnx50IndexChart',false,{},succeededCallback,failedCallback,userContext); },
+GetDataFutureIntradayChart:function(symbol,succeededCallback, failedCallback, userContext) {
+/// <param name="symbol" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataFutureIntradayChart',false,{symbol:symbol},succeededCallback,failedCallback,userContext); },
+GetDataFutureLifetimeChart:function(symbol,succeededCallback, failedCallback, userContext) {
+/// <param name="symbol" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetDataFutureLifetimeChart',false,{symbol:symbol},succeededCallback,failedCallback,userContext); }}
+SSI.STC.AjaxWebService.registerClass('SSI.STC.AjaxWebService',Sys.Net.WebServiceProxy);
+SSI.STC.AjaxWebService._staticInstance = new SSI.STC.AjaxWebService();
+SSI.STC.AjaxWebService.set_path = function(value) {
+SSI.STC.AjaxWebService._staticInstance.set_path(value); }
+SSI.STC.AjaxWebService.get_path = function() { 
+/// <value type="String" mayBeNull="true">The service url.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_path();}
+SSI.STC.AjaxWebService.set_timeout = function(value) {
+SSI.STC.AjaxWebService._staticInstance.set_timeout(value); }
+SSI.STC.AjaxWebService.get_timeout = function() { 
+/// <value type="Number">The service timeout.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_timeout(); }
+SSI.STC.AjaxWebService.set_defaultUserContext = function(value) { 
+SSI.STC.AjaxWebService._staticInstance.set_defaultUserContext(value); }
+SSI.STC.AjaxWebService.get_defaultUserContext = function() { 
+/// <value mayBeNull="true">The service default user context.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_defaultUserContext(); }
+SSI.STC.AjaxWebService.set_defaultSucceededCallback = function(value) { 
+ SSI.STC.AjaxWebService._staticInstance.set_defaultSucceededCallback(value); }
+SSI.STC.AjaxWebService.get_defaultSucceededCallback = function() { 
+/// <value type="Function" mayBeNull="true">The service default succeeded callback.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_defaultSucceededCallback(); }
+SSI.STC.AjaxWebService.set_defaultFailedCallback = function(value) { 
+SSI.STC.AjaxWebService._staticInstance.set_defaultFailedCallback(value); }
+SSI.STC.AjaxWebService.get_defaultFailedCallback = function() { 
+/// <value type="Function" mayBeNull="true">The service default failed callback.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_defaultFailedCallback(); }
+SSI.STC.AjaxWebService.set_enableJsonp = function(value) { SSI.STC.AjaxWebService._staticInstance.set_enableJsonp(value); }
+SSI.STC.AjaxWebService.get_enableJsonp = function() { 
+/// <value type="Boolean">Specifies whether the service supports JSONP for cross domain calling.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_enableJsonp(); }
+SSI.STC.AjaxWebService.set_jsonpCallbackParameter = function(value) { SSI.STC.AjaxWebService._staticInstance.set_jsonpCallbackParameter(value); }
+SSI.STC.AjaxWebService.get_jsonpCallbackParameter = function() { 
+/// <value type="String">Specifies the parameter name that contains the callback function name for a JSONP request.</value>
+return SSI.STC.AjaxWebService._staticInstance.get_jsonpCallbackParameter(); }
+SSI.STC.AjaxWebService.set_path("/AjaxWebService.asmx");
+SSI.STC.AjaxWebService.GetStatusBasePrice= function(tradingFloor,onSuccess,onFailed,userContext) {
+/// <param name="tradingFloor" type="Number">System.Int32</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetStatusBasePrice(tradingFloor,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHoseIndex= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHoseIndex(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataHoseStockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataHoseStockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHoseStockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHoseStockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHoseStockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHoseStockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHoseIndexChart= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHoseIndexChart(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHosePTInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHosePTInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHosePTMatch= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHosePTMatch(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHosePTBid= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHosePTBid(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHosePTOffer= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHosePTOffer(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHose30Index= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHose30Index(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataHose30StockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataHose30StockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHose30StockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHose30StockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHose30StockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHose30StockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxIndex= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxIndex(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataHnxStockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataHnxStockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxStockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxStockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxStockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxStockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxTop3Price= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxTop3Price(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxIndexChart= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxIndexChart(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxPTInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxPTInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxPTMatch= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxPTMatch(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxPTBid= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxPTBid(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnxPTOffer= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnxPTOffer(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnx30Index= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnx30Index(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnx30StockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnx30StockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnx30StockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnx30StockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnx30StockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnx30StockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetHnx30Top3Price= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetHnx30Top3Price(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetMarketAllIndex= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetMarketAllIndex(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomIndex= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomIndex(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomStockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomStockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomStockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomStockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomStockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomStockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomTop3Price= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomTop3Price(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomIndexChart= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomIndexChart(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPTInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPTInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPTMatch= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPTMatch(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPTBid= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPTBid(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPTOffer= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPTOffer(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPreStockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPreStockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPreStockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPreStockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPreStockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPreStockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetUpcomPreTop3Price= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetUpcomPreTop3Price(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataFutureStockList= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataFutureStockList(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFutureStockQuoteInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFutureStockQuoteInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFutureStockQuote= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFutureStockQuote(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFutureTop3Price= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFutureTop3Price(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFuturePTInit= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFuturePTInit(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFuturePTMatch= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFuturePTMatch(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFuturePTBid= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFuturePTBid(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetFuturePTOffer= function(VersionId,onSuccess,onFailed,userContext) {
+/// <param name="VersionId" type="Number">System.Int64</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetFuturePTOffer(VersionId,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetVn30IndexChart= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetVn30IndexChart(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetVnx50IndexChart= function(onSuccess,onFailed,userContext) {
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetVnx50IndexChart(onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataFutureIntradayChart= function(symbol,onSuccess,onFailed,userContext) {
+/// <param name="symbol" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataFutureIntradayChart(symbol,onSuccess,onFailed,userContext); }
+SSI.STC.AjaxWebService.GetDataFutureLifetimeChart= function(symbol,onSuccess,onFailed,userContext) {
+/// <param name="symbol" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+SSI.STC.AjaxWebService._staticInstance.GetDataFutureLifetimeChart(symbol,onSuccess,onFailed,userContext); }

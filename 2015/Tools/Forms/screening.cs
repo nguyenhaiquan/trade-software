@@ -15,7 +15,7 @@ namespace Tools.Forms
 {
     public partial class screening : baseTesting
     {
-        private const int constDefaultMax = 1000;
+        private const int constDefaultMax = 100000;
         public screening()
         {
             try
@@ -537,7 +537,7 @@ namespace Tools.Forms
         {
             Data.tmpDataSet.screeningCriteriaRow row = tmpDS.screeningCriteria.NewscreeningCriteriaRow();
             row.code = code;
-            row.min = 0;
+            row.min = -100;
             row.max = constDefaultMax;
             row.selected = selected;
             tmpDS.screeningCriteria.AddscreeningCriteriaRow(row);

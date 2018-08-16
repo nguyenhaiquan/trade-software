@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using commonTypes;
+using Imports;
 
 namespace server
 {
@@ -199,6 +200,23 @@ namespace server
             progressBar1.Value = e.ProgressPercentage;
             // Set the text.
             this.Text = e.ProgressPercentage.ToString();
+        }
+
+        /// <summary>
+        /// Delete Stocks that don't exist any more
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteStocksMenuItem_Click(object sender, EventArgs e)
+        {
+            Imports.Stock.ssi_StockImport ssiStockImport = new Imports.Stock.ssi_StockImport();
+            ssiStockImport.DeleteStocksNotinDatabase();
+        }
+
+        private void FAImport_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Imports.Stock.vnd_FinancialDataImport vndFAImport = new Imports.Stock.vnd_FinancialDataImport();
+            vnd_FinancialDataImport.ImporttoDataBase();
         }
     }
 }

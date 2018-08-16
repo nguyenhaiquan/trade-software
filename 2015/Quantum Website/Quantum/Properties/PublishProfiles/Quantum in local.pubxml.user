@@ -292,13 +292,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/23/2015 07:56:27</publishTime>
     </File>
     <File Include="bin/commonTypes.dll">
-      <publishTime>07/07/2016 12:12:20</publishTime>
+      <publishTime>07/20/2016 14:39:02</publishTime>
     </File>
     <File Include="bin/commonTypes.pdb">
       <publishTime>07/06/2016 15:32:51</publishTime>
     </File>
     <File Include="bin/databaseEntity.dll">
-      <publishTime>07/08/2016 16:51:39</publishTime>
+      <publishTime>07/12/2016 09:52:12</publishTime>
     </File>
     <File Include="bin/databaseEntity.pdb">
       <publishTime>06/27/2016 16:59:31</publishTime>
@@ -313,19 +313,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/23/2015 07:56:25</publishTime>
     </File>
     <File Include="bin/Languages.dll">
-      <publishTime>07/07/2016 12:12:19</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="bin/Languages.pdb">
       <publishTime>07/06/2016 15:32:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/01/2015 21:29:22</publishTime>
     </File>
     <File Include="bin/NTP.dll">
       <publishTime>08/23/2015 07:56:25</publishTime>
     </File>
     <File Include="bin/Quantum.dll">
-      <publishTime>07/10/2016 06:50:35</publishTime>
+      <publishTime>07/20/2016 15:47:02</publishTime>
     </File>
     <File Include="bin/Quantum.pdb">
       <publishTime>07/07/2016 15:52:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Entity.dll">
+      <publishTime>08/03/2013 00:51:42</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>09/01/2015 21:29:22</publishTime>
@@ -349,7 +355,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/23/2015 07:56:29</publishTime>
     </File>
     <File Include="bin/vi-VN/Languages.resources.dll">
-      <publishTime>07/07/2016 12:12:21</publishTime>
+      <publishTime>07/18/2016 09:53:39</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>07/10/2012 12:03:36</publishTime>
     </File>
     <File Include="bin/WeifenLuo.WinFormsUI.Docking.dll">
       <publishTime>08/23/2015 07:56:26</publishTime>
@@ -367,7 +379,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2016 12:37:54</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/08/2016 22:48:21</publishTime>
+      <publishTime>07/20/2016 14:33:11</publishTime>
     </File>
     <File Include="Scripts/jquery-1.4.4.js">
       <publishTime>06/30/2016 12:37:54</publishTime>
@@ -382,40 +394,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2016 12:37:54</publishTime>
     </File>
     <File Include="Views/Home/Dangky.cshtml">
-      <publishTime>07/06/2016 15:03:30</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Dangnhap.cshtml">
-      <publishTime>07/07/2016 15:52:37</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Download.cshtml">
-      <publishTime>07/07/2016 14:37:56</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Gioithieu.cshtml">
-      <publishTime>07/06/2016 15:03:30</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/07/2016 15:58:15</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Lienhe.cshtml">
-      <publishTime>07/07/2016 15:51:00</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
+    </File>
+    <File Include="Views/Home/Recommendation.cshtml">
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Sanpham.cshtml">
-      <publishTime>07/06/2016 15:03:30</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Home/Trogiup.cshtml">
-      <publishTime>07/06/2016 15:03:30</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/08/2016 17:06:35</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>07/08/2016 22:46:27</publishTime>
+      <publishTime>07/18/2016 09:53:38</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>06/30/2016 12:37:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/08/2016 22:51:52</publishTime>
+      <publishTime>07/20/2016 15:29:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -18,7 +18,7 @@ namespace Strategy
             int Bar = data.Close.Count - 1;
             if (Bar <= 1) return;
             // Dong sau tao mot data moi cua ^VNINDEX 
-            application.AnalysisData vnidxData = data.New("^VNINDEX");
+            application.AnalysisData vnidxData = data.New("VN-IDX");
             int Barindex = vnidxData.Close.Count - 1;
             if (Barindex <= 1) return;
 //            if (Bar == vnidxData.Close.Count - 1)

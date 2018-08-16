@@ -44,3 +44,34 @@ C:\Users\Ang Tony Vincent\Documents\trade-software\2015\wsServices\obj\Debug\com
 C:\Users\Ang Tony Vincent\Documents\trade-software\2015\wsServices\obj\Debug\databases.dll.config
 C:\Users\Ang Tony Vincent\Documents\trade-software\2015\wsServices\obj\Debug\vi-VN\common.resources.dll
 C:\Users\Ang Tony Vincent\Documents\trade-software\2015\wsServices\obj\Debug\vi-VN\Languages.resources.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\wsServices.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\wsServices\obj\Debug\wsServices.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\wsServices\obj\Debug\wsServices.dll.config
+C:\Github\trade-software\2015\wsServices\obj\Debug\wsServices.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\wsServices.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\application.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\common.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\commonClass.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\commonTypes.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\databases.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\Indicators.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\strategy.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\Languages.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\Charts.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\LaMarvin.Windows.Forms.ColorPicker.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\NTP.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\TA-Lib-Core.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\ZedGraph.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\application.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\common.dll.config
+C:\Github\trade-software\2015\wsServices\obj\Debug\commonClass.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\commonTypes.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\databases.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\databases.dll.config
+C:\Github\trade-software\2015\wsServices\obj\Debug\Indicators.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\strategy.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\Languages.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\Charts.pdb
+C:\Github\trade-software\2015\wsServices\obj\Debug\vi-VN\common.resources.dll
+C:\Github\trade-software\2015\wsServices\obj\Debug\vi-VN\Languages.resources.dll

@@ -397,6 +397,7 @@ namespace baseClass.controls
 
         private void SetColor()
         {
+            return;
             decimal variant;
             for (int idx = 0; idx < stockGV.RowCount; idx++)
             {

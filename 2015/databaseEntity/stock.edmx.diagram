@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="7ca3d170d1654b2e97fc1800f69fdebb" Name="Diagram1">
         <EntityTypeShape EntityType="stockModel.bestStrategy" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="stockModel.dtproperty" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stockModel.dtproperty" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="stockModel.exchangeDetail" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="stockModel.financialModel" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="stockModel.investor" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />

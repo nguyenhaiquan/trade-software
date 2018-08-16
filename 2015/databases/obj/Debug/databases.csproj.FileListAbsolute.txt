@@ -16,3 +16,10 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\data
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.dll.config
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.pdb
+C:\Github\trade-software\2015\dlls\databases.dll.config
+C:\Github\trade-software\2015\dlls\databases.dll
+C:\Github\trade-software\2015\dlls\databases.pdb
+C:\Github\trade-software\2015\databases\obj\Debug\databases.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\databases\obj\Debug\databases.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\databases\obj\Debug\databases.dll
+C:\Github\trade-software\2015\databases\obj\Debug\databases.pdb

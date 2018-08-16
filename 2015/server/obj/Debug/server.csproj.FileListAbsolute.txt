@@ -8,3 +8,14 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Debug\server.
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Debug\server.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\server.exe.config
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\server\obj\Debug\server.frmSchedule.resources
+C:\Github\trade-software\2015\server\obj\Debug\server.frmServer.resources
+C:\Github\trade-software\2015\server\obj\Debug\server.Properties.Resources.resources
+C:\Github\trade-software\2015\server\obj\Debug\server.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\server\obj\Debug\server.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\server\obj\Debug\server.exe
+C:\Github\trade-software\2015\dlls\server.exe.config
+C:\Github\trade-software\2015\dlls\server.exe
+C:\Github\trade-software\2015\dlls\server.pdb
+C:\Github\trade-software\2015\server\obj\Debug\server.pdb
