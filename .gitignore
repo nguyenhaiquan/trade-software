@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
 2015/.vs/stock/v15/sqlite3/storage.ide
-2015/.vs/stock/v15/sqlite3/storage.ide
-=======
 **/bin
 2015/dlls/
 2015/admin/obj/
@@ -43,9 +39,3 @@
 *.dll
 *.exe
 *.cache
-2015/wsServices/obj/Debug/wsServices.csprojResolveAssemblyReference.cache
->>>>>>> origin/Change-download-page
-2015/.vs/stock/v15/.suo
-2015/.vs/stock/v15/.suo
-*.ide
-*.ide
