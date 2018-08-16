@@ -310,6 +310,11 @@ namespace Imports.Stock
             }
         }
 
+        /// <summary>
+        /// Get Derivative data
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="stockExchange"></param>
         private void GetDerivativeTableData(HtmlAgilityPack.HtmlDocument html, string stockExchange)
         {
             double value = 0;
