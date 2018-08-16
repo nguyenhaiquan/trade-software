@@ -10,3 +10,6 @@
 /2015/dataAccess/obj/
 /2015/dataAccess/obj/Debug/
 /2015/dlls/*.*
+*.cache
+*.ide-wal
+*.cache
