@@ -8,3 +8,15 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Debug\Lang
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Debug\vi-VN\Languages.resources.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Debug\Languages.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\Languages\obj\Debug\Languages.pdb
+C:\Github\trade-software\2015\dlls\Languages.dll
+C:\Github\trade-software\2015\dlls\Languages.pdb
+C:\Github\trade-software\2015\dlls\vi-VN\Languages.resources.dll
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.langs.myResources.resources
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.Properties.Resources.resources
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.langs.myResources.vi-VN.resources
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\Languages\obj\Debug\vi-VN\Languages.resources.dll
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.dll
+C:\Github\trade-software\2015\Languages\obj\Debug\Languages.pdb

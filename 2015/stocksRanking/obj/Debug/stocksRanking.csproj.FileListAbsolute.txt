@@ -1,0 +1,2 @@
+C:\Github\trade-software\2015\stocksRanking\obj\Debug\stocksRanking.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\stocksRanking\obj\Debug\stocksRanking.csproj.CoreCompileInputs.cache

@@ -7,3 +7,12 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Debug\Dat
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.GenerateResource.Cache
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.pdb
+C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.forms.splashForm.resources
+C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.Properties.Resources.resources
+C:\Github\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\dlls\DataAccess.dll.config
+C:\Github\trade-software\2015\dlls\DataAccess.dll
+C:\Github\trade-software\2015\dlls\DataAccess.pdb
+C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.dll
+C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.pdb

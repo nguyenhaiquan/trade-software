@@ -1,0 +1,8 @@
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\databases.csprojResolveAssemblyReference.cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\databases.Properties.Resources.resources
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\databases.csproj.GenerateResource.Cache
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.dll.config
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\databases.pdb
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\databases.dll
+C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\databases\obj\Debug\databases.pdb

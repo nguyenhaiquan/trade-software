@@ -348,9 +348,6 @@
     <None Include="Resources\save.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\waiting-bar.gif" />
   </ItemGroup>
   <ItemGroup>

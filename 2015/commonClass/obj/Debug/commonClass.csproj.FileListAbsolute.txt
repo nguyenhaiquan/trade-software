@@ -5,3 +5,11 @@ C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\commonClass.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\dlls\commonClass.pdb
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.dll
 C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.pdb
+C:\Github\trade-software\2015\dlls\commonClass.dll
+C:\Github\trade-software\2015\dlls\commonClass.pdb
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.Properties.Resources.resources
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.GenerateResource.Cache
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.CoreCompileInputs.cache
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.dll
+C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.pdb
