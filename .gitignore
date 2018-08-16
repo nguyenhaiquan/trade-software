@@ -49,3 +49,9 @@
 2015/.vs/stock/v15/.suo
 *.ide
 *.ide
+*.cache
+*.lock
+*.ide-shm
+*.ide-wal
+*.cache
+*.cache
