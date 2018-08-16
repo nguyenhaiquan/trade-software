@@ -43,6 +43,7 @@
             this.pauseBtn = new common.controls.baseButton();
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnDevivativeFetch = new System.Windows.Forms.Button();
             this.scheduleGb.SuspendLayout();
             this.basePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +98,7 @@
             this.tradeAlertChk.Margin = new System.Windows.Forms.Padding(2);
             this.tradeAlertChk.Name = "tradeAlertChk";
             this.tradeAlertChk.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tradeAlertChk.Size = new System.Drawing.Size(106, 20);
+            this.tradeAlertChk.Size = new System.Drawing.Size(131, 25);
             this.tradeAlertChk.TabIndex = 10;
             this.tradeAlertChk.Text = "Create alert";
             this.tradeAlertChk.UseVisualStyleBackColor = true;
@@ -112,7 +113,7 @@
             this.fetchDataChk.Margin = new System.Windows.Forms.Padding(2);
             this.fetchDataChk.Name = "fetchDataChk";
             this.fetchDataChk.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fetchDataChk.Size = new System.Drawing.Size(104, 20);
+            this.fetchDataChk.Size = new System.Drawing.Size(132, 25);
             this.fetchDataChk.TabIndex = 1;
             this.fetchDataChk.Text = "Fetch  data ";
             this.fetchDataChk.UseVisualStyleBackColor = true;
@@ -120,6 +121,7 @@
             // basePanel1
             // 
             this.basePanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.basePanel1.Controls.Add(this.btnDevivativeFetch);
             this.basePanel1.Controls.Add(this.viewLogBtn);
             this.basePanel1.Controls.Add(this.runBtn);
             this.basePanel1.haveCloseButton = false;
@@ -199,11 +201,22 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(321, 25);
             this.toolStrip1.TabIndex = 146;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnDevivativeFetch
+            // 
+            this.btnDevivativeFetch.Image = global::server.Properties.Resources.data;
+            this.btnDevivativeFetch.Location = new System.Drawing.Point(64, 3);
+            this.btnDevivativeFetch.Name = "btnDevivativeFetch";
+            this.btnDevivativeFetch.Size = new System.Drawing.Size(22, 23);
+            this.btnDevivativeFetch.TabIndex = 10;
+            this.btnDevivativeFetch.UseVisualStyleBackColor = true;
+            this.btnDevivativeFetch.Click += new System.EventHandler(this.btnDevivativeFetch_Click);
             // 
             // frmSchedule
             // 
@@ -217,7 +230,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3);
-            this.Name = "scheduleForm";
+            this.Name = "frmSchedule";
             this.Text = "Tool";
             this.Controls.SetChildIndex(this.scheduleGb, 0);
             this.Controls.SetChildIndex(this.pauseBtn, 0);
@@ -248,6 +261,7 @@
         private common.controls.baseCheckBox fetchDataChk;
         protected System.Windows.Forms.Timer timerAlert;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.Button btnDevivativeFetch;
     }
 }
 

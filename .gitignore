@@ -47,3 +47,6 @@
 /2015/dataAccess/obj/Debug/
 /2015/dlls/*.*
 *.ide-wal
+*.lock
+*.ide-shm
+*.ide

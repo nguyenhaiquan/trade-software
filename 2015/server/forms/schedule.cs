@@ -309,10 +309,7 @@ namespace server
                 scheduleGb.Enabled = !fRunning;
 
                 fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked?Settings.sysGlobal.RefreshDataInSecs:0);
-                //fetchDataTimerHOSE.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-                //fetchDataTimerHASTC.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-                //fetchDataTimerGOLD.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-
+                
                 createTradeAlertTimer.WaitInSeconds = (short)(tradeAlertChk.Checked ? Settings.sysGlobal.CheckAlertInSeconds : 0);
                 //createTradeAlertTimer.WaitInSeconds = 10;
 
@@ -321,7 +318,7 @@ namespace server
                     myTimer.Start();
 
                     //Init last price before importing
-                    //databases.AppLibs.GetLastClosePrices();
+                    databases.AppLibs.GetLastClosePrices();
                 }
                 else myTimer.Stop();
             }
@@ -374,6 +371,33 @@ namespace server
             {                
                 if (createTradeAlertTimer.IsEndWaitTime())
                     createTradeAlertTimer.Execute();
+            }
+            catch (Exception er)
+            {
+                ShowError(er);
+            }
+        }
+
+        private void btnDevivativeFetch_Click(object sender, EventArgs e)
+        {
+            fFetchDataRunning = false;
+            try
+            {
+                fRunning = !fRunning;
+                this.ShowMessage("");
+                runBtn.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
+                scheduleGb.Enabled = !fRunning;
+
+                fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
+
+                if (fRunning)
+                {
+                    myTimerDerivative.Start();
+
+                    //Init last price before importing
+                    //databases.AppLibs.GetLastClosePrices();
+                }
+                else myTimer.Stop();
             }
             catch (Exception er)
             {

@@ -122,8 +122,9 @@ namespace commonTypes
     {
         public const bool sysDebugMode =true;//Dung de debug WCF
         //public const bool sysDebugMode = true;//Dung de debug WCF
-        public enum environmentDebugMode{localT440,localHP,SITAzure,UAT,Prod};
-        public static environmentDebugMode environmentMode = environmentDebugMode.SITAzure;
+        public enum environmentDebugMode{localT440, localT460,localHP, SITAzure,UAT,Prod};
+        //public static environmentDebugMode environmentMode = environmentDebugMode.SITAzure;
+        public static environmentDebugMode environmentMode = environmentDebugMode.localT460;
         public static string sysDebugMode_execDirectory = "";
         //public const string sysDebugMode_execDirectory = "D:\\work\\stockProdsject\\code\\wsServices\\obj\\Debug";        
 
@@ -247,7 +248,9 @@ namespace commonTypes
                         else
                             if (environmentMode == environmentDebugMode.localT440)
                                 sysDebugMode_execDirectory = @"C:\Users\qnguyen37\Documents\GitHub\trade-software\2015\wsServices\obj\Debug";
-                            else
+                        if (environmentMode == environmentDebugMode.localT460)
+                            sysDebugMode_execDirectory = @"F:\GitHub\trade-software\2015\wsServices\obj\Debug";
+                        else
                                 if (environmentMode == environmentDebugMode.SITAzure)
                                     sysDebugMode_execDirectory = @"C:\Github\trade-software\2015\wsServices\obj\Debug";
                                 else
