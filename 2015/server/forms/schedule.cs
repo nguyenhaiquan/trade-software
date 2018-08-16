@@ -321,7 +321,7 @@ namespace server
                     myTimer.Start();
 
                     //Init last price before importing
-                    databases.AppLibs.GetLastClosePrices();
+                    //databases.AppLibs.GetLastClosePrices();
                 }
                 else myTimer.Stop();
             }

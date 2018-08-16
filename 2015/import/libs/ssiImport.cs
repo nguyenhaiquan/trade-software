@@ -62,11 +62,13 @@ namespace Imports.Stock
                 databases.importDS.importPriceDataTable importPriceTbl = new databases.importDS.importPriceDataTable();
                 
                 if (ssiPage==null)
+                    //    ssiPage = new SSIPage("http://banggia2.ssi.com.vn/", "http://banggia2.ssi.com.vn/Hnx.aspx", "http://banggia2.ssi.com.vn/Future.aspx");
                     ssiPage = new SSIPage("http://banggia2.ssi.com.vn/", "http://banggia2.ssi.com.vn/Hnx.aspx");
-                    //ssiPage = new SSIPage("file:///C:/Temp/selenium/HOSE%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html", "file:///C:/Temp/selenium/HNX%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html");
-                
+                //ssiPage = new SSIPage("file:///C:/Temp/selenium/HOSE%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html", "file:///C:/Temp/selenium/HNX%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html");
+
                 ssiPage.getHOSEData();
                 ssiPage.getHNXData();
+                //ssiPage.getDerivativeData();
                 //SaveDatatoImportPriceDataTable(updateTime,importPriceTbl);
                 databases.importDS.importPriceRow importRow = null;
                 databases.importDS.importPriceRow oldImportRow;
@@ -78,14 +80,14 @@ namespace Imports.Stock
                     importRow.onDate = updateTime;
                     importRow.stockCode = stock.Key;
                     //Doi de fix error #136 - Lỗi cập nhật HNX
-                    //importRow.isTotalVolume = true;
-                    importRow.isTotalVolume = false;
+                    importRow.isTotalVolume = true;
+                    //importRow.isTotalVolume = false;
 
                     importRow.closePrice=(decimal)stock.Value.price;
 
                     //Doi de fix error #136 - Lỗi cập nhật HNX
-                    //importRow.volume = (decimal)stock.Value.totalVolume;
-                    importRow.volume = (decimal)stock.Value.actualVolume;
+                    importRow.volume = (decimal)stock.Value.totalVolume;
+                    //importRow.volume = (decimal)stock.Value.actualVolume;
                     
                     //Doi de fix error #136 - Lỗi cập nhật HNX
                     if (importRow.closePrice > 0)
@@ -94,8 +96,18 @@ namespace Imports.Stock
                         oldImportRow = lastImportData.Find(importRow);
                         if (!lastImportData.IsSameData(importRow, oldImportRow))
                         {
-                            importPriceTbl.AddimportPriceRow(importRow);
                             lastImportData.Update(importRow);
+
+                            //Chenh lenh volume giua 2 lan lay
+                            if (importRow.isTotalVolume)
+                            {
+                                if (oldImportRow != null)
+                                    importRow.volume = importRow.volume - oldImportRow.volume;
+                                else
+                                    importRow.volume = (decimal)stock.Value.actualVolume;
+                            }
+                            importPriceTbl.AddimportPriceRow(importRow);
+                            
                         }
                         else importRow.CancelEdit();
                     }

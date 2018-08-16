@@ -1,0 +1,2 @@
+C:\Github\trade-software\2015\Quantum Website\Quantum\obj\Debug\Quantum.csprojResolveAssemblyReference.cache
+C:\Github\trade-software\2015\Quantum Website\Quantum\obj\Debug\Quantum.csproj.CoreCompileInputs.cache

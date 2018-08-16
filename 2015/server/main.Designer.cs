@@ -47,12 +47,13 @@
             this.reAggregateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.bestStrategyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dataProcessMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FAImport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,8 @@
             this.reAggregateMenuItem,
             this.toolStripSeparator7,
             this.bestStrategyToolStripMenuItem,
-            this.xToolStripMenuItem});
+            this.xToolStripMenuItem,
+            this.FAImport_ToolStripMenuItem});
             this.toolMenuItem.Name = "toolMenuItem";
             this.toolMenuItem.Size = new System.Drawing.Size(71, 22);
             this.toolMenuItem.Text = "Công cụ";
@@ -132,7 +134,7 @@
             // 
             this.importPriceDataMenu.Image = global::server.Properties.Resources.import;
             this.importPriceDataMenu.Name = "importPriceDataMenu";
-            this.importPriceDataMenu.Size = new System.Drawing.Size(249, 22);
+            this.importPriceDataMenu.Size = new System.Drawing.Size(293, 22);
             this.importPriceDataMenu.Text = "Nhập dữ liệu giá";
             this.importPriceDataMenu.Click += new System.EventHandler(this.importPriceDataMenu_Click);
             // 
@@ -140,7 +142,7 @@
             // 
             this.importIcbMenu.Image = global::server.Properties.Resources.data;
             this.importIcbMenu.Name = "importIcbMenu";
-            this.importIcbMenu.Size = new System.Drawing.Size(249, 22);
+            this.importIcbMenu.Size = new System.Drawing.Size(293, 22);
             this.importIcbMenu.Text = "Nhập bộ mã ICB ";
             this.importIcbMenu.Click += new System.EventHandler(this.importIcbMenu_Click);
             // 
@@ -148,7 +150,7 @@
             // 
             this.importCompanyMenu.Image = global::server.Properties.Resources.home1;
             this.importCompanyMenu.Name = "importCompanyMenu";
-            this.importCompanyMenu.Size = new System.Drawing.Size(249, 22);
+            this.importCompanyMenu.Size = new System.Drawing.Size(293, 22);
             this.importCompanyMenu.Text = "Nhập công ty";
             this.importCompanyMenu.Click += new System.EventHandler(this.importCompanyMenu_Click);
             // 
@@ -156,60 +158,67 @@
             // 
             this.importComSectorMenu.Image = global::server.Properties.Resources.product;
             this.importComSectorMenu.Name = "importComSectorMenu";
-            this.importComSectorMenu.Size = new System.Drawing.Size(249, 22);
+            this.importComSectorMenu.Size = new System.Drawing.Size(293, 22);
             this.importComSectorMenu.Text = "Nhập mã ngành";
             this.importComSectorMenu.Click += new System.EventHandler(this.importComSectorMenu_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(290, 6);
             // 
             // updateDataMenuItem
             // 
             this.updateDataMenuItem.Image = global::server.Properties.Resources.schedule;
             this.updateDataMenuItem.Name = "updateDataMenuItem";
-            this.updateDataMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.updateDataMenuItem.Size = new System.Drawing.Size(293, 22);
             this.updateDataMenuItem.Text = "Lấy giá trực tuyến";
             this.updateDataMenuItem.Click += new System.EventHandler(this.updateDataMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(290, 6);
             // 
             // reUpdatePriceMenuItem
             // 
             this.reUpdatePriceMenuItem.Image = global::server.Properties.Resources.exrate;
             this.reUpdatePriceMenuItem.Name = "reUpdatePriceMenuItem";
-            this.reUpdatePriceMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.reUpdatePriceMenuItem.Size = new System.Drawing.Size(293, 22);
             this.reUpdatePriceMenuItem.Text = "Cập nhật lại giá trực tuyến";
             this.reUpdatePriceMenuItem.Click += new System.EventHandler(this.reUpdatePriceMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(290, 6);
             // 
             // reAggregateMenuItem
             // 
             this.reAggregateMenuItem.Image = global::server.Properties.Resources.exrate;
             this.reAggregateMenuItem.Name = "reAggregateMenuItem";
-            this.reAggregateMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.reAggregateMenuItem.Size = new System.Drawing.Size(293, 22);
             this.reAggregateMenuItem.Text = "Tổ hợp lại giá";
             this.reAggregateMenuItem.Click += new System.EventHandler(this.reAggregateMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(290, 6);
             // 
             // bestStrategyToolStripMenuItem
             // 
             this.bestStrategyToolStripMenuItem.Name = "bestStrategyToolStripMenuItem";
-            this.bestStrategyToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.bestStrategyToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
             this.bestStrategyToolStripMenuItem.Text = "Tạo chiến lược tốt nhất";
             this.bestStrategyToolStripMenuItem.Click += new System.EventHandler(this.bestStrategyToolStripMenuItem_Click);
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
+            this.xToolStripMenuItem.Text = "Xóa Cổ Phiếu Không Tồn Tại";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.DeleteStocksMenuItem_Click);
             // 
             // exitMenuStrip
             // 
@@ -242,12 +251,12 @@
             this.progressBar1.Size = new System.Drawing.Size(720, 23);
             this.progressBar1.TabIndex = 233;
             // 
-            // xToolStripMenuItem
+            // FAImport_ToolStripMenuItem
             // 
-            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.xToolStripMenuItem.Text = "Xóa Cổ Phiếu Không Tồn Tại";
-            this.xToolStripMenuItem.Click += new System.EventHandler(this.DeleteStocksMenuItem_Click);
+            this.FAImport_ToolStripMenuItem.Name = "FAImport_ToolStripMenuItem";
+            this.FAImport_ToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
+            this.FAImport_ToolStripMenuItem.Text = "Nhập dữ liệu tài chính từ VNDirect";
+            this.FAImport_ToolStripMenuItem.Click += new System.EventHandler(this.FAImport_ToolStripMenuItem_Click);
             // 
             // frmServer
             // 
@@ -298,5 +307,6 @@
         private System.Windows.Forms.ToolStripMenuItem bestStrategyToolStripMenuItem;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FAImport_ToolStripMenuItem;
     }
 }

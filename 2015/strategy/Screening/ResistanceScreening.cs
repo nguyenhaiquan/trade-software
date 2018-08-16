@@ -17,6 +17,9 @@ namespace Strategy
         public ResistanceSCR_Helper() : base(typeof(ResistanceSCR)) { }
     }
 
+    /// <summary>
+    /// Find support - and show distance to support 
+    /// </summary>
     class SupportSCR : GenericStrategy
     {
         override protected void StrategyExecute()
@@ -28,10 +31,11 @@ namespace Strategy
             if (Bar <= 1) return;
             double support = strategyLib.findSupport(data.Close, Bar, period);
             if (support == -1) return;
-            if ((data.Close[Bar] - support) / support*100 < distance)
+            //if ((data.Close[Bar] - support) / support*100 < distance)
+            if (support>0)
             {
                 BusinessInfo info = new BusinessInfo();
-                info.Weight = support;
+                info.Weight = (data.Close[Bar] - support) / support;
                 SelectStock(Bar, info);
             }
         }
@@ -49,10 +53,12 @@ namespace Strategy
             double resistance = strategyLib.findResistance(data.Close, Bar, period);
             if (resistance == -1) return;
 
-            if ((resistance - data.Close[Bar]) / data.Close[Bar]*100 < distance)
+
+            //if ((resistance - data.Close[Bar]) / data.Close[Bar]*100 < distance)
+            if (data.Close[Bar]>0)
             {
                 BusinessInfo info = new BusinessInfo();
-                info.Weight = resistance;
+                info.Weight = (resistance - data.Close[Bar]) / data.Close[Bar];
                 SelectStock(Bar, info);
             }
         }

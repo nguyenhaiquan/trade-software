@@ -1,0 +1,553 @@
+﻿var v_version = 0;
+var v_browser = "";
+
+function detectBrowserVersion() {
+    if ($.browser.msie) {
+        v_version = $.browser.version;
+        v_browser = "IE";
+    }
+    else if ($.browser.chrome) {
+        v_version = $.browser.version;
+        v_browser = "CR";
+    }
+    else if ($.browser.mozilla) {
+        v_version = $.browser.version;
+        v_browser = "FF";
+    }
+    else if ($.browser.safari) {
+        v_version = $.browser.version;
+        v_browser = "SF";
+    }
+    else if ($.browser.opera) {
+        v_version = $.browser.version;
+        v_browser = "OP";
+    }
+}
+
+function HoseInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+    
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHoseInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHoseQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTOffer.min.js" type="text/javascript"></script>');
+       
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Ho.min.js" type="text/javascript"></script>');
+}
+function HnxInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxTop3Price.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTOffer.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Ha.min.js" type="text/javascript"></script>');
+}
+function UpcomInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTOffer.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomTop3Price.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Upcom.min.js" type="text/javascript"></script>');
+}
+function Hose30InitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHose30Quote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHosePTOffer.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Ho30.min.js" type="text/javascript"></script>');
+}
+function Hnx30InitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxTop3Price.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxPTOffer.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Ha30.min.js" type="text/javascript"></script>');
+}
+function UpcomPreInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomTop3Price.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTBid.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTMatch.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserUpcomPTOffer.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/UpcomPre.min.js" type="text/javascript"></script>');
+}
+function FutureInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFutureStockList.min.js?v=1" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFutureInitQuote.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFutureQuote.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFutureTop3Price.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserIntraday.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserLifetime.min.js?v=1" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFuturePTBid.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFuturePTMatch.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserFuturePTOffer.min.js?v=1" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/Highstock-6.0.2/highstock.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Highstock-6.0.2/highcharts-more.js" type="text/javascript"></script>');
+    
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/IntradayPanel.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LifetimePanel.min.js?v=1" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js?v=1" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Future.min.js?v=1" type="text/javascript"></script>');
+}
+
+function MixInitIncludes() {
+    document.write('<script src="App_Themes/Default/Scripts/LangVI.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/LangEN.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Conf.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Function.min.js?v=2" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/CookieParserColor.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Web.min.js?v=3" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserStockList.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketAllIndex.min.js" type="text/javascript"></script>');
+    
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxInitQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxQuote.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserHnxTop3Price.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/DataParserMarketIndex.min.js" type="text/javascript"></script>');
+    
+    
+    document.write('<script src="App_Themes/Default/Scripts/MarketPanel.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/highstock.min.js" type="text/javascript"></script>');
+
+    document.write('<script src="App_Themes/Default/Scripts/MarketIndex.min.js" type="text/javascript"></script>');
+    document.write('<script src="App_Themes/Default/Scripts/Mix.min.js" type="text/javascript"></script>');
+}
+
+
+function HoseInitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/HoSocket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/HoRequester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HoSocket.min.js?v=2" type="text/javascript"><\/script>');
+
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HoSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HoSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HoSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/HoRequester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function HnxInitChannel() {    
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/HaSocket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/HaRequester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HaSocket.min.js?v=2" type="text/javascript"><\/script>');
+        
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HaSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HaSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/HaSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/HaRequester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function UpcomInitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/UpcomSocket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/UpcomRequester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/UpcomRequester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function Hose30InitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/Ho30Socket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/Ho30Requester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ho30Socket.min.js?v=2" type="text/javascript"><\/script>');        
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ho30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ho30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ho30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/Ho30Requester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function Hnx30InitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/Ha30Socket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/Ha30Requester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ha30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ha30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ha30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/Ha30Socket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/Ha30Requester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function UpcomPreInitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/UpcomPreSocket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/UpcomPreRequester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomPreSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomPreSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomPreSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/UpcomPreSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/UpcomPreRequester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
+function FutureInitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/FutureSocket.min.js?v=1" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/FutureRequester.min.js?v=1" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/FutureSocket.min.js?v=1" type="text/javascript"><\/script>');
+
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/FutureSocket.min.js?v=1" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/FutureSocket.min.js?v=1" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/FutureSocket.min.js?v=1" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/FutureRequester.min.js?v=1" type="text/javascript"><\/script>');
+    }
+}
+
+function MixInitChannel() {
+    if ($.browser.msie) {
+        v_browser = "IE";
+        v_version = $.browser.version;
+        if (v_version >= 9) {
+            document.write('<script src=' + Conf.SocketLink + '><\/script>');
+            document.write('<script src="App_Themes/Default/Scripts/MixSocket.min.js?v=2" type="text/javascript"><\/script>');
+        }
+        else {
+            document.write('<script src="App_Themes/Default/Scripts/MixRequester.min.js?v=2" type="text/javascript"><\/script>');
+        }
+    }
+    else if ($.browser.chrome) {
+        v_browser = "CR";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/MixSocket.min.js?v=2" type="text/javascript"><\/script>');
+
+    }
+    else if ($.browser.mozilla) {
+        v_browser = "FF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/MixSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.safari) {
+        v_browser = "SF";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/MixSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else if ($.browser.opera) {
+        v_browser = "OP";
+        v_version = $.browser.version;
+        document.write('<script src=' + Conf.SocketLink + '><\/script>');
+        document.write('<script src="App_Themes/Default/Scripts/MixSocket.min.js?v=2" type="text/javascript"><\/script>');
+    }
+    else {
+        document.write('<script src="App_Themes/Default/Scripts/MixRequester.min.js?v=2" type="text/javascript"><\/script>');
+    }
+}
