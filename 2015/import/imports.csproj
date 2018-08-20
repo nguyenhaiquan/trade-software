@@ -169,6 +169,7 @@
     <Compile Include="forms\reUpdatePrice.Designer.cs">
       <DependentUpon>reUpdatePrice.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="libs\CVSLibs.cs" />
     <Compile Include="libs\dataClass.cs" />
     <Compile Include="libs\generalImport.cs" />

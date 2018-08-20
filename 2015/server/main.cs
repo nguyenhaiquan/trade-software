@@ -215,8 +215,6 @@ namespace server
 
         private void FAImport_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Imports.Stock.vnd_FinancialDataImport vndFAImport = new Imports.Stock.vnd_FinancialDataImport();
-            //vnd_FinancialDataImport.ImporttoDataBase();
         }
     }
 }

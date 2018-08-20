@@ -15,14 +15,12 @@ namespace server
     public partial class frmSchedule : baseClass.forms.baseForm   
     {
         private bool fRunning = false;
+        private bool fDerivativeRunning = false;
+        
         common.TimerProcess fetchDataTimer = new common.TimerProcess();
-        //common.TimerProcess fetchDataTimerHOSE = new common.TimerProcess();
-        //common.TimerProcess fetchDataTimerHASTC = new common.TimerProcess();
-        //common.TimerProcess fetchDataTimerGOLD = new common.TimerProcess();
-
         common.TimerProcess createTradeAlertTimer = new common.TimerProcess();
 
-        BackgroundWorker bWorker;
+        BackgroundWorker bWorkerDerivative;
 
         public frmSchedule()
         {
@@ -40,35 +38,40 @@ namespace server
         {
             tradeAlertLbl.Text = Settings.sysGlobal.CheckAlertInSeconds.ToString() + " " + Languages.Libs.GetString("seconds");
             fetchStockLbl.Text = Settings.sysGlobal.RefreshDataInSecs.ToString() + " " + Languages.Libs.GetString("seconds");
-            fetchDataTimer.OnProcess += new common.TimerProcess.OnProcessEvent(FetchData);
-            //fetchDataTimerHOSE.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHOSE);
+            //fetchDataTimer.OnProcess += new common.TimerProcess.OnProcessEvent(FetchData);
+            //fetchDataTimerHOSE.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHOSE);(
             //fetchDataTimerHASTC.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHASTC);
             //fetchDataTimerGOLD.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataGOLD);
 
-            createTradeAlertTimer.OnProcess += new common.TimerProcess.OnProcessEvent(CreateTradeAlert);
+            //createTradeAlertTimer.OnProcess += new common.TimerProcess.OnProcessEvent(CreateTradeAlert);
 
-            bWorker = new BackgroundWorker();
-            bWorker.DoWork += new DoWorkEventHandler(bWorker_DoWork);
-            bWorker.ProgressChanged += new ProgressChangedEventHandler(bWorker_ProgressChanged);
-            bWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorker_DoWork_RunWorkerCompleted);
+            bWorkerDerivative = new BackgroundWorker();
+            bWorkerDerivative.DoWork += new DoWorkEventHandler(bWorkerDerivative_DoWork);
+            bWorkerDerivative.ProgressChanged += new ProgressChangedEventHandler(bWorkerDerivative_ProgressChanged);
+            bWorkerDerivative.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorkerDerivative_DoWork_RunWorkerCompleted);
 
-            bWorker.WorkerReportsProgress = true;
-            bWorker.WorkerSupportsCancellation = true;
+            bWorkerDerivative.WorkerReportsProgress = true;
+            bWorkerDerivative.WorkerSupportsCancellation = true;
+
+            //Derivative
+            fDerivativeRunning = false;
+
         }
 
-        void bWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        void bWorkerDerivative_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (fFetchDataHOSERunning) myStatusStrip.Text = "Downloading HOSE data..";
             if (fFetchDataHASTCRunning) myStatusStrip.Text = "Downloading HASTC data..";
             if (fFetchDataGOLDRunning) myStatusStrip.Text = "Downloading Gold data..";
         }
 
-        void bWorker_DoWork(object sender, DoWorkEventArgs e)
+        void bWorkerDerivative_DoWork(object sender, DoWorkEventArgs e)
         {
-            FetchData();
+            FetchData("DERIVATIVE");
+
         }
 
-        void bWorker_DoWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        void bWorkerDerivative_DoWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
         }
 
@@ -143,7 +146,7 @@ namespace server
         Boolean fFetchDataGOLDRunning = false;
 
         Boolean fCreateAlertRunning = false;
-        private void FetchData()
+        private void FetchData(string market)
         {
             try
             {
@@ -153,14 +156,15 @@ namespace server
                 stopWatch.Start();            
  
                 fFetchDataRunning = true;
-                //libs.FetchRealTimeData(DateTime.Now,"HOSE");
-                //libs.FetchRealTimeData(DateTime.Now, "HASTC");
-                //libs.FetchRealTimeData(DateTime.Now, "GOLD");
-                //09-Jul-14 update tat ca cac du lieu o cac san
-                libs.FetchRealTimeData(DateTime.Now);
+
+                if (market == "HOSE") libs.FetchRealTimeData(DateTime.Now, "HOSE");
+                else
+                if (market == "HASTC") libs.FetchRealTimeData(DateTime.Now, "HASTC");
+                else
+                if (market == "DERIVATIVE") libs.FetchRealTimeData(DateTime.Now, "HASTC");
 
                 fFetchDataRunning = false;
-                
+
                 stopWatch.Stop();
                 TimeSpan ts = stopWatch.Elapsed;
 
@@ -177,95 +181,6 @@ namespace server
             
         }
 
-        //private void FetchDataHOSE()
-        //{
-        //    try
-        //    {
-        //        if (fFetchDataHOSERunning) return;
-
-        //        Stopwatch stopWatch = new Stopwatch();
-        //        stopWatch.Start();
-
-        //        fFetchDataHOSERunning = true;
-        //        libs.FetchRealTimeData(DateTime.Now, "HOSE");
-        //        fFetchDataHOSERunning = false;
-
-        //        stopWatch.Stop();
-        //        TimeSpan ts = stopWatch.Elapsed;
-
-        //        // Format and display the TimeSpan value.
-        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-        //            ts.Hours, ts.Minutes, ts.Seconds,
-        //            ts.Milliseconds / 10);
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHOSE", elapsedTime);
-        //    }
-        //    catch (Exception er)
-        //    {
-        //        fFetchDataHOSERunning = false;
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-        //    }
-
-        //}
-
-        //private void FetchDataHASTC()
-        //{
-        //    try
-        //    {
-        //        if (fFetchDataHASTCRunning) return;
-
-        //        Stopwatch stopWatch = new Stopwatch();
-        //        stopWatch.Start();
-
-        //        fFetchDataHASTCRunning = true;
-        //        libs.FetchRealTimeData(DateTime.Now, "HASTC");
-        //        fFetchDataHASTCRunning = false;
-
-        //        stopWatch.Stop();
-        //        TimeSpan ts = stopWatch.Elapsed;
-
-        //        // Format and display the TimeSpan value.
-        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-        //            ts.Hours, ts.Minutes, ts.Seconds,
-        //            ts.Milliseconds / 10);
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeHASTC", elapsedTime);
-        //    }
-        //    catch (Exception er)
-        //    {
-        //        fFetchDataHASTCRunning = false;
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-        //    }
-
-        //}
-
-        //private void FetchDataGOLD()
-        //{
-        //    try
-        //    {
-        //        if (fFetchDataGOLDRunning) return;
-
-        //        Stopwatch stopWatch = new Stopwatch();
-        //        stopWatch.Start();
-
-        //        fFetchDataGOLDRunning = true;
-        //        libs.FetchRealTimeData(DateTime.Now, "GOLD");
-        //        fFetchDataGOLDRunning = false;
-
-        //        stopWatch.Stop();
-        //        TimeSpan ts = stopWatch.Elapsed;
-
-        //        // Format and display the TimeSpan value.
-        //        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-        //            ts.Hours, ts.Minutes, ts.Seconds,
-        //            ts.Milliseconds / 10);
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Warning, "TimeGOLD", elapsedTime);
-        //    }
-        //    catch (Exception er)
-        //    {
-        //        fFetchDataGOLDRunning = false;
-        //        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002", er);
-        //    }
-
-        //}
 
         private void CreateTradeAlert()
         {
@@ -344,19 +259,11 @@ namespace server
         {
             try
             {
-                if (!bWorker.IsBusy)
-                    bWorker.RunWorkerAsync();
-                //if (fetchDataTimerHOSE.IsEndWaitTime()) 
-                //    fetchDataTimerHOSE.Execute();
+                if (!bWorkerDerivative.IsBusy)
+                    bWorkerDerivative.RunWorkerAsync();
 
-                //if (fetchDataTimerHASTC.IsEndWaitTime())
-                //    fetchDataTimerHASTC.Execute();
-
-                //if (fetchDataTimerGOLD.IsEndWaitTime())
-                //    fetchDataTimerGOLD.Execute();
-
-                if (createTradeAlertTimer.IsEndWaitTime()) 
-                    createTradeAlertTimer.Execute();
+                //if (createTradeAlertTimer.IsEndWaitTime()) 
+                //    createTradeAlertTimer.Execute();
             }
             catch (Exception er)
             {
@@ -380,24 +287,23 @@ namespace server
 
         private void btnDevivativeFetch_Click(object sender, EventArgs e)
         {
-            fFetchDataRunning = false;
             try
             {
-                fRunning = !fRunning;
+                fDerivativeRunning = !fDerivativeRunning;
                 this.ShowMessage("");
-                runBtn.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
-                scheduleGb.Enabled = !fRunning;
+                btnDevivativeFetch.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
+                scheduleGb.Enabled = !fDerivativeRunning;
 
                 fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
 
-                if (fRunning)
+                if (fFetchDataRunning)
                 {
                     myTimerDerivative.Start();
 
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
                 }
-                else myTimer.Stop();
+                else myTimerDerivative.Stop();
             }
             catch (Exception er)
             {

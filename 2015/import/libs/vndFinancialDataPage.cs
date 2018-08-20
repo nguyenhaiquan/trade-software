@@ -22,9 +22,15 @@ namespace Imports.Stock
         public IWebDriver driverVND;
         private string URL;
         private string tongquan="https://www.vndirect.com.vn/portal/tong-quan/";//+HPG.shtml
+#pragma warning disable CS0414 // The field 'vndFinancialDataPage.candoiketoan' is assigned but its value is never used
         private string candoiketoan = "https://www.vndirect.com.vn/portal/bang-can-doi-ke-toan/";
+#pragma warning restore CS0414 // The field 'vndFinancialDataPage.candoiketoan' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'vndFinancialDataPage.kqkd' is assigned but its value is never used
         private string kqkd="https://www.vndirect.com.vn/portal/bao-cao-ket-qua-kinh-doanh/";
+#pragma warning restore CS0414 // The field 'vndFinancialDataPage.kqkd' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'vndFinancialDataPage.lctt' is assigned but its value is never used
         private string lctt = "https://www.vndirect.com.vn/portal/bao-cao-luu-chuyen-tien-te/";
+#pragma warning restore CS0414 // The field 'vndFinancialDataPage.lctt' is assigned but its value is never used
 
         //public Dictionary<string, PageStockRow> dictStocks;
 
@@ -200,7 +206,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -226,7 +234,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -245,7 +255,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -264,7 +276,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }

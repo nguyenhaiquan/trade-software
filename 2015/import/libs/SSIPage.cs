@@ -89,7 +89,9 @@ namespace Imports.Stock
     public class SSIPage
     {
         public IWebDriver driverHOSE, driverHNX,driverDerivative;
+#pragma warning disable CS0169 // The field 'SSIPage.upcomURL' is never used
         private string hoseURL, hxnURL, upcomURL,derivativeURL;
+#pragma warning restore CS0169 // The field 'SSIPage.upcomURL' is never used
         public double dVNIndex = 0, dVNIndexVolume = 0, dVNIndex30 = 0,
         dVNIndex30Volume = 0, dHNIndex = 0, dHNIndexVolume = 0, dHNIndex30 = 0, dHNIndex30Volume = 0,
         dUpComIndex = 0, dUpComIndexVolume = 0;
@@ -485,7 +487,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -511,7 +515,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -530,7 +536,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -549,7 +557,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }

@@ -23,7 +23,9 @@ namespace Imports.Stock
     /// </summary>
     public class vndFinancialDataImport : generalImport
     {
+#pragma warning disable CS0414 // The field 'vndFinancialDataImport.vndPage' is assigned but its value is never used
         static vndFinancialDataPage vndPage = null;
+#pragma warning restore CS0414 // The field 'vndFinancialDataImport.vndPage' is assigned but its value is never used
 
         public override databases.baseDS.priceDataDataTable GetImportFromCSV(string fileName, string market, OnUpdatePriceData onUpdateDataFunc)
         {

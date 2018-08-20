@@ -23,3 +23,11 @@ C:\Github\trade-software\2015\databases\obj\Debug\databases.csprojResolveAssembl
 C:\Github\trade-software\2015\databases\obj\Debug\databases.csproj.CoreCompileInputs.cache
 C:\Github\trade-software\2015\databases\obj\Debug\databases.dll
 C:\Github\trade-software\2015\databases\obj\Debug\databases.pdb
+F:\GitHub\trade-software\2015\databases\obj\Debug\databases.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\databases\obj\Debug\databases.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\databases\obj\Debug\databases.dll
+F:\GitHub\trade-software\2015\databases\obj\Debug\databases.pdb
+F:\GitHub\trade-software\2015\dlls\databases.dll.config
+F:\GitHub\trade-software\2015\dlls\databases.dll
+F:\GitHub\trade-software\2015\dlls\databases.pdb
+F:\GitHub\trade-software\2015\databases\obj\Debug\databases.csproj.CopyComplete

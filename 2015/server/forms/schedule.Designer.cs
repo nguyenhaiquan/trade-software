@@ -36,6 +36,7 @@
             this.tradeAlertChk = new common.controls.baseCheckBox();
             this.fetchDataChk = new common.controls.baseCheckBox();
             this.basePanel1 = new common.controls.basePanel();
+            this.btnDevivativeFetch = new System.Windows.Forms.Button();
             this.viewLogBtn = new common.controls.baseButton();
             this.runBtn = new common.controls.baseButton();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
@@ -43,7 +44,9 @@
             this.pauseBtn = new common.controls.baseButton();
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnDevivativeFetch = new System.Windows.Forms.Button();
+            this.myTimerDerivative = new System.Windows.Forms.Timer(this.components);
+            this.bwDerivativeCrawler = new System.ComponentModel.BackgroundWorker();
+            this.cbDerivativeFetch = new common.controls.baseCheckBox();
             this.scheduleGb.SuspendLayout();
             this.basePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,7 @@
             // fetchStockLbl
             // 
             this.fetchStockLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fetchStockLbl.Location = new System.Drawing.Point(147, 26);
+            this.fetchStockLbl.Location = new System.Drawing.Point(204, 27);
             this.fetchStockLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fetchStockLbl.Name = "fetchStockLbl";
             this.fetchStockLbl.Size = new System.Drawing.Size(158, 20);
@@ -67,7 +70,7 @@
             // tradeAlertLbl
             // 
             this.tradeAlertLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tradeAlertLbl.Location = new System.Drawing.Point(146, 48);
+            this.tradeAlertLbl.Location = new System.Drawing.Point(204, 103);
             this.tradeAlertLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeAlertLbl.Name = "tradeAlertLbl";
             this.tradeAlertLbl.Size = new System.Drawing.Size(158, 20);
@@ -76,6 +79,7 @@
             // 
             // scheduleGb
             // 
+            this.scheduleGb.Controls.Add(this.cbDerivativeFetch);
             this.scheduleGb.Controls.Add(this.tradeAlertChk);
             this.scheduleGb.Controls.Add(this.fetchDataChk);
             this.scheduleGb.Controls.Add(this.tradeAlertLbl);
@@ -85,7 +89,7 @@
             this.scheduleGb.Margin = new System.Windows.Forms.Padding(2);
             this.scheduleGb.Name = "scheduleGb";
             this.scheduleGb.Padding = new System.Windows.Forms.Padding(2);
-            this.scheduleGb.Size = new System.Drawing.Size(320, 90);
+            this.scheduleGb.Size = new System.Drawing.Size(415, 168);
             this.scheduleGb.TabIndex = 10;
             this.scheduleGb.TabStop = false;
             this.scheduleGb.Text = " Scheduling ";
@@ -94,7 +98,7 @@
             // 
             this.tradeAlertChk.AutoSize = true;
             this.tradeAlertChk.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tradeAlertChk.Location = new System.Drawing.Point(36, 46);
+            this.tradeAlertChk.Location = new System.Drawing.Point(39, 101);
             this.tradeAlertChk.Margin = new System.Windows.Forms.Padding(2);
             this.tradeAlertChk.Name = "tradeAlertChk";
             this.tradeAlertChk.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -134,6 +138,16 @@
             this.basePanel1.Name = "basePanel1";
             this.basePanel1.Size = new System.Drawing.Size(327, 31);
             this.basePanel1.TabIndex = 1;
+            // 
+            // btnDevivativeFetch
+            // 
+            this.btnDevivativeFetch.Image = global::server.Properties.Resources.data;
+            this.btnDevivativeFetch.Location = new System.Drawing.Point(64, 3);
+            this.btnDevivativeFetch.Name = "btnDevivativeFetch";
+            this.btnDevivativeFetch.Size = new System.Drawing.Size(22, 23);
+            this.btnDevivativeFetch.TabIndex = 10;
+            this.btnDevivativeFetch.UseVisualStyleBackColor = true;
+            this.btnDevivativeFetch.Click += new System.EventHandler(this.btnDevivativeFetch_Click);
             // 
             // viewLogBtn
             // 
@@ -204,24 +218,29 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(321, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(416, 25);
             this.toolStrip1.TabIndex = 146;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnDevivativeFetch
+            // cbDerivativeFetch
             // 
-            this.btnDevivativeFetch.Image = global::server.Properties.Resources.data;
-            this.btnDevivativeFetch.Location = new System.Drawing.Point(64, 3);
-            this.btnDevivativeFetch.Name = "btnDevivativeFetch";
-            this.btnDevivativeFetch.Size = new System.Drawing.Size(22, 23);
-            this.btnDevivativeFetch.TabIndex = 10;
-            this.btnDevivativeFetch.UseVisualStyleBackColor = true;
-            this.btnDevivativeFetch.Click += new System.EventHandler(this.btnDevivativeFetch_Click);
+            this.cbDerivativeFetch.AutoSize = true;
+            this.cbDerivativeFetch.Checked = true;
+            this.cbDerivativeFetch.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDerivativeFetch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDerivativeFetch.Location = new System.Drawing.Point(38, 63);
+            this.cbDerivativeFetch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDerivativeFetch.Name = "cbDerivativeFetch";
+            this.cbDerivativeFetch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbDerivativeFetch.Size = new System.Drawing.Size(224, 25);
+            this.cbDerivativeFetch.TabIndex = 11;
+            this.cbDerivativeFetch.Text = "Fetch  Derivative data ";
+            this.cbDerivativeFetch.UseVisualStyleBackColor = true;
             // 
             // frmSchedule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(321, 148);
+            this.ClientSize = new System.Drawing.Size(416, 225);
             this.Controls.Add(this.basePanel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.startBtn);
@@ -229,6 +248,7 @@
             this.Controls.Add(this.scheduleGb);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.isLockEdit = false;
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "frmSchedule";
             this.Text = "Tool";
@@ -262,6 +282,9 @@
         protected System.Windows.Forms.Timer timerAlert;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btnDevivativeFetch;
+        private System.Windows.Forms.Timer myTimerDerivative;
+        private System.ComponentModel.BackgroundWorker bwDerivativeCrawler;
+        private common.controls.baseCheckBox cbDerivativeFetch;
     }
 }
 
