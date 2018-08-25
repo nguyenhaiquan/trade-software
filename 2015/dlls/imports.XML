@@ -4,67 +4,132 @@
         <name>imports</name>
     </assembly>
     <members>
-        <member name="F:imports.forms.importPriceData.components">
+        <member name="F:Imports.Forms.frmReAggregatePrice.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:imports.forms.importPriceData.Dispose(System.Boolean)">
+        <member name="M:Imports.Forms.frmReAggregatePrice.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:imports.forms.importPriceData.InitializeComponent">
+        <member name="M:Imports.Forms.frmReAggregatePrice.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:imports.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:imports.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:imports.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="F:imports.forms.reUpdatePrice.components">
+        <member name="F:Imports.Forms.frmImportCompany.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:imports.forms.reUpdatePrice.Dispose(System.Boolean)">
+        <member name="M:Imports.Forms.frmImportCompany.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:imports.forms.reUpdatePrice.InitializeComponent">
+        <member name="M:Imports.Forms.frmImportCompany.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:imports.libs.ImportPricedata_URL(System.DateTime,System.String,imports.libs.importPriceMeta,System.String,data.importDS.importPriceDataTable)">
+        <member name="F:Imports.Forms.frmImportComSector.components">
             <summary>
-            Import data from URL to tables : importPrice 
-            The function also detect and add new companies to the database
+            Required designer variable.
             </summary>
-            <param name="url">URL to get data</param>
-            <param name="priceMeta">meta describe the webpage structure</param>
-            <param name="stockExchangeCode">stock exchange code of imported data </param>
-            <param name="importPriceTbl"> where to store imported data </param>
         </member>
-        <member name="M:imports.libs.AggregateDateTime(commonClass.AppTypes.TimeScale,System.DateTime,System.Globalization.CultureInfo)">
+        <member name="M:Imports.Forms.frmImportComSector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Imports.Forms.frmImportComSector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Imports.Forms.importIcbCode.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Imports.Forms.importIcbCode.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Imports.Forms.importIcbCode.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Imports.Forms.frmImportPriceData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Imports.Forms.frmImportPriceData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Imports.Forms.frmImportPriceData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Imports.Forms.frmReUpdatePrice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Imports.Forms.frmReUpdatePrice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Imports.Forms.frmReUpdatePrice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Imports.CVSLibs.CSV_ImportParse(System.String,System.Char,common.dateTimeLibs.DateTimeFormats,System.String,System.Globalization.CultureInfo,databases.baseDS.priceDataDataTable,Imports.ImportRowHandler,Imports.OnUpdatePriceData,Imports.OnEndImportPriceData)">
+            <summary>
+            Use the idea from http://www.codeproject.com/KB/database/CsvReader.aspx by Sebastien Lorion
+            </summary>
+            <param name="csvFileName"></param>
+            <param name="delimiter"></param>
+            <param name="dateDataFormat"></param>
+            <param name="marketCode"></param>
+            <param name="dataCulture"></param>
+            <param name="priceDataTbl"></param>
+            <param name="ImportRowFunc"></param>
+            <param name="onUpdateDataFunc"></param>
+            <param name="onEndImportFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Imports.Gold.kitcoImport.ImportKitco(System.String)">
+            <summary>
+            Update from http://www.kitco.com/
+            Su dung XPath de truy van tim ra du lieu
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Imports.Libs.AggregateDateTime(commonTypes.AppTypes.TimeScale,System.DateTime,System.Globalization.CultureInfo)">
             <summary>
             Get aggregation date/time from a date/time
             </summary>
@@ -73,88 +138,133 @@
             <param name="ci"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:imports.libs.AggregatePriceData(data.baseDS.priceDataRow,System.Decimal,commonClass.AppTypes.TimeScale,System.Globalization.CultureInfo,data.baseDS.priceDataSumDataTable)" -->
-        <member name="M:imports.libs.AggregatePriceData(data.baseDS.priceDataDataTable,System.String,imports.libs.onAggregateData)">
+        <member name="T:Imports.Stock.ssi_StockImport">
             <summary>
-            Agrregate a data table to hourly,daily data...
-            </summary>
-            <param name="priceTbl">source data to be aggregated </param>
-            <param name="cultureCode"></param>
-            <param name="isDailyPrice">
-             Volume can be accumulated real-time or at the end of the day. 
-             - If data is collected in realtime, 
-             updateVolume table is used to culmulated the volume for each day and that will need some more resources.
-             - If data is collected at the end of the day, the voulume alredy is the total volume and updateVolume table 
-             should not be used to save resources.
-            </param>
-            <param name="onAggregateDataFunc">function that was triggered after each agrregation</param>
-        </member>
-        <member name="F:imports.forms.importIcbCode.components">
-            <summary>
-            Required designer variable.
+            Import stock data of HOSE and HASTC using SSIPage class
             </summary>
         </member>
-        <member name="M:imports.forms.importIcbCode.Dispose(System.Boolean)">
+        <member name="M:Imports.Stock.ssi_StockImport.GetImportFromWeb(System.DateTime,System.String)">
             <summary>
-            Clean up any resources being used.
+            Override method - /// Import stock data of HOSE and HASTC from  http://banggia2.ssi.com.vn/#
             </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            <param name="updateTime"></param>
+            <param name="exchangeDetailRow"></param>
+            <returns></returns>
         </member>
-        <member name="M:imports.forms.importIcbCode.InitializeComponent">
+        <member name="M:Imports.Stock.ssi_StockImport.GetPriceFromWeb(System.DateTime,System.String)">
             <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Private - SU dung ASPWebservices
             </summary>
+            <param name="updateTime"></param>
+            <param name="exchangeDetailRow"></param>
+            <returns></returns>
         </member>
-        <member name="F:imports.forms.updatePrice.components">
+        <member name="M:Imports.Stock.SSIPage.IsHOSELoaded">
             <summary>
-            Required designer variable.
+            Verified if HOSE page is fully loaded
             </summary>
+            <returns></returns>
         </member>
-        <member name="M:imports.forms.updatePrice.Dispose(System.Boolean)">
+        <member name="M:Imports.Stock.SSIPage.IsHNXLoaded">
             <summary>
-            Clean up any resources being used.
+            Verified if HASTC/HNX page is fully loaded
             </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            <returns></returns>
         </member>
-        <member name="M:imports.forms.updatePrice.InitializeComponent">
+        <member name="M:Imports.Stock.SSIPage.GetDerivativeTableData(HtmlAgilityPack.HtmlDocument,System.String)">
             <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Get Derivative data
             </summary>
+            <param name="html"></param>
+            <param name="stockExchange"></param>
         </member>
-        <member name="F:imports.forms.importCompany.components">
+        <member name="M:Imports.Stock.SSIPage.getHOSEData">
             <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:imports.forms.importCompany.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:imports.forms.importCompany.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Get HOSE Data from SSI Page
             </summary>
         </member>
-        <member name="F:imports.forms.importComSector.components">
+        <member name="M:Imports.Stock.SSIPage.getHNXData">
             <summary>
-            Required designer variable.
+            Get HASTC/HNX Data from SSI Page
             </summary>
         </member>
-        <member name="M:imports.forms.importComSector.Dispose(System.Boolean)">
+        <member name="M:Imports.Stock.SSIPage.GetWebElementByXPath(OpenQA.Selenium.IWebDriver,System.String,System.Int32,System.Int32)">
             <summary>
-            Clean up any resources being used.
+            Get IWebElement using XPath
             </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            <param name="sXPath"></param>
+            <param name="waitTime"></param>
+            <param name="totalTime"></param>
+            <returns></returns>
         </member>
-        <member name="M:imports.forms.importComSector.InitializeComponent">
+        <member name="M:Imports.Stock.SSIPage.GetWebElementByID(OpenQA.Selenium.IWebDriver,System.String,System.Int32,System.Int32)">
             <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Get IWebElement using ID
+            </summary>
+            <param name="ID"></param>
+            <param name="waitTime"></param>
+            <param name="totalTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Imports.Stock.SSIPage.GetTextByXPath(OpenQA.Selenium.IWebDriver,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get Text by Xpath
+            </summary>
+            <param name="driver"></param>
+            <param name="sXPath"></param>
+            <param name="waitTime"></param>
+            <param name="totalTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Imports.Stock.SSIPage.GetTextByID(OpenQA.Selenium.IWebDriver,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get Text by ID
+            </summary>
+            <param name="driver"></param>
+            <param name="ID"></param>
+            <param name="waitTime"></param>
+            <param name="totalTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Imports.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.close">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.open">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.remove">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.report">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Imports.Properties.Resources.select">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
     </members>

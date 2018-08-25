@@ -90,7 +90,8 @@ namespace Imports.Stock
     {
         public IWebDriver driverHOSE, driverHNX,driverDerivative;
 #pragma warning disable CS0169 // The field 'SSIPage.upcomURL' is never used
-        private string hoseURL, hxnURL, upcomURL,derivativeURL;
+        private string hoseURL, hxnURL, upcomURL,derivativeURL,mainURL;
+
 #pragma warning restore CS0169 // The field 'SSIPage.upcomURL' is never used
         public double dVNIndex = 0, dVNIndexVolume = 0, dVNIndex30 = 0,
         dVNIndex30Volume = 0, dHNIndex = 0, dHNIndexVolume = 0, dHNIndex30 = 0, dHNIndex30Volume = 0,
@@ -134,6 +135,45 @@ namespace Imports.Stock
             dictStocks = new Dictionary<string, PageStockRow>();
 
         }
+
+        public SSIPage(string market)
+        {
+            if (market == "HOSE")
+            {
+                hoseURL = "http://banggia2.ssi.com.vn/Hose.aspx";
+                driverHOSE = new ChromeDriver();
+                driverHOSE.Manage().Window.Maximize();
+                driverHOSE.Navigate().GoToUrl(hoseURL);
+            }
+            else
+                if (market == "HASTC")
+            {
+                hxnURL = "http://banggia2.ssi.com.vn/Hnx.aspx";
+                driverHNX = new ChromeDriver();
+                driverHNX.Manage().Window.Maximize();
+                driverHNX.Navigate().GoToUrl(hxnURL);
+            }
+            else
+                if (market == "DERIVATIVE")
+            {
+                derivativeURL = "http://banggia2.ssi.com.vn/Future.aspx";
+                //derivativeURL="http://banggia.mbs.com.vn/v2/"
+                driverDerivative = new ChromeDriver();
+                driverDerivative.Manage().Window.Maximize();
+                driverDerivative.Navigate().GoToUrl(derivativeURL);
+
+                //add for mbs page
+                //driverDerivative.FindElement(By.Name())
+            }
+
+            dictStocks = new Dictionary<string, PageStockRow>();
+            //previousDictStocks = new Dictionary<string,PageStockRow>();
+
+            //Get import Data of Today vao dictStocks
+            //getDataforLoading(dictStocks);
+
+        }
+
         ~SSIPage()
         {
             if (driverHNX!=null) driverHNX.Quit();
@@ -194,7 +234,7 @@ namespace Imports.Stock
         {
             try
             {
-                //Refresh(driverHOSE);
+                //Refresh(driverDerivative);
                 string ssi = GetTextByXPath(driverDerivative, "//*[@id='spanIndexHOSE30']", 100, 10000);
                 if (ssi == null) return false;
                 return true;
@@ -219,11 +259,26 @@ namespace Imports.Stock
         {
             if (dictStocks.ContainsKey(key))
             {
-                dictStocks[key] = value;
+                //Chi them vao neu co su thay doi
+
+                //if (value.totalVolume > dictStocks[key].totalVolume)
+                //{
+                    //actual Volume chinh xac la chenh lech giua 2 lan cap nhat
+                    value.actualVolume = value.totalVolume - dictStocks[key].totalVolume;
+                    dictStocks[key] = value;
+                //}
+                //else
+                    //neu giong thi loai bo - khong can cap nhat
+                    //dictStocks.Remove(key);
             }
-            else
+            else          
             {
-                dictStocks.Add(key, value);
+                //neu chua ton tai key
+                {
+                    value.actualVolume = value.totalVolume;
+                    dictStocks.Add(key, value);
+                }
+                //previousDictStocks.Add(key, value);
             }
         }
 
@@ -524,6 +579,14 @@ namespace Imports.Stock
             return s1;
         }
 
+        /// <summary>
+        /// Get Text by Xpath
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="sXPath"></param>
+        /// <param name="waitTime"></param>
+        /// <param name="totalTime"></param>
+        /// <returns></returns>
         public string GetTextByXPath(IWebDriver driver, string sXPath, int waitTime, int totalTime)
         {
             string s1 = null;
@@ -545,6 +608,14 @@ namespace Imports.Stock
             return s1;
         }
 
+        /// <summary>
+        /// Get Text by ID
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="ID"></param>
+        /// <param name="waitTime"></param>
+        /// <param name="totalTime"></param>
+        /// <returns></returns>
         public string GetTextByID(IWebDriver driver, string ID, int waitTime, int totalTime)
         {
             string s1 = null;

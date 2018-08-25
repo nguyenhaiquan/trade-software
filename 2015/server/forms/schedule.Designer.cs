@@ -33,6 +33,7 @@
             this.fetchStockLbl = new common.controls.baseLabel();
             this.tradeAlertLbl = new common.controls.baseLabel();
             this.scheduleGb = new System.Windows.Forms.GroupBox();
+            this.cbDerivativeFetch = new common.controls.baseCheckBox();
             this.tradeAlertChk = new common.controls.baseCheckBox();
             this.fetchDataChk = new common.controls.baseCheckBox();
             this.basePanel1 = new common.controls.basePanel();
@@ -46,7 +47,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.myTimerDerivative = new System.Windows.Forms.Timer(this.components);
             this.bwDerivativeCrawler = new System.ComponentModel.BackgroundWorker();
-            this.cbDerivativeFetch = new common.controls.baseCheckBox();
             this.scheduleGb.SuspendLayout();
             this.basePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,21 @@
             this.scheduleGb.TabIndex = 10;
             this.scheduleGb.TabStop = false;
             this.scheduleGb.Text = " Scheduling ";
+            // 
+            // cbDerivativeFetch
+            // 
+            this.cbDerivativeFetch.AutoSize = true;
+            this.cbDerivativeFetch.Checked = true;
+            this.cbDerivativeFetch.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDerivativeFetch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDerivativeFetch.Location = new System.Drawing.Point(38, 63);
+            this.cbDerivativeFetch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDerivativeFetch.Name = "cbDerivativeFetch";
+            this.cbDerivativeFetch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbDerivativeFetch.Size = new System.Drawing.Size(224, 25);
+            this.cbDerivativeFetch.TabIndex = 11;
+            this.cbDerivativeFetch.Text = "Fetch  Derivative data ";
+            this.cbDerivativeFetch.UseVisualStyleBackColor = true;
             // 
             // tradeAlertChk
             // 
@@ -179,6 +194,7 @@
             // 
             // myTimer
             // 
+            this.myTimer.Interval = 1000;
             this.myTimer.Tick += new System.EventHandler(this.myTimer_Tick);
             // 
             // startBtn
@@ -221,21 +237,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(416, 25);
             this.toolStrip1.TabIndex = 146;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // cbDerivativeFetch
-            // 
-            this.cbDerivativeFetch.AutoSize = true;
-            this.cbDerivativeFetch.Checked = true;
-            this.cbDerivativeFetch.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDerivativeFetch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDerivativeFetch.Location = new System.Drawing.Point(38, 63);
-            this.cbDerivativeFetch.Margin = new System.Windows.Forms.Padding(2);
-            this.cbDerivativeFetch.Name = "cbDerivativeFetch";
-            this.cbDerivativeFetch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbDerivativeFetch.Size = new System.Drawing.Size(224, 25);
-            this.cbDerivativeFetch.TabIndex = 11;
-            this.cbDerivativeFetch.Text = "Fetch  Derivative data ";
-            this.cbDerivativeFetch.UseVisualStyleBackColor = true;
             // 
             // frmSchedule
             // 

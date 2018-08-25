@@ -36,12 +36,12 @@ namespace Imports.Stock
         /// <param name="updateTime"></param>
         /// <param name="exchangeDetailRow"></param>
         /// <returns></returns>
-        public override databases.baseDS.priceDataDataTable GetImportFromWeb(DateTime updateTime, databases.baseDS.exchangeDetailRow exchangeDetailRow)
+        public override databases.baseDS.priceDataDataTable GetImportFromWeb(DateTime updateTime, string market)
         {
-            databases.importDS.importPriceDataTable importPriceTbl = GetPriceFromWeb(updateTime, exchangeDetailRow);
+            databases.importDS.importPriceDataTable importPriceTbl = GetPriceFromWeb(updateTime, market);
             if (importPriceTbl == null) return null;
 
-            Imports.Libs.AddNewCode(exchangeDetailRow.marketCode, importPriceTbl, null);
+            Imports.Libs.AddNewCode(market, importPriceTbl, null);
             databases.DbAccess.UpdateData(importPriceTbl);
             databases.baseDS.priceDataDataTable priceTbl = new databases.baseDS.priceDataDataTable();
             Imports.Libs.AddIdmportPrice(importPriceTbl, priceTbl);
@@ -55,23 +55,27 @@ namespace Imports.Stock
         /// <param name="updateTime"></param>
         /// <param name="exchangeDetailRow"></param>
         /// <returns></returns>
-        private databases.importDS.importPriceDataTable GetPriceFromWeb(DateTime updateTime, databases.baseDS.exchangeDetailRow exchangeDetailRow)
+        private databases.importDS.importPriceDataTable GetPriceFromWeb(DateTime updateTime, string market)
         {
             try
             {
                 databases.importDS.importPriceDataTable importPriceTbl = new databases.importDS.importPriceDataTable();
-                
-                if (ssiPage==null)
-                    //    ssiPage = new SSIPage("http://banggia2.ssi.com.vn/", "http://banggia2.ssi.com.vn/Hnx.aspx", "http://banggia2.ssi.com.vn/Future.aspx");
-                    ssiPage = new SSIPage("http://banggia2.ssi.com.vn/", "http://banggia2.ssi.com.vn/Hnx.aspx");
+
+                if (ssiPage == null)
+                    ssiPage = new SSIPage(market);
                 //ssiPage = new SSIPage("file:///C:/Temp/selenium/HOSE%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html", "file:///C:/Temp/selenium/HNX%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html");
 
-                ssiPage.getHOSEData();
-                ssiPage.getHNXData();
-                //ssiPage.getDerivativeData();
+                if (market=="HOSE")
+                    ssiPage.getHOSEData();
+                else
+                    if (market=="HASTC")
+                        ssiPage.getHNXData();
+                else
+                    if (market=="DERIVATIVE")
+                        ssiPage.getDerivativeData();
                 //SaveDatatoImportPriceDataTable(updateTime,importPriceTbl);
                 databases.importDS.importPriceRow importRow = null;
-                databases.importDS.importPriceRow oldImportRow;
+                databases.importDS.importPriceRow oldImportRow=null;
 
                 foreach (var stock in ssiPage.dictStocks)
                 {
@@ -79,39 +83,46 @@ namespace Imports.Stock
                     databases.AppLibs.InitData(importRow);
                     importRow.onDate = updateTime;
                     importRow.stockCode = stock.Key;
+                    //importRow.to
                     //Doi de fix error #136 - Lỗi cập nhật HNX
-                    importRow.isTotalVolume = true;
-                    //importRow.isTotalVolume = false;
+                    //importRow.isTotalVolume = true;
+                    importRow.isTotalVolume = false;
 
                     importRow.closePrice=(decimal)stock.Value.price;
+                    importRow.totalVolume = (decimal)stock.Value.totalVolume;
 
                     //Doi de fix error #136 - Lỗi cập nhật HNX
-                    importRow.volume = (decimal)stock.Value.totalVolume;
-                    //importRow.volume = (decimal)stock.Value.actualVolume;
                     
-                    //Doi de fix error #136 - Lỗi cập nhật HNX
-                    if (importRow.closePrice > 0)
-                    {
-                        //Only add new when there are some changes 
-                        oldImportRow = lastImportData.Find(importRow);
-                        if (!lastImportData.IsSameData(importRow, oldImportRow))
-                        {
-                            lastImportData.Update(importRow);
 
-                            //Chenh lenh volume giua 2 lan lay
-                            if (importRow.isTotalVolume)
-                            {
-                                if (oldImportRow != null)
-                                    importRow.volume = importRow.volume - oldImportRow.volume;
-                                else
-                                    importRow.volume = (decimal)stock.Value.actualVolume;
-                            }
-                            importPriceTbl.AddimportPriceRow(importRow);
-                            
-                        }
-                        else importRow.CancelEdit();
+                    if ((importRow.closePrice > 0) && (stock.Value.actualVolume>0))
+                    {
+                        importRow.volume = (decimal)stock.Value.actualVolume;
+                        importPriceTbl.AddimportPriceRow(importRow);
                     }
                     else importRow.CancelEdit();
+                    //Doi de fix error #136 - Lỗi cập nhật HNX
+                    //if (importRow.closePrice > 0)
+                    //{
+                    //    Only add new when there are some changes
+                    //    oldImportRow = lastImportData.Find(importRow);
+
+                    //    if (!lastImportData.IsSameData(importRow, oldImportRow))
+                    //    {
+                    //        lastImportData.Update(importRow);
+
+                    //        Chenh lenh volume giua 2 lan lay
+                    //        if (importRow.isTotalVolume)
+                    //        {
+                    //            importRow.volume = (decimal)stock.Value.totalVolume;
+                    //        }
+                    //        else
+                    //            importRow.volume = (decimal)stock.Value.actualVolume;
+                    //        importPriceTbl.AddimportPriceRow(importRow);
+                    //    }
+                    //    else
+                    //        importRow.CancelEdit();
+                    //}
+                    //else importRow.CancelEdit();
                 }
 
                 return importPriceTbl;

@@ -68,7 +68,6 @@ namespace server
         void bWorkerDerivative_DoWork(object sender, DoWorkEventArgs e)
         {
             FetchData("DERIVATIVE");
-
         }
 
         void bWorkerDerivative_DoWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -161,7 +160,7 @@ namespace server
                 else
                 if (market == "HASTC") libs.FetchRealTimeData(DateTime.Now, "HASTC");
                 else
-                if (market == "DERIVATIVE") libs.FetchRealTimeData(DateTime.Now, "HASTC");
+                if (market == "DERIVATIVE") libs.FetchRealTimeData(DateTime.Now, "DERIVATIVE");
 
                 fFetchDataRunning = false;
 
@@ -233,7 +232,7 @@ namespace server
                     myTimer.Start();
 
                     //Init last price before importing
-                    databases.AppLibs.GetLastClosePrices();
+                    //databases.AppLibs.GetLastClosePrices();
                 }
                 else myTimer.Stop();
             }

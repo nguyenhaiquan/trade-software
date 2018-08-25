@@ -1,2 +1,4 @@
 C:\Github\trade-software\2015\database scripts\database_scripts\obj\Debug\database_scripts.csprojResolveAssemblyReference.cache
 C:\Github\trade-software\2015\database scripts\database_scripts\obj\Debug\database_scripts.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\database scripts\database_scripts\obj\Debug\database_scripts.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\database scripts\database_scripts\obj\Debug\database_scripts.csproj.CoreCompileInputs.cache
