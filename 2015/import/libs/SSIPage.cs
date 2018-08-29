@@ -14,6 +14,8 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using System.Diagnostics;
+using databaseEntity;
+using System.Data.Entity;
 
 namespace Imports.Stock
 {
@@ -167,10 +169,7 @@ namespace Imports.Stock
             }
 
             dictStocks = new Dictionary<string, PageStockRow>();
-            //previousDictStocks = new Dictionary<string,PageStockRow>();
-
-            //Get import Data of Today vao dictStocks
-            //getDataforLoading(dictStocks);
+            GetLastImportData(market);    
 
         }
 
@@ -181,9 +180,43 @@ namespace Imports.Stock
             if (driverDerivative != null) driverDerivative.Quit();
         }
 
+        private void GetLastImportData(string market)
+        {
+            try
+            {
+                StockImportDB dbimport = new StockImportDB();
+                StockDb db = new StockDb();
+                DateTime today = DateTime.Today;
+                DateTime tomorrow = today.AddDays(+1);
+
+                //lay ca ma cua market
+                var stockcode = db.StockCodes.Where(m => m.stockExchange == market);
+                //GetStockCode(market);
+
+                //Lay lan dau tien
+                foreach (var s in stockcode)
+                {
+                    PageStockRow lastrow = new PageStockRow();
+                    importPrice importprice_row=dbimport.GetByDateAndCodeDescending(today, tomorrow, s.code);
+                    lastrow.price = (double)importprice_row.closePrice;
+                    
+                    lastrow.actualVolume = (double)importprice_row.volume;
+                    lastrow.totalVolume = (double)importprice_row.totalVolume;
+                    dictStocks.Add(s.code, lastrow);
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }   
+        
         public void Refresh(IWebDriver driver)
         {
             driver.Navigate().Refresh();
+
+
+
         }
 
         /// <summary>
@@ -280,6 +313,7 @@ namespace Imports.Stock
                 }
                 //previousDictStocks.Add(key, value);
             }
+            
         }
 
         private void GetStockTableData(HtmlAgilityPack.HtmlDocument html, string stockExchange)
@@ -571,6 +605,7 @@ namespace Imports.Stock
                 catch (Exception)
                 {
 #pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
+                    //driver.Manage().Timeouts().ImplicitlyWait = waitTime;
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
 #pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;

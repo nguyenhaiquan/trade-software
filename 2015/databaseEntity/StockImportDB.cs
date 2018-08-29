@@ -13,7 +13,7 @@ namespace databaseEntity
         public virtual DbSet<importPrice> ImportPrices { get; set; }
 
         public StockImportDB()
-            : base("name=importPrices")
+            : base("name=stock_importEntities")
         {
         }
 

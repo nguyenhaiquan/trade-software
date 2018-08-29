@@ -100,29 +100,6 @@ namespace Imports.Stock
                         importPriceTbl.AddimportPriceRow(importRow);
                     }
                     else importRow.CancelEdit();
-                    //Doi de fix error #136 - Lỗi cập nhật HNX
-                    //if (importRow.closePrice > 0)
-                    //{
-                    //    Only add new when there are some changes
-                    //    oldImportRow = lastImportData.Find(importRow);
-
-                    //    if (!lastImportData.IsSameData(importRow, oldImportRow))
-                    //    {
-                    //        lastImportData.Update(importRow);
-
-                    //        Chenh lenh volume giua 2 lan lay
-                    //        if (importRow.isTotalVolume)
-                    //        {
-                    //            importRow.volume = (decimal)stock.Value.totalVolume;
-                    //        }
-                    //        else
-                    //            importRow.volume = (decimal)stock.Value.actualVolume;
-                    //        importPriceTbl.AddimportPriceRow(importRow);
-                    //    }
-                    //    else
-                    //        importRow.CancelEdit();
-                    //}
-                    //else importRow.CancelEdit();
                 }
 
                 return importPriceTbl;

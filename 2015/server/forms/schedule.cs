@@ -16,11 +16,17 @@ namespace server
     {
         private bool fRunning = false;
         private bool fDerivativeRunning = false;
-        
-        common.TimerProcess fetchDataTimer = new common.TimerProcess();
+        Boolean fFetchDataRunning = false;
+        Boolean fFetchDataHOSERunning = false;
+        Boolean fFetchDataHASTCRunning = false;
+        Boolean fFetchDataGOLDRunning = false;
+
+        Boolean fCreateAlertRunning = false;
+
+        //common.TimerProcess fetchDataTimer = new common.TimerProcess();
         common.TimerProcess createTradeAlertTimer = new common.TimerProcess();
 
-        BackgroundWorker bWorkerDerivative;
+        public BackgroundWorker bWorkerDerivative;
 
         public frmSchedule()
         {
@@ -53,16 +59,19 @@ namespace server
             bWorkerDerivative.WorkerReportsProgress = true;
             bWorkerDerivative.WorkerSupportsCancellation = true;
 
-            //Derivative
+            //Init Flag for Fetching Data from Data Source
             fDerivativeRunning = false;
-
+            fFetchDataHOSERunning = false;
+            fFetchDataHOSERunning = false;
         }
 
         void bWorkerDerivative_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            if (fFetchDataHOSERunning) myStatusStrip.Text = "Downloading HOSE data..";
-            if (fFetchDataHASTCRunning) myStatusStrip.Text = "Downloading HASTC data..";
-            if (fFetchDataGOLDRunning) myStatusStrip.Text = "Downloading Gold data..";
+            //if (fFetchDataHOSERunning) myStatusStrip.Text = "Downloading HOSE data..";
+            //if (fFetchDataHASTCRunning) myStatusStrip.Text = "Downloading HASTC data..";
+            //if (fFetchDataGOLDRunning) myStatusStrip.Text = "Downloading Gold data..";
+            //if (fDerivativeRunning) myStatusStrip.Text = "Downloading Derivative data...";
+            myStatusStrip.Text = e.UserState.ToString();
         }
 
         void bWorkerDerivative_DoWork(object sender, DoWorkEventArgs e)
@@ -139,38 +148,54 @@ namespace server
         }
 
 
-        Boolean fFetchDataRunning = false;
-        Boolean fFetchDataHOSERunning = false;
-        Boolean fFetchDataHASTCRunning = false;
-        Boolean fFetchDataGOLDRunning = false;
-
-        Boolean fCreateAlertRunning = false;
+       
         private void FetchData(string market)
         {
             try
             {
-                if (fFetchDataRunning)  return;
-                
                 Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();            
- 
-                fFetchDataRunning = true;
+                stopWatch.Start();
 
-                if (market == "HOSE") libs.FetchRealTimeData(DateTime.Now, "HOSE");
-                else
-                if (market == "HASTC") libs.FetchRealTimeData(DateTime.Now, "HASTC");
-                else
-                if (market == "DERIVATIVE") libs.FetchRealTimeData(DateTime.Now, "DERIVATIVE");
+                switch (market)
+                {
+                    case "HOSE":
+                        if (!fFetchDataHOSERunning)
+                        {
+                            fFetchDataHOSERunning = true;
+                            libs.FetchRealTimeData(DateTime.Now, "HOSE");
+                            fFetchDataHOSERunning = false;
+                        }
+                        break;
+                    case "HASTC":
+                        if (!fFetchDataHASTCRunning)
+                        {
+                            fFetchDataHASTCRunning = true;
+                            libs.FetchRealTimeData(DateTime.Now, "HASTC");
+                            fFetchDataHASTCRunning = false;
+                        }
+                        break;
+                    case "DERIVATIVE":
+                        if (!fDerivativeRunning)
+                        {
+                            fDerivativeRunning = true;
+                            libs.FetchRealTimeData(DateTime.Now, "DERIVATIVE");
+                            fDerivativeRunning = false;
+                        }
 
-                fFetchDataRunning = false;
+                        stopWatch.Stop();
+                        TimeSpan ts = stopWatch.Elapsed;
 
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
+                        // Format and display the TimeSpan value.
+                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                            ts.Hours, ts.Minutes, ts.Seconds,
+                            ts.Milliseconds / 10);
+                        //myStatusStrip.Text = "Downloading " + market + " takes " + elapsedTime;
+                        bWorkerDerivative.ReportProgress(100, elapsedTime);
+                        break;
 
-                // Format and display the TimeSpan value.
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                    ts.Hours, ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
+                }
+
+                
             }
             catch (Exception er)
             {
@@ -222,19 +247,34 @@ namespace server
                 runBtn.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
                 scheduleGb.Enabled = !fRunning;
 
-                fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked?Settings.sysGlobal.RefreshDataInSecs:0);
+                //fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked?Settings.sysGlobal.RefreshDataInSecs:0);
                 
                 createTradeAlertTimer.WaitInSeconds = (short)(tradeAlertChk.Checked ? Settings.sysGlobal.CheckAlertInSeconds : 0);
                 //createTradeAlertTimer.WaitInSeconds = 10;
 
                 if (fRunning)
                 {
-                    myTimer.Start();
+                    if (cboxfetchDataHOSE.Checked)
+                        myTimerHOSE.Start();
+                    if (cboxFetchDataHSTC.Checked)
+                        myTimerHASTC.Start();
 
+                    if (cboxDerivativeFetch.Checked)
+                        myTimerDerivative.Start();
+                    //if (fetchDataChk)
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
                 }
-                else myTimer.Stop();
+                else
+                {
+                    if (cboxfetchDataHOSE.Checked)
+                        myTimerHOSE.Stop();
+                    if (cboxFetchDataHSTC.Checked)
+                        myTimerHASTC.Stop();
+                    if (cboxDerivativeFetch.Checked)
+                        myTimerDerivative.Stop();
+                }
+                
             }
             catch (Exception er)
             {
@@ -254,15 +294,12 @@ namespace server
             }
         }
 
-        private void myTimer_Tick(object sender, EventArgs e)
+        private void myTimerDerivative_Tick(object sender, EventArgs e)
         {
             try
             {
-                if (!bWorkerDerivative.IsBusy)
+                if ((!bWorkerDerivative.IsBusy) && (!fDerivativeRunning))
                     bWorkerDerivative.RunWorkerAsync();
-
-                //if (createTradeAlertTimer.IsEndWaitTime()) 
-                //    createTradeAlertTimer.Execute();
             }
             catch (Exception er)
             {
@@ -293,21 +330,44 @@ namespace server
                 btnDevivativeFetch.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
                 scheduleGb.Enabled = !fDerivativeRunning;
 
-                fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
+                //fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
 
                 if (fFetchDataRunning)
                 {
-                    myTimerDerivative.Start();
+                    myTimerHOSE.Start();
 
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
                 }
-                else myTimerDerivative.Stop();
+                else myTimerHOSE.Stop();
             }
             catch (Exception er)
             {
                 ShowError(er);
             }
+        }
+
+        private void bwHOSECrawler_DoWork(object sender, DoWorkEventArgs e)
+        {
+            FetchData("HOSE");
+        }
+
+        private void myTimerHOSE_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((!bwHOSECrawler.IsBusy) && (!fFetchDataHOSERunning))
+                    bwHOSECrawler.RunWorkerAsync();
+            }
+            catch (Exception er)
+            {
+                ShowError(er);
+            }
+        }
+
+        private void myTimerHASTC_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

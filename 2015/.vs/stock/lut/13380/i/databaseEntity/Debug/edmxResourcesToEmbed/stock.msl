@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stockModelStoreContainer" CdmEntityContainer="stockEntities">
+    <EntitySetMapping Name="bestStrategies">
+      <EntityTypeMapping TypeName="stockModel.bestStrategy">
+        <MappingFragment StoreEntitySet="bestStrategy">
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="timeFrame" ColumnName="timeFrame" />
+          <ScalarProperty Name="strategyCode1" ColumnName="strategyCode1" />
+          <ScalarProperty Name="strategyCode2" ColumnName="strategyCode2" />
+          <ScalarProperty Name="strategyCode3" ColumnName="strategyCode3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="stockModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exchangeDetails">
+      <EntityTypeMapping TypeName="stockModel.exchangeDetail">
+        <MappingFragment StoreEntitySet="exchangeDetail">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="marketCode" ColumnName="marketCode" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="goTrue" ColumnName="goTrue" />
+          <ScalarProperty Name="goFalse" ColumnName="goFalse" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="culture" ColumnName="culture" />
+          <ScalarProperty Name="isEnabled" ColumnName="isEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="financialModels">
+      <EntityTypeMapping TypeName="stockModel.financialModel">
+        <MappingFragment StoreEntitySet="financialModel">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="nameVN" ColumnName="nameVN" />
+          <ScalarProperty Name="nameUS" ColumnName="nameUS" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="sector" ColumnName="sector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="investors">
+      <EntityTypeMapping TypeName="stockModel.investor">
+        <MappingFragment StoreEntitySet="investor">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="displayName" ColumnName="displayName" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="catCode" ColumnName="catCode" />
+          <ScalarProperty Name="expireDate" ColumnName="expireDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="investorStocks">
+      <EntityTypeMapping TypeName="stockModel.investorStock">
+        <MappingFragment StoreEntitySet="investorStock">
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="portfolio" ColumnName="portfolio" />
+          <ScalarProperty Name="buyDate" ColumnName="buyDate" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="buyAmt" ColumnName="buyAmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messages">
+      <EntityTypeMapping TypeName="stockModel.message">
+        <MappingFragment StoreEntitySet="messages">
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="OnDate" ColumnName="OnDate" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="ReceiverId" ColumnName="ReceiverId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="MsgBody" ColumnName="MsgBody" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="RefMsgId" ColumnName="RefMsgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portfolios">
+      <EntityTypeMapping TypeName="stockModel.portfolio">
+        <MappingFragment StoreEntitySet="portfolio">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="investorCode" ColumnName="investorCode" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="startCapAmt" ColumnName="startCapAmt" />
+          <ScalarProperty Name="usedCapAmt" ColumnName="usedCapAmt" />
+          <ScalarProperty Name="stockAccumulatePerc" ColumnName="stockAccumulatePerc" />
+          <ScalarProperty Name="stockReducePerc" ColumnName="stockReducePerc" />
+          <ScalarProperty Name="maxBuyAmtPerc" ColumnName="maxBuyAmtPerc" />
+          <ScalarProperty Name="interestedStock" ColumnName="interestedStock" />
+          <ScalarProperty Name="interestedSector" ColumnName="interestedSector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portfolioDetails">
+      <EntityTypeMapping TypeName="stockModel.portfolioDetail">
+        <MappingFragment StoreEntitySet="portfolioDetail">
+          <ScalarProperty Name="portfolio" ColumnName="portfolio" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="subCode" ColumnName="subCode" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceDatas">
+      <EntityTypeMapping TypeName="stockModel.priceData">
+        <MappingFragment StoreEntitySet="priceData">
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="onDate" ColumnName="onDate" />
+          <ScalarProperty Name="openPrice" ColumnName="openPrice" />
+          <ScalarProperty Name="closePrice" ColumnName="closePrice" />
+          <ScalarProperty Name="lowPrice" ColumnName="lowPrice" />
+          <ScalarProperty Name="highPrice" ColumnName="highPrice" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceDataSums">
+      <EntityTypeMapping TypeName="stockModel.priceDataSum">
+        <MappingFragment StoreEntitySet="priceDataSum">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="onDate" ColumnName="onDate" />
+          <ScalarProperty Name="openPrice" ColumnName="openPrice" />
+          <ScalarProperty Name="closePrice" ColumnName="closePrice" />
+          <ScalarProperty Name="lowPrice" ColumnName="lowPrice" />
+          <ScalarProperty Name="highPrice" ColumnName="highPrice" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockCodes">
+      <EntityTypeMapping TypeName="stockModel.stockCode">
+        <MappingFragment StoreEntitySet="stockCode">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="stockExchange" ColumnName="stockExchange" />
+          <ScalarProperty Name="tickerCode" ColumnName="tickerCode" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="nameEn" ColumnName="nameEn" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="bizSectors" ColumnName="bizSectors" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="regDate" ColumnName="regDate" />
+          <ScalarProperty Name="noListedStock" ColumnName="noListedStock" />
+          <ScalarProperty Name="noOutstandingStock" ColumnName="noOutstandingStock" />
+          <ScalarProperty Name="noForeignOwnedStock" ColumnName="noForeignOwnedStock" />
+          <ScalarProperty Name="noTreasuryStock" ColumnName="noTreasuryStock" />
+          <ScalarProperty Name="bookPrice" ColumnName="bookPrice" />
+          <ScalarProperty Name="targetPrice" ColumnName="targetPrice" />
+          <ScalarProperty Name="targetPriceVariant" ColumnName="targetPriceVariant" />
+          <ScalarProperty Name="workingCap" ColumnName="workingCap" />
+          <ScalarProperty Name="capitalUnit" ColumnName="capitalUnit" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="profit" ColumnName="profit" />
+          <ScalarProperty Name="equity" ColumnName="equity" />
+          <ScalarProperty Name="totalDebt" ColumnName="totalDebt" />
+          <ScalarProperty Name="totaAssets" ColumnName="totaAssets" />
+          <ScalarProperty Name="PB" ColumnName="PB" />
+          <ScalarProperty Name="EPS" ColumnName="EPS" />
+          <ScalarProperty Name="PE" ColumnName="PE" />
+          <ScalarProperty Name="ROA" ColumnName="ROA" />
+          <ScalarProperty Name="ROE" ColumnName="ROE" />
+          <ScalarProperty Name="BETA" ColumnName="BETA" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Headquarter" ColumnName="Headquarter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockExchanges">
+      <EntityTypeMapping TypeName="stockModel.stockExchange">
+        <MappingFragment StoreEntitySet="stockExchange">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="workTime" ColumnName="workTime" />
+          <ScalarProperty Name="holidays" ColumnName="holidays" />
+          <ScalarProperty Name="minBuySellDay" ColumnName="minBuySellDay" />
+          <ScalarProperty Name="tranFeePerc" ColumnName="tranFeePerc" />
+          <ScalarProperty Name="priceRatio" ColumnName="priceRatio" />
+          <ScalarProperty Name="volumeRatio" ColumnName="volumeRatio" />
+          <ScalarProperty Name="dataSource" ColumnName="dataSource" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="priceAmplitude" ColumnName="priceAmplitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockReports">
+      <EntityTypeMapping TypeName="stockModel.stockReport">
+        <MappingFragment StoreEntitySet="stockReport">
+          <ScalarProperty Name="reportType" ColumnName="reportType" />
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="onDate" ColumnName="onDate" />
+          <ScalarProperty Name="reportCode" ColumnName="reportCode" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="val0" ColumnName="val0" />
+          <ScalarProperty Name="val1" ColumnName="val1" />
+          <ScalarProperty Name="val2" ColumnName="val2" />
+          <ScalarProperty Name="val3" ColumnName="val3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysAutoKeys">
+      <EntityTypeMapping TypeName="stockModel.sysAutoKey">
+        <MappingFragment StoreEntitySet="sysAutoKey">
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysAutoKeyPendings">
+      <EntityTypeMapping TypeName="stockModel.sysAutoKeyPending">
+        <MappingFragment StoreEntitySet="sysAutoKeyPending">
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="timeStamp" ColumnName="timeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysCodes">
+      <EntityTypeMapping TypeName="stockModel.sysCode">
+        <MappingFragment StoreEntitySet="sysCode">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="inGroup" ColumnName="inGroup" />
+          <ScalarProperty Name="description1" ColumnName="description1" />
+          <ScalarProperty Name="description2" ColumnName="description2" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="tag1" ColumnName="tag1" />
+          <ScalarProperty Name="tag2" ColumnName="tag2" />
+          <ScalarProperty Name="isVisible" ColumnName="isVisible" />
+          <ScalarProperty Name="isSystem" ColumnName="isSystem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysCodeCats">
+      <EntityTypeMapping TypeName="stockModel.sysCodeCat">
+        <MappingFragment StoreEntitySet="sysCodeCat">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="tag1" ColumnName="tag1" />
+          <ScalarProperty Name="tag2" ColumnName="tag2" />
+          <ScalarProperty Name="isVisible" ColumnName="isVisible" />
+          <ScalarProperty Name="isSystem" ColumnName="isSystem" />
+          <ScalarProperty Name="maxCodeLen" ColumnName="maxCodeLen" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysConfigs">
+      <EntityTypeMapping TypeName="stockModel.sysConfig">
+        <MappingFragment StoreEntitySet="sysConfig">
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="stockModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysLogs">
+      <EntityTypeMapping TypeName="stockModel.sysLog">
+        <MappingFragment StoreEntitySet="sysLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="onDate" ColumnName="onDate" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="investorCode" ColumnName="investorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tradeAlerts">
+      <EntityTypeMapping TypeName="stockModel.tradeAlert">
+        <MappingFragment StoreEntitySet="tradeAlert">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="onTime" ColumnName="onTime" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="tradeAction" ColumnName="tradeAction" />
+          <ScalarProperty Name="portfolio" ColumnName="portfolio" />
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="timeScale" ColumnName="timeScale" />
+          <ScalarProperty Name="strategy" ColumnName="strategy" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="stockModel.transaction">
+        <MappingFragment StoreEntitySet="transactions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="onTime" ColumnName="onTime" />
+          <ScalarProperty Name="tranType" ColumnName="tranType" />
+          <ScalarProperty Name="portfolio" ColumnName="portfolio" />
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="feeAmt" ColumnName="feeAmt" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

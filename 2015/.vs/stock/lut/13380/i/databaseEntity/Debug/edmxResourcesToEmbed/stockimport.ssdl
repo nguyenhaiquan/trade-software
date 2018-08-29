@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stock_importModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="importPrice">
+    <Key>
+      <PropertyRef Name="onDate" />
+      <PropertyRef Name="stockCode" />
+    </Key>
+    <Property Name="onDate" Type="datetime" Nullable="false" />
+    <Property Name="stockCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="closePrice" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="volume" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="isTotalVolume" Type="bit" Nullable="false" />
+    <Property Name="totalVolume" Type="decimal" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="stock_importModelStoreContainer">
+    <EntitySet Name="importPrice" EntityType="Self.importPrice" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
