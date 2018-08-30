@@ -27,6 +27,7 @@ namespace databaseEntity
         public virtual DbSet<priceDataSum> PriceDataSums { get; set; }
         public virtual DbSet<priceData> PriceData { get; set; }
         public virtual DbSet<transaction> Transactions { get; set; }
+        public virtual DbSet<stockExchange> StockExchanges { get; set; }
 
         public StockDb()
             : base("name=stockEntities")
@@ -209,6 +210,11 @@ namespace databaseEntity
         public DbSet<databaseEntity.stockCode> GetAllStockCodes()
         {
             return StockCodes;
+        }
+
+        public stockExchange GetStockExchanges(string market)
+        {
+            return (stockExchange) StockExchanges.Where(x => x.code == market).FirstOrDefault();
         }
     }
 }

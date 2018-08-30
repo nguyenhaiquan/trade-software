@@ -103,7 +103,7 @@ namespace server
             return false;
         }
 
-        public static void FetchRealTimeData(DateTime updateTime,string market)
+        public static void FetchRealTimeData(DateTime updateTime, string market)
         {
             //DataView myDataView = new DataView(application.SysLibs.myExchangeDetailTbl);
             //myDataView.Sort = application.SysLibs.myExchangeDetailTbl.orderIdColumn.ToString();
@@ -115,42 +115,63 @@ namespace server
 
             //StockDb.Get db = new StockDb();
 
-            for (int idx1 = 0; idx1 < application.SysLibs.myStockExchangeTbl.Count; idx1++)                
+            //GetStockExchange Row
+            StockDb db = new StockDb();
+            stockExchange marketRaw = db.GetStockExchanges(market);
+
+            if (IsHolidays(updateTime, marketRaw.holidays)) return;
+
+            // WorkTimes can have multipe parts separated by charater |
+            parts = marketRaw.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            StringCollection confWorkTimes = new StringCollection();
+            for (int idx2 = 0; idx2 < parts.Length; idx2++) confWorkTimes.Add(parts[idx2]);
+            if (!IsWorktime(updateTime, confWorkTimes)) return;
+
+            bool retVal = true;
+            try
             {
-                marketRow = application.SysLibs.myStockExchangeTbl[idx1];
-                if (((string)marketRow["code"]) != market) continue;
-                
-                if (IsHolidays(updateTime, marketRow.holidays)) continue;
-
-                // WorkTimes can have multipe parts separated by charater |
-                parts = marketRow.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-                StringCollection confWorkTimes = new StringCollection();
-                for (int idx2 = 0; idx2 < parts.Length; idx2++) confWorkTimes.Add(parts[idx2]);
-                if (!IsWorktime(updateTime, confWorkTimes)) continue;
-
-
-                bool retVal = true;
-                {
-                    try
-                    {
-                        //Main call to update price
-                        retVal = Imports.Libs.ImportFromWeb(updateTime, market);
-                        if (retVal == false)
-                            throw new Exception();
-                    }
-                    catch (Exception er)
-                    {
-                        retVal = false;
-                        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV004", er);
-                        break;
-                    }
-
-                    //Xu ly ko doc duoc
-                    
-                    
-                }
+                //Main call to update price
+                retVal = Imports.Libs.ImportFromWeb(updateTime, market);
+                if (retVal == false)
+                    throw new Exception();
             }
-            return;
+            catch (Exception er)
+            {
+                retVal = false;
+                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV004", er);
+            }
+
+            //for (int idx1 = 0; idx1 < application.SysLibs.myStockExchangeTbl.Count; idx1++)                
+            //{
+            //    marketRow = application.SysLibs.myStockExchangeTbl[idx1];
+            //    if (((string)marketRow["code"]) != market) continue;
+
+            //    if (IsHolidays(updateTime, marketRow.holidays)) continue;
+
+            //    // WorkTimes can have multipe parts separated by charater |
+            //    parts = marketRow.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            //    StringCollection confWorkTimes = new StringCollection();
+            //    for (int idx2 = 0; idx2 < parts.Length; idx2++) confWorkTimes.Add(parts[idx2]);
+            //    if (!IsWorktime(updateTime, confWorkTimes)) continue;
+
+
+            //    bool retVal = true;
+            //    {
+            //        try
+            //        {
+            //            //Main call to update price
+            //            retVal = Imports.Libs.ImportFromWeb(updateTime, market);
+            //            if (retVal == false)
+            //                throw new Exception();
+            //        }
+            //        catch (Exception er)
+            //        {
+            //            retVal = false;
+            //            commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV004", er);
+            //            break;
+            //        }
+            //    }
+            //}
         }
     }
 }

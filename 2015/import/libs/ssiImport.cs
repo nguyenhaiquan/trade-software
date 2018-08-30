@@ -23,7 +23,7 @@ namespace Imports.Stock
     /// </summary>
     public class ssi_StockImport : generalImport
     {
-        static SSIPage ssiPage=null;
+       SSIPage ssiPage=null;
 
         public override databases.baseDS.priceDataDataTable GetImportFromCSV(string fileName, string market, OnUpdatePriceData onUpdateDataFunc)
         {
