@@ -92,6 +92,9 @@
     </Compile>
     <Compile Include="libs\libs.cs">
     </Compile>
+    <Compile Include="libs\MyTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -5,21 +5,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using commonTypes;
-using System.Diagnostics;
 
 namespace server
 {
+    
+
     public partial class frmSchedule : baseClass.forms.baseForm   
     {
         private bool fRunning = false;
         private bool fDerivativeRunning = false;
-        Boolean fFetchDataRunning = false;
-        Boolean fFetchDataHOSERunning = false;
-        Boolean fFetchDataHASTCRunning = false;
-        Boolean fFetchDataGOLDRunning = false;
 
         Boolean fCreateAlertRunning = false;
 
@@ -27,7 +25,7 @@ namespace server
         common.TimerProcess createTradeAlertTimer = new common.TimerProcess();
 
         public BackgroundWorker bWorkerDerivative;
-
+        List<MyTimer> listTimers;
         public frmSchedule()
         {
             try
@@ -44,45 +42,11 @@ namespace server
         {
             tradeAlertLbl.Text = Settings.sysGlobal.CheckAlertInSeconds.ToString() + " " + Languages.Libs.GetString("seconds");
             fetchStockLbl.Text = Settings.sysGlobal.RefreshDataInSecs.ToString() + " " + Languages.Libs.GetString("seconds");
-            //fetchDataTimer.OnProcess += new common.TimerProcess.OnProcessEvent(FetchData);
-            //fetchDataTimerHOSE.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHOSE);(
-            //fetchDataTimerHASTC.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataHASTC);
-            //fetchDataTimerGOLD.OnProcess += new common.TimerProcess.OnProcessEvent(FetchDataGOLD);
-
-            //createTradeAlertTimer.OnProcess += new common.TimerProcess.OnProcessEvent(CreateTradeAlert);
-
-            bWorkerDerivative = new BackgroundWorker();
-            bWorkerDerivative.DoWork += new DoWorkEventHandler(bWorkerDerivative_DoWork);
-            bWorkerDerivative.ProgressChanged += new ProgressChangedEventHandler(bWorkerDerivative_ProgressChanged);
-            bWorkerDerivative.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorkerDerivative_DoWork_RunWorkerCompleted);
-
-            bWorkerDerivative.WorkerReportsProgress = true;
-            bWorkerDerivative.WorkerSupportsCancellation = true;
-
-            //Init Flag for Fetching Data from Data Source
-            fDerivativeRunning = false;
-            fFetchDataHOSERunning = false;
-            fFetchDataHOSERunning = false;
+            listTimers = new List<MyTimer>();
+            listTimers.Add(new MyTimer("HOSE",1000,true));
+            listTimers.Add(new MyTimer("HASTC", 1000,true));
+            listTimers.Add(new MyTimer("DERIVATIVE", 1000,true));
         }
-
-        void bWorkerDerivative_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //if (fFetchDataHOSERunning) myStatusStrip.Text = "Downloading HOSE data..";
-            //if (fFetchDataHASTCRunning) myStatusStrip.Text = "Downloading HASTC data..";
-            //if (fFetchDataGOLDRunning) myStatusStrip.Text = "Downloading Gold data..";
-            //if (fDerivativeRunning) myStatusStrip.Text = "Downloading Derivative data...";
-            myStatusStrip.Text = e.UserState.ToString();
-        }
-
-        void bWorkerDerivative_DoWork(object sender, DoWorkEventArgs e)
-        {
-            FetchData("DERIVATIVE");
-        }
-
-        void bWorkerDerivative_DoWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-        }
-
         private void onTradeAlertProcessStart(int count)
         {
             if (myStatusStrip.InvokeRequired)
@@ -148,64 +112,6 @@ namespace server
         }
 
 
-       
-        private void FetchData(string market)
-        {
-            try
-            {
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-
-                switch (market)
-                {
-                    case "HOSE":
-                        if (!fFetchDataHOSERunning)
-                        {
-                            fFetchDataHOSERunning = true;
-                            libs.FetchRealTimeData(DateTime.Now, "HOSE");
-                            fFetchDataHOSERunning = false;
-                        }
-                        break;
-                    case "HASTC":
-                        if (!fFetchDataHASTCRunning)
-                        {
-                            fFetchDataHASTCRunning = true;
-                            libs.FetchRealTimeData(DateTime.Now, "HASTC");
-                            fFetchDataHASTCRunning = false;
-                        }
-                        break;
-                    case "DERIVATIVE":
-                        if (!fDerivativeRunning)
-                        {
-                            fDerivativeRunning = true;
-                            libs.FetchRealTimeData(DateTime.Now, "DERIVATIVE");
-                            fDerivativeRunning = false;
-                        }
-
-                        stopWatch.Stop();
-                        TimeSpan ts = stopWatch.Elapsed;
-
-                        // Format and display the TimeSpan value.
-                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                            ts.Hours, ts.Minutes, ts.Seconds,
-                            ts.Milliseconds / 10);
-                        //myStatusStrip.Text = "Downloading " + market + " takes " + elapsedTime;
-                        bWorkerDerivative.ReportProgress(100, elapsedTime);
-                        break;
-
-                }
-
-                
-            }
-            catch (Exception er)
-            {
-                fFetchDataRunning = false;
-                commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV002",er);
-            }
-            
-        }
-
-
         private void CreateTradeAlert()
         {
             try
@@ -238,7 +144,7 @@ namespace server
         /// <param name="e"></param>
         private void runBtn_Click(object sender, EventArgs e)
         {
-            fFetchDataRunning = false;
+            //fFetchDataRunning = false;
             fCreateAlertRunning = false;
             try
             {
@@ -255,12 +161,13 @@ namespace server
                 if (fRunning)
                 {
                     if (cboxfetchDataHOSE.Checked)
-                        myTimerHOSE.Start();
+                        //myTimerHOSE.Start();
+                        listTimers[0].Start();
                     if (cboxFetchDataHSTC.Checked)
-                        myTimerHASTC.Start();
+                        listTimers[1].Start();
 
                     if (cboxDerivativeFetch.Checked)
-                        myTimerDerivative.Start();
+                        listTimers[2].Start();
                     //if (fetchDataChk)
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
@@ -268,11 +175,11 @@ namespace server
                 else
                 {
                     if (cboxfetchDataHOSE.Checked)
-                        myTimerHOSE.Stop();
+                        listTimers[0].Stop();
                     if (cboxFetchDataHSTC.Checked)
-                        myTimerHASTC.Stop();
+                        listTimers[1].Stop();
                     if (cboxDerivativeFetch.Checked)
-                        myTimerDerivative.Stop();
+                        listTimers[2].Stop();
                 }
                 
             }
@@ -321,53 +228,5 @@ namespace server
             }
         }
 
-        private void btnDevivativeFetch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                fDerivativeRunning = !fDerivativeRunning;
-                this.ShowMessage("");
-                btnDevivativeFetch.Image = (fRunning ? pauseBtn.Image : startBtn.Image);
-                scheduleGb.Enabled = !fDerivativeRunning;
-
-                //fetchDataTimer.WaitInSeconds = (short)(fetchDataChk.Checked ? Settings.sysGlobal.RefreshDataInSecs : 0);
-
-                if (fFetchDataRunning)
-                {
-                    myTimerHOSE.Start();
-
-                    //Init last price before importing
-                    //databases.AppLibs.GetLastClosePrices();
-                }
-                else myTimerHOSE.Stop();
-            }
-            catch (Exception er)
-            {
-                ShowError(er);
-            }
-        }
-
-        private void bwHOSECrawler_DoWork(object sender, DoWorkEventArgs e)
-        {
-            FetchData("HOSE");
-        }
-
-        private void myTimerHOSE_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                if ((!bwHOSECrawler.IsBusy) && (!fFetchDataHOSERunning))
-                    bwHOSECrawler.RunWorkerAsync();
-            }
-            catch (Exception er)
-            {
-                ShowError(er);
-            }
-        }
-
-        private void myTimerHASTC_Tick(object sender, EventArgs e)
-        {
-
-        }
     }
 }

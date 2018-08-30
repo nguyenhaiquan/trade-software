@@ -34,3 +34,4 @@ F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csproj.Cor
 F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csproj.CopyComplete
 F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.dll
 F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.pdb
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csprojResolveAssemblyReference.cache

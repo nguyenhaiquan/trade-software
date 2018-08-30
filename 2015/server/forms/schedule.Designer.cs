@@ -38,17 +38,13 @@
             this.tradeAlertChk = new common.controls.baseCheckBox();
             this.cboxfetchDataHOSE = new common.controls.baseCheckBox();
             this.basePanel1 = new common.controls.basePanel();
+            this.pauseBtn = new common.controls.baseButton();
+            this.startBtn = new common.controls.baseButton();
             this.btnDevivativeFetch = new System.Windows.Forms.Button();
             this.viewLogBtn = new common.controls.baseButton();
             this.runBtn = new common.controls.baseButton();
-            this.myTimerDerivative = new System.Windows.Forms.Timer(this.components);
-            this.startBtn = new common.controls.baseButton();
-            this.pauseBtn = new common.controls.baseButton();
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.myTimerHOSE = new System.Windows.Forms.Timer(this.components);
-            this.bwHOSECrawler = new System.ComponentModel.BackgroundWorker();
-            this.myTimerHASTC = new System.Windows.Forms.Timer(this.components);
             this.scheduleGb.SuspendLayout();
             this.basePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +170,34 @@
             this.basePanel1.Size = new System.Drawing.Size(327, 31);
             this.basePanel1.TabIndex = 1;
             // 
+            // pauseBtn
+            // 
+            this.pauseBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseBtn.Image = global::server.Properties.Resources.pause;
+            this.pauseBtn.isDownState = false;
+            this.pauseBtn.Location = new System.Drawing.Point(219, 5);
+            this.pauseBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pauseBtn.Name = "pauseBtn";
+            this.pauseBtn.Size = new System.Drawing.Size(15, 16);
+            this.pauseBtn.TabIndex = 145;
+            this.myToolTip.SetToolTip(this.pauseBtn, "Run ");
+            this.pauseBtn.UseVisualStyleBackColor = true;
+            this.pauseBtn.Visible = false;
+            // 
+            // startBtn
+            // 
+            this.startBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Image = global::server.Properties.Resources.run;
+            this.startBtn.isDownState = false;
+            this.startBtn.Location = new System.Drawing.Point(255, 7);
+            this.startBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(15, 16);
+            this.startBtn.TabIndex = 3;
+            this.myToolTip.SetToolTip(this.startBtn, "Run ");
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Visible = false;
+            // 
             // btnDevivativeFetch
             // 
             this.btnDevivativeFetch.Image = global::server.Properties.Resources.data;
@@ -182,7 +206,6 @@
             this.btnDevivativeFetch.Size = new System.Drawing.Size(22, 23);
             this.btnDevivativeFetch.TabIndex = 10;
             this.btnDevivativeFetch.UseVisualStyleBackColor = true;
-            this.btnDevivativeFetch.Click += new System.EventHandler(this.btnDevivativeFetch_Click);
             // 
             // viewLogBtn
             // 
@@ -212,39 +235,6 @@
             this.runBtn.UseVisualStyleBackColor = true;
             this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
             // 
-            // myTimerDerivative
-            // 
-            this.myTimerDerivative.Interval = 1000;
-            this.myTimerDerivative.Tick += new System.EventHandler(this.myTimerDerivative_Tick);
-            // 
-            // startBtn
-            // 
-            this.startBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startBtn.Image = global::server.Properties.Resources.run;
-            this.startBtn.isDownState = false;
-            this.startBtn.Location = new System.Drawing.Point(255, 7);
-            this.startBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(15, 16);
-            this.startBtn.TabIndex = 3;
-            this.myToolTip.SetToolTip(this.startBtn, "Run ");
-            this.startBtn.UseVisualStyleBackColor = true;
-            this.startBtn.Visible = false;
-            // 
-            // pauseBtn
-            // 
-            this.pauseBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pauseBtn.Image = global::server.Properties.Resources.pause;
-            this.pauseBtn.isDownState = false;
-            this.pauseBtn.Location = new System.Drawing.Point(219, 5);
-            this.pauseBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.pauseBtn.Name = "pauseBtn";
-            this.pauseBtn.Size = new System.Drawing.Size(15, 16);
-            this.pauseBtn.TabIndex = 145;
-            this.myToolTip.SetToolTip(this.pauseBtn, "Run ");
-            this.pauseBtn.UseVisualStyleBackColor = true;
-            this.pauseBtn.Visible = false;
-            // 
             // timerAlert
             // 
             this.timerAlert.Tick += new System.EventHandler(this.timerAlert_Tick);
@@ -257,22 +247,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(785, 25);
             this.toolStrip1.TabIndex = 146;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // myTimerHOSE
-            // 
-            this.myTimerHOSE.Interval = 1000;
-            this.myTimerHOSE.Tick += new System.EventHandler(this.myTimerHOSE_Tick);
-            // 
-            // bwHOSECrawler
-            // 
-            this.bwHOSECrawler.WorkerReportsProgress = true;
-            this.bwHOSECrawler.WorkerSupportsCancellation = true;
-            this.bwHOSECrawler.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwHOSECrawler_DoWork);
-            // 
-            // myTimerHASTC
-            // 
-            this.myTimerHASTC.Interval = 1000;
-            this.myTimerHASTC.Tick += new System.EventHandler(this.myTimerHASTC_Tick);
             // 
             // frmSchedule
             // 
@@ -309,17 +283,13 @@
         protected System.Windows.Forms.GroupBox scheduleGb;
         protected common.controls.basePanel basePanel1;
         private common.controls.baseButton startBtn;
-        protected System.Windows.Forms.Timer myTimerDerivative;
         private common.controls.baseCheckBox tradeAlertChk;
         private common.controls.baseCheckBox cboxfetchDataHOSE;
         protected System.Windows.Forms.Timer timerAlert;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btnDevivativeFetch;
-        private System.ComponentModel.BackgroundWorker bwHOSECrawler;
         private common.controls.baseCheckBox cboxDerivativeFetch;
         private common.controls.baseCheckBox cboxFetchDataHSTC;
-        private System.Windows.Forms.Timer myTimerHASTC;
-        protected System.Windows.Forms.Timer myTimerHOSE;
     }
 }
 
