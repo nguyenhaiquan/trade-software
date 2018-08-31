@@ -23,7 +23,13 @@ namespace Imports.Stock
     /// </summary>
     public class ssi_StockImport : generalImport
     {
-       SSIPage ssiPage=null;
+        SSIPage ssiPage=null;
+
+        public ssi_StockImport(string market) : base()
+        {
+            if (ssiPage == null)
+                ssiPage = new SSIPage(market);
+        }
 
         public override databases.baseDS.priceDataDataTable GetImportFromCSV(string fileName, string market, OnUpdatePriceData onUpdateDataFunc)
         {
@@ -61,8 +67,8 @@ namespace Imports.Stock
             {
                 databases.importDS.importPriceDataTable importPriceTbl = new databases.importDS.importPriceDataTable();
 
-                if (ssiPage == null)
-                    ssiPage = new SSIPage(market);
+                //if (ssiPage == null)
+                //    ssiPage = new SSIPage(market);
                 //ssiPage = new SSIPage("file:///C:/Temp/selenium/HOSE%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html", "file:///C:/Temp/selenium/HNX%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html");
 
                 if (market=="HOSE")

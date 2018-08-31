@@ -90,7 +90,7 @@ namespace Imports.Stock
         
     public class SSIPage
     {
-        public IWebDriver driverHOSE, driverHNX,driverDerivative;
+        static public IWebDriver driverHOSE, driverHNX,driverDerivative;
 #pragma warning disable CS0169 // The field 'SSIPage.upcomURL' is never used
         private string hoseURL, hxnURL, upcomURL,derivativeURL,mainURL;
 
@@ -140,7 +140,7 @@ namespace Imports.Stock
 
         public SSIPage(string market)
         {
-            if (market == "HOSE")
+            if ((market == "HOSE") && (driverHOSE!=null))
             {
                 hoseURL = "http://banggia2.ssi.com.vn/Hose.aspx";
                 driverHOSE = new ChromeDriver();
@@ -148,7 +148,7 @@ namespace Imports.Stock
                 driverHOSE.Navigate().GoToUrl(hoseURL);
             }
             else
-                if (market == "HASTC")
+                if ((market == "HASTC") && (driverHNX!=null)
             {
                 hxnURL = "http://banggia2.ssi.com.vn/Hnx.aspx";
                 driverHNX = new ChromeDriver();
@@ -156,16 +156,13 @@ namespace Imports.Stock
                 driverHNX.Navigate().GoToUrl(hxnURL);
             }
             else
-                if (market == "DERIVATIVE")
+                if ((market == "DERIVATIVE")&& (driverDerivative!=null))
             {
                 derivativeURL = "http://banggia2.ssi.com.vn/Future.aspx";
                 //derivativeURL="http://banggia.mbs.com.vn/v2/"
                 driverDerivative = new ChromeDriver();
                 driverDerivative.Manage().Window.Maximize();
                 driverDerivative.Navigate().GoToUrl(derivativeURL);
-
-                //add for mbs page
-                //driverDerivative.FindElement(By.Name())
             }
 
             dictStocks = new Dictionary<string, PageStockRow>();
@@ -175,9 +172,9 @@ namespace Imports.Stock
 
         ~SSIPage()
         {
-            if (driverHNX!=null) driverHNX.Quit();
-            if (driverHOSE != null) driverHOSE.Quit();
-            if (driverDerivative != null) driverDerivative.Quit();
+            //if (driverHNX!=null) driverHNX.Quit();
+            //if (driverHOSE != null) driverHOSE.Quit();
+            //if (driverDerivative != null) driverDerivative.Quit();
         }
 
         private void GetLastImportData(string market)
