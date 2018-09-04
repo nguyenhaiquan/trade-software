@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stockModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="stockModelStoreContainer">
+    <EntitySet Name="bestStrategy" EntityType="stockModel.Store.bestStrategy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dtproperties" EntityType="stockModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="exchangeDetail" EntityType="stockModel.Store.exchangeDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="financialModel" EntityType="stockModel.Store.financialModel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="investor" EntityType="stockModel.Store.investor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="investorStock" EntityType="stockModel.Store.investorStock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="messages" EntityType="stockModel.Store.messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="portfolio" EntityType="stockModel.Store.portfolio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="portfolioDetail" EntityType="stockModel.Store.portfolioDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="priceData" EntityType="stockModel.Store.priceData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="priceDataSum" EntityType="stockModel.Store.priceDataSum" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="stockCode" EntityType="stockModel.Store.stockCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="stockExchange" EntityType="stockModel.Store.stockExchange" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="stockReport" EntityType="stockModel.Store.stockReport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysAutoKey" EntityType="stockModel.Store.sysAutoKey" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysAutoKeyPending" EntityType="stockModel.Store.sysAutoKeyPending" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysCode" EntityType="stockModel.Store.sysCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysCodeCat" EntityType="stockModel.Store.sysCodeCat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysConfig" EntityType="stockModel.Store.sysConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="stockModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysLog" EntityType="stockModel.Store.sysLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tradeAlert" EntityType="stockModel.Store.tradeAlert" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="transactions" EntityType="stockModel.Store.transactions" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_bestStrategy_stockCode" Association="stockModel.Store.FK_bestStrategy_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="bestStrategy" EntitySet="bestStrategy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_investorStock_portpolio" Association="stockModel.Store.FK_investorStock_portpolio">
+      <End Role="portfolio" EntitySet="portfolio" />
+      <End Role="investorStock" EntitySet="investorStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_investorStock_stockCode" Association="stockModel.Store.FK_investorStock_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="investorStock" EntitySet="investorStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_investorTransHistory_portpolio" Association="stockModel.Store.FK_investorTransHistory_portpolio">
+      <End Role="portfolio" EntitySet="portfolio" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_investorTransHistory_stockCode" Association="stockModel.Store.FK_investorTransHistory_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_portfolio_investor" Association="stockModel.Store.fk_portfolio_investor">
+      <End Role="investor" EntitySet="investor" />
+      <End Role="portfolio" EntitySet="portfolio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portfolioDetail_portfolio" Association="stockModel.Store.FK_portfolioDetail_portfolio">
+      <End Role="portfolio" EntitySet="portfolio" />
+      <End Role="portfolioDetail" EntitySet="portfolioDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_priceData_stockCode" Association="stockModel.Store.FK_priceData_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="priceData" EntitySet="priceData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_priceDataSum_stockCode" Association="stockModel.Store.FK_priceDataSum_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="priceDataSum" EntitySet="priceDataSum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stockCode_stockExchange" Association="stockModel.Store.FK_stockCode_stockExchange">
+      <End Role="stockExchange" EntitySet="stockExchange" />
+      <End Role="stockCode" EntitySet="stockCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stockReport_stockCode" Association="stockModel.Store.FK_stockReport_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="stockReport" EntitySet="stockReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysCode_sysCodeCat" Association="stockModel.Store.FK_sysCode_sysCodeCat">
+      <End Role="sysCodeCat" EntitySet="sysCodeCat" />
+      <End Role="sysCode" EntitySet="sysCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tradeAlert_portpolio" Association="stockModel.Store.FK_tradeAlert_portpolio">
+      <End Role="portfolio" EntitySet="portfolio" />
+      <End Role="tradeAlert" EntitySet="tradeAlert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tradeAlert_stockCode" Association="stockModel.Store.FK_tradeAlert_stockCode">
+      <End Role="stockCode" EntitySet="stockCode" />
+      <End Role="tradeAlert" EntitySet="tradeAlert" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="bestStrategy">
+    <Key>
+      <PropertyRef Name="stockCode" />
+      <PropertyRef Name="timeFrame" />
+    </Key>
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="timeFrame" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="strategyCode1" Type="nvarchar" MaxLength="20" />
+    <Property Name="strategyCode2" Type="nvarchar" MaxLength="20" />
+    <Property Name="strategyCode3" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="exchangeDetail">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="smallint" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="20" />
+    <Property Name="marketCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="goTrue" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="goFalse" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="culture" Type="nchar" MaxLength="2" />
+    <Property Name="isEnabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="financialModel">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="nameVN" Type="nvarchar" MaxLength="50" />
+    <Property Name="nameUS" Type="nvarchar" MaxLength="50" />
+    <Property Name="model" Type="nvarchar" MaxLength="20" />
+    <Property Name="sector" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="investor">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="type" Type="tinyint" Nullable="false" />
+    <Property Name="firstName" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="lastName" Type="nchar" Nullable="false" MaxLength="30" />
+    <Property Name="displayName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="sex" Type="tinyint" Nullable="false" />
+    <Property Name="address1" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="city" Type="nchar" MaxLength="10" />
+    <Property Name="country" Type="nchar" MaxLength="3" />
+    <Property Name="account" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="catCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="expireDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+    <Property Name="note" Type="ntext" />
+  </EntityType>
+  <EntityType Name="investorStock">
+    <Key>
+      <PropertyRef Name="stockCode" />
+      <PropertyRef Name="portfolio" />
+      <PropertyRef Name="buyDate" />
+    </Key>
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="portfolio" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="buyDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="qty" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="buyAmt" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="MsgId" />
+    </Key>
+    <Property Name="MsgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="smallint" Nullable="false" />
+    <Property Name="OnDate" Type="datetime" Nullable="false" />
+    <Property Name="SenderId" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="ReceiverId" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="MsgBody" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="RefMsgId" Type="int" />
+  </EntityType>
+  <EntityType Name="portfolio">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="type" Type="tinyint" Nullable="false" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="investorCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="startCapAmt" Type="decimal" Nullable="false" />
+    <Property Name="usedCapAmt" Type="decimal" Nullable="false" />
+    <Property Name="stockAccumulatePerc" Type="decimal" Nullable="false" Precision="4" Scale="1" />
+    <Property Name="stockReducePerc" Type="decimal" Nullable="false" Precision="4" Scale="1" />
+    <Property Name="maxBuyAmtPerc" Type="decimal" Nullable="false" Precision="4" Scale="1" />
+    <Property Name="interestedStock" Type="ntext" Nullable="false" />
+    <Property Name="interestedSector" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="portfolioDetail">
+    <Key>
+      <PropertyRef Name="portfolio" />
+      <PropertyRef Name="code" />
+      <PropertyRef Name="subCode" />
+    </Key>
+    <Property Name="portfolio" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="subCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="data" Type="nvarchar" Nullable="false" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="priceData">
+    <Key>
+      <PropertyRef Name="stockCode" />
+      <PropertyRef Name="onDate" />
+    </Key>
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="onDate" Type="datetime" Nullable="false" />
+    <Property Name="openPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="closePrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="lowPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="highPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="volume" Type="decimal" Nullable="false" Precision="16" />
+  </EntityType>
+  <EntityType Name="priceDataSum">
+    <Key>
+      <PropertyRef Name="type" />
+      <PropertyRef Name="stockCode" />
+      <PropertyRef Name="onDate" />
+    </Key>
+    <Property Name="type" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="onDate" Type="datetime" Nullable="false" />
+    <Property Name="openPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="closePrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="lowPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="highPrice" Type="decimal" Nullable="false" Precision="8" Scale="1" />
+    <Property Name="volume" Type="decimal" Nullable="false" Precision="16" />
+  </EntityType>
+  <EntityType Name="stockCode">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="stockExchange" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="tickerCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="nameEn" Type="nvarchar" MaxLength="255" />
+    <Property Name="address1" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fax" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="website" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="bizSectors" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="country" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="regDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="noListedStock" Type="int" Nullable="false" />
+    <Property Name="noOutstandingStock" Type="int" Nullable="false" />
+    <Property Name="noForeignOwnedStock" Type="int" Nullable="false" />
+    <Property Name="noTreasuryStock" Type="int" Nullable="false" />
+    <Property Name="bookPrice" Type="decimal" Nullable="false" />
+    <Property Name="targetPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="targetPriceVariant" Type="decimal" Nullable="false" Precision="4" />
+    <Property Name="workingCap" Type="decimal" Nullable="false" />
+    <Property Name="capitalUnit" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="sales" Type="decimal" Nullable="false" />
+    <Property Name="profit" Type="decimal" Nullable="false" />
+    <Property Name="equity" Type="decimal" Nullable="false" />
+    <Property Name="totalDebt" Type="decimal" Nullable="false" />
+    <Property Name="totaAssets" Type="decimal" Nullable="false" />
+    <Property Name="PB" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="EPS" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="PE" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="ROA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="ROE" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="BETA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+    <Property Name="Headquarter" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="stockExchange">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="country" Type="nchar" Nullable="false" MaxLength="3" />
+    <Property Name="workTime" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="holidays" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="minBuySellDay" Type="tinyint" Nullable="false" />
+    <Property Name="tranFeePerc" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="priceRatio" Type="decimal" Nullable="false" />
+    <Property Name="volumeRatio" Type="decimal" Nullable="false" />
+    <Property Name="dataSource" Type="nvarchar" MaxLength="255" />
+    <Property Name="weight" Type="tinyint" />
+    <Property Name="priceAmplitude" Type="decimal" Nullable="false" Precision="4" Scale="2" />
+  </EntityType>
+  <EntityType Name="stockReport">
+    <Key>
+      <PropertyRef Name="reportType" />
+      <PropertyRef Name="stockCode" />
+      <PropertyRef Name="onDate" />
+      <PropertyRef Name="reportCode" />
+      <PropertyRef Name="currency" />
+    </Key>
+    <Property Name="reportType" Type="nchar" Nullable="false" MaxLength="3" />
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="onDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="reportCode" Type="nchar" Nullable="false" MaxLength="4" />
+    <Property Name="currency" Type="nchar" Nullable="false" MaxLength="1" />
+    <Property Name="val0" Type="decimal" Nullable="false" />
+    <Property Name="val1" Type="decimal" Nullable="false" />
+    <Property Name="val2" Type="decimal" Nullable="false" />
+    <Property Name="val3" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysAutoKey">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="value" Type="int" />
+  </EntityType>
+  <EntityType Name="sysAutoKeyPending">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="value" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="timeStamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysCode">
+    <Key>
+      <PropertyRef Name="category" />
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="category" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="inGroup" Type="nvarchar" MaxLength="20" />
+    <Property Name="description1" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="description2" Type="nvarchar" MaxLength="255" />
+    <Property Name="weight" Type="int" />
+    <Property Name="notes" Type="ntext" />
+    <Property Name="tag1" Type="nvarchar" MaxLength="50" />
+    <Property Name="tag2" Type="nvarchar" MaxLength="50" />
+    <Property Name="isVisible" Type="bit" Nullable="false" />
+    <Property Name="isSystem" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysCodeCat">
+    <Key>
+      <PropertyRef Name="category" />
+    </Key>
+    <Property Name="category" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="tag1" Type="nchar" MaxLength="50" />
+    <Property Name="tag2" Type="nchar" MaxLength="50" />
+    <Property Name="isVisible" Type="bit" Nullable="false" />
+    <Property Name="isSystem" Type="bit" Nullable="false" />
+    <Property Name="maxCodeLen" Type="tinyint" />
+    <Property Name="weight" Type="smallint" />
+  </EntityType>
+  <EntityType Name="sysConfig">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="value" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="sysLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="onDate" Type="datetime" />
+    <Property Name="type" Type="tinyint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="source" Type="nvarchar" MaxLength="255" />
+    <Property Name="message" Type="ntext" />
+    <Property Name="investorCode" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tradeAlert">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="onTime" Type="datetime" Nullable="false" />
+    <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="tradeAction" Type="tinyint" Nullable="false" />
+    <Property Name="portfolio" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="timeScale" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="strategy" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="subject" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="msg" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="onTime" Type="datetime" Nullable="false" />
+    <Property Name="tranType" Type="tinyint" Nullable="false" />
+    <Property Name="portfolio" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="stockCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="qty" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="amt" Type="decimal" Nullable="false" />
+    <Property Name="feeAmt" Type="decimal" Nullable="false" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_bestStrategy_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="bestStrategy" Type="stockModel.Store.bestStrategy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="bestStrategy">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_investorStock_portpolio">
+    <End Role="portfolio" Type="stockModel.Store.portfolio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="investorStock" Type="stockModel.Store.investorStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portfolio">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="investorStock">
+        <PropertyRef Name="portfolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_investorStock_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="investorStock" Type="stockModel.Store.investorStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="investorStock">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_investorTransHistory_portpolio">
+    <End Role="portfolio" Type="stockModel.Store.portfolio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="transactions" Type="stockModel.Store.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portfolio">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="portfolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_investorTransHistory_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="transactions" Type="stockModel.Store.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_portfolio_investor">
+    <End Role="investor" Type="stockModel.Store.investor" Multiplicity="1" />
+    <End Role="portfolio" Type="stockModel.Store.portfolio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="investor">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="portfolio">
+        <PropertyRef Name="investorCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portfolioDetail_portfolio">
+    <End Role="portfolio" Type="stockModel.Store.portfolio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="portfolioDetail" Type="stockModel.Store.portfolioDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portfolio">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="portfolioDetail">
+        <PropertyRef Name="portfolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_priceData_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="priceData" Type="stockModel.Store.priceData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="priceData">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_priceDataSum_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="priceDataSum" Type="stockModel.Store.priceDataSum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="priceDataSum">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stockCode_stockExchange">
+    <End Role="stockExchange" Type="stockModel.Store.stockExchange" Multiplicity="1" />
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockExchange">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="stockCode">
+        <PropertyRef Name="stockExchange" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stockReport_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="stockReport" Type="stockModel.Store.stockReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="stockReport">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysCode_sysCodeCat">
+    <End Role="sysCodeCat" Type="stockModel.Store.sysCodeCat" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysCode" Type="stockModel.Store.sysCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysCodeCat">
+        <PropertyRef Name="category" />
+      </Principal>
+      <Dependent Role="sysCode">
+        <PropertyRef Name="category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tradeAlert_portpolio">
+    <End Role="portfolio" Type="stockModel.Store.portfolio" Multiplicity="1" />
+    <End Role="tradeAlert" Type="stockModel.Store.tradeAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portfolio">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="tradeAlert">
+        <PropertyRef Name="portfolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tradeAlert_stockCode">
+    <End Role="stockCode" Type="stockModel.Store.stockCode" Multiplicity="1" />
+    <End Role="tradeAlert" Type="stockModel.Store.tradeAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stockCode">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="tradeAlert">
+        <PropertyRef Name="stockCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

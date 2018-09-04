@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>databaseEntity</RootNamespace>
     <AssemblyName>databaseEntity</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -55,6 +55,13 @@
       <DependentUpon>stock.edmx</DependentUpon>
       <LastGenOutput>stock.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="stockimport.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>stockimport.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="stockimport.edmx.diagram">
+      <DependentUpon>stockimport.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bestStrategy.cs">
@@ -68,6 +75,9 @@
     </Compile>
     <Compile Include="financialModel.cs">
       <DependentUpon>stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="importPrice.cs">
+      <DependentUpon>stockimport.tt</DependentUpon>
     </Compile>
     <Compile Include="investor.cs">
       <DependentUpon>stock.tt</DependentUpon>
@@ -113,6 +123,22 @@
     <Compile Include="stockExchange.cs">
       <DependentUpon>stock.tt</DependentUpon>
     </Compile>
+    <Compile Include="stockimport.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockimport.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stockimport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockimport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stockimport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockimport.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StockImportDB.cs" />
     <Compile Include="stockReport.cs">
       <DependentUpon>stock.tt</DependentUpon>
     </Compile>
@@ -164,6 +190,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="stockimport.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>stockimport.edmx</DependentUpon>
+      <LastGenOutput>stockimport.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="stockimport.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>stockimport.edmx</DependentUpon>
+      <LastGenOutput>stockimport.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

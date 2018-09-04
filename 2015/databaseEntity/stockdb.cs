@@ -12,6 +12,12 @@ namespace databaseEntity
     /// </summary>
     public class StockDb : DbContext
     {
+        //private static readonly Lazy<StockDb> lazy =
+        //new Lazy<StockDb>(() => new StockDb());
+
+        ////public static StockDb stockdb { get { return lazy.Value; } }
+
+
         public virtual DbSet<investor> Investors { get; set; }
 
         public virtual DbSet<investorStock> InvestorStocks { get; set; }
@@ -21,6 +27,7 @@ namespace databaseEntity
         public virtual DbSet<priceDataSum> PriceDataSums { get; set; }
         public virtual DbSet<priceData> PriceData { get; set; }
         public virtual DbSet<transaction> Transactions { get; set; }
+        public virtual DbSet<stockExchange> StockExchanges { get; set; }
 
         public StockDb()
             : base("name=stockEntities")
@@ -169,11 +176,15 @@ namespace databaseEntity
                 DeleteInvestorStocks(stockcode);
 
                 //6. Delete Stock Code
-                var stock = (from s in StockCodes
-                            where (s.code == stockcode)
-                            select s).FirstOrDefault();
-                StockCodes.Remove(stock);
+                //var stock = (from s in StockCodes
+                //            where (s.code == stockcode)
+                //            select s).FirstOrDefault();
+                //StockCodes.Remove(stock);
+
+                StockCodes.RemoveRange(StockCodes.Where(x => x.code == stockcode));
                 this.SaveChanges();
+
+                //this.SaveChanges();
                 return true;
             }
             catch (DbEntityValidationException dbEx)
@@ -191,13 +202,19 @@ namespace databaseEntity
             }
         }
 
-        //public StockCodes GetHOSEStockCodes()
-        //{
-        //    return StockCodes.Where(x => x.stockExchange == "HOSE");
-        //}
+        public DbSet<stockCode> GetStockCodes(string market)
+        {
+            return (DbSet < stockCode >) StockCodes.Where(x => x.stockExchange == "HOSE");
+        }
+
         public DbSet<databaseEntity.stockCode> GetAllStockCodes()
         {
             return StockCodes;
+        }
+
+        public stockExchange GetStockExchanges(string market)
+        {
+            return (stockExchange) StockExchanges.Where(x => x.code == market).FirstOrDefault();
         }
     }
 }

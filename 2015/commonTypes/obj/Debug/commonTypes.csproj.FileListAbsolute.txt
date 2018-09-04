@@ -13,3 +13,12 @@ C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.CoreCompi
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.dll
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.pdb
 C:\Github\trade-software\2015\commonTypes\obj\Debug\commonTypes.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\dlls\commonTypes.dll
+F:\GitHub\trade-software\2015\dlls\commonTypes.pdb
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.Properties.Resources.resources
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.GenerateResource.cache
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.csproj.CopyComplete
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.dll
+F:\GitHub\trade-software\2015\commonTypes\obj\Debug\commonTypes.pdb

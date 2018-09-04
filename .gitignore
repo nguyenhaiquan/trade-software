@@ -50,3 +50,6 @@
 *.lock
 *.ide-shm
 *.ide
+2015/client/obj/Debug/client.csprojResolveAssemblyReference.cache
+2015/application/obj/Debug/application.csprojResolveAssemblyReference.cache
+2015/databaseEntity/obj/Debug/databaseEntity.csprojResolveAssemblyReference.cache

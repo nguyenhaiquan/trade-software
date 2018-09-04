@@ -17,17 +17,17 @@ namespace Imports
     {
         //Keep the last import price to excluse non-changed data
         public ImportData lastImportData = new ImportData();
-        public abstract databases.baseDS.priceDataDataTable GetImportFromWeb(DateTime updateTime, databases.baseDS.exchangeDetailRow row);
+        public abstract databases.baseDS.priceDataDataTable GetImportFromWeb(DateTime updateTime, string market);
         public abstract databases.baseDS.priceDataDataTable GetImportFromCSV(string fileName, string market, OnUpdatePriceData onUpdateDataFunc);
-        public virtual bool ImportFromWeb(DateTime updateTime, databases.baseDS.exchangeDetailRow exchangeDetailRow)
+        public virtual bool ImportFromWeb(DateTime updateTime, string market)
         {
             try
             {
-                databases.baseDS.priceDataDataTable priceTbl = GetImportFromWeb(updateTime, exchangeDetailRow);
+                databases.baseDS.priceDataDataTable priceTbl = GetImportFromWeb(updateTime, market);
                 if (priceTbl == null) return false;
 
                 // Different culture has different start of week, ie in VN culture : start of week is Monday (not Sunday) 
-                CultureInfo exchangeCulture = application.AppLibs.GetExchangeCulture(exchangeDetailRow.marketCode);
+                CultureInfo exchangeCulture = application.AppLibs.GetExchangeCulture(market);
                 databases.AppLibs.AggregatePriceData(priceTbl, exchangeCulture, null);
                 return true;
             }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stock_importModelStoreContainer" CdmEntityContainer="stock_import">
+    <EntitySetMapping Name="importPrices">
+      <EntityTypeMapping TypeName="stock_importModel.importPrice">
+        <MappingFragment StoreEntitySet="importPrice">
+          <ScalarProperty Name="onDate" ColumnName="onDate" />
+          <ScalarProperty Name="stockCode" ColumnName="stockCode" />
+          <ScalarProperty Name="closePrice" ColumnName="closePrice" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="isTotalVolume" ColumnName="isTotalVolume" />
+          <ScalarProperty Name="totalVolume" ColumnName="totalVolume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

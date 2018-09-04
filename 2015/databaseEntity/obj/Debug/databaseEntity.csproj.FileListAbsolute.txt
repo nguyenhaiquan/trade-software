@@ -27,3 +27,11 @@ C:\Github\trade-software\2015\dlls\databaseEntity.dll
 C:\Github\trade-software\2015\dlls\databaseEntity.pdb
 C:\Github\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.dll
 C:\Github\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.pdb
+F:\GitHub\trade-software\2015\dlls\databaseEntity.dll.config
+F:\GitHub\trade-software\2015\dlls\databaseEntity.dll
+F:\GitHub\trade-software\2015\dlls\databaseEntity.pdb
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csproj.CopyComplete
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.dll
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.pdb
+F:\GitHub\trade-software\2015\databaseEntity\obj\Debug\databaseEntity.csprojResolveAssemblyReference.cache

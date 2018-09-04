@@ -14,6 +14,8 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using System.Diagnostics;
+using databaseEntity;
+using System.Data.Entity;
 
 namespace Imports.Stock
 {
@@ -88,8 +90,11 @@ namespace Imports.Stock
         
     public class SSIPage
     {
-        public IWebDriver driverHOSE, driverHNX,driverDerivative;
-        private string hoseURL, hxnURL, upcomURL,derivativeURL;
+        static public IWebDriver driverHOSE, driverHNX,driverDerivative;
+#pragma warning disable CS0169 // The field 'SSIPage.upcomURL' is never used
+        private string hoseURL, hxnURL, upcomURL,derivativeURL,mainURL;
+
+#pragma warning restore CS0169 // The field 'SSIPage.upcomURL' is never used
         public double dVNIndex = 0, dVNIndexVolume = 0, dVNIndex30 = 0,
         dVNIndex30Volume = 0, dHNIndex = 0, dHNIndexVolume = 0, dHNIndex30 = 0, dHNIndex30Volume = 0,
         dUpComIndex = 0, dUpComIndexVolume = 0;
@@ -132,16 +137,83 @@ namespace Imports.Stock
             dictStocks = new Dictionary<string, PageStockRow>();
 
         }
-        ~SSIPage()
+
+        public SSIPage(string market)
         {
-            if (driverHNX!=null) driverHNX.Quit();
-            if (driverHOSE != null) driverHOSE.Quit();
-            if (driverDerivative != null) driverDerivative.Quit();
+            if ((market == "HOSE") && (driverHOSE!=null))
+            {
+                hoseURL = "http://banggia2.ssi.com.vn/Hose.aspx";
+                driverHOSE = new ChromeDriver();
+                driverHOSE.Manage().Window.Maximize();
+                driverHOSE.Navigate().GoToUrl(hoseURL);
+            }
+            else
+                if ((market == "HASTC") && (driverHNX!=null)
+            {
+                hxnURL = "http://banggia2.ssi.com.vn/Hnx.aspx";
+                driverHNX = new ChromeDriver();
+                driverHNX.Manage().Window.Maximize();
+                driverHNX.Navigate().GoToUrl(hxnURL);
+            }
+            else
+                if ((market == "DERIVATIVE")&& (driverDerivative!=null))
+            {
+                derivativeURL = "http://banggia2.ssi.com.vn/Future.aspx";
+                //derivativeURL="http://banggia.mbs.com.vn/v2/"
+                driverDerivative = new ChromeDriver();
+                driverDerivative.Manage().Window.Maximize();
+                driverDerivative.Navigate().GoToUrl(derivativeURL);
+            }
+
+            dictStocks = new Dictionary<string, PageStockRow>();
+            GetLastImportData(market);    
+
         }
 
+        ~SSIPage()
+        {
+            //if (driverHNX!=null) driverHNX.Quit();
+            //if (driverHOSE != null) driverHOSE.Quit();
+            //if (driverDerivative != null) driverDerivative.Quit();
+        }
+
+        private void GetLastImportData(string market)
+        {
+            try
+            {
+                StockImportDB dbimport = new StockImportDB();
+                StockDb db = new StockDb();
+                DateTime today = DateTime.Today;
+                DateTime tomorrow = today.AddDays(+1);
+
+                //lay ca ma cua market
+                var stockcode = db.StockCodes.Where(m => m.stockExchange == market);
+                //GetStockCode(market);
+
+                //Lay lan dau tien
+                foreach (var s in stockcode)
+                {
+                    PageStockRow lastrow = new PageStockRow();
+                    importPrice importprice_row=dbimport.GetByDateAndCodeDescending(today, tomorrow, s.code);
+                    lastrow.price = (double)importprice_row.closePrice;
+                    
+                    lastrow.actualVolume = (double)importprice_row.volume;
+                    lastrow.totalVolume = (double)importprice_row.totalVolume;
+                    dictStocks.Add(s.code, lastrow);
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }   
+        
         public void Refresh(IWebDriver driver)
         {
             driver.Navigate().Refresh();
+
+
+
         }
 
         /// <summary>
@@ -192,7 +264,7 @@ namespace Imports.Stock
         {
             try
             {
-                //Refresh(driverHOSE);
+                //Refresh(driverDerivative);
                 string ssi = GetTextByXPath(driverDerivative, "//*[@id='spanIndexHOSE30']", 100, 10000);
                 if (ssi == null) return false;
                 return true;
@@ -217,12 +289,28 @@ namespace Imports.Stock
         {
             if (dictStocks.ContainsKey(key))
             {
-                dictStocks[key] = value;
+                //Chi them vao neu co su thay doi
+
+                //if (value.totalVolume > dictStocks[key].totalVolume)
+                //{
+                    //actual Volume chinh xac la chenh lech giua 2 lan cap nhat
+                    value.actualVolume = value.totalVolume - dictStocks[key].totalVolume;
+                    dictStocks[key] = value;
+                //}
+                //else
+                    //neu giong thi loai bo - khong can cap nhat
+                    //dictStocks.Remove(key);
             }
-            else
+            else          
             {
-                dictStocks.Add(key, value);
+                //neu chua ton tai key
+                {
+                    value.actualVolume = value.totalVolume;
+                    dictStocks.Add(key, value);
+                }
+                //previousDictStocks.Add(key, value);
             }
+            
         }
 
         private void GetStockTableData(HtmlAgilityPack.HtmlDocument html, string stockExchange)
@@ -485,7 +573,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
@@ -511,13 +601,24 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
+                    //driver.Manage().Timeouts().ImplicitlyWait = waitTime;
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
             return s1;
         }
 
+        /// <summary>
+        /// Get Text by Xpath
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="sXPath"></param>
+        /// <param name="waitTime"></param>
+        /// <param name="totalTime"></param>
+        /// <returns></returns>
         public string GetTextByXPath(IWebDriver driver, string sXPath, int waitTime, int totalTime)
         {
             string s1 = null;
@@ -530,13 +631,23 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
             return s1;
         }
 
+        /// <summary>
+        /// Get Text by ID
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="ID"></param>
+        /// <param name="waitTime"></param>
+        /// <param name="totalTime"></param>
+        /// <returns></returns>
         public string GetTextByID(IWebDriver driver, string ID, int waitTime, int totalTime)
         {
             string s1 = null;
@@ -549,7 +660,9 @@ namespace Imports.Stock
                 }
                 catch (Exception)
                 {
+#pragma warning disable CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(waitTime));
+#pragma warning restore CS0618 // 'ITimeouts.ImplicitlyWait(TimeSpan)' is obsolete: 'This method will be removed in a future version. Please set the ImplicitWait property instead.'
                     i = i - waitTime;
                 }
             }
