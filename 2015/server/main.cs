@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using commonTypes;
 using Imports;
-using Imports.Stock;
 
 namespace server
 {
@@ -210,12 +209,14 @@ namespace server
         /// <param name="e"></param>
         private void DeleteStocksMenuItem_Click(object sender, EventArgs e)
         {
-            ssi_StockImport ssiStockImport = new ssi_StockImport(null);
+            Imports.Stock.ssi_StockImport ssiStockImport = new Imports.Stock.ssi_StockImport();
             ssiStockImport.DeleteStocksNotinDatabase();
         }
 
         private void FAImport_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Imports.Stock.vnd_FinancialDataImport vndFAImport = new Imports.Stock.vnd_FinancialDataImport();
+            //vnd_FinancialDataImport.ImporttoDataBase();
         }
     }
 }

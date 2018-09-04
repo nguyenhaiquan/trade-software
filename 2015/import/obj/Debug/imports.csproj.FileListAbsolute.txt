@@ -29,6 +29,7 @@ C:\Github\trade-software\2015\import\obj\Debug\imports.pdb
 F:\GitHub\trade-software\2015\dlls\imports.dll.config
 F:\GitHub\trade-software\2015\dlls\imports.dll
 F:\GitHub\trade-software\2015\dlls\imports.pdb
+F:\GitHub\trade-software\2015\import\obj\Debug\imports.csprojResolveAssemblyReference.cache
 F:\GitHub\trade-software\2015\import\obj\Debug\Imports.Forms.frmReAggregatePrice.resources
 F:\GitHub\trade-software\2015\import\obj\Debug\Imports.Forms.frmImportCompany.resources
 F:\GitHub\trade-software\2015\import\obj\Debug\Imports.Forms.frmImportComSector.resources
@@ -41,5 +42,3 @@ F:\GitHub\trade-software\2015\import\obj\Debug\imports.csproj.CoreCompileInputs.
 F:\GitHub\trade-software\2015\import\obj\Debug\imports.csproj.CopyComplete
 F:\GitHub\trade-software\2015\import\obj\Debug\imports.dll
 F:\GitHub\trade-software\2015\import\obj\Debug\imports.pdb
-F:\GitHub\trade-software\2015\import\obj\Debug\imports.csprojResolveAssemblyReference.cache
-F:\GitHub\trade-software\2015\dlls\imports.xml

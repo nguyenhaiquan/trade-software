@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using commonTypes;
-using databaseEntity;
 
 namespace server
 {
@@ -103,6 +102,127 @@ namespace server
             return false;
         }
 
-        
+        /// <summary>
+        /// Cap nhat du lieu voi cac thong tin tu table exchangeDetail va stockExchange
+        /// </summary>
+        /// <param name="updateTime"></param>
+        public static void FetchRealTimeData(DateTime updateTime)
+        {
+            DataView myDataView = new DataView(application.SysLibs.myExchangeDetailTbl);
+            myDataView.Sort = application.SysLibs.myExchangeDetailTbl.orderIdColumn.ToString();
+            string[] parts;
+            databases.baseDS.stockExchangeRow marketRow;
+            databases.baseDS.exchangeDetailRow exchangeDetailRow;
+            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", "Start");
+            for (int idx1 = 0; idx1 < application.SysLibs.myStockExchangeTbl.Count; idx1++)
+            {
+                marketRow = application.SysLibs.myStockExchangeTbl[idx1];
+                
+                //verify holidays ?
+                if (IsHolidays(updateTime, marketRow.holidays)) continue;
+
+                // WorkTimes can have multipe parts separated by charater |
+                parts = marketRow.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                StringCollection confWorkTimes = new StringCollection();
+                for(int idx2=0;idx2<parts.Length;idx2++) confWorkTimes.Add(parts[idx2]);
+                
+                //Verify if it's working time ?
+                if (!IsWorktime(updateTime, confWorkTimes)) continue;
+
+                myDataView.RowFilter = application.SysLibs.myExchangeDetailTbl.marketCodeColumn.ColumnName + "='" + marketRow.code + "' AND "+
+                                       application.SysLibs.myExchangeDetailTbl.isEnabledColumn.ColumnName + "=true";
+                if (myDataView.Count == 0) continue;
+
+                
+                bool retVal = true;
+                exchangeDetailRow = (databases.baseDS.exchangeDetailRow)myDataView[0].Row;
+                while (exchangeDetailRow.marketCode == marketRow.code)
+                {
+                    try
+                    {
+                        //Main function for importing
+                        retVal = Imports.Libs.ImportFromWeb(updateTime, exchangeDetailRow);
+                    }
+                    catch (Exception)
+                    {
+                        retVal = false;
+                    }
+
+                    string nextRunCode = null;
+                    if (retVal==false)                                            
+                            nextRunCode = exchangeDetailRow.goFalse;                    
+                    else
+                        nextRunCode = exchangeDetailRow.goTrue;
+                    
+                    //Find next line to run
+                    if (nextRunCode == null || nextRunCode.Trim() == "") break;
+                    exchangeDetailRow = application.SysLibs.myExchangeDetailTbl.FindBycode(nextRunCode);
+                    if (exchangeDetailRow == null) break;
+                }
+            }
+            return;
+        }
+
+        public static void FetchRealTimeData(DateTime updateTime,string market)
+        {
+            DataView myDataView = new DataView(application.SysLibs.myExchangeDetailTbl);
+            myDataView.Sort = application.SysLibs.myExchangeDetailTbl.orderIdColumn.ToString();
+            string[] parts;
+            databases.baseDS.stockExchangeRow marketRow;
+            databases.baseDS.exchangeDetailRow exchangeDetailRow;
+            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", "Start");
+            for (int idx1 = 0; idx1 < application.SysLibs.myStockExchangeTbl.Count; idx1++)                
+            {
+                marketRow = application.SysLibs.myStockExchangeTbl[idx1];
+                if (((string)marketRow["code"]) != market) continue;
+                
+                if (IsHolidays(updateTime, marketRow.holidays)) continue;
+
+                // WorkTimes can have multipe parts separated by charater |
+                parts = marketRow.workTime.Trim().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                StringCollection confWorkTimes = new StringCollection();
+                for (int idx2 = 0; idx2 < parts.Length; idx2++) confWorkTimes.Add(parts[idx2]);
+                if (!IsWorktime(updateTime, confWorkTimes)) continue;
+
+                myDataView.RowFilter = application.SysLibs.myExchangeDetailTbl.marketCodeColumn.ColumnName + "='" + marketRow.code + "' AND " +
+                                       application.SysLibs.myExchangeDetailTbl.isEnabledColumn.ColumnName + "=true";
+                if (myDataView.Count == 0) continue;
+
+
+                bool retVal = true;
+                exchangeDetailRow = (databases.baseDS.exchangeDetailRow)myDataView[0].Row;
+                while (true)
+                {
+                    try
+                    {
+                        //Main call to update price
+                        retVal = Imports.Libs.ImportFromWeb(updateTime, exchangeDetailRow);
+                    }
+                    catch (Exception er)
+                    {
+                        retVal = false;
+                        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Error, "SRV004", er);
+                    }
+
+                    string nextRunCode = null;
+                    if (retVal == false)
+                    {
+                        commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", " - Updated " + exchangeDetailRow.code + " from " + exchangeDetailRow.address + " failed");
+                        if (exchangeDetailRow.IsgoFalseNull() == false) nextRunCode = exchangeDetailRow.goFalse;
+                    }
+                    else
+                    {
+                        //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", " - Updated " + exchangeDetailRow.code + " from " + exchangeDetailRow.address + " successful");
+                        if (exchangeDetailRow.IsgoTrueNull() == false) nextRunCode = exchangeDetailRow.goTrue;
+                    }
+                    //Find next line to run
+                    if (nextRunCode == null || nextRunCode.Trim() == "") break;
+                    exchangeDetailRow = application.SysLibs.myExchangeDetailTbl.FindBycode(nextRunCode);
+                    if (exchangeDetailRow == null) break;
+                }
+            }
+            //commonClass.SysLibs.WriteSysLog(common.SysSeverityLevel.Informational, "", "End");
+            return;
+        }
     }
 }

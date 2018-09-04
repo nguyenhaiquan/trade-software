@@ -1,6 +1,0 @@
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.csprojResolveAssemblyReference.cache
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.langs.myResources.resources
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.Properties.Resources.resources
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.langs.myResources.vi-VN.resources
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.csproj.GenerateResource.cache
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\Languages\Debug\Languages.csproj.CoreCompileInputs.cache

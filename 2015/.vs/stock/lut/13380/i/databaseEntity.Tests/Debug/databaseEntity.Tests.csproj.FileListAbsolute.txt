@@ -1,7 +1,0 @@
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\b\databaseEntity.Tests03\bin\Debug\databaseEntity.Tests.dll
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\b\databaseEntity.Tests03\bin\Debug\databaseEntity.Tests.pdb
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\databaseEntity.Tests\Debug\databaseEntity.Tests.csprojResolveAssemblyReference.cache
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\databaseEntity.Tests\Debug\databaseEntity.Tests.csproj.CoreCompileInputs.cache
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\databaseEntity.Tests\Debug\databaseEntity.Tests.csproj.CopyComplete
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\databaseEntity.Tests\Debug\databaseEntity.Tests.dll
-F:\GitHub\trade-software\2015\.vs\stock\lut\13380\i\databaseEntity.Tests\Debug\databaseEntity.Tests.pdb
