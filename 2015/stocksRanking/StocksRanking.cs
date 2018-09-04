@@ -1,27 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
-using System.Collections.Specialized;
 using databaseEntity;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
 
 namespace stocksRanking
 {
     public class StocksRanking
     {
         
-        private void GetAllStockCodes(out DbSet<databaseEntity.stockCode> stringCollection)
+        private void GetAllStockCodes(out DbSet<stockCode> stringCollection)
         {
             //StringCollection stockCodeList = new StringCollection();
             //databases.baseDS.stockCodeDataTable stockCodeTable = new databases.baseDS.stockCodeDataTable();
             //databases.DbAccess.LoadData(stockCodeTable);
             //for (int i = 0; i < stockCodeTable.Count; i++)
             //    stockCodeList.Add(stockCodeTable[i].code);
-            databaseEntity.StockDb stockDB = new databaseEntity.StockDb();
+            StockDb stockDB = new StockDb();
             stringCollection=stockDB.GetAllStockCodes();
             //stockDB.GetAllStockCodes();
             //stringCollection=st

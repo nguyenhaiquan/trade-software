@@ -392,7 +392,7 @@ namespace server
 
                 if (fRunning)
                 {
-                    myTimerDerivative.Start();
+                    //myTimerDerivative.Start();
 
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
