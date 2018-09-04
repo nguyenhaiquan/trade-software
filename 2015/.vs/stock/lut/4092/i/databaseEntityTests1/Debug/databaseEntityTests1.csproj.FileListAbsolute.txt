@@ -1,0 +1,10 @@
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\b\databaseEntityTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\b\databaseEntityTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\b\databaseEntityTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\b\databaseEntityTests1\bin\Debug\databaseEntityTests1.dll
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\b\databaseEntityTests1\bin\Debug\databaseEntityTests1.pdb
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\i\databaseEntityTests1\Debug\databaseEntityTests1.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\i\databaseEntityTests1\Debug\databaseEntityTests1.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\i\databaseEntityTests1\Debug\databaseEntityTests1.csproj.CopyComplete
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\i\databaseEntityTests1\Debug\databaseEntityTests1.dll
+F:\GitHub\trade-software\2015\.vs\stock\lut\0\i\databaseEntityTests1\Debug\databaseEntityTests1.pdb

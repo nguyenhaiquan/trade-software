@@ -32,3 +32,7 @@ C:\Github\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.csproj
 C:\Github\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.csproj.CoreCompileInputs.cache
 C:\Github\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.dll
 C:\Github\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.pdb
+F:\GitHub\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.dll
+F:\GitHub\trade-software\2015\Indicators.Tests\obj\Debug\Indicators.Tests.pdb

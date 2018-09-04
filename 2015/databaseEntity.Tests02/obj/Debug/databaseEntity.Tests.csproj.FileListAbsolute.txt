@@ -1,0 +1,17 @@
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\databaseEntity.Tests.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\databaseEntity.Tests.pdb
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\databaseEntity.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\EntityFramework.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\Microsoft.Pex.Framework.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\Microsoft.ExtendedReflection.Reasoning.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\Microsoft.ExtendedReflection.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\databaseEntity.pdb
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\databaseEntity.dll.config
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\EntityFramework.xml
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\bin\Debug\Microsoft.Pex.Framework.xml
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\obj\Debug\databaseEntity.Tests.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\obj\Debug\databaseEntity.Tests.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\obj\Debug\databaseEntity.Tests.csproj.CopyComplete
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\obj\Debug\databaseEntity.Tests.dll
+F:\GitHub\trade-software\2015\databaseEntity.Tests02\obj\Debug\databaseEntity.Tests.pdb
