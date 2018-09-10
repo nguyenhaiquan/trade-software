@@ -17,6 +17,7 @@ namespace server
         string market;
         BackgroundWorker bgw;
         Boolean fRunning;
+        ssi_StockImport ssiImport = null;
         //static readonly object _object = new object();
 
         public MyTimer(string _market, double _interval, Boolean _autoReset)
@@ -87,6 +88,9 @@ namespace server
             if (!fRunning)
             {
                 fRunning = true;
+                //if (market=="ALERT")
+                
+                //ELSE
                 FetchRealTimeData(DateTime.Now, market);
                 fRunning = false;
             }
@@ -125,9 +129,14 @@ namespace server
 
             bool retVal = true;
 
+            
+            //Initiate ssiImport
+            if (ssiImport == null)
+                ssiImport = new ssi_StockImport(market);
+
             //Main call to update price
-            ssi_StockImport ssiImport = new ssi_StockImport(market);
             retVal = ssiImport.ImportFromWeb(updateTime, market);
+
             if (retVal == false)
                 throw new Exception();
         }

@@ -19,3 +19,15 @@ C:\Github\trade-software\2015\application\obj\Debug\application.csproj.GenerateR
 C:\Github\trade-software\2015\application\obj\Debug\application.csproj.CoreCompileInputs.cache
 C:\Github\trade-software\2015\application\obj\Debug\application.dll
 C:\Github\trade-software\2015\application\obj\Debug\application.pdb
+F:\GitHub\trade-software\2015\dlls\application.dll
+F:\GitHub\trade-software\2015\dlls\application.pdb
+F:\GitHub\trade-software\2015\application\obj\Debug\application.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseIndicatorForm.resources
+F:\GitHub\trade-software\2015\application\obj\Debug\application.forms.baseStrategyForm.resources
+F:\GitHub\trade-software\2015\application\obj\Debug\application.forms.commonIndicatorForm.resources
+F:\GitHub\trade-software\2015\application\obj\Debug\application.Properties.Resources.resources
+F:\GitHub\trade-software\2015\application\obj\Debug\application.csproj.GenerateResource.cache
+F:\GitHub\trade-software\2015\application\obj\Debug\application.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\application\obj\Debug\application.csproj.CopyComplete
+F:\GitHub\trade-software\2015\application\obj\Debug\application.dll
+F:\GitHub\trade-software\2015\application\obj\Debug\application.pdb

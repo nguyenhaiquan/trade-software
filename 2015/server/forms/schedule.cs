@@ -46,6 +46,8 @@ namespace server
             listTimers.Add(new MyTimer("HOSE",1000,true));
             listTimers.Add(new MyTimer("HASTC", 1000,true));
             listTimers.Add(new MyTimer("DERIVATIVE", 1000,true));
+
+            listTimers.Add(new MyTimer("ALERT",1000,true));
         }
         private void onTradeAlertProcessStart(int count)
         {
@@ -168,6 +170,10 @@ namespace server
 
                     if (cboxDerivativeFetch.Checked)
                         listTimers[2].Start();
+
+                    //if (tradeAlertChk.Checked)
+                    //    listTimers[3].Start();
+
                     //if (fetchDataChk)
                     //Init last price before importing
                     //databases.AppLibs.GetLastClosePrices();
