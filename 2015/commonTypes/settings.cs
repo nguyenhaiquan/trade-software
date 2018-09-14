@@ -120,7 +120,7 @@ namespace commonTypes
     /// </summary>
     public static class Settings
     {
-        public const bool sysDebugMode =true;//Dung de debug WCF
+        public const bool sysDebugMode =false;//Dung de debug WCF
         //public const bool sysDebugMode = true;//Dung de debug WCF
         public enum environmentDebugMode{localT440, localT460,localHP, SITAzure,UAT,Prod};
         //public static environmentDebugMode environmentMode = environmentDebugMode.SITAzure;
