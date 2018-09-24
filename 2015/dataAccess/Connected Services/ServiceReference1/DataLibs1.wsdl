@@ -3936,16 +3936,16 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd2" namespace="http://tempuri.org/masterDataSet.xsd" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/databases" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/commonTypes" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd5" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/commonClass" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/application" />
-      <xsd:import schemaLocation="http://localhost:8733/wsServices/DataLibs/?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/common" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd2" namespace="http://tempuri.org/masterDataSet.xsd" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/databases" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/commonTypes" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd5" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/commonClass" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/application" />
+      <xsd:import schemaLocation="http://quantumdev/DataLibs.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/common" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IStockService_Reset_InputMessage">
@@ -6989,14 +6989,14 @@
   </wsdl:binding>
   <wsdl:service name="DataLibs">
     <wsdl:port name="basicEndpoint" binding="tns:basicEndpoint">
-      <soap:address location="http://localhost:8733/wsServices/DataLibs/" />
+      <soap:address location="http://quantumdev/DataLibs.svc" />
     </wsdl:port>
     <wsdl:port name="wsEndpoint" binding="tns:wsEndpoint">
-      <soap12:address location="http://localhost:8733/wsServices/DataLibs/secure" />
+      <soap12:address location="http://quantumdev/DataLibs.svc/secure" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:8733/wsServices/DataLibs/secure</wsa10:Address>
+        <wsa10:Address>http://quantumdev/DataLibs.svc/secure</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>qnguyen37@vdc.csc.com</Upn>
+          <Spn>host/quantumDev</Spn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

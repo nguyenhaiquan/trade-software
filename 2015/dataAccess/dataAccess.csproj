@@ -121,7 +121,7 @@
     </Compile>
     <None Include="app_bak.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="Connected Services\ServiceReference1\baseDS.xsd" />
+    <None Include="Connected Services\ServiceReference1\baseDS1.xsd" />
     <None Include="Connected Services\ServiceReference1\DataAccess.ServiceReference1.GetAnalysis_DataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -182,32 +182,32 @@
     <None Include="Connected Services\ServiceReference1\DataAccess.ServiceReference1.UpdateTransactionsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\DataLibs.wsdl" />
-    <None Include="Connected Services\ServiceReference1\item.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item1.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\DataLibs1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item2.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item3.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item4.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item5.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item6.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item7.xsd">
+    <None Include="Connected Services\ServiceReference1\DataLibs7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\tmpDS.xsd" />
+    <None Include="Connected Services\ServiceReference1\tmpDS1.xsd" />
     <None Include="Properties\DataSources\application.StrategyStatistics.datasource" />
     <None Include="Properties\DataSources\commonClass.DataValues1.datasource" />
     <None Include="Properties\DataSources\commonClass.TradePointInfo1.datasource" />
@@ -270,9 +270,6 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +280,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\DataLibs.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

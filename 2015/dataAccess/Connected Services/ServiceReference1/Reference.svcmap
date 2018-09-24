@@ -19,21 +19,21 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/wsServices/DataLibs/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/DataLibs.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="5ecb0a09-905c-4b7c-8452-48f4c68b5a8e" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd7" />
-    <MetadataFile FileName="baseDS.xsd" MetadataType="Schema" ID="2ee84e1b-caa1-425e-b955-25b7afd65c78" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd2" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="31818eb0-6e37-458e-80fc-e85ab6c6ecf4" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="1eea46a6-f20c-4923-a4e5-0c1bbe7cd168" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd3" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="6c12b92c-8294-4223-a80e-e02a647685fe" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?disco" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="6253c97d-e8db-442b-bcdc-caadcf17f816" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd8" />
-    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="64e480c7-c0da-408d-a385-394ec08ff3e3" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd0" />
-    <MetadataFile FileName="tmpDS.xsd" MetadataType="Schema" ID="0f8f23da-4ef1-4a0c-9fe1-190ab551e6a3" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd5" />
-    <MetadataFile FileName="DataLibs.wsdl" MetadataType="Wsdl" ID="6c56a740-16a8-4fdb-96c1-2fe45a86a8d4" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?wsdl" />
-    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="a4d4eb5a-d46b-42dc-b8e4-bb90b8e49f60" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd6" />
-    <MetadataFile FileName="item6.xsd" MetadataType="Schema" ID="ecf95f8b-90a8-430f-9617-8b291124c9f8" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd9" />
-    <MetadataFile FileName="item7.xsd" MetadataType="Schema" ID="b06d4e1d-34fb-4a2d-9fb4-382564fcb804" SourceId="1" SourceUrl="http://localhost:8733/wsServices/DataLibs/?xsd=xsd4" />
+    <MetadataFile FileName="DataLibs.xsd" MetadataType="Schema" ID="de8505bc-ee05-4bcc-8c27-a6c01812dd00" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd3" />
+    <MetadataFile FileName="tmpDS1.xsd" MetadataType="Schema" ID="f4ed7f8c-c61c-4682-a477-28c785369f26" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd5" />
+    <MetadataFile FileName="DataLibs1.xsd" MetadataType="Schema" ID="8df9edd9-3d8a-4f1c-a3c8-6594dd50c751" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataLibs2.xsd" MetadataType="Schema" ID="284e009b-c971-44f8-b723-1f8325c3c838" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd6" />
+    <MetadataFile FileName="DataLibs3.xsd" MetadataType="Schema" ID="77322048-2735-4e3d-84cd-1e55684d5604" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd9" />
+    <MetadataFile FileName="baseDS1.xsd" MetadataType="Schema" ID="2ce5d6cc-4766-4360-bda1-6c459c31dd99" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataLibs4.xsd" MetadataType="Schema" ID="06eff194-316c-4af8-951c-16ab3bb472fa" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataLibs5.xsd" MetadataType="Schema" ID="72ece5c3-491d-4e27-8bf1-816a867d1160" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd7" />
+    <MetadataFile FileName="DataLibs6.xsd" MetadataType="Schema" ID="e0205f0c-cdf0-4d88-932d-85dd7cfd4c05" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd8" />
+    <MetadataFile FileName="DataLibs.disco" MetadataType="Disco" ID="2dad5c84-dd50-4b23-bc3c-47e376f857a8" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?disco" />
+    <MetadataFile FileName="DataLibs7.xsd" MetadataType="Schema" ID="9ce686ad-e25d-4ee2-be3c-11acc09e12e3" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataLibs1.wsdl" MetadataType="Wsdl" ID="a3a3307c-1ccd-4496-a840-5aebf99d4cf2" SourceId="1" SourceUrl="http://quantumdev/DataLibs.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
