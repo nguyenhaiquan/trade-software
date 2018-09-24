@@ -13,3 +13,12 @@ C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.GenerateR
 C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.CoreCompileInputs.cache
 C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.dll
 C:\Github\trade-software\2015\commonClass\obj\Debug\commonClass.pdb
+F:\GitHub\trade-software\2015\dlls\commonClass.dll
+F:\GitHub\trade-software\2015\dlls\commonClass.pdb
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.Properties.Resources.resources
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.GenerateResource.cache
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.csproj.CopyComplete
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.dll
+F:\GitHub\trade-software\2015\commonClass\obj\Debug\commonClass.pdb
