@@ -91,10 +91,8 @@ namespace Imports.Stock
     public class SSIPage
     {
         static public IWebDriver driverHOSE, driverHNX,driverDerivative;
-#pragma warning disable CS0169 // The field 'SSIPage.upcomURL' is never used
-        private string hoseURL, hxnURL, upcomURL,derivativeURL,mainURL;
+        private string hoseURL, hxnURL,derivativeURL,mainURL;
 
-#pragma warning restore CS0169 // The field 'SSIPage.upcomURL' is never used
         public double dVNIndex = 0, dVNIndexVolume = 0, dVNIndex30 = 0,
         dVNIndex30Volume = 0, dHNIndex = 0, dHNIndexVolume = 0, dHNIndex30 = 0, dHNIndex30Volume = 0,
         dUpComIndex = 0, dUpComIndexVolume = 0;
@@ -140,7 +138,7 @@ namespace Imports.Stock
 
         public SSIPage(string market)
         {
-            if ((market == "HOSE") && (driverHOSE!=null))
+            if ((market == "HOSE") && (driverHOSE==null))
             {
                 hoseURL = "http://banggia2.ssi.com.vn/Hose.aspx";
                 driverHOSE = new ChromeDriver();
@@ -148,7 +146,7 @@ namespace Imports.Stock
                 driverHOSE.Navigate().GoToUrl(hoseURL);
             }
             else
-                if ((market == "HASTC") && (driverHNX!=null)
+                if ((market == "HASTC") && (driverHNX==null))
             {
                 hxnURL = "http://banggia2.ssi.com.vn/Hnx.aspx";
                 driverHNX = new ChromeDriver();
@@ -156,7 +154,7 @@ namespace Imports.Stock
                 driverHNX.Navigate().GoToUrl(hxnURL);
             }
             else
-                if ((market == "DERIVATIVE")&& (driverDerivative!=null))
+                if ((market == "DERIVATIVE")&& (driverDerivative==null))
             {
                 derivativeURL = "http://banggia2.ssi.com.vn/Future.aspx";
                 //derivativeURL="http://banggia.mbs.com.vn/v2/"
@@ -195,11 +193,14 @@ namespace Imports.Stock
                 {
                     PageStockRow lastrow = new PageStockRow();
                     importPrice importprice_row=dbimport.GetByDateAndCodeDescending(today, tomorrow, s.code);
-                    lastrow.price = (double)importprice_row.closePrice;
-                    
-                    lastrow.actualVolume = (double)importprice_row.volume;
-                    lastrow.totalVolume = (double)importprice_row.totalVolume;
-                    dictStocks.Add(s.code, lastrow);
+                    if (importprice_row != null)
+                    {
+                        lastrow.price = (double)importprice_row.closePrice;
+
+                        lastrow.actualVolume = (double)importprice_row.volume;
+                        lastrow.totalVolume = (double)importprice_row.totalVolume;
+                        dictStocks.Add(s.code, lastrow);
+                    }
                 }
             }
             catch (Exception e)
@@ -324,14 +325,11 @@ namespace Imports.Stock
             for (int iRow=0;iRow<Rows.Count;iRow++)
             {
                 HtmlNode row = Rows[iRow];
-                //Console.WriteLine("Row=" + row.InnerText);
-                if ((stockExchange == "DERIVATIVE")&&(iRow==0))
-                    continue;
-
                 HtmlNodeCollection Cols = row.SelectNodes("td");
                 PageStockRow stockRow = new PageStockRow();
                 stockRow.stockExchange = stockExchange;
                 if (Cols[0].InnerText != "" && Cols[0].InnerText != null) stockRow.stockCode = Cols[0].InnerText;
+
                 for (int i = 1; i <= 24; i++)
                 {
                     if (Double.TryParse(Cols[i].InnerText, out value))
@@ -491,9 +489,9 @@ namespace Imports.Stock
         /// <summary>
         /// Get HOSE Data from SSI Page
         /// </summary>
-        public void getHOSEData()
+        public bool getHOSEData()
         {
-            if (!IsHOSELoaded()) return;
+            if (!IsHOSELoaded()) return false;
 
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
             html.LoadHtml(driverHOSE.PageSource);
@@ -530,28 +528,32 @@ namespace Imports.Stock
             //Console.WriteLine("VNIndex30=" + dictStocks["VN30-IDX"].price);
 
             GetStockTableData(html, "HOSE");
+
+            return true;
         }
 
         /// <summary>
         /// Get HASTC/HNX Data from SSI Page
         /// </summary>
-        public void getHNXData()
+        public bool getHNXData()
         {
-            if (!IsHNXLoaded()) return;
+            if (!IsHNXLoaded()) return false;
 
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
             html.LoadHtml(driverHNX.PageSource);
             GetStockTableData(html, "HASTC");
+            return true;
         }
 
-        public void getDerivativeData()
+        public bool getDerivativeData()
         {
-            if (!IsDerivativeLoaded()) return;
+            if (!IsDerivativeLoaded()) return false;
 
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
             html.LoadHtml(driverDerivative.PageSource);
 
             GetDerivativeTableData(html, "DERIVATIVE");
+            return true;
         }
 
         /// <summary>

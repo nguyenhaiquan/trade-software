@@ -65,49 +65,60 @@ namespace Imports.Stock
         {
             try
             {
+                bool getDataStatus = false;
                 databases.importDS.importPriceDataTable importPriceTbl = new databases.importDS.importPriceDataTable();
 
-                //if (ssiPage == null)
-                //    ssiPage = new SSIPage(market);
+                if (ssiPage == null)
+                    ssiPage = new SSIPage(market);
                 //ssiPage = new SSIPage("file:///C:/Temp/selenium/HOSE%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html", "file:///C:/Temp/selenium/HNX%20-%20CTCP%20ch%E1%BB%A9ng%20kho%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20B%E1%BA%A3ng%20gi%C3%A1%20tr%E1%BB%B1c%20tuy%E1%BA%BFn.html");
 
                 if (market=="HOSE")
-                    ssiPage.getHOSEData();
+                    getDataStatus=ssiPage.getHOSEData();
                 else
                     if (market=="HASTC")
-                        ssiPage.getHNXData();
+                        getDataStatus=ssiPage.getHNXData();
                 else
                     if (market=="DERIVATIVE")
-                        ssiPage.getDerivativeData();
-                //SaveDatatoImportPriceDataTable(updateTime,importPriceTbl);
-                databases.importDS.importPriceRow importRow = null;
-                databases.importDS.importPriceRow oldImportRow=null;
-
-                foreach (var stock in ssiPage.dictStocks)
+                    getDataStatus=ssiPage.getDerivativeData();
+                if (getDataStatus)
                 {
-                    importRow = importPriceTbl.NewimportPriceRow();
-                    databases.AppLibs.InitData(importRow);
-                    importRow.onDate = updateTime;
-                    importRow.stockCode = stock.Key;
-                    //importRow.to
-                    //Doi de fix error #136 - Lỗi cập nhật HNX
-                    //importRow.isTotalVolume = true;
-                    importRow.isTotalVolume = false;
+                    //SaveDatatoImportPriceDataTable(updateTime,importPriceTbl);
+                    databases.importDS.importPriceRow importRow = null;
+                    databases.importDS.importPriceRow oldImportRow = null;
 
-                    importRow.closePrice=(decimal)stock.Value.price;
-                    importRow.totalVolume = (decimal)stock.Value.totalVolume;
-
-                    //Doi de fix error #136 - Lỗi cập nhật HNX
-                    
-
-                    if ((importRow.closePrice > 0) && (stock.Value.actualVolume>0))
+                    //Gan tu DictStock vao tung hang trong ImportRow
+                    foreach (var stock in ssiPage.dictStocks)
                     {
-                        importRow.volume = (decimal)stock.Value.actualVolume;
-                        importPriceTbl.AddimportPriceRow(importRow);
-                    }
-                    else importRow.CancelEdit();
-                }
+                        importRow = importPriceTbl.NewimportPriceRow();
+                        databases.AppLibs.InitData(importRow);
+                        importRow.onDate = updateTime;
+                        importRow.stockCode = stock.Key;
+                        //importRow.to
+                        //Doi de fix error #136 - Lỗi cập nhật HNX
+                        //importRow.isTotalVolume = true;
+                        importRow.isTotalVolume = false;
 
+                        importRow.closePrice = (decimal)stock.Value.price;
+                        importRow.totalVolume = (decimal)stock.Value.totalVolume;
+
+                        //bo xung 2 cot bid,ask
+                        importRow.bidPrice1 = (decimal)stock.Value.bidPrice1;
+                        importRow.bidVolume1 = (decimal)stock.Value.bidVolume1;
+
+                        importRow.askPrice1 = (decimal)stock.Value.askPrice1;
+                        importRow.askVolume1 = (decimal)stock.Value.askVolume1;
+
+                        //Doi de fix error #136 - Lỗi cập nhật HNX
+
+
+                        if ((importRow.closePrice > 0) && (stock.Value.actualVolume > 0))
+                        {
+                            importRow.volume = (decimal)stock.Value.actualVolume;
+                            importPriceTbl.AddimportPriceRow(importRow);
+                        }
+                        else importRow.CancelEdit();
+                    }
+                }
                 return importPriceTbl;
             }
             catch (Exception e)
