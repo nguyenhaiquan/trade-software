@@ -31,3 +31,8 @@ F:\GitHub\trade-software\2015\server\obj\Debug\server.csproj.CopyComplete
 F:\GitHub\trade-software\2015\server\obj\Debug\server.exe
 F:\GitHub\trade-software\2015\server\obj\Debug\server.pdb
 F:\GitHub\trade-software\2015\server\obj\Debug\server.frmSchedule.resources
+F:\GitHub\trade-software\2015\dlls\server.exe.manifest
+F:\GitHub\trade-software\2015\dlls\server.application
+F:\GitHub\trade-software\2015\server\obj\Debug\server.TrustInfo.xml
+F:\GitHub\trade-software\2015\server\obj\Debug\server.exe.manifest
+F:\GitHub\trade-software\2015\server\obj\Debug\server.application

@@ -108,6 +108,11 @@ namespace Imports.Stock
                         importRow.askPrice1 = (decimal)stock.Value.askPrice1;
                         importRow.askVolume1 = (decimal)stock.Value.askVolume1;
 
+                        if (market == "DERIVATIVE")
+                        {
+                            PageDerivativeRow derivativeRow = (PageDerivativeRow)stock.Value;
+                            importRow.vn30 = (decimal)derivativeRow.price - (decimal)derivativeRow.difference;
+                       }
                         //Doi de fix error #136 - Lỗi cập nhật HNX
 
 
