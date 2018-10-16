@@ -255,7 +255,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\commonClass.DataValues.datasource" />
     <None Include="Properties\DataSources\commonClass.TradePointInfo.datasource" />
     <None Include="Properties\DataSources\commonClass.TransactionInfo.datasource" />

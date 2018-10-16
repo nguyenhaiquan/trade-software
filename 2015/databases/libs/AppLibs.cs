@@ -487,10 +487,10 @@ namespace databases
             switch (timeScale.Type)
             {
                 case AppTypes.TimeScaleTypes.Minnute:
-                    int newMin = ((int)(onDateTime.Minute / timeScale.AggregationValue)) * timeScale.AggregationValue;
+                    int newMin = ((int)(onDateTime.Minute / timeScale.AggregationValue+1)) * timeScale.AggregationValue;
                     return onDateTime.Date.AddHours(onDateTime.Hour).AddMinutes(newMin);
                 case AppTypes.TimeScaleTypes.Hour:
-                    int newHour = ((int)(onDateTime.Hour / timeScale.AggregationValue)) * timeScale.AggregationValue;
+                    int newHour = ((int)(onDateTime.Hour / timeScale.AggregationValue+1)) * timeScale.AggregationValue;
                     return onDateTime.Date.AddHours(newHour);
                 case AppTypes.TimeScaleTypes.Day:
                     int newDay = ((int)((onDateTime.Day - 1) / timeScale.AggregationValue)) * timeScale.AggregationValue + 1;

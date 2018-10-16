@@ -137,8 +137,8 @@ namespace server
             //Main call to update price
             retVal = ssiImport.ImportFromWeb(updateTime, market);
 
-            if (retVal == false)
-                throw new Exception();
+            //if (retVal == false)
+            //    throw new Exception();
         }
     }
 }

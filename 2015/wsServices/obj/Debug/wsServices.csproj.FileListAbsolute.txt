@@ -106,3 +106,4 @@ F:\GitHub\trade-software\2015\wsServices\obj\Debug\Languages.pdb
 F:\GitHub\trade-software\2015\wsServices\obj\Debug\Charts.pdb
 F:\GitHub\trade-software\2015\wsServices\obj\Debug\vi-VN\common.resources.dll
 F:\GitHub\trade-software\2015\wsServices\obj\Debug\vi-VN\Languages.resources.dll
+F:\GitHub\trade-software\2015\wsServices\obj\Debug\wsServices.csprojResolveAssemblyReference.cache

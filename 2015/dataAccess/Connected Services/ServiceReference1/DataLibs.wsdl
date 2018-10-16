@@ -6996,7 +6996,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8733/wsServices/DataLibs/secure</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>qnguyen37@vdc.csc.com</Upn>
+          <Upn>VDC\qnguyen37</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

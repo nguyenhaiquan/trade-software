@@ -16,3 +16,14 @@ C:\Github\trade-software\2015\dlls\DataAccess.dll
 C:\Github\trade-software\2015\dlls\DataAccess.pdb
 C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.dll
 C:\Github\trade-software\2015\dataAccess\obj\Debug\DataAccess.pdb
+F:\GitHub\trade-software\2015\dlls\DataAccess.dll.config
+F:\GitHub\trade-software\2015\dlls\DataAccess.dll
+F:\GitHub\trade-software\2015\dlls\DataAccess.pdb
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\dataAccess.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.forms.splashForm.resources
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.Properties.Resources.resources
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.GenerateResource.cache
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\dataAccess.csproj.CopyComplete
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.dll
+F:\GitHub\trade-software\2015\dataAccess\obj\Debug\DataAccess.pdb
