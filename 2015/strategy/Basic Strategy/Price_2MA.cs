@@ -1,6 +1,7 @@
 ﻿using application.Strategy;
 using commonClass;
 using commonTypes;
+using System;
 
 namespace Strategy
 {
@@ -15,7 +16,8 @@ namespace Strategy
         {
             PriceTwoSMARule smarule = new PriceTwoSMARule(data.Close, parameters[0], parameters[1]);
 
-            int cutlosslevel = 5;
+            int cutlosslevel = 3; //point (not %)
+            int takeprofitlevel = 3;
             Indicators.MIN min = Indicators.MIN.Series(data.Close, parameters[0], "min");
             Indicators.MAX max = Indicators.MAX.Series(data.Close, parameters[1], "max");
             Indicators.Fibonnanci fibo = Indicators.Fibonnanci.Series(data.Bars, parameters[1], "fibo");
@@ -27,23 +29,52 @@ namespace Strategy
                 {
                     BusinessInfo info = new BusinessInfo();
                     info.SetTrend(AppTypes.MarketTrend.Upward, AppTypes.MarketTrend.Unspecified, AppTypes.MarketTrend.Unspecified);
+
+
                     info.Short_Resistance = max[idx];
                     info.Short_Support = min[idx];
+
                     info.Short_Target = fibo.Fibo23pc[idx];
-                    info.Stop_Loss = data.Close[idx] * (1 - cutlosslevel / 100);
-                    BuyAtClose(idx,info);
+
+                    if (info.Short_Target < smarule.short_indicator[idx] + takeprofitlevel)
+                        info.Short_Target = smarule.short_indicator[idx] + takeprofitlevel;
+
+                    info.Stop_Loss = Math.Min(data.Close[idx] - cutlosslevel,smarule.long_indicator[idx]-1);
+
+                    BuyAtClose(idx, info);
                 }
                 else
                     if (smarule.isValid_forSell(idx))
+                {
+                    BusinessInfo info = new BusinessInfo();
+                    info.SetTrend(AppTypes.MarketTrend.Upward, AppTypes.MarketTrend.Unspecified, AppTypes.MarketTrend.Unspecified);
+                    info.Short_Resistance = max[idx];
+                    info.Short_Support = min[idx];
+                    info.Short_Target = fibo.Fibo23pc[idx];
+
+                    info.Stop_Loss = data.Close[idx]+cutlosslevel;
+
+                    SellAtClose(idx, info);
+                }
+
+                //Update Trailing Stop
+
+                if (adviceInfo.Count > 0){ //
+                    //Lay thong tin cua Last Advise
+                    TradePointInfo info =( (TradePointInfo)adviceInfo[adviceInfo.Count-1]);
+                    if (info.TradeAction == AppTypes.TradeActions.Buy)
                     {
-                        BusinessInfo info = new BusinessInfo();
-                        info.SetTrend(AppTypes.MarketTrend.Upward, AppTypes.MarketTrend.Unspecified, AppTypes.MarketTrend.Unspecified);
-                        info.Short_Resistance = max[idx];
-                        info.Short_Support = min[idx];
-                        info.Short_Target = fibo.Fibo23pc[idx];
-                        info.Stop_Loss = data.Close[idx] * (1 - cutlosslevel / 100);
-                        SellAtClose(idx,info);
+                        info.BusinessInfo.Stop_Loss = Math.Min(data.Close[idx] - cutlosslevel, smarule.long_indicator[idx] - 1);
                     }
+
+                    if (info.TradeAction == AppTypes.TradeActions.Sell) { 
+                        info.BusinessInfo.Stop_Loss=
+                }
+                
+                //If CutLoss then Action=CutLoss
+                //If TakeProfit the TakeProfit action o take profit
+
+                if (CutLossCondition())
             }
         }
     }

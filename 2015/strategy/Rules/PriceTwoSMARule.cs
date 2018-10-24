@@ -33,13 +33,18 @@ namespace Strategy
             if (index < long_indicator.FirstValidValue) return false;
             if ((price[index] >= short_indicator[index]) && (short_indicator[index] >= long_indicator[index]))
                 return true;
+
+
+        //Testing - tao Data nào ?
+        // if (data=ngay "2018-10-11" , freq="5P"); (index==3) and return ==false => failed Testing;
+
             return false;
         }
 
         public override bool DownTrend(int index)
         {
             if (index < long_indicator.FirstValidValue) return false;
-            if ((price[index] < short_indicator[index]) || (short_indicator[index] < long_indicator[index]))
+            if ((price[index] < short_indicator[index]) && (short_indicator[index] < long_indicator[index]))
                 return true;
             return base.DownTrend(index);
         }
