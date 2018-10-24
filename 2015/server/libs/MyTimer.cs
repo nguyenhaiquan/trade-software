@@ -129,16 +129,33 @@ namespace server
 
             bool retVal = true;
 
-            
-            //Initiate ssiImport
-            if (ssiImport == null)
-                ssiImport = new ssi_StockImport(market);
+            if (marketRaw.dataSource == "SSI")
+            {
 
-            //Main call to update price
-            retVal = ssiImport.ImportFromWeb(updateTime, market);
+                //Initiate ssiImport
+                if (ssiImport == null)
+                    ssiImport = new ssi_StockImport(market);
 
-            //if (retVal == false)
-            //    throw new Exception();
+                //Main call to update price
+                retVal = ssiImport.ImportFromWeb(updateTime, market);
+
+                //if (retVal == false)
+                //    throw new Exception();
+            }
+            else
+                if (marketRaw.dataSource == "VNDIRECT")
+            {
+
+                ////Initiate ssiImport
+                //if (vndImport == null)
+                //    vndImport = new vnd_StockImport(market);
+
+                ////Main call to update price
+                //retVal = vndImport.ImportFromWeb(updateTime, market);
+
+                ////if (retVal == false)
+                //    throw new Exception();
+            }
         }
     }
 }
