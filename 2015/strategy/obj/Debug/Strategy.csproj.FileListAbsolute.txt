@@ -13,3 +13,12 @@ C:\Github\trade-software\2015\dlls\strategy.pdb
 C:\Github\trade-software\2015\strategy\obj\Debug\strategy.dll
 C:\Github\trade-software\2015\strategy\obj\Debug\strategy.pdb
 C:\Github\trade-software\2015\strategy\obj\Debug\Strategy.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\strategy\obj\Debug\Strategy.csprojResolveAssemblyReference.cache
+F:\GitHub\trade-software\2015\strategy\obj\Debug\strategy.Properties.Resources.resources
+F:\GitHub\trade-software\2015\strategy\obj\Debug\Strategy.csproj.GenerateResource.cache
+F:\GitHub\trade-software\2015\strategy\obj\Debug\Strategy.csproj.CoreCompileInputs.cache
+F:\GitHub\trade-software\2015\strategy\obj\Debug\strategy.dll
+F:\GitHub\trade-software\2015\strategy\obj\Debug\strategy.pdb
+F:\GitHub\trade-software\2015\dlls\strategy.dll
+F:\GitHub\trade-software\2015\dlls\strategy.pdb
+F:\GitHub\trade-software\2015\strategy\obj\Debug\Strategy.csproj.CopyComplete

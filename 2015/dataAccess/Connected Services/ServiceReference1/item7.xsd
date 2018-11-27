@@ -156,6 +156,8 @@
       <xs:enumeration value="Accumulate" />
       <xs:enumeration value="ClearAll" />
       <xs:enumeration value="Select" />
+      <xs:enumeration value="TakeProfit" />
+      <xs:enumeration value="CutLoss" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AppTypes.TradeActions" nillable="true" type="tns:AppTypes.TradeActions" />

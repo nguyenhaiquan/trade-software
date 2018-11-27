@@ -575,7 +575,7 @@
 <STRATEGY>
     <PriceTwoSMA Code="STR020"/>
     <PriceTwoSMA Category="TRE" />
-    <PriceTwoSMA Parameters="Short Period = 5,Long Period=10" />
+    <PriceTwoSMA Parameters="Short Period = 9,Long Period=15" />
     <PriceTwoSMA ParameterDescriptions="Short Period is the period for the short term moving average line.&#xD;&#xA;                 Long Period is the period for the long term moving average line." />
     <PriceTwoSMA Name="Two Simple Moving Average Waves compared with Price" />
     <PriceTwoSMA Description="Two Simple Moving Average Waves compared with Price" />
